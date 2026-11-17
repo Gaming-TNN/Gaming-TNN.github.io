@@ -21,15 +21,13 @@ Requires Node 22.12+ (CI uses Node 24).
 |---|---|
 | `/` | `src/pages/index.astro` |
 | `/about/` | `src/pages/about.astro` |
-| `/streaming/` | `src/pages/streaming.astro` (DapperNanner & The Nannerati) |
 | `/community/` | `src/pages/community.astro` (Discord section) |
 
 ## Common edits
 
 - **Discord invite:** set `DISCORD_INVITE_URL` in `src/lib/site.ts`. While it is empty, every Discord button shows a "coming soon" placeholder.
-- **Stream channel links / schedule:** `channels` list at the top of `src/pages/streaming.astro`.
 - **Nav & network links:** `NAV` / `NETWORKS` in `src/lib/site.ts`.
-- **Images:** optimized WebP files live in `public/images/`. Resize/compress new art to WebP before committing.
+- **Images:** resize/compress new art (WebP preferred) before committing to `public/`.
 - **Custom domain:** `public/CNAME` must stay `gaming.top-notchnetwork.com`.
 
 ## CI / deploy

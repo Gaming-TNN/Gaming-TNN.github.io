@@ -5,20 +5,20 @@ import DiscordButton from '../components/DiscordButton.astro';
 import { DISCORD_INVITE_URL } from '../lib/site';
 
 const features = [
-  { code: 'CH // 01', title: 'GO-LIVE ALERTS', description: 'Know the moment DapperNanner goes live.' },
+  { code: 'CH // 01', title: 'ANNOUNCEMENTS', description: 'News, events, and updates from Top-Notch Gaming.' },
   { code: 'CH // 02', title: 'LFG & SQUADS', description: 'Find teammates for whatever you are playing tonight.' },
   { code: 'CH // 03', title: 'GAME NIGHTS', description: 'Community events and play sessions, announced here first.' },
-  { code: 'CH // 04', title: 'THE NANNERATI', description: 'Hang out with the bunch between streams.' },
+  { code: 'CH // 04', title: 'HANGOUT', description: 'Off-topic chat, clips, and good company between sessions.' },
 ];
 
 const rules = [
   'Be respectful. No harassment, hate, or personal attacks.',
-  'Keep it safe for work and safe for streams.',
+  'Keep it safe for work.',
   'No spam, scams, or unsolicited self-promotion.',
-  'Respect the mods and the stream. Keep it top-notch.',
+  'Respect the mods. Keep it top-notch.',
 ];
 ---
-<BaseLayout title="Community | Top-Notch Gaming" description="Join the Top-Notch Gaming community: Discord, game nights, go-live alerts, and The Nannerati.">
+<BaseLayout title="Community | Top-Notch Gaming" description="Join the Top-Notch Gaming community: Discord, game nights, squads, and announcements.">
 
     <section class="relative overflow-hidden">
       <div class="tng-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
@@ -29,7 +29,7 @@ const rules = [
           <span class="text-[#c20e0e]">SQUAD</span>
         </h1>
         <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed">
-          The Top-Notch Gaming community is where players, viewers, and The Nannerati meet between streams. Queue up, swap strats, and catch every event.
+          The Top-Notch Gaming community is where players meet up between sessions. Queue up, swap strats, and catch every event.
         </p>
       </div>
     </section>
@@ -42,10 +42,10 @@ const rules = [
             <span class="text-[#8b93f8] text-xs font-black tracking-widest block mb-2">// OFFICIAL DISCORD</span>
             <h2 class="text-3xl md:text-4xl font-black text-[#e4e4e7] mb-4">THE TOP-NOTCH GAMING DISCORD</h2>
             <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl leading-relaxed mb-6">
-              Our home base for go-live alerts, looking-for-group, community game nights, and hanging out with The Nannerati.
+              Our home base for announcements, looking-for-group, community game nights, and hanging out.
             </p>
             {!DISCORD_INVITE_URL && (
-              <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-widest text-[#f5c518] border border-[#f5c518]/50 bg-[#f5c518]/10 px-3 py-2 mb-6" data-discord-placeholder-note>
+              <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-widest text-[#8b93f8] border border-[#5865F2]/60 bg-[#5865F2]/10 px-3 py-2 mb-6" data-discord-placeholder-note>
                 ⚠ INVITE LINK COMING SOON · CHECK BACK SHORTLY
               </p>
             )}
@@ -71,8 +71,10 @@ const rules = [
 
     <section class="bg-[#121215] border-y border-[#27272a] py-20">
       <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-        <div class="tng-cut border border-[#27272a] bg-black p-2 order-last lg:order-first">
-          <img src="/images/nannerati-council.webp" width="974" height="519" alt="The Nannerati council gathered around the emblem table" class="w-full h-auto block" loading="lazy" />
+        <div class="tng-cut border border-[#27272a] bg-black p-8 order-last lg:order-first flex flex-col items-center justify-center gap-6 min-h-64 relative overflow-hidden">
+          <div class="tng-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+          <img src="/tnn-emblem.png" width="198" height="210" alt="" class="relative h-28 w-auto drop-shadow-[0_0_25px_rgba(194,14,14,0.45)]" loading="lazy" />
+          <div class="relative text-xs font-black tracking-widest text-zinc-400">PLAY FAIR · LIFT THE LOBBY · KEEP IT TOP-NOTCH</div>
         </div>
         <div>
           <SectionHeader kicker="GROUND RULES" title="KEEP IT TOP-NOTCH" class="mb-8" />
@@ -91,13 +93,13 @@ const rules = [
     <section class="py-20 px-6">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-5xl font-black text-[#e4e4e7] mb-6">
-          CATCH THE <span class="text-[#f5c518]">NEXT STREAM</span>
+          NEW HERE? <span class="text-[#c20e0e]">START HERE.</span>
         </h2>
         <p class="text-zinc-400 text-sm normal-case max-w-xl mx-auto mb-8">
-          Meet DapperNanner and The Nannerati, and find out where to watch.
+          Learn what Top-Notch Gaming is about and the standard we play by.
         </p>
-        <a href="/streaming/" class="inline-block bg-[#c20e0e] hover:bg-[#9e0b0b] text-white font-black px-10 py-5 text-xs tracking-widest border border-[#d30000] shadow-[0_0_25px_rgba(194,14,14,0.3)] transition">
-          GO TO STREAMING
+        <a href="/about/" class="inline-block bg-[#c20e0e] hover:bg-[#9e0b0b] text-white font-black px-10 py-5 text-xs tracking-widest border border-[#d30000] shadow-[0_0_25px_rgba(194,14,14,0.3)] transition">
+          ABOUT TOP-NOTCH GAMING
         </a>
       </div>
     </section>

@@ -4,13 +4,20 @@ import SectionHeader from '../components/SectionHeader.astro';
 import DiscordButton from '../components/DiscordButton.astro';
 
 const pillars = [
-  { code: '01 // STREAM', title: 'LIVE CONTENT', description: 'Streams and videos from creators in the Top-Notch family, starting with DapperNanner and The Nannerati.' },
-  { code: '02 // SQUAD', title: 'COMMUNITY FIRST', description: 'A welcoming place to queue up, trade strats, and hang out with people who love games as much as you do.' },
-  { code: '03 // PLAY', title: 'GAME NIGHTS & EVENTS', description: 'Community play sessions and events. Dates are announced in the community first, so keep an eye on the Discord.' },
+  { code: '01 // SQUAD', title: 'COMMUNITY FIRST', description: 'A welcoming place to queue up, trade strats, and hang out with people who love games as much as you do.' },
+  { code: '02 // PLAY', title: 'GAME NIGHTS & EVENTS', description: 'Community play sessions and events. Dates are announced in the community first, so keep an eye on the Discord.' },
+  { code: '03 // CREATE', title: 'ROOM FOR CREATORS', description: 'Clips, content, and creative projects from players in the Top-Notch family, with a community behind them.' },
   { code: '04 // NETWORK', title: 'PART OF TOP-NOTCH', description: 'Top-Notch Gaming is the gaming arm of Top-Notch Network, built on the same standard: show up, play fair, lift others up.' },
 ];
+
+const hud = [
+  ['MODE', 'CO-OP'],
+  ['LOBBY', 'OPEN'],
+  ['SKILL LEVEL', 'ALL WELCOME'],
+  ['NETWORK', 'TOP-NOTCH'],
+];
 ---
-<BaseLayout title="Top-Notch Gaming | Streams, Community & Game Nights" description="Top-Notch Gaming is the gaming arm of Top-Notch Network: live streams from DapperNanner and The Nannerati, community game nights, and a place for players to connect.">
+<BaseLayout title="Top-Notch Gaming | Community & Game Nights" description="Top-Notch Gaming is the gaming arm of Top-Notch Network: community game nights, squads, and a place for players to connect.">
 
     <!-- Hero Section -->
     <section class="relative overflow-hidden">
@@ -23,29 +30,39 @@ const pillars = [
             <span class="text-[#c20e0e]">TOGETHER</span>
           </h1>
           <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed mb-4">
-            Streams, squads, and game nights from the gaming side of Top-Notch Network.
+            Squads, game nights, and good company from the gaming side of Top-Notch Network.
           </p>
           <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed mb-10">
-            Top-Notch Gaming brings players and creators together. Catch DapperNanner live with The Nannerati, jump into the community, and play with people who keep it top-notch.
+            Top-Notch Gaming brings players together. Jump into the community, find your squad, and play with people who keep it top-notch.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/streaming/" class="bg-[#c20e0e] hover:bg-[#9e0b0b] text-white font-black px-8 py-4 text-xs tracking-widest text-center border border-[#d30000] shadow-[0_0_20px_rgba(194,14,14,0.25)] transition">
-              WATCH THE STREAM
-            </a>
-            <a href="/community/" class="bg-[#121215] hover:bg-zinc-800 text-zinc-300 font-bold px-8 py-4 text-xs tracking-widest text-center border border-[#27272a] transition">
+            <a href="/community/" class="bg-[#c20e0e] hover:bg-[#9e0b0b] text-white font-black px-8 py-4 text-xs tracking-widest text-center border border-[#d30000] shadow-[0_0_20px_rgba(194,14,14,0.25)] transition">
               JOIN THE COMMUNITY
+            </a>
+            <a href="/about/" class="bg-[#121215] hover:bg-zinc-800 text-zinc-300 font-bold px-8 py-4 text-xs tracking-widest text-center border border-[#27272a] transition">
+              ABOUT TNG
             </a>
           </div>
         </div>
-        <div class="relative">
-          <div class="tng-cut relative border border-[#27272a] bg-[#121215] p-2 shadow-[0_0_40px_rgba(194,14,14,0.18)]">
-            <img src="/images/dappernanner-studio-800.webp" srcset="/images/dappernanner-studio-800.webp 800w, /images/dappernanner-studio.webp 1408w" sizes="(min-width: 1024px) 40vw, 100vw" width="800" height="436" alt="DapperNanner, a banana in a top hat and monocle, at his streaming desk" class="w-full h-auto block" fetchpriority="high" />
-            <div class="tng-scanlines absolute inset-2 pointer-events-none" aria-hidden="true"></div>
+
+        <!-- HUD panel -->
+        <div class="tng-cut relative border border-[#27272a] bg-[#121215] p-8 shadow-[0_0_40px_rgba(194,14,14,0.18)] overflow-hidden" aria-hidden="true">
+          <div class="tng-scanlines absolute inset-0 pointer-events-none"></div>
+          <div class="relative flex items-center justify-between mb-8">
+            <span class="text-[10px] font-black tracking-widest text-[#c20e0e]">● PLAYER 1 READY</span>
+            <span class="text-[10px] font-black tracking-widest text-zinc-500">TNG // HUB</span>
           </div>
-          <div class="absolute -bottom-6 -left-4 sm:-left-8 w-24 sm:w-32 rounded-full border-2 border-[#f5c518]/70 shadow-[0_0_25px_rgba(245,197,24,0.35)] overflow-hidden bg-black">
-            <img src="/images/nannerati-logo-360.webp" width="360" height="360" alt="The Nannerati logo" class="w-full h-auto block" />
+          <div class="relative flex justify-center mb-8">
+            <img src="/tnn-emblem.png" width="198" height="210" alt="" class="h-32 sm:h-40 w-auto drop-shadow-[0_0_30px_rgba(194,14,14,0.5)]" />
           </div>
-          <span class="absolute top-4 right-4 bg-[#c20e0e] text-white text-[10px] font-black tracking-widest px-2 py-1">● FEATURED CREATOR</span>
+          <dl class="relative grid grid-cols-2 gap-px bg-[#27272a] border border-[#27272a]">
+            {hud.map(([k, v]) => (
+              <div class="bg-black px-4 py-3">
+                <dt class="text-[10px] font-bold tracking-widest text-zinc-500">{k}</dt>
+                <dd class="text-xs font-black tracking-widest text-[#e4e4e7]">{v}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>
@@ -64,25 +81,8 @@ const pillars = [
       </div>
     </section>
 
-    <!-- Featured Creator Banner -->
-    <section class="bg-[#121215] border-y border-[#27272a] py-20">
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-[auto_1fr] gap-10 items-center">
-        <img src="/images/nannerati-logo-360.webp" width="360" height="360" alt="The Nannerati logo" class="w-48 md:w-64 h-auto mx-auto rounded-full border-2 border-[#f5c518]/60 shadow-[0_0_35px_rgba(245,197,24,0.25)]" loading="lazy" />
-        <div>
-          <span class="text-[#f5c518] text-xs font-black tracking-widest block mb-2">// FEATURED CREATOR</span>
-          <h2 class="text-3xl md:text-4xl font-black text-[#e4e4e7] mb-4">DAPPERNANNER <span class="text-[#c20e0e]">&amp;</span> THE NANNERATI</h2>
-          <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl leading-relaxed mb-8">
-            The most distinguished banana on stream. Top hat, monocle, bow tie, and a community of loyal Nannerati along for every run.
-          </p>
-          <a href="/streaming/" class="inline-block bg-transparent hover:bg-[#f5c518] text-[#f5c518] hover:text-black font-black px-8 py-4 text-xs tracking-widest border border-[#f5c518] transition">
-            MEET DAPPERNANNER
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Strip -->
-    <section class="py-20 px-6">
+    <section class="border-t border-[#27272a] bg-[#121215] py-20 px-6">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-5xl font-black text-[#e4e4e7] mb-6">
           READY, <span class="text-[#c20e0e]">PLAYER TWO?</span>

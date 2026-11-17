@@ -19,7 +19,6 @@ export const DISCORD_INVITE_URL = '';
 
 export const NAV = [
   { label: 'About', href: '/about/' },
-  { label: 'Streaming', href: '/streaming/' },
   { label: 'Community', href: '/community/' },
 ];
 
