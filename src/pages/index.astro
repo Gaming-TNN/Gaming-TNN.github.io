@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import DiscordButton from '../components/DiscordButton.astro';
+import GameEmblem from '../components/GameEmblem.astro';
+import { GAMES } from '../data/games';
 
 const pillars = [
   { code: '01 // SQUAD', title: 'COMMUNITY FIRST', description: 'A welcoming place to queue up, trade strats, and hang out with people who love games as much as you do.' },
@@ -64,6 +66,27 @@ const hud = [
             ))}
           </dl>
         </div>
+      </div>
+    </section>
+
+    <!-- Games We Play strip -->
+    <section class="border-y border-[#27272a] bg-[#121215] py-14">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center gap-8">
+        <div class="shrink-0">
+          <span class="text-[#c20e0e] text-xs font-black tracking-widest block mb-2">// NOW PLAYING</span>
+          <h2 class="text-2xl md:text-3xl font-black text-[#e4e4e7]">GAMES WE PLAY</h2>
+        </div>
+        <div class="flex-1 grid sm:grid-cols-2 gap-4">
+          {GAMES.map((g) => (
+            <a href={`/games/#${g.slug}`} class="flex items-center gap-4 bg-black border border-[#27272a] hover:border-[#c20e0e]/60 p-4 transition-colors group min-w-0">
+              <GameEmblem mark={g.mark} size="sm" />
+              <span class="font-black text-sm text-[#e4e4e7] group-hover:text-[#c20e0e] transition-colors min-w-0">{g.name}</span>
+            </a>
+          ))}
+        </div>
+        <a href="/games/" class="shrink-0 text-center bg-transparent hover:bg-[#c20e0e] text-[#c20e0e] hover:text-white font-black px-6 py-3 text-xs tracking-widest border border-[#c20e0e] transition">
+          ALL GAMES
+        </a>
       </div>
     </section>
 

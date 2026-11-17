@@ -21,11 +21,13 @@ Requires Node 22.12+ (CI uses Node 24).
 |---|---|
 | `/` | `src/pages/index.astro` |
 | `/about/` | `src/pages/about.astro` |
+| `/games/` | `src/pages/games.astro` (cards from `src/data/games.ts`) |
 | `/community/` | `src/pages/community.astro` (Discord section) |
 
 ## Common edits
 
 - **Discord invite:** set `DISCORD_INVITE_URL` in `src/lib/site.ts`. While it is empty, every Discord button shows a "coming soon" placeholder.
+- **Games:** add or edit entries in `GAMES` in `src/data/games.ts`. Set `guild` when clan/guild info is confirmed; while it is `null` the card shows "Coming soon". Use the typographic `mark`, not official logos or art.
 - **Nav & network links:** `NAV` / `NETWORKS` in `src/lib/site.ts`.
 - **Images:** resize/compress new art (WebP preferred) before committing to `public/`.
 - **Custom domain:** `public/CNAME` must stay `gaming.top-notchnetwork.com`.
