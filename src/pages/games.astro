@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import GameEmblem from '../components/GameEmblem.astro';
+import GameLogo from '../components/GameLogo.astro';
 import DiscordButton from '../components/DiscordButton.astro';
-import { GAMES } from '../data/games';
+import { GAMES, GAMES_TRADEMARK_NOTICE } from '../data/games';
 ---
 <BaseLayout title="Games | Top-Notch Gaming" description="The games Top-Notch Gaming plays, with clan and guild info coming soon.">
 
@@ -24,14 +24,14 @@ import { GAMES } from '../data/games';
       <div class="grid md:grid-cols-2 gap-8">
         {GAMES.map((g, i) => (
           <article id={g.slug} class="tng-cut bg-[#121215] border border-[#27272a] hover:border-[#c20e0e]/60 transition-colors group flex flex-col scroll-mt-24">
+            <div class="relative h-56 sm:h-60 bg-black border-b border-[#27272a] flex items-center justify-center px-8 overflow-hidden">
+              <div class="tng-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+              <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(194,14,14,0.18),transparent_65%)]" aria-hidden="true"></div>
+              <GameLogo game={g} />
+            </div>
             <div class="p-8 flex-1">
-              <div class="flex items-start gap-6 mb-6">
-                <GameEmblem mark={g.mark} />
-                <div class="min-w-0">
-                  <div class="text-xs font-black text-[#c20e0e] mb-2">{String(i + 1).padStart(2, '0')} // {g.genre}</div>
-                  <h2 class="text-2xl md:text-3xl font-black text-[#e4e4e7] leading-tight group-hover:text-[#c20e0e] transition-colors">{g.name}</h2>
-                </div>
-              </div>
+              <div class="text-xs font-black text-[#c20e0e] mb-2">{String(i + 1).padStart(2, '0')} // {g.genre}</div>
+              <h2 class="text-2xl md:text-3xl font-black text-[#e4e4e7] leading-tight mb-4 group-hover:text-[#c20e0e] transition-colors">{g.name}</h2>
               <p class="text-zinc-400 text-sm normal-case leading-relaxed">{g.description}</p>
             </div>
             <div class="border-t border-[#27272a] p-8 pt-6">
@@ -53,6 +53,9 @@ import { GAMES } from '../data/games';
           </article>
         ))}
       </div>
+      <p class="mt-10 text-[11px] text-zinc-500 normal-case tracking-normal leading-relaxed max-w-4xl" data-trademark-notice>
+        {GAMES_TRADEMARK_NOTICE}
+      </p>
     </section>
 
     <section class="border-t border-[#27272a] bg-[#121215] py-20 px-6">

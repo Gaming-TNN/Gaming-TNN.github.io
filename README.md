@@ -27,7 +27,7 @@ Requires Node 22.12+ (CI uses Node 24).
 ## Common edits
 
 - **Discord invite:** set `DISCORD_INVITE_URL` in `src/lib/site.ts`. While it is empty, every Discord button shows a "coming soon" placeholder.
-- **Games:** add or edit entries in `GAMES` in `src/data/games.ts`. Set `guild` when clan/guild info is confirmed; while it is `null` the card shows "Coming soon". Use the typographic `mark`, not official logos or art.
+- **Games:** add or edit entries in `GAMES` in `src/data/games.ts`. Set `guild` when clan/guild info is confirmed; while it is `null` the card shows "Coming soon". Official logos are optional (`logo`); without one, the card falls back to the typographic `mark`.
 - **Nav & network links:** `NAV` / `NETWORKS` in `src/lib/site.ts`.
 - **Images:** resize/compress new art (WebP preferred) before committing to `public/`.
 - **Custom domain:** `public/CNAME` must stay `gaming.top-notchnetwork.com`.
@@ -38,3 +38,16 @@ Requires Node 22.12+ (CI uses Node 24).
 - `.github/workflows/deploy.yml`: builds with `withastro/action` and deploys to GitHub Pages on push to `main`. Requires the repo's Pages source to be set to **GitHub Actions**.
 
 The previous Jekyll (Chirpy) site is preserved on the `jekyll-backup` branch.
+
+## Game logo sources
+
+Official logos, from each publisher's press kit. The artwork is unaltered: transparent margins were trimmed, and each logo was resized and converted to WebP (`public/images/games/*-800.webp`, `*-400.webp`).
+
+| Game | File | Source |
+|---|---|---|
+| EverQuest Legends | `everquest-legends-logo-*.webp` | Daybreak Game Company press page, "EverQuest Legends Logo" (transparent PNG, 2400×1500): https://www.daybreakgames.com/press/eqlegends/logos (asset: https://assets-cdn.daybreakgames.com/uploads/dcsclient/000/000/351/282.png) |
+| World of Warcraft: Forever | `wow-forever-logo-*.webp` | Blizzard Press Center, WoW Forever Launch Press Kit, `WoW_Forever_Logo.png` (transparent PNG, 4550×3850): https://blizzard.gamespress.com/Kit/Details/WoW-Forever-Launch-Press-Kit |
+
+Trademark credit (shown on `/games/`, text in `GAMES_TRADEMARK_NOTICE` in `src/data/games.ts`) uses the owner names as published:
+- Daybreak: "EverQuest is a registered trademark of Daybreak Game Company LLC" (https://www.daybreakgames.com/legal); "Daybreak, the Daybreak logo and EverQuest Legends are trademarks or registered trademarks of Daybreak Game Company LLC" (https://www.everquestlegends.com/)
+- Blizzard: "World of Warcraft, Warcraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc." (https://www.blizzard.com/en-us/legal/9c9cb70b-d1ed-4e17-998a-16c6df46be7b/copyright-notices)

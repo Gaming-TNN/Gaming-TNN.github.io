@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import DiscordButton from '../components/DiscordButton.astro';
-import GameEmblem from '../components/GameEmblem.astro';
+import GameLogo from '../components/GameLogo.astro';
 import { GAMES } from '../data/games';
 
 const pillars = [
@@ -79,7 +79,7 @@ const hud = [
         <div class="flex-1 grid sm:grid-cols-2 gap-4">
           {GAMES.map((g) => (
             <a href={`/games/#${g.slug}`} class="flex items-center gap-4 bg-black border border-[#27272a] hover:border-[#c20e0e]/60 p-4 transition-colors group min-w-0">
-              <GameEmblem mark={g.mark} size="sm" />
+              <GameLogo game={g} size="sm" />
               <span class="font-black text-sm text-[#e4e4e7] group-hover:text-[#c20e0e] transition-colors min-w-0">{g.name}</span>
             </a>
           ))}
@@ -88,6 +88,7 @@ const hud = [
           ALL GAMES
         </a>
       </div>
+      <p class="max-w-7xl mx-auto px-6 mt-6 text-[10px] text-zinc-500 normal-case tracking-normal">Game names and logos are trademarks of their respective owners. <a href="/games/" class="underline hover:text-zinc-300">See credits</a>.</p>
     </section>
 
     <!-- Pillars Grid -->
