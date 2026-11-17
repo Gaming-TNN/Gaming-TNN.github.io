@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import DiscordButton from '../components/DiscordButton.astro';
 import GameLogo from '../components/GameLogo.astro';
+import SquadPanel from '../components/SquadPanel.astro';
 import { GAMES } from '../data/games';
 
 const pillars = [
@@ -12,12 +13,6 @@ const pillars = [
   { code: '04 // NETWORK', title: 'PART OF TOP-NOTCH', description: 'Top-Notch Gaming is the gaming arm of Top-Notch Network, built on the same standard: show up, play fair, lift others up.' },
 ];
 
-const hud = [
-  ['MODE', 'CO-OP'],
-  ['LOBBY', 'OPEN'],
-  ['SKILL LEVEL', 'ALL WELCOME'],
-  ['NETWORK', 'TOP-NOTCH'],
-];
 ---
 <BaseLayout title="Top-Notch Gaming | Community & Game Nights" description="Top-Notch Gaming is the gaming arm of Top-Notch Network: community game nights, squads, and a place for players to connect.">
 
@@ -47,25 +42,7 @@ const hud = [
           </div>
         </div>
 
-        <!-- HUD panel -->
-        <div class="tng-cut relative border border-[#27272a] bg-[#121215] p-8 shadow-[0_0_40px_rgba(194,14,14,0.18)] overflow-hidden" aria-hidden="true">
-          <div class="tng-scanlines absolute inset-0 pointer-events-none"></div>
-          <div class="relative flex items-center justify-between mb-8">
-            <span class="text-[10px] font-black tracking-widest text-[#c20e0e]">● PLAYER 1 READY</span>
-            <span class="text-[10px] font-black tracking-widest text-zinc-500">TNG // HUB</span>
-          </div>
-          <div class="relative flex justify-center mb-8">
-            <img src="/tnn-emblem.png" width="198" height="210" alt="" class="h-32 sm:h-40 w-auto drop-shadow-[0_0_30px_rgba(194,14,14,0.5)]" />
-          </div>
-          <dl class="relative grid grid-cols-2 gap-px bg-[#27272a] border border-[#27272a]">
-            {hud.map(([k, v]) => (
-              <div class="bg-black px-4 py-3">
-                <dt class="text-[10px] font-bold tracking-widest text-zinc-500">{k}</dt>
-                <dd class="text-xs font-black tracking-widest text-[#e4e4e7]">{v}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+        <SquadPanel />
       </div>
     </section>
 

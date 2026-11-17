@@ -1,0 +1,110 @@
+---
+// Squad roster for the homepage hero. Each member card matches the
+// "Games we play" strip card: wide, short, black, thin border, icon left + bold title.
+// Cards stack vertically so more members can be added later.
+import GameLogo from './GameLogo.astro';
+import {
+  SQUAD,
+  DISCORD_STATUS_LABEL,
+  EVERQUEST_GAME,
+  WOW_FOREVER_GAME,
+  type DiscordStatus,
+  type EverQuestCharacter,
+  type SquadMember,
+  type WowForeverCharacter,
+} from '../data/squad';
+import type { Game } from '../data/games';
+
+const statusDot: Record<DiscordStatus, string> = {
+  online: 'bg-emerald-400',
+  idle: 'bg-amber-400',
+  dnd: 'bg-red-500',
+  offline: 'bg-zinc-500',
+  unknown: 'bg-zinc-500',
+};
+
+function isPlaceholder(name?: string) {
+  return !name || name === 'TBD';
+}
+
+function memberMark(member: SquadMember) {
+  if (member.mark) return member.mark;
+  const letters = member.handle.replace(/[^a-zA-Z]/g, '');
+  return (letters.slice(0, 2) || member.handle.slice(0, 2) || '?').toUpperCase();
+}
+
+function everquestBits(char?: EverQuestCharacter) {
+  if (!char) return [];
+  const bits: string[] = [];
+  if (char.server) bits.push(char.server);
+  bits.push(isPlaceholder(char.name) ? 'TBD' : char.name);
+  if (typeof char.level === 'number') bits.push(`Lv ${char.level}`);
+  if (char.class) bits.push(char.class);
+  return bits;
+}
+
+/** WoW Forever has no realms — never include a realm/server here. */
+function wowForeverBits(char?: WowForeverCharacter) {
+  if (!char) return [];
+  const bits: string[] = [];
+  bits.push(isPlaceholder(char.name) ? 'TBD' : char.name);
+  if (typeof char.level === 'number') bits.push(`Lv ${char.level}`);
+  if (char.class) bits.push(char.class);
+  if (char.ruleset) bits.push(char.ruleset);
+  return bits;
+}
+
+interface GameChip {
+  game: Game | undefined;
+  label: string;
+  title: string;
+  bits: string[];
+}
+
+function chipsFor(member: SquadMember): GameChip[] {
+  return [
+    { game: EVERQUEST_GAME, label: 'EQ', title: 'EverQuest Legends', bits: everquestBits(member.everquest) },
+    { game: WOW_FOREVER_GAME, label: 'WoW', title: 'World of Warcraft: Forever', bits: wowForeverBits(member.wowForever) },
+  ].filter((chip) => chip.bits.length > 0 || chip.game);
+}
+---
+<aside class="tng-cut relative border border-[#27272a] bg-[#121215] p-5 sm:p-6 shadow-[0_0_40px_rgba(194,14,14,0.18)] overflow-hidden" aria-labelledby="squad-heading">
+  <div class="tng-scanlines absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class="relative flex items-center justify-between gap-3 mb-5">
+    <h2 id="squad-heading" class="text-[10px] font-black tracking-widest text-[#c20e0e] m-0">● SQUAD</h2>
+    <span class="text-[10px] font-black tracking-widest text-zinc-500">TNG // MEMBERS</span>
+  </div>
+  <ul class="relative grid grid-cols-1 gap-4">
+    {SQUAD.map((member) => (
+      <li class="flex items-center gap-4 bg-black border border-[#27272a] p-4 min-w-0">
+        <div class="relative shrink-0 w-12 h-12 bg-black border border-[#c20e0e]/70 flex items-center justify-center shadow-[0_0_25px_rgba(194,14,14,0.25)]" aria-hidden="true">
+          <div class="tng-scanlines absolute inset-0 pointer-events-none"></div>
+          <span class="relative font-black tracking-widest text-sm text-[#e4e4e7]">{memberMark(member)}</span>
+          <span class="absolute bottom-1 right-1 w-1.5 h-1.5 bg-[#c20e0e]"></span>
+        </div>
+        <div class="min-w-0 flex-1">
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <p class="font-black text-sm text-[#e4e4e7] min-w-0 truncate m-0">{member.handle}</p>
+            <p class="shrink-0 flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-zinc-400 m-0" title="Discord status (placeholder until the server widget is connected)">
+              <span class={`inline-block size-2 rounded-full ${statusDot[member.discordStatus]}`} aria-hidden="true"></span>
+              <span><span class="hidden sm:inline">Discord </span>{DISCORD_STATUS_LABEL[member.discordStatus]}</span>
+            </p>
+          </div>
+          <ul class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+            {chipsFor(member).map((chip) => (
+              <li class="flex items-center gap-1.5 shrink-0 whitespace-nowrap" title={chip.title}>
+                {chip.game && <GameLogo game={chip.game} size="xs" />}
+                <p class="text-[10px] font-bold tracking-wide text-zinc-400 normal-case m-0">
+                  <span class="uppercase tracking-widest text-zinc-500">{chip.label}</span>
+                  {chip.bits.map((bit) => (
+                    <span class:list={['ml-1.5', bit === 'TBD' ? 'italic text-zinc-500' : 'text-zinc-300']}>{bit}</span>
+                  ))}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
+    ))}
+  </ul>
+</aside>
