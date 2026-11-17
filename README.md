@@ -1,61 +1,40 @@
-# Chirpy Starter
+# Top-Notch Gaming
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+Source for [gaming.top-notchnetwork.com](https://gaming.top-notchnetwork.com), the site for Top-Notch Gaming (TNG), the gaming sister company of [Top-Notch Network](https://top-notchnetwork.com).
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+Built with [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com), sharing the TNN site's theme (palette, typography, nav/footer and component patterns) with gaming accents.
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+## Develop
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
-
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+```sh
+npm ci
+npm run dev      # http://localhost:4321
+npm run build    # static output in dist/
+npm run preview
 ```
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+Requires Node 22.12+ (CI uses Node 24).
 
-## Prerequisites
+## Pages
 
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of
-the basic environment. [Git](https://git-scm.com/) also needs to be installed.
+| Route | File |
+|---|---|
+| `/` | `src/pages/index.astro` |
+| `/about/` | `src/pages/about.astro` |
+| `/streaming/` | `src/pages/streaming.astro` (DapperNanner & The Nannerati) |
+| `/community/` | `src/pages/community.astro` (Discord section) |
 
-## Installation
+## Common edits
 
-Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it
-`USERNAME.github.io`, where `USERNAME` represents your GitHub username.
+- **Discord invite:** set `DISCORD_INVITE_URL` in `src/lib/site.ts`. While it is empty, every Discord button shows a "coming soon" placeholder.
+- **Stream channel links / schedule:** `channels` list at the top of `src/pages/streaming.astro`.
+- **Nav & network links:** `NAV` / `NETWORKS` in `src/lib/site.ts`.
+- **Images:** optimized WebP files live in `public/images/`. Resize/compress new art to WebP before committing.
+- **Custom domain:** `public/CNAME` must stay `gaming.top-notchnetwork.com`.
 
-Then clone it to your local machine and run:
+## CI / deploy
 
-```console
-$ bundle
-```
+- `.github/workflows/ci.yml`: `build` job on pull requests and pushes to `main` (`npm ci && npm run build`, plus a CNAME check).
+- `.github/workflows/deploy.yml`: builds with `withastro/action` and deploys to GitHub Pages on push to `main`. Requires the repo's Pages source to be set to **GitHub Actions**.
 
-## Usage
-
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
-
-## Contributing
-
-The contents of this repository are automatically updated when new releases are made to the [main repository][chirpy].  
-If you have problems using it, or would like to participate in improving it, please go to the main repository for feedback!
-
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+The previous Jekyll (Chirpy) site is preserved on the `jekyll-backup` branch.

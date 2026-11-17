@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import { SITE } from '../lib/site';
+
+const codes = [
+  { code: 'RULE 01', title: 'PLAY FAIR', description: 'Good games are better than easy wins. We compete hard and keep it clean.' },
+  { code: 'RULE 02', title: 'LIFT THE LOBBY', description: 'New player or veteran, everyone gets the same welcome. We teach, we cheer, we share the controller.' },
+  { code: 'RULE 03', title: 'KEEP IT TOP-NOTCH', description: 'The same standard Top-Notch Network brings to everything: show up, follow through, and look out for each other.' },
+];
+---
+<BaseLayout title="About | Top-Notch Gaming" description="Top-Notch Gaming is the gaming sister company of Top-Notch Network, bringing creators, players, and community together.">
+
+    <section class="relative overflow-hidden">
+      <div class="tng-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-12">
+        <span class="text-[#c20e0e] text-xs font-black tracking-widest block mb-4">// ABOUT TOP-NOTCH GAMING</span>
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[#e4e4e7] leading-tight mb-6">
+          BUILT FOR <br />
+          <span class="text-[#c20e0e]">PLAYERS</span>
+        </h1>
+        <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed">
+          Top-Notch Gaming is the gaming sister company of Top-Notch Network. We back creators, host a community for players, and bring people together around the games they love.
+        </p>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-[#121215] border border-[#27272a] p-8">
+          <div class="text-xs font-black text-[#c20e0e] mb-4">// WHO WE ARE</div>
+          <h2 class="text-xl font-black text-[#e4e4e7] mb-4">A NETWORK THAT GAMES</h2>
+          <p class="text-zinc-400 text-sm normal-case leading-relaxed mb-4">
+            Top-Notch Network was built around serving people well. Top-Notch Gaming carries that same spirit into gaming: creator-led streams, a community that feels like home, and events where anyone can jump in.
+          </p>
+          <p class="text-zinc-400 text-sm normal-case leading-relaxed">
+            Our first featured creator is <a href="/streaming/" class="text-[#f5c518] hover:underline">DapperNanner</a>, whose community, The Nannerati, is at the heart of what we're building.
+          </p>
+        </div>
+        <div class="bg-[#121215] border border-[#27272a] p-8">
+          <div class="text-xs font-black text-[#c20e0e] mb-4">// WHAT'S NEXT</div>
+          <h2 class="text-xl font-black text-[#e4e4e7] mb-4">THE ROADMAP</h2>
+          <ul class="text-zinc-400 text-sm normal-case leading-relaxed space-y-3">
+            <li class="flex gap-3"><span class="text-[#c20e0e] font-black">▸</span> Grow the stream with DapperNanner and The Nannerati.</li>
+            <li class="flex gap-3"><span class="text-[#c20e0e] font-black">▸</span> Open the community Discord to everyone.</li>
+            <li class="flex gap-3"><span class="text-[#c20e0e] font-black">▸</span> Host community game nights and events.</li>
+            <li class="flex gap-3"><span class="text-[#c20e0e] font-black">▸</span> Welcome more creators into the Top-Notch family.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+      <SectionHeader kicker="HOUSE RULES" title="THE TOP-NOTCH CODE" />
+      <div class="grid md:grid-cols-3 gap-8">
+        {codes.map((c) => (
+          <div class="bg-[#121215] border border-[#27272a] p-8 hover:border-[#c20e0e]/60 transition-colors group">
+            <div class="text-xs font-black text-[#c20e0e] mb-4">{c.code}</div>
+            <h3 class="text-xl font-black text-[#e4e4e7] mb-3 group-hover:text-[#c20e0e] transition-colors">{c.title}</h3>
+            <p class="text-zinc-400 text-sm normal-case leading-relaxed">{c.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="border-t border-[#27272a] bg-[#121215] py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-black text-[#e4e4e7] mb-6">
+          PART OF <span class="text-[#c20e0e]">TOP-NOTCH NETWORK</span>
+        </h2>
+        <p class="text-zinc-400 text-sm normal-case max-w-xl mx-auto mb-8">
+          Curious about the wider network? Visit our parent company to see what else the Top-Notch family is up to.
+        </p>
+        <a href={SITE.parentUrl} class="inline-block bg-[#c20e0e] hover:bg-[#9e0b0b] text-white font-black px-10 py-5 text-xs tracking-widest border border-[#d30000] shadow-[0_0_25px_rgba(194,14,14,0.3)] transition">
+          VISIT TOP-NOTCH NETWORK
+        </a>
+      </div>
+    </section>
+
+</BaseLayout>

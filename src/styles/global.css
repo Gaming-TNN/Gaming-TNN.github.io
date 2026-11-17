@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Shared TNN palette, plus a gaming accent for Top-Notch Gaming. */
+@theme {
+  --color-tnn-red: #c20e0e;
+  --color-tnn-red-dark: #9e0b0b;
+  --color-tnn-panel: #121215;
+  --color-tnn-line: #27272a;
+  --color-tnn-ink: #e4e4e7;
+  --color-tng-gold: #f5c518;
+}
+
+/* Subtle HUD grid behind hero sections. */
+.tng-grid {
+  background-image:
+    linear-gradient(rgba(194, 14, 14, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(194, 14, 14, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 30% 40%, #000 30%, transparent 75%);
+}
+
+/* Faint CRT scanlines for image frames. */
+.tng-scanlines {
+  background-image: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px 3px);
+}
+
+/* Angled "HUD" corner cut used on cards and frames. */
+.tng-cut {
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+}
