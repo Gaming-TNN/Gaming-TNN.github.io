@@ -13,7 +13,7 @@ export type DiscordStatus = 'online' | 'idle' | 'dnd' | 'offline' | 'unknown';
  * Gaming positions used to section the /members/ roster, in display order.
  * Edit this list to add or rename roles; empty sections are not rendered.
  */
-export const MEMBER_POSITIONS = ['Leadership', 'Officers', 'Members'] as const;
+export const MEMBER_POSITIONS = ['Executives', 'Directors', 'Members'] as const;
 export type MemberPosition = (typeof MEMBER_POSITIONS)[number];
 export const DEFAULT_MEMBER_POSITION: MemberPosition = 'Members';
 
