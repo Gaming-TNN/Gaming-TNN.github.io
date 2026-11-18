@@ -12,12 +12,13 @@ const totalPoints = trees.reduce((sum, t) => sum + t.points, 0);
 const className = snapshot?.profile?.character_class?.name;
 
 const CELL = 40;
-const GAP = 12;
+const COL_GAP = 10;
+const ROW_GAP = 12;
 
 function cellCenter(col: number, row: number) {
   return {
-    x: (col - 1) * (CELL + GAP) + CELL / 2,
-    y: (row - 1) * (CELL + GAP) + CELL / 2,
+    x: (col - 1) * (CELL + COL_GAP) + CELL / 2,
+    y: (row - 1) * (CELL + ROW_GAP) + CELL / 2,
   };
 }
 
@@ -38,8 +39,8 @@ function edgeCoords(fromCol: number, fromRow: number, toCol: number, toRow: numb
 
 function treeSize(cols: number, rows: number) {
   return {
-    width: cols * CELL + (cols - 1) * GAP,
-    height: rows * CELL + (rows - 1) * GAP,
+    width: cols * CELL + (cols - 1) * COL_GAP,
+    height: rows * CELL + (rows - 1) * ROW_GAP,
   };
 }
 ---
@@ -57,15 +58,16 @@ function treeSize(cols: number, rows: number) {
           {trees.map((tree) => {
             const size = treeSize(tree.cols, tree.rows);
             return (
-              <div class="talent-tree-card min-w-0 w-full overflow-x-clip bg-[#121215] border border-[#27272a] p-3 sm:p-4 pb-5" data-talent-tree={tree.shortName}>
-                <header class="flex items-center justify-between gap-3 mb-4">
+              <div
+                class="talent-tree-card min-w-0 w-full overflow-x-clip bg-[#121215] border border-[#27272a] px-3 sm:px-4 pt-5 pb-7"
+                data-talent-tree={tree.shortName}
+                style={`--tree-w:${size.width};--tree-h:${size.height};--cols:${tree.cols};--rows:${tree.rows};--col-gap:${COL_GAP};--row-gap:${ROW_GAP};`}
+              >
+                <header class="flex items-center justify-between gap-3 mb-5">
                   <h3 class="text-sm font-black text-[#e4e4e7] m-0 tracking-wide">{tree.shortName}</h3>
                   <p class="text-[10px] font-bold tracking-widest text-zinc-400 m-0">{tree.points} {tree.points === 1 ? 'POINT' : 'POINTS'}</p>
                 </header>
-                <div
-                  class="tree-board relative mx-auto"
-                  style={`--tree-w:${size.width};--tree-h:${size.height};--cols:${tree.cols};--rows:${tree.rows};`}
-                >
+                <div class="tree-board relative mx-auto">
                   <svg class="absolute inset-0 h-full w-full pointer-events-none" viewBox={`0 0 ${size.width} ${size.height}`} preserveAspectRatio="xMidYMid meet" aria-hidden="true">
                     <defs>
                       <marker id={`arrow-${tree.id}`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -121,7 +123,7 @@ function treeSize(cols: number, rows: number) {
                           ></span>
                           <span
                             class:list={[
-                              'absolute -bottom-1 -right-1 min-w-[1.15rem] px-0.5 text-[9px] font-black leading-tight text-center border border-black',
+                              'talent-rank absolute font-black leading-tight text-center border border-black',
                               maxed ? 'bg-[#ffd100] text-black' : spent ? 'bg-[#ca8a04] text-black' : 'bg-[#18181b] text-zinc-400',
                             ]}
                           >
@@ -165,25 +167,33 @@ function treeSize(cols: number, rows: number) {
     container-type: inline-size;
     overflow-x: clip;
   }
-  .talent-tree-card {
-    container-type: inline-size;
-  }
   .talent-tree-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
     gap: 1rem;
     min-width: 0;
   }
   @container (min-width: 42rem) {
     .talent-tree-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      justify-items: stretch;
       gap: 1rem;
     }
   }
-  .tree-board {
+  .talent-tree-card {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
+    justify-self: stretch;
+    container-type: inline-size;
+  }
+  /* 40px tiles, ~10px column / 12px row gaps; board centered in the full-width panel. */
+  .tree-board {
+    width: calc(var(--tree-w) * 1px);
+    max-width: 100%;
     aspect-ratio: var(--tree-w) / var(--tree-h);
+    margin-inline: auto;
     container-type: inline-size;
   }
   .tree-grid {
@@ -192,7 +202,15 @@ function treeSize(cols: number, rows: number) {
     height: 100%;
     grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
     grid-template-rows: repeat(var(--rows), minmax(0, 1fr));
-    gap: calc(12 / var(--tree-w) * 100cqi);
+    column-gap: calc(var(--col-gap) / var(--tree-w) * 100cqi);
+    row-gap: calc(var(--row-gap) / var(--tree-w) * 100cqi);
+  }
+  .talent-rank {
+    right: -0.15em;
+    bottom: -0.15em;
+    min-width: 1.15em;
+    padding-inline: 0.15em;
+    font-size: clamp(7px, calc(9 / var(--tree-w) * 100cqi), 9px);
   }
   .talent-fallback {
     display: block;
