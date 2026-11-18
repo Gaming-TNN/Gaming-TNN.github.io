@@ -3,9 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  # Also triggered by refresh-characters.yml after it squash-merges a
-  # data-only PR. Merges performed with GITHUB_TOKEN do not fire push
-  # workflows, so deploy must be started via workflow_dispatch.
+  # Also dispatched by refresh-characters.yml after a GITHUB_TOKEN
+  # squash-merge (those merges do not fire push workflows). A merge
+  # performed with DATA_PR_TOKEN does fire this push trigger; refresh
+  # only dispatches if that push run does not appear.
   workflow_dispatch:
 
 # Least privilege: read-only by default; Pages/OIDC write is granted to the deploy job only.
