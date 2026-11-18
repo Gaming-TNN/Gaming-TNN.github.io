@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-18T19:54:16.250Z",
+  "fetchedAt": "2026-11-18T19:58:50.516Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -2853,8 +2853,7 @@
                   "description": "Increases the damage of your Holy Strike ability by 20% and causes it to refresh all Judgement effects on the target.",
                   "spellId": 1311087
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135278.jpg"
+              ]
             },
             {
               "id": 105697,
@@ -2882,8 +2881,7 @@
                   "description": "Increases the Physical and Holy damage you deal by 6%, and reduces all threat you generate by 20% while a two-handed melee weapon is equipped.",
                   "spellId": 20111
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/133041.jpg"
+              ]
             },
             {
               "id": 113629,
@@ -2906,8 +2904,7 @@
                   "description": "Reduces the cast time of your Turn Undead spell by 1.0 sec, its cooldown by 10 sec, and allows it to affect Demons.",
                   "spellId": 1328370
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135983.jpg"
+              ]
             },
             {
               "id": 105694,
@@ -2927,8 +2924,7 @@
                   "description": "Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. Any damage caused will awaken the target. Only works against Humanoids.",
                   "spellId": 20066
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135942.jpg"
+              ]
             },
             {
               "id": 105693,
@@ -2958,8 +2954,7 @@
                   "description": "Increases your Physical and Holy damage dealt by 3% for 30 sec after landing a non-periodic critical strike.  Stacks up to 5 times.",
                   "spellId": 20049
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132275.jpg"
+              ]
             },
             {
               "id": 110882,
@@ -2997,8 +2992,7 @@
                   "description": "Increases your spell damage by up to 60% of your Intellect, and reduces the cast time of your Hammer of Wrath by 1.0 sec.",
                   "spellId": 1311084
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236251.jpg"
+              ]
             },
             {
               "id": 105692,
@@ -3018,8 +3012,7 @@
                   "description": "Your melee attacks store a copy of your active Seal for 15 sec, stacking up to 3 times. Landing an attack with a different Seal consumes all stacks, giving the stored Seal its normal chance to activate once per stack.",
                   "spellId": 1310735
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135878.jpg"
+              ]
             }
           ]
         }
@@ -3064,8 +3057,7 @@
                   "description": "Increases the duration of your Gouge ability by 1.5 sec.",
                   "spellId": 13741
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132155.jpg"
+              ]
             },
             {
               "id": 105723,
@@ -3088,8 +3080,7 @@
                   "description": "After killing a non-trivial enemy, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
                   "spellId": 14144
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132151.jpg"
+              ]
             },
             {
               "id": 105722,
@@ -3129,8 +3120,7 @@
                   "description": "Increases your critical strike chance with all attacks and Poisons by 5%.",
                   "spellId": 14138
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
+              ]
             },
             {
               "id": 105721,
@@ -3158,8 +3148,7 @@
                   "description": "Gives your finishing moves a 60% chance to add a Combo Point to your target.",
                   "spellId": 14156
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132122.jpg"
+              ]
             },
             {
               "id": 105717,
@@ -3182,8 +3171,7 @@
                   "description": "Reduces the Energy cost of your Expose Armor ability by 10, and refunds 2 Combo Points when cast with 5 Combo Points.",
                   "spellId": 14168
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132354.jpg"
+              ]
             },
             {
               "id": 105739,
@@ -3211,8 +3199,7 @@
                   "description": "Increases the duration of your Slice and Dice ability by 45%.",
                   "spellId": 14165
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132306.jpg"
+              ]
             },
             {
               "id": 105720,
@@ -3235,8 +3222,7 @@
                   "description": "Increases your maximum Energy by 10.",
                   "spellId": 14983
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136023.jpg"
+              ]
             },
             {
               "id": 105718,
@@ -3254,8 +3240,7 @@
                   "description": "Increases the duration of your Rupture ability by 6 sec and your Garrote ability by 9 sec.",
                   "spellId": 1329256
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132302.jpg"
+              ]
             },
             {
               "id": 105716,
@@ -3280,8 +3265,7 @@
                   "description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Mutilate, Ghostly Strike, and Hemorrhage abilities by 20%.",
                   "spellId": 14128
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132109.jpg"
+              ]
             },
             {
               "id": 105714,
@@ -3319,8 +3303,7 @@
                   "description": "Increases the damage dealt by your poisons by 20% and gives your poisons an additional 40% chance to resist dispel effects.",
                   "spellId": 16513
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132293.jpg"
+              ]
             },
             {
               "id": 105715,
@@ -3338,8 +3321,7 @@
                   "description": "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, Eviscerate, or Mutilate by 100%.",
                   "spellId": 14177
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135988.jpg"
+              ]
             },
             {
               "id": 105713,
@@ -3377,8 +3359,7 @@
                   "description": "Increases the chance to apply Poisons to your target by 10%, and gives Poison applications a 50% chance to not consume a charge.",
                   "spellId": 14113
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132273.jpg"
+              ]
             },
             {
               "id": 113633,
@@ -3416,8 +3397,7 @@
                   "description": "Your finishing moves have a 20% chance per Combo Point to restore 25 Energy.",
                   "spellId": 14179
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132340.jpg"
+              ]
             },
             {
               "id": 105712,
@@ -3437,8 +3417,7 @@
                   "description": "Causes your Shank ability to increase your Poison damage by 30% and your chance to apply Poisons by 20% for 6 sec.",
                   "spellId": 1329328
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135341.jpg"
+              ]
             },
             {
               "id": 105711,
@@ -3461,8 +3440,7 @@
                   "description": "Enemies Stunned by your Kidney Shot ability take 10% increased damage from your poisons and attacks.",
                   "spellId": 14174
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132298.jpg"
+              ]
             },
             {
               "id": 105710,
@@ -3490,8 +3468,7 @@
                   "description": "Your critical strikes from abilities that add Combo Points have a 100% chance to add an additional Combo Point.",
                   "spellId": 14186
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136130.jpg"
+              ]
             },
             {
               "id": 105709,
@@ -3511,8 +3488,7 @@
                   "description": "Instantly attacks with both weapons for 90% weapon damage plus an additional 36 with each weapon. Damage increased by 20% against Poisoned targets. Awards 2 Combo Points.",
                   "spellId": 399956
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236270.jpg"
+              ]
             }
           ]
         },
@@ -3550,8 +3526,7 @@
                   "description": "Increases the damage done by your Eviscerate ability by 20%, and the damage and storage rate of your Death Mark ability by 20%.",
                   "spellId": 14162
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132292.jpg"
+              ]
             },
             {
               "id": 105741,
@@ -3574,8 +3549,7 @@
                   "description": "Reduces the Energy cost of your Sinister Strike and Hemorrhage abilities by 5.",
                   "spellId": 13732
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136189.jpg"
+              ]
             },
             {
               "id": 113398,
@@ -3613,8 +3587,7 @@
                   "description": "Increases your Dodge chance by 5%.",
                   "spellId": 13712
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136047.jpg"
+              ]
             },
             {
               "id": 105719,
@@ -3642,8 +3615,7 @@
                   "description": "Increases the critical strike chance of your Backstab by 30% and your Mutilate by 15%, and gives Backstab a 45% chance to add an additional Combo Point.",
                   "spellId": 1224716
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132090.jpg"
+              ]
             },
             {
               "id": 105738,
@@ -3673,8 +3645,7 @@
                   "description": "Increases your Parry chance by 6%.",
                   "spellId": 13713
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
+              ]
             },
             {
               "id": 105737,
@@ -3704,8 +3675,7 @@
                   "description": "Improves your chance to hit by 3%.",
                   "spellId": 13705
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132222.jpg"
+              ]
             },
             {
               "id": 105732,
@@ -3728,8 +3698,7 @@
                   "description": "Gives a 100% chance to remove all movement impairing effects when you activate your Sprint ability.",
                   "spellId": 13743
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132307.jpg"
+              ]
             },
             {
               "id": 105736,
@@ -6566,8 +6535,7 @@
                   "description": "Infuses the target with power, increasing their spell damage and healing done by 20% for 15 sec.",
                   "spellId": 10060
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135939.jpg"
+              ]
             }
           ]
         },
@@ -6605,8 +6573,7 @@
                   "description": "Gives your spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 14913
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135918.jpg"
+              ]
             },
             {
               "id": 105866,
@@ -6634,8 +6601,7 @@
                   "description": "Increases the amount healed by your Renew spell by 15%.",
                   "spellId": 14908
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135953.jpg"
+              ]
             },
             {
               "id": 110855,
@@ -6673,8 +6639,7 @@
                   "description": "Increases the critical effect chance of your Holy spells by 5%.",
                   "spellId": 14889
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135967.jpg"
+              ]
             },
             {
               "id": 105864,
@@ -6712,8 +6677,7 @@
                   "description": "Reduces all spell damage taken by 10%.",
                   "spellId": 27900
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135976.jpg"
+              ]
             },
             {
               "id": 105863,
@@ -6753,8 +6717,7 @@
                   "description": "Reduces the casting time of your Smite, Holy Fire, Heal, and Greater Heal spells by 0.5 sec.",
                   "spellId": 18530
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135971.jpg"
+              ]
             },
             {
               "id": 105862,
@@ -6772,8 +6735,7 @@
                   "description": "Causes an explosion of holy light around the caster, causing 46 to 51 Holy damage to all enemy targets within 10 yards and healing all party members within 10 yards for 107 to 116. These effects cause no threat.",
                   "spellId": 15237
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135922.jpg"
+              ]
             },
             {
               "id": 105861,
@@ -6801,8 +6763,7 @@
                   "description": "After being struck by a melee or ranged critical hit, or suffering more than 30% of your maximum Health from a single attack, heal 25% of the damage taken over 6 sec. Refreshing this effect carries over any remaining healing.",
                   "spellId": 27811
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135877.jpg"
+              ]
             },
             {
               "id": 105860,
@@ -6830,8 +6791,7 @@
                   "description": "Your non-periodic critical heals increase your target's Armor by 25% for 15 sec.",
                   "spellId": 14892
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135928.jpg"
+              ]
             },
             {
               "id": 105859,
@@ -6854,8 +6814,7 @@
                   "description": "Increases the range of your Smite and Holy Fire spells and the radius of your Prayer of Healing and Holy Nova spells by 20%.",
                   "spellId": 27789
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135949.jpg"
+              ]
             },
             {
               "id": 105858,
@@ -6883,8 +6842,7 @@
                   "description": "Reduces the Mana cost of your Lesser Heal, Heal, Greater Heal, Penance, and Prayer of Mending spells by 15%.",
                   "spellId": 14912
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135916.jpg"
+              ]
             },
             {
               "id": 105857,
@@ -6909,8 +6867,7 @@
                   "description": "Increases your Holy damage done by 5%, and gives a 10% chance each time your Holy Fire spell deals periodic damage for your next Holy Nova to cost no Mana.",
                   "spellId": 14909
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135973.jpg"
+              ]
             },
             {
               "id": 105856,
@@ -6928,8 +6885,7 @@
                   "description": "Each time you heal a target other than yourself with Flash Heal, you are healed for 50% as much. This healing generates no threat.",
                   "spellId": 1328569
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135883.jpg"
+              ]
             },
             {
               "id": 105855,
@@ -6952,8 +6908,7 @@
                   "description": "When you cast a healing spell, gain Mana equal to 10% of the base cost of the spell if your previous heal was a different spell.",
                   "spellId": 1317006
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134943.jpg"
+              ]
             },
             {
               "id": 105854,
@@ -6973,8 +6928,7 @@
                   "description": "Upon death, the priest becomes the Spirit of Redemption for 15 sec.  The Spirit of Redemption cannot move, attack, be attacked or targeted by any spells or effects.  While in this form the priest can cast any healing spell free of cost.  When the effect ends, the priest dies.",
                   "spellId": 20711
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132864.jpg"
+              ]
             },
             {
               "id": 105853,
@@ -7012,8 +6966,7 @@
                   "description": "Increases your spell healing by up to 25% of your total Spirit and your spell damage by up to 8% of your total Spirit.",
                   "spellId": 14901
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135977.jpg"
+              ]
             },
             {
               "id": 105852,
@@ -7041,8 +6994,7 @@
                   "description": "Increases the amount healed by your spells by 10%.",
                   "spellId": 14898
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136057.jpg"
+              ]
             },
             {
               "id": 105851,
@@ -7062,8 +7014,7 @@
                   "description": "Places a spell on the target that heals them for 395 the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within 20 yards. Jumps up to 5 times and lasts 30 sec after each jump. This spell can only be placed on one target at a time per caster.",
                   "spellId": 401859
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135944.jpg"
+              ]
             },
             {
               "id": 105865,
@@ -7101,8 +7052,7 @@
                   "description": "Increases the critical effect chance of your Holy spells by 5%.",
                   "spellId": 14889
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135967.jpg"
+              ]
             }
           ]
         },
@@ -7150,8 +7100,7 @@
                   "description": "Improves your chance to hit with Shadow spells by 5%.",
                   "spellId": 15260
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136126.jpg"
+              ]
             },
             {
               "id": 105832,
@@ -7191,8 +7140,7 @@
                   "description": "Gives your Shadow damage spells a 10% chance to stun the target for 3 sec.",
                   "spellId": 15326
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136160.jpg"
+              ]
             },
             {
               "id": 105833,
@@ -7230,8 +7178,7 @@
                   "description": "Gives you a 100% chance to increase your Spirit by 100% for 15 sec after killing a non-trivial target or when an enemy afflicted by your Vampiric Embrace dies. For the duration, 50% of your Mana regeneration will continue while casting.",
                   "spellId": 15270
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136188.jpg"
+              ]
             },
             {
               "id": 105831,
@@ -7269,8 +7216,7 @@
                   "description": "Reduces the cooldown of your Mind Blast spell by 2.5 sec.",
                   "spellId": 15273
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136224.jpg"
+              ]
             },
             {
               "id": 105830,
@@ -7293,8 +7239,7 @@
                   "description": "Increases the duration of your Shadow Word: Pain spell by 6 sec.",
                   "spellId": 15275
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136207.jpg"
+              ]
             },
             {
               "id": 105829,
@@ -7317,8 +7262,7 @@
                   "description": "Increases the range of your offensive Shadow spells by 20%.",
                   "spellId": 17322
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136130.jpg"
+              ]
             },
             {
               "id": 105828,
@@ -7343,8 +7287,7 @@
                   "description": "Reduces the cooldown of your Psychic Scream spell by 4 sec.",
                   "spellId": 15392
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136184.jpg"
+              ]
             },
             {
               "id": 105826,
@@ -7364,8 +7307,7 @@
                   "description": "Assault the target's mind with Shadow energy, causing 159 Shadow damage over 3 sec  and slowing their movement speed by 50%.",
                   "spellId": 15407
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136208.jpg"
+              ]
             },
             {
               "id": 105825,
@@ -7390,8 +7332,7 @@
                   "description": "Each instance of damage of Mind Flay deals 20% more damage than its previous instance of damage.",
                   "spellId": 1225139
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136213.jpg"
+              ]
             },
             {
               "id": 105823,
@@ -7429,8 +7370,7 @@
                   "description": "Your Mind Blast and fully channeled Mind Flay causes Dark Inspiration, increasing yours and your party's Spirit by 15% for 10 sec.",
                   "spellId": 1326159
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/463284.jpg"
+              ]
             },
             {
               "id": 105820,
@@ -7450,8 +7390,7 @@
                   "description": "Afflicts your target with Shadow energy that causes all party members to be healed for 10% of any Shadow spell damage you deal for 30 sec. You receive 100% increased healing on yourself from this effect.",
                   "spellId": 15286
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136230.jpg"
+              ]
             },
             {
               "id": 105821,
@@ -7479,8 +7418,7 @@
                   "description": "Your Shadow damage spells have a 100% chance to increase the Shadow damage the target takes from you by 2% for 15 sec, stacking up to 5 times.",
                   "spellId": 15257
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136123.jpg"
+              ]
             },
             {
               "id": 105824,
@@ -7498,8 +7436,7 @@
                   "description": "Silences the target, preventing them from casting spells for 5 sec and interrupting their spellcasts for 3 sec.",
                   "spellId": 15487
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136164.jpg"
+              ]
             },
             {
               "id": 105819,
@@ -7522,8 +7459,7 @@
                   "description": "Reduces the mana cost of your Devouring Plague by 50%.\r\n\r\nTargets that die while Devouring Plague is active spreads it, jumping to 2 nearby enemies within 10 yds for the remaining duration.\r\n",
                   "spellId": 1309950
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/252996.jpg"
+              ]
             },
             {
               "id": 110854,
@@ -7546,8 +7482,7 @@
                   "description": "Increases Shadow Word: Death's critical strike chance on targets at or below 20% health by 30%.",
                   "spellId": 1310076
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136149.jpg"
+              ]
             },
             {
               "id": 105818,
@@ -7585,8 +7520,7 @@
                   "description": "Increases your Shadow damage done by 10%.",
                   "spellId": 15259
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136223.jpg"
+              ]
             },
             {
               "id": 105817,
@@ -7606,8 +7540,7 @@
                   "description": "Assume Shadowform, increasing your Shadow damage by 10%, reducing the Mana cost of all Shadow spells by 50%, increasing the critical strike damage bonus of your Shadow spells by 100%, and reducing Physical damage taken by you by 15%. However, you may not cast healing spells while in this form.",
                   "spellId": 15473
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136200.jpg"
+              ]
             }
           ]
         }
@@ -7647,8 +7580,7 @@
                   "description": "Increases the amount of Mana awarded by your Life Tap spell by 20%.",
                   "spellId": 18182
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136126.jpg"
+              ]
             },
             {
               "id": 105925,
@@ -7686,8 +7618,7 @@
                   "description": "Improves your chance to hit by 5% and reduces all threat you generate by 20%.",
                   "spellId": 18174
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136230.jpg"
+              ]
             },
             {
               "id": 105924,
@@ -7725,8 +7656,7 @@
                   "description": "Reduces the casting time of your Corruption spell by 2 sec and increases the damage it deals by 10%.",
                   "spellId": 17810
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136118.jpg"
+              ]
             },
             {
               "id": 105923,
@@ -7749,8 +7679,7 @@
                   "description": "Increases the range of your Affliction spells by 20%.",
                   "spellId": 18218
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136127.jpg"
+              ]
             },
             {
               "id": 105922,
@@ -7773,8 +7702,7 @@
                   "description": "Killing a non-trivial target afflicted by your Drain Soul increases your Mana regeneration by 100% for 10 sec and allows 100% of normal Mana regeneration to continue while casting.",
                   "spellId": 437032
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132851.jpg"
+              ]
             },
             {
               "id": 105920,
@@ -7802,8 +7730,7 @@
                   "description": "Increases Health drained, damage done, or Mana drained by your Drain Life, Drain Soul, and Drain Mana spells by 20%.",
                   "spellId": 403511
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136163.jpg"
+              ]
             },
             {
               "id": 105919,
@@ -7826,8 +7753,7 @@
                   "description": "Increases the damage done by your Bane of Agony by 10%.",
                   "spellId": 18827
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136139.jpg"
+              ]
             },
             {
               "id": 105918,
@@ -7855,8 +7781,7 @@
                   "description": "Gives your Drain Life, Drain Mana, Drain Soul, and Wrack spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 17783
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136157.jpg"
+              ]
             },
             {
               "id": 105916,
@@ -7876,8 +7801,7 @@
                   "description": "Increases the effect of your next Curse of Weakness or Bane of Agony by 50%, or your next Curse of Exhaustion by 20%.  Lasts 30 sec.",
                   "spellId": 18288
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136132.jpg"
+              ]
             },
             {
               "id": 105917,
@@ -7905,8 +7829,7 @@
                   "description": "Increases the critical strike damage bonus of your Corruption, Bane of Agony, Bane of Doom, Drain Soul, Drain Life, Siphon Life, and Wrack spells by 100%.",
                   "spellId": 427712
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136227.jpg"
+              ]
             },
             {
               "id": 110876,
@@ -7944,8 +7867,7 @@
                   "description": "Increases the critical effect chance of your Shadow spells by 5%.",
                   "spellId": 1310949
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136158.jpg"
+              ]
             },
             {
               "id": 105914,
@@ -7968,8 +7890,7 @@
                   "description": "Gives your Corruption, Drain Soul, Drain Life, and Wrack spells a 4% chance to cause you to enter a Shadow Trance after damaging the opponent. The Shadow Trance reduces the casting time of your next Shadow Bolt spell by 100%.",
                   "spellId": 18094
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136223.jpg"
+              ]
             },
             {
               "id": 105913,
@@ -7989,8 +7910,7 @@
                   "description": "Reduces the target's movement speed by 30% for 12 sec.  Only one Curse per Warlock can be active on any one target.",
                   "spellId": 18223
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136162.jpg"
+              ]
             },
             {
               "id": 105912,
@@ -8010,8 +7930,7 @@
                   "description": "Transfers 27 health from the target to the caster every 3 sec.  Lasts 30 sec.",
                   "spellId": 18265
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136188.jpg"
+              ]
             },
             {
               "id": 105911,
@@ -8039,8 +7958,7 @@
                   "description": "Increases the damage done or health drained by your Drain Life, Drain Soul, and Wrack spells by 12% per each of your Corruption, Siphon Life, and Bane of Agony effects active on the target, up to a maximum increase of 36%.",
                   "spellId": 17804
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136169.jpg"
+              ]
             },
             {
               "id": 105910,
@@ -8078,8 +7996,7 @@
                   "description": "Increases the damage dealt or life drained by your Shadow spells by 10%.",
                   "spellId": 18271
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136195.jpg"
+              ]
             },
             {
               "id": 105909,
@@ -8099,8 +8016,7 @@
                   "description": "Tears the target apart from within for 6 sec, inflicting 124 Shadow damage every 1 sec. While channeling, your Siphon Life, Corruption, and Bane of Agony effects on the target deal their periodic damage 100% faster.",
                   "spellId": 1316697
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/460687.jpg"
+              ]
             }
           ]
         },
@@ -8133,8 +8049,7 @@
                   "description": "Increases the amount of health transferred by your Health Funnel spell by 40%, reduces its health cost by 30%, and reduces all threat your Health Funnel generates by 100%. Allows Health Funnel to be used regardless of your demon's health.",
                   "spellId": 18703
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136168.jpg"
+              ]
             },
             {
               "id": 105908,
@@ -8162,8 +8077,7 @@
                   "description": "Increases the damage of your Imp's Firebolt spell by 30% and the effect of its Fire Shield spell by 30%.",
                   "spellId": 18694
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136218.jpg"
+              ]
             },
             {
               "id": 105907,
@@ -8201,8 +8115,7 @@
                   "description": "Increases your total Stamina by 15%.",
                   "spellId": 18697
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136172.jpg"
+              ]
             },
             {
               "id": 105906,
@@ -8240,8 +8153,7 @@
                   "description": "Increases all damage done by your Imp, Voidwalker, Succubus, Incubus, and Felhunter pets by 10%.",
                   "spellId": 18769
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136206.jpg"
+              ]
             },
             {
               "id": 105902,
@@ -8264,8 +8176,7 @@
                   "description": "Increases the effectiveness of your Demon Skin and Demon Armor spells by 30%.",
                   "spellId": 1235316
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136185.jpg"
+              ]
             },
             {
               "id": 105904,
@@ -8293,8 +8204,7 @@
                   "description": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, Sacrifice, and Suffering spells by 30%.",
                   "spellId": 18705
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136221.jpg"
+              ]
             },
             {
               "id": 105903,
@@ -8322,8 +8232,7 @@
                   "description": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by 15%, and increases your maximum Mana by 15%.",
                   "spellId": 18731
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136150.jpg"
+              ]
             },
             {
               "id": 105899,
@@ -8346,8 +8255,7 @@
                   "description": "You heal your pet for 15% of all spell damage you deal. When you gain Mana from Life Tap, your summoned demon gains 100% of the Mana you gain.",
                   "spellId": 1225214
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237564.jpg"
+              ]
             },
             {
               "id": 105901,
@@ -8375,8 +8283,7 @@
                   "description": "Increases the effect of your Succubus' and Incubus' Lash of Pain and Soothing Kiss spells by 30%, and increases the duration of your Succubus' and Incubus' Seduction and Lesser Invisibility spells by 30%.",
                   "spellId": 18754
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/4352493.jpg"
+              ]
             },
             {
               "id": 105900,
@@ -8396,8 +8303,7 @@
                   "description": "When activated, sacrifices your summoned Demon to enhance the opposing aspect of your power, granting you an effect that lasts 2 hrs. The effect is canceled if any Demon is summoned.\r\n\r\nImp: Increases your Shadow damage by 15%.\r\n\r\nVoidwalker: Restores 2% of your total Mana every 4 sec.\r\n\r\nSuccubus/Incubus: Increases your Fire damage by 15%.\r\n\r\nFelhunter: Restores 3% of your total Health every 4 sec.",
                   "spellId": 18788
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136184.jpg"
+              ]
             },
             {
               "id": 105898,
@@ -8422,8 +8328,7 @@
                   "description": "Reduces the casting time of your Imp, Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by 4 sec and the Mana cost by 40%.",
                   "spellId": 18709
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136164.jpg"
+              ]
             },
             {
               "id": 105897,
@@ -8446,8 +8351,7 @@
                   "description": "Reduces the cooldown of your Soul Fire spell by 90%. When you cast Shadow Bolt or Searing Pain on an enemy below 35% health, they deal 6% increased damage, and for the next 10 sec your Soul Fire spell has its cast time reduced by 40% and costs no Soul Shards.",
                   "spellId": 440870
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135808.jpg"
+              ]
             },
             {
               "id": 105895,
@@ -8467,8 +8371,7 @@
                   "description": "Your next Imp, Voidwalker, Succubus, Incubus, or Felhunter Summon spell has its casting time reduced by 5.5 sec and its Mana cost reduced by 50%.",
                   "spellId": 18708
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136082.jpg"
+              ]
             },
             {
               "id": 105896,
@@ -8496,8 +8399,7 @@
                   "description": "Your Searing Pain generates 50% less threat and brands the target for 10 sec. Your pet's next 6 attacks against the target deal 90 to 93 Fire or Shadow damage based on the pet. If Shadow damage is dealt, it has high threat.",
                   "spellId": 1293695
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/4226151.jpg"
+              ]
             },
             {
               "id": 105894,
@@ -8525,8 +8427,7 @@
                   "description": "Increases the Attack Power reduction of your Felhunter's Tainted Blood, the healing of its Devour Magic, and the detection level of its Paranoia by 30%, and reduces the cooldown of its Spell Lock by 6 sec.",
                   "spellId": 1225217
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136217.jpg"
+              ]
             },
             {
               "id": 105892,
@@ -8548,8 +8449,7 @@
                   "description": "When active, 30% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, Incubus, or Felhunter Demon instead. In addition, both the Demon and the master will inflict 3% more damage. Lasts as long as the Demon is active.",
                   "spellId": 19028
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136160.jpg"
+              ]
             },
             {
               "id": 105893,
@@ -8577,8 +8477,7 @@
                   "description": "Increases your spell damage and your Demon pet's spell damage by up to 100% of your level while you have a summoned Demon pet active.",
                   "spellId": 412732
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136165.jpg"
+              ]
             },
             {
               "id": 105891,
@@ -8616,8 +8515,7 @@
                   "description": "Grants both the Warlock and the summoned demon an effect as long as that demon is active.\r\n\r\nImp - Increases Fire damage done by 10%.\r\n\r\nVoidwalker - Reduces Physical damage taken by 10%.\r\n\r\nSuccubus/Incubus - Increases Shadow damage done by 10%.\r\n\r\nFelhunter - Reduces Magic damage taken by 10%.",
                   "spellId": 23785
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136203.jpg"
+              ]
             },
             {
               "id": 105890,
@@ -8637,8 +8535,7 @@
                   "description": "Your Demonic Sacrifice effect is no longer cancelled by summoning a different Demon pet. Resummoning the sacrificed pet will still cancel the effect.\r\n",
                   "spellId": 425464
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/5927650.jpg"
+              ]
             }
           ]
         },
@@ -8671,8 +8568,7 @@
                   "description": "Increases the range of your Destruction spells by 20%.",
                   "spellId": 17917
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136133.jpg"
+              ]
             },
             {
               "id": 105889,
@@ -8710,8 +8606,7 @@
                   "description": "Your Shadow Bolt critical strikes increase Shadow damage taken by the target from your attacks by 20% for 12 sec.",
                   "spellId": 17793
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136197.jpg"
+              ]
             },
             {
               "id": 105888,
@@ -8749,8 +8644,7 @@
                   "description": "Reduces the casting time of your Shadow Bolt, Immolate, and Incinerate spells by 0.5 sec and your Soul Fire spell by 2 sec.",
                   "spellId": 17788
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136146.jpg"
+              ]
             },
             {
               "id": 105885,
@@ -8788,8 +8682,7 @@
                   "description": "Reduces all damage taken by 10%.",
                   "spellId": 1225220
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132221.jpg"
+              ]
             },
             {
               "id": 105887,
@@ -8817,8 +8710,7 @@
                   "description": "Reduces the Mana cost of your Destruction spells by 10%.",
                   "spellId": 17778
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135831.jpg"
+              ]
             },
             {
               "id": 105886,
@@ -8856,8 +8748,7 @@
                   "description": "Increases the initial damage of your Immolate spell by 50% and your Conflagrate spell has a 100% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.",
                   "spellId": 18119
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135805.jpg"
+              ]
             },
             {
               "id": 105883,
@@ -8895,8 +8786,7 @@
                   "description": "Increases the critical strike damage bonus of your Destruction spells by 100%.",
                   "spellId": 17959
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136207.jpg"
+              ]
             },
             {
               "id": 105884,
@@ -8914,8 +8804,7 @@
                   "description": "Instantly blasts the target for 208 to 216 Shadow damage.  If a non-trivial target dies within 8 sec of being hit with Shadowburn, the caster gains a Soul Shard.",
                   "spellId": 17877
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136191.jpg"
+              ]
             },
             {
               "id": 105882,
@@ -8945,8 +8834,7 @@
                   "description": "Gives your Destruction spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 18135
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135819.jpg"
+              ]
             },
             {
               "id": 105879,
@@ -8974,8 +8862,7 @@
                   "description": "Increases the critical strike chance of your Searing Pain spell by 10% and the damage done by all your Destruction spells by 10%.",
                   "spellId": 17927
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135827.jpg"
+              ]
             },
             {
               "id": 105880,
@@ -8995,8 +8882,7 @@
                   "description": "Ignites a target that is already afflicted by your Immolate spell, dealing 233 to 234 Fire damage and consuming your Immolate effect.",
                   "spellId": 1293817
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135807.jpg"
+              ]
             },
             {
               "id": 105878,
@@ -9021,8 +8907,7 @@
                   "description": "Gives your Soul Fire spell a 26% chance to Stun the target for 3 sec, and your Rain of Fire and Hellfire spells a 26% chance over their duration to Stun targets they damage for 3 sec.",
                   "spellId": 18073
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135830.jpg"
+              ]
             },
             {
               "id": 105876,
@@ -9042,8 +8927,7 @@
                   "description": "Afflicts the target for 5 min, causing 15% of all damage done by the Warlock to other targets to also be dealt to the cursed target. Bane of Havoc is limited to 1 target, and only one Bane per Warlock can be active on any one target.",
                   "spellId": 1225228
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/460695.jpg"
+              ]
             },
             {
               "id": 105877,
@@ -9073,8 +8957,7 @@
                   "description": "Increases the critical strike chance of your Conflagrate spell by 25%.",
                   "spellId": 412751
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135821.jpg"
+              ]
             },
             {
               "id": 105875,
@@ -9112,8 +8995,7 @@
                   "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by 20% for 20 sec, and hitting an enemy with Shadowburn increases all Fire damage you deal by 20% for 20 sec. In addition, Conflagrate has a 100% chance not to consume Immolate, and Shadowburn has a 100% chance to instantly refund a Soul Shard.",
                   "spellId": 426316
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135823.jpg"
+              ]
             },
             {
               "id": 105874,
@@ -9133,8 +9015,7 @@
                   "description": "Deals 323 to 345 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate.",
                   "spellId": 412758
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135789.jpg"
+              ]
             }
           ]
         }
@@ -9179,8 +9060,7 @@
                   "description": "Reduces the cost of your Heroic Strike ability by 3 Rage.",
                   "spellId": 12282
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132282.jpg"
+              ]
             },
             {
               "id": 105957,
@@ -9218,8 +9098,7 @@
                   "description": "Increases your Parry chance by 5%.",
                   "spellId": 16462
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
+              ]
             },
             {
               "id": 105956,
@@ -9249,8 +9128,7 @@
                   "description": "Increases the Bleed damage done by your Rend ability by 35%.",
                   "spellId": 12286
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132155.jpg"
+              ]
             },
             {
               "id": 105955,
@@ -9273,8 +9151,7 @@
                   "description": "Increases the Rage generated by your Charge ability by 6.",
                   "spellId": 12285
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132337.jpg"
+              ]
             },
             {
               "id": 105954,
@@ -9304,8 +9181,7 @@
                   "description": "Tactical Mastery lets you retain up to an additional 15 Rage when you change stances.",
                   "spellId": 12295
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136031.jpg"
+              ]
             },
             {
               "id": 105952,
@@ -9328,8 +9204,7 @@
                   "description": "Increases the critical strike chance of your Overpower ability by 50%.",
                   "spellId": 12290
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135275.jpg"
+              ]
             },
             {
               "id": 105951,
@@ -9349,8 +9224,7 @@
                   "description": "Generates 1 Rage every 3 sec while in combat, and reduces Rage loss while out of combat by 30%.",
                   "spellId": 12296
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135881.jpg"
+              ]
             },
             {
               "id": 105950,
@@ -9382,8 +9256,7 @@
                   "description": "Your critical strikes cause your opponent to Bleed, dealing 60% of your melee weapon's average damage over 12 sec.",
                   "spellId": 12834
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132090.jpg"
+              ]
             },
             {
               "id": 105949,
@@ -9401,8 +9274,7 @@
                   "description": "A brutal attack that deals 75% weapon damage. Deals an additional 75% weapon damage against Giants, Dragonkin, and mounted targets. Mounted targets are dismounted.",
                   "spellId": 1310222
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135124.jpg"
+              ]
             },
             {
               "id": 105948,
@@ -9430,8 +9302,7 @@
                   "description": "Increases the damage you deal with two-handed melee weapons by 6%.",
                   "spellId": 12163
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132400.jpg"
+              ]
             },
             {
               "id": 105947,
@@ -9456,8 +9327,7 @@
                   "description": "Increases the critical strike damage bonus of your abilities by 20%.",
                   "spellId": 16493
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132312.jpg"
+              ]
             },
             {
               "id": 110524,
@@ -9480,8 +9350,7 @@
                   "description": "Grants your Main Hand melee attacks against enemies afflicted by your Rend a 20% chance to allow an activation of Overpower.",
                   "spellId": 1289682
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135271.jpg"
+              ]
             },
             {
               "id": 105945,
@@ -9501,8 +9370,7 @@
                   "description": "Your next 5 melee attacks strike an additional nearby opponent.",
                   "spellId": 12292
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132306.jpg"
+              ]
             },
             {
               "id": 105944,
@@ -9540,8 +9408,7 @@
                   "description": "Gives your melee weapon attacks a benefit depending on the weapon.\r\n\r\n    Axe/Polearm: Increases your\r\n    critical strike chance by 5%.\r\n\r\n    Mace/Staff: Your attacks ignore\r\n    15% of your target's armor.\r\n\r\n    Sword: Your successful melee \r\n    attacks have a 5% chance to \r\n    trigger an extra attack on the \r\n    target.",
                   "spellId": 1290261
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/1085608.jpg"
+              ]
             },
             {
               "id": 110858,
@@ -9564,8 +9431,7 @@
                   "description": "Reduces the cooldown of your Slam ability by 5.0 sec, the cast time and global cooldown by 0.50 sec, and Slam no longer interrupts or delays your melee swing.",
                   "spellId": 12862
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132340.jpg"
+              ]
             },
             {
               "id": 105942,
@@ -9593,8 +9459,7 @@
                   "description": "Gives your Hamstring ability a 15% chance to immobilize the target for 5 sec.",
                   "spellId": 12289
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132316.jpg"
+              ]
             },
             {
               "id": 105941,
@@ -9614,8 +9479,7 @@
                   "description": "A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec.",
                   "spellId": 12294
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132355.jpg"
+              ]
             }
           ]
         },
@@ -9663,8 +9527,7 @@
                   "description": "Increases the area of effect of your Shouts by 50% and reduces the Rage cost by of your Shouts and Howls by 25%.",
                   "spellId": 12321
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136075.jpg"
+              ]
             },
             {
               "id": 105939,
@@ -9702,8 +9565,7 @@
                   "description": "Improves your chance to get a critical strike with melee attacks by 5%.",
                   "spellId": 12320
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132292.jpg"
+              ]
             },
             {
               "id": 110857,
@@ -9741,8 +9603,7 @@
                   "description": "Increases the time before your Rage begins to decay after leaving combat by 10 sec.",
                   "spellId": 1323964
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132356.jpg"
+              ]
             },
             {
               "id": 105937,
@@ -9780,8 +9641,7 @@
                   "description": "Gives you a 60% chance to generate 1 additional Rage when you deal melee damage with a weapon.",
                   "spellId": 12322
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136097.jpg"
+              ]
             },
             {
               "id": 105953,
@@ -9809,8 +9669,7 @@
                   "description": "Increases your chance to hit with off-hand attacks by 10%.",
                   "spellId": 1323963
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236309.jpg"
+              ]
             },
             {
               "id": 105935,
@@ -9828,8 +9687,7 @@
                   "description": "Causes all enemies within 10 yds to be Dazed, reducing movement speed by 50% for 6 sec.",
                   "spellId": 12323
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136147.jpg"
+              ]
             },
             {
               "id": 105934,
@@ -9859,8 +9717,7 @@
                   "description": "Regenerates 3% of your total Health over 6 sec after being the victim of a critical strike or suffering more than 20% of your maximum Health from a single attack.",
                   "spellId": 16487
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136218.jpg"
+              ]
             },
             {
               "id": 105931,
@@ -9898,8 +9755,7 @@
                   "description": "Gives you a 30% chance to deal 10% increased Physical damage for 12 sec after being the victim of any damaging attack.",
                   "spellId": 12317
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136224.jpg"
+              ]
             },
             {
               "id": 105933,
@@ -9937,8 +9793,7 @@
                   "description": "Increases the damage done by your off-hand weapon by 25% and the Rage generated by your off-hand attacks by 50%.",
                   "spellId": 23584
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132147.jpg"
+              ]
             },
             {
               "id": 113636,
@@ -9956,8 +9811,7 @@
                   "description": "Your next 4 melee attacks generate 5 additional Rage. Lasts 8 sec.",
                   "spellId": 1329555
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132334.jpg"
+              ]
             },
             {
               "id": 105932,
@@ -9980,8 +9834,7 @@
                   "description": "Reduces the Rage cost of your Execute ability by 5.",
                   "spellId": 20502
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135358.jpg"
+              ]
             },
             {
               "id": 105978,
@@ -13015,8 +12868,7 @@
                   "description": "Increases your chance to dodge by an additional 6%.",
                   "spellId": 16254
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136056.jpg"
+              ]
             },
             {
               "id": 104746,
@@ -13054,8 +12906,7 @@
                   "description": "Increases your Stamina by 10%.",
                   "spellId": 16252
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135892.jpg"
+              ]
             },
             {
               "id": 104747,
@@ -13095,8 +12946,7 @@
                   "description": "Increases your attack speed by 30% for your next 3 swings after dealing a melee critical strike.",
                   "spellId": 16256
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132152.jpg"
+              ]
             },
             {
               "id": 104743,
@@ -13116,8 +12966,7 @@
                   "description": "Instantly strike for 100% weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec.",
                   "spellId": 17364
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132314.jpg"
+              ]
             },
             {
               "id": 104752,
@@ -13140,8 +12989,7 @@
                   "description": "Reduces the cast time of your Ghost Wolf spell by 3.0 sec, and Ghost Wolf may be used indoors.",
                   "spellId": 16262
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136095.jpg"
+              ]
             },
             {
               "id": 104745,
@@ -13159,8 +13007,7 @@
                   "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and increases all threat generated by 30% while Rockbiter Weapon is active.",
                   "spellId": 16268
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
+              ]
             },
             {
               "id": 104744,
@@ -13185,8 +13032,7 @@
                   "description": "Increases your spell damage and healing by up to 30% of your Intellect.",
                   "spellId": 30812
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136090.jpg"
+              ]
             },
             {
               "id": 104742,
@@ -13211,8 +13057,7 @@
                   "description": "When you Stormstrike, you have a 100% chance to gain 50% mana regeneration while casting spells for 15 sec, and Stormstrike's cooldown has a 100% chance to reset each time you Dodge or Parry.",
                   "spellId": 1223031
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237581.jpg"
+              ]
             },
             {
               "id": 104741,
@@ -13250,8 +13095,7 @@
                   "description": "When you deal damage with a melee attack, you have a 27% chance (based on weapon speed) to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec.",
                   "spellId": 408498
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237584.jpg"
+              ]
             },
             {
               "id": 104740,
@@ -13271,8 +13115,7 @@
                   "description": "Increases your attack speed by 30% for 25 sec.",
                   "spellId": 425336
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136012.jpg"
+              ]
             }
           ]
         },
@@ -13320,8 +13163,7 @@
                   "description": "Reduces the casting time of your Healing Wave spell by 0.5 sec.",
                   "spellId": 16182
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136052.jpg"
+              ]
             },
             {
               "id": 104729,
@@ -13359,8 +13201,7 @@
                   "description": "Reduces the Mana cost of your healing spells by 5% and improves your chance to hit by 5%.",
                   "spellId": 16179
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135859.jpg"
+              ]
             },
             {
               "id": 104734,
@@ -13388,8 +13229,7 @@
                   "description": "Allows 50% of your Mana regeneration to continue while casting.",
                   "spellId": 1223033
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136090.jpg"
+              ]
             },
             {
               "id": 104736,
@@ -13417,8 +13257,7 @@
                   "description": "Reduces the threat generated by your spells by 15%.",
                   "spellId": 29187
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136041.jpg"
+              ]
             },
             {
               "id": 104735,
@@ -13456,8 +13295,7 @@
                   "description": "Reduces the Mana cost of your totems and any spells that summon or move them by 25%.",
                   "spellId": 16173
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136057.jpg"
+              ]
             },
             {
               "id": 104737,
@@ -13480,8 +13318,7 @@
                   "description": "Reduces the cooldown of your Reincarnation spell by 20 min, increases your maximum health by 4%, and increases the amount of health and Mana you reincarnate with by an additional 20%.",
                   "spellId": 16184
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136080.jpg"
+              ]
             },
             {
               "id": 104731,
@@ -13509,8 +13346,7 @@
                   "description": "Increases your target's armor value by 25% for 15 sec after getting a critical effect from one of your healing spells.",
                   "spellId": 16176
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136109.jpg"
+              ]
             },
             {
               "id": 104733,
@@ -13538,8 +13374,7 @@
                   "description": "Gives your healing spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 16181
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136043.jpg"
+              ]
             },
             {
               "id": 104732,
@@ -13557,8 +13392,7 @@
                   "description": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds.  Lasts 10 min.\r\n\r\nOnly one Elemental Shield can be active on the Shaman at any one time.",
                   "spellId": 408510
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132315.jpg"
+              ]
             },
             {
               "id": 104738,
@@ -13596,8 +13430,7 @@
                   "description": "Increases the critical effect chance of your healing spells by 5%.",
                   "spellId": 16194
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136107.jpg"
+              ]
             },
             {
               "id": 104730,
@@ -13635,8 +13468,7 @@
                   "description": "Increases the effect of your Mana Spring Totem by 25% and increases the effect of your Healing Stream Totem by 50%.",
                   "spellId": 16187
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136053.jpg"
+              ]
             },
             {
               "id": 104728,
@@ -13654,8 +13486,7 @@
                   "description": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 88 mana every 3 seconds to group members within 30 yards.",
                   "spellId": 16190
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135861.jpg"
+              ]
             },
             {
               "id": 104727,
@@ -13685,8 +13516,7 @@
                   "description": "Increases the amount healed by your Healing Wave spell by 25%.",
                   "spellId": 29206
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136044.jpg"
+              ]
             },
             {
               "id": 104726,
@@ -13704,8 +13534,7 @@
                   "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell.",
                   "spellId": 16188
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136076.jpg"
+              ]
             },
             {
               "id": 104725,
@@ -13743,8 +13572,7 @@
                   "description": "Increases the effectiveness of your healing spells by 10%.",
                   "spellId": 16178
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
+              ]
             },
             {
               "id": 104724,
@@ -13764,8 +13592,7 @@
                   "description": "Heals a friendly target for 600 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
                   "spellId": 408521
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/252995.jpg"
+              ]
             }
           ]
         }
