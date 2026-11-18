@@ -10,7 +10,8 @@
     "dev": "astro dev",
     "build": "astro build && cp dist/sitemap-index.xml dist/sitemap.xml",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "fetch-characters": "node scripts/fetch-characters.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

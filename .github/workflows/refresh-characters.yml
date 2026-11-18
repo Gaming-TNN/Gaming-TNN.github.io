@@ -1,0 +1,59 @@
+# Refresh WoW Forever character snapshots from the Battle.net Profile API
+# and open a pull request. This workflow never deploys and never merges.
+#
+# Required repository secrets (add later; do not commit them):
+#   BNET_CLIENT_ID
+#   BNET_CLIENT_SECRET
+#
+# A unique branch is used for each run so the data branch is not force-pushed.
+# Branches are not deleted after the PR is opened or merged.
+
+name: Refresh character data
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-characters
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: fetch-and-pr
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Fetch character snapshots
+        env:
+          BNET_CLIENT_ID: ${{ secrets.BNET_CLIENT_ID }}
+          BNET_CLIENT_SECRET: ${{ secrets.BNET_CLIENT_SECRET }}
+        run: node scripts/fetch-characters.mjs
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
+        with:
+          branch: data/wow-characters-${{ github.run_id }}
+          delete-branch: false
+          add-paths: src/data/characters
+          commit-message: |
+            Update WoW Forever character snapshots
+
+            Snapshot written by scripts/fetch-characters.mjs from the Battle.net
+            Profile API (profile-forever namespace).
+          title: Update WoW Forever character snapshots
+          body: |
+            Automated snapshot of squad WoW Forever characters from the official Battle.net Profile API.
+
+            This PR only updates JSON under `src/data/characters/`. It does not deploy or merge itself — please review and merge when ready.
+          labels: data

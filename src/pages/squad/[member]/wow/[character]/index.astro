@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import WowCharacterSheet from '../../../../../components/WowCharacterSheet.astro';
+import {
+  SQUAD,
+  wowCharacterSlug,
+  wowCharacters,
+  memberSlug,
+} from '../../../../../data/squad';
+import { characterDisplayName, loadSnapshot } from '../../../../../lib/characters';
+
+export function getStaticPaths() {
+  return SQUAD.flatMap((member) =>
+    wowCharacters(member).map((character) => ({
+      params: { member: memberSlug(member), character: wowCharacterSlug(character) },
+      props: { member, character },
+    })),
+  );
+}
+
+const { member, character } = Astro.props;
+const snapshot = loadSnapshot(memberSlug(member), wowCharacterSlug(character));
+const displayName = characterDisplayName(character, snapshot);
+const title = `${displayName} · ${member.handle} | Top-Notch Gaming`;
+const description = snapshot?.profile
+  ? `${displayName} — Level ${snapshot.profile.level ?? '?'} ${snapshot.profile.faction?.name ?? ''} ${snapshot.profile.race?.name ?? ''} ${snapshot.profile.character_class?.name ?? ''} on WoW Forever.`
+  : `${displayName} on World of Warcraft: Forever, from the Top-Notch Gaming squad.`;
+---
+<BaseLayout title={title} description={description}>
+  <article class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+    <WowCharacterSheet member={member} character={character} snapshot={snapshot} />
+  </article>
+</BaseLayout>

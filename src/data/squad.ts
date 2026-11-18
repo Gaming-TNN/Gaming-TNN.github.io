@@ -1,6 +1,7 @@
-// Squad members shown in the homepage hero panel.
-// Add a member here to add a card. Character names stay 'TBD' until confirmed.
+// Squad members shown in the homepage hero panel and /squad/ pages.
 // Discord status is a static placeholder until the Discord server widget is wired up.
+// EverQuest types stay here so EQ can return to member cards later; it is omitted from
+// members for now. WoW Forever supports multiple characters per member (Horde and Alliance).
 
 import type { Game } from './games';
 import { GAMES } from './games';
@@ -26,22 +27,20 @@ export interface EverQuestCharacter {
 }
 
 /**
- * WoW Forever has no realms. Characters are unique per Battle.net region
- * by first name + surname. `region` is for a later API lookup, not shown
- * as a realm on the card. `ruleset` is Normal / PvP / Roleplay / Roleplay PvP.
+ * One WoW Forever character. There are no realms: identity is region + first name + surname.
+ * Faction, class, race, level, and ruleset come from the Battle.net snapshot when present.
  */
 export interface WowForeverCharacter {
-  /** Display name. Use 'TBD' until Seth confirms the real name. */
   name: string;
-  class?: string;
-  level?: number;
-  region?: 'us' | 'eu' | 'kr' | 'tw';
-  ruleset?: string;
+  surname: string;
+  region: 'us' | 'eu' | 'kr' | 'tw';
 }
 
 export interface SquadMember {
   /** Public handle shown on the card. */
   handle: string;
+  /** URL slug; defaults to the lowercased handle. */
+  slug?: string;
   /** Optional 1–3 character monogram for the card icon. Defaults to the handle's first letters. */
   mark?: string;
   /** Discord username, used later to match the server widget. */
@@ -51,18 +50,39 @@ export interface SquadMember {
    * Discord server widget (presence + voice). 'unknown' until that ships.
    */
   discordStatus: DiscordStatus;
-  everquest?: EverQuestCharacter;
-  wowForever?: WowForeverCharacter;
+  /** Omitted on members for now; kept so EQ can return later. */
+  everquest?: EverQuestCharacter | EverQuestCharacter[];
+  /** Zero or more WoW Forever characters (Alliance and/or Horde). */
+  wowForever?: WowForeverCharacter[];
 }
 
 export const SQUAD: SquadMember[] = [
   {
     handle: 'zTOPN0TCHz',
     discordStatus: 'unknown',
-    everquest: { name: 'TBD', server: 'Freeport' },
-    wowForever: { name: 'TBD' },
+    wowForever: [{ name: 'Vhexz', surname: 'Warfarin', region: 'us' }],
   },
 ];
 
 export const EVERQUEST_GAME: Game | undefined = GAMES.find((g) => g.slug === 'everquest-legends');
 export const WOW_FOREVER_GAME: Game | undefined = GAMES.find((g) => g.slug === 'wow-forever');
+
+export function memberSlug(member: SquadMember): string {
+  return (member.slug ?? member.handle).toLowerCase();
+}
+
+export function wowCharacterSlug(character: WowForeverCharacter): string {
+  return `${character.name}-${character.surname}`.toLowerCase();
+}
+
+export function wowCharacters(member: SquadMember): WowForeverCharacter[] {
+  return member.wowForever ?? [];
+}
+
+export function findMember(slug: string): SquadMember | undefined {
+  return SQUAD.find((m) => memberSlug(m) === slug);
+}
+
+export function officialWowArmoryUrl(character: WowForeverCharacter): string {
+  return `https://worldofwarcraft.blizzard.com/en-us/forever/${character.region}/armory/character/${wowCharacterSlug(character)}/`;
+}
