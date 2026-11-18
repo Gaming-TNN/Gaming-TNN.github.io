@@ -10,6 +10,12 @@ export interface GameLogo {
   alt: string;
 }
 
+/** Square app-style tile used on member cards. Files are `${src}.png`, `${src}-256.webp`, `${src}-128.webp`. */
+export interface GameIcon {
+  src: string;
+  alt: string;
+}
+
 export interface Game {
   /** URL-safe id, used for the card anchor (/games/#slug). */
   slug: string;
@@ -19,6 +25,8 @@ export interface Game {
   mark: string;
   /** Official logo (from the publisher's press kit). Optional. */
   logo?: GameLogo;
+  /** Square tile for member game lists, derived from the official logo. */
+  icon?: GameIcon;
   /** Short genre tag. */
   genre: string;
   /** One-line, neutral description. */
@@ -41,6 +49,10 @@ export const GAMES: Game[] = [
       height: 392,
       alt: 'EverQuest Legends logo',
     },
+    icon: {
+      src: '/images/games/everquest-legends-icon',
+      alt: 'EverQuest Legends',
+    },
     genre: 'MMORPG',
     // Source: Daybreak Games press release, 07/28/2026
     // https://www.daybreakgames.com/press/eqlegends/article/eql-now-available
@@ -56,6 +68,10 @@ export const GAMES: Game[] = [
       width: 800,
       height: 652,
       alt: 'World of Warcraft: Forever logo',
+    },
+    icon: {
+      src: '/images/games/wow-forever-icon',
+      alt: 'World of Warcraft: Forever',
     },
     genre: 'MMORPG',
     // Source: Blizzard, "World of Warcraft: Forever Now Live!"

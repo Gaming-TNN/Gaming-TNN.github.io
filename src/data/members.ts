@@ -1,4 +1,4 @@
-// Members shown in the homepage hero panel and /members/ pages.
+// Members shown on /members/ pages and profile game tiles.
 // Discord status is a static placeholder until the Discord server widget is wired up.
 // EverQuest types stay here so EQ can return to member cards later; it is omitted from
 // members for now. WoW Forever supports multiple characters per member (Horde and Alliance).
@@ -95,6 +95,27 @@ export function wowCharacterSlug(character: WowForeverCharacter): string {
 
 export function wowCharacters(member: Member): WowForeverCharacter[] {
   return member.wowForever ?? [];
+}
+
+export function everquestCharacters(member: Member): EverQuestCharacter[] {
+  if (!member.everquest) return [];
+  return Array.isArray(member.everquest) ? member.everquest : [member.everquest];
+}
+
+/** Whether this member has at least one character listed for the game. */
+export function memberHasGame(member: Member, game: Game): boolean {
+  if (game.slug === 'wow-forever') return wowCharacters(member).length > 0;
+  if (game.slug === 'everquest-legends') return everquestCharacters(member).length > 0;
+  return false;
+}
+
+/**
+ * On-site game page for this member, if one exists.
+ * WoW Forever uses /members/{slug}/wow/. EverQuest Legends has no page yet.
+ */
+export function memberGameHref(member: Member, game: Game): string | undefined {
+  if (game.slug === 'wow-forever') return `/members/${memberSlug(member)}/wow/`;
+  return undefined;
 }
 
 export function isMemberHidden(member: Member): boolean {

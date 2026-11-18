@@ -1,14 +1,12 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import MemberGameTiles from '../../../components/MemberGameTiles.astro';
 import {
   DISCORD_STATUS_LABEL,
   visibleMembers,
-  WOW_FOREVER_GAME,
   type Member,
   memberSlug,
-  wowCharacters,
 } from '../../../data/members';
-import { wowHref } from '../../../lib/characters';
 
 export function getStaticPaths() {
   return visibleMembers().map((member) => ({
@@ -22,7 +20,6 @@ interface Props {
 }
 
 const { member } = Astro.props;
-const wow = wowCharacters(member);
 const title = `${member.handle} | Top-Notch Gaming`;
 
 function memberMark(m: Member) {
@@ -83,29 +80,7 @@ function memberMark(m: Member) {
 
     <section aria-labelledby="playing-heading">
       <h2 id="playing-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-4">CURRENTLY PLAYING</h2>
-      {wow.length > 0 && WOW_FOREVER_GAME ? (
-        <ul class="grid sm:grid-cols-2 gap-4">
-          <li>
-            <a href={wowHref(member)} class="flex items-center gap-4 bg-black border border-[#27272a] hover:border-[#c20e0e]/60 p-4 transition-colors group min-w-0">
-              <img
-                src="/images/games/wow-forever-icon-128.webp"
-                srcset="/images/games/wow-forever-icon-128.webp 128w, /images/games/wow-forever-icon-256.webp 256w"
-                sizes="48px"
-                width="48"
-                height="48"
-                alt=""
-                class="size-12 rounded-md object-cover border border-[#27272a] bg-[#0a0a0c] shrink-0"
-              />
-              <span class="min-w-0">
-                <span class="block font-black text-sm text-[#e4e4e7] group-hover:text-[#c20e0e] transition-colors">{WOW_FOREVER_GAME.name}</span>
-                <span class="block text-[10px] font-bold tracking-widest text-zinc-500 mt-1">{wow.length} {wow.length === 1 ? 'CHARACTER' : 'CHARACTERS'} →</span>
-              </span>
-            </a>
-          </li>
-        </ul>
-      ) : (
-        <p class="text-zinc-500 text-sm normal-case m-0">No games listed yet.</p>
-      )}
+      <MemberGameTiles member={member} size={56} />
     </section>
   </section>
 </BaseLayout>
