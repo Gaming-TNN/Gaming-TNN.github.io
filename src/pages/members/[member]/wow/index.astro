@@ -3,7 +3,7 @@ import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import {
   memberHref,
   memberSlug,
-  MEMBERS,
+  visibleMembers,
   wowCharacterSlug,
   wowCharacters,
 } from '../../../../data/members';
@@ -16,7 +16,7 @@ import {
 } from '../../../../lib/characters';
 
 export function getStaticPaths() {
-  return MEMBERS.filter((m) => wowCharacters(m).length > 0).map((member) => ({
+  return visibleMembers().filter((m) => wowCharacters(m).length > 0).map((member) => ({
     params: { member: memberSlug(member) },
     props: { member },
   }));

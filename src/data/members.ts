@@ -58,11 +58,18 @@ export interface Member {
   about?: string;
   /** Optional experience blurb for the member main page. Leave empty for the placeholder. */
   experience?: string;
+  /**
+   * When true, the member is omitted from the public site (pages, listings,
+   * sitemap, fetch, and refresh) until Seth unhides them. The entry stays
+   * in this file so it can be restored by flipping the flag.
+   */
+  hidden?: boolean;
 }
 
 export const MEMBERS: Member[] = [
   {
     handle: 'zTOPN0TCHz',
+    hidden: true,
     discordStatus: 'unknown',
     wowForever: [{ name: 'Vhexz', surname: 'Warfarin', region: 'us' }],
   },
@@ -90,8 +97,17 @@ export function wowCharacters(member: Member): WowForeverCharacter[] {
   return member.wowForever ?? [];
 }
 
+export function isMemberHidden(member: Member): boolean {
+  return member.hidden === true;
+}
+
+/** Members that may appear on the public site. Hidden members are omitted. */
+export function visibleMembers(): Member[] {
+  return MEMBERS.filter((member) => !isMemberHidden(member));
+}
+
 export function findMember(slug: string): Member | undefined {
-  return MEMBERS.find((m) => memberSlug(m) === slug);
+  return visibleMembers().find((m) => memberSlug(m) === slug);
 }
 
 export function memberHref(member: Member): string {

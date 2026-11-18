@@ -2,7 +2,7 @@
 import BaseLayout from '../../../../../layouts/BaseLayout.astro';
 import WowCharacterSheet from '../../../../../components/WowCharacterSheet.astro';
 import {
-  MEMBERS,
+  visibleMembers,
   wowCharacterSlug,
   wowCharacters,
   memberSlug,
@@ -10,7 +10,7 @@ import {
 import { characterDisplayName, loadSnapshot } from '../../../../../lib/characters';
 
 export function getStaticPaths() {
-  return MEMBERS.flatMap((member) =>
+  return visibleMembers().flatMap((member) =>
     wowCharacters(member).map((character) => ({
       params: { member: memberSlug(member), character: wowCharacterSlug(character) },
       props: { member, character },

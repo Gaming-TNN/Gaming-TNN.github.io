@@ -42,6 +42,10 @@ function readMemberTargets(source) {
   for (const block of memberBlocks) {
     const handle = block.match(/^([^']+)'/)?.[1];
     if (!handle) continue;
+    if (/\bhidden:\s*true\b/.test(block)) {
+      console.log(`SKIP  hidden member ${handle}`);
+      continue;
+    }
     const slugMatch = block.match(/slug:\s*'([^']+)'/);
     const slug = (slugMatch?.[1] ?? handle).toLowerCase();
     // Stop at the next handle if present is already how we split.

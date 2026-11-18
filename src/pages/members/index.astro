@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
-import { MEMBERS, memberHref, memberSlug, wowCharacters, wowCharacterSlug } from '../../data/members';
+import { memberHref, memberSlug, visibleMembers, wowCharacters, wowCharacterSlug } from '../../data/members';
 import { characterDisplayName, loadSnapshot, mediaAsset, wowHref } from '../../lib/characters';
 ---
 <BaseLayout title="Members | Top-Notch Gaming" description="Members of Top-Notch Gaming and the games they play.">
   <section class="max-w-7xl mx-auto px-6 pt-20 pb-24">
     <SectionHeader kicker="TNG // ROSTER" title="MEMBERS" class="mb-12" />
     <ul class="grid gap-6">
-      {MEMBERS.map((member) => {
+      {visibleMembers().map((member) => {
         const wow = wowCharacters(member);
         return (
           <li class="bg-[#121215] border border-[#27272a] p-6">
