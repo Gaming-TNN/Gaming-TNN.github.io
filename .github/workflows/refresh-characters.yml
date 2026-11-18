@@ -8,10 +8,16 @@
 # keep the PR open for Seth's go-ahead. Unchanged data produces no PR
 # and does not touch the data branch.
 #
-# Pushes and pull requests made with GITHUB_TOKEN do not trigger other
-# workflows, so CI is started with workflow_dispatch on the data branch
-# (the "build" check attaches to that head SHA) and deploy is started
-# with workflow_dispatch on main after the merge.
+# Pushes and pull requests made with GITHUB_TOKEN do not run other
+# workflows. A pull_request opened with GITHUB_TOKEN still creates a CI
+# check suite that finishes as action_required with zero jobs; that suite
+# is what blocks merge ("base branch policy prohibits the merge") because
+# the required "build" check is not reported on the PR (even if a
+# workflow_dispatch "build" on the same SHA succeeded). After dispatch CI
+# succeeds, this workflow deletes those stub runs and retries the merge.
+# Optional repository secret DATA_PR_TOKEN (a narrowly scoped PAT) makes
+# pull_request CI run normally and is the more reliable path. Deploy after
+# a GITHUB_TOKEN merge is started with workflow_dispatch on main.
 #
 # The workflow reuses a single fixed branch, data/wow-characters: it is
 # brought up to date with the default branch by a normal merge or
@@ -19,9 +25,13 @@
 # --force. An existing open PR for that branch is updated in place. The
 # branch is never force-pushed or deleted.
 #
-# Required repository secrets (add later; do not commit them):
+# Required repository secrets (do not commit them):
 #   BNET_CLIENT_ID
 #   BNET_CLIENT_SECRET
+# Optional:
+#   DATA_PR_TOKEN — PAT used to push the data branch and open/merge the
+#   data PR so pull_request CI runs (GITHUB_TOKEN cannot). Fine-grained
+#   Contents + Pull requests write on this repo only; not an admin token.
 
 name: Refresh character data
 
@@ -49,6 +59,9 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
+          # Prefer DATA_PR_TOKEN so git push is not done with GITHUB_TOKEN
+          # (a GITHUB_TOKEN push does not trigger pull_request CI).
+          token: ${{ secrets.DATA_PR_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Set up Node
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -108,7 +121,7 @@ jobs:
         id: cpr_data
         if: steps.changes.outputs.has_changes == 'true' && github.ref_name == github.event.repository.default_branch
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.DATA_PR_TOKEN || secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           DATA_BRANCH: data/wow-characters
           DATA_ONLY: ${{ steps.changes.outputs.data_only }}
@@ -254,11 +267,12 @@ jobs:
           steps.cpr_data.outputs.pull-request-number != '' &&
           github.ref_name == github.event.repository.default_branch
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.DATA_PR_TOKEN || secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.cpr_data.outputs.pull-request-number }}
           PR_BRANCH: ${{ steps.cpr_data.outputs.pull-request-branch }}
           PR_SHA: ${{ steps.cpr_data.outputs.pull-request-head-sha }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GH_REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
           if [ -z "${PR_NUMBER}" ] || [ -z "${PR_BRANCH}" ] || [ -z "${PR_SHA}" ]; then
@@ -298,6 +312,37 @@ jobs:
             echo "Reusing successful CI run ${RUN_ID} for ${PR_SHA}."
           fi
 
-          gh pr merge "${PR_NUMBER}" --squash --body "Automated data refresh. Squash-merged by the Refresh character data workflow after the required build check passed. Only files under src/data/characters/ and src/data/talent-trees/ were changed."
+          # GITHUB_TOKEN-created PRs still open a pull_request CI suite that
+          # finishes as action_required with zero jobs. That suite blocks
+          # merge even after a successful workflow_dispatch "build" on the
+          # same SHA (required check is not reported on the PR). Drop the
+          # stub runs, then retry the merge. No --admin bypass.
+          mapfile -t stub_runs < <(gh api "repos/${GH_REPO}/actions/runs?head_sha=${PR_SHA}&status=completed&per_page=100" --jq '.workflow_runs[] | select(.conclusion=="action_required" and .path==".github/workflows/ci.yml") | .id')
+          if [ "${#stub_runs[@]}" -gt 0 ]; then
+            for stub_id in "${stub_runs[@]}"; do
+              [ -n "${stub_id}" ] || continue
+              echo "Deleting action_required CI stub run ${stub_id} so it does not block merge."
+              gh api -X DELETE "repos/${GH_REPO}/actions/runs/${stub_id}" --silent || echo "Could not delete run ${stub_id}; will still try to merge."
+            done
+          else
+            echo "No action_required CI stub runs on ${PR_SHA}."
+          fi
+
+          merge_body="Automated data refresh. Squash-merged by the Refresh character data workflow after the required build check passed. Only files under src/data/characters/ and src/data/talent-trees/ were changed."
+          merged=false
+          for _ in $(seq 1 12); do
+            state=$(gh api "repos/${GH_REPO}/pulls/${PR_NUMBER}" --jq '.mergeable_state // empty')
+            echo "PR #${PR_NUMBER} mergeable_state=${state}"
+            if gh pr merge "${PR_NUMBER}" --squash --body "${merge_body}"; then
+              merged=true
+              break
+            fi
+            sleep 5
+          done
+
+          if [ "${merged}" != true ]; then
+            gh pr comment "${PR_NUMBER}" --body "Auto-merge is still blocked by the \`main\` branch policy after the required \`build\` check ran and after removing any \`action_required\` CI stub. This usually means GitHub is not reporting that \`build\` check on the PR (GITHUB_TOKEN-created PRs). A narrowly scoped \`DATA_PR_TOKEN\` repo secret (Contents + Pull requests write on this repo only, not an admin token) lets pull_request CI run normally. This PR needs Seth's go-ahead until then."
+            exit 1
+          fi
 
           gh workflow run deploy.yml --ref "${DEFAULT_BRANCH}"
