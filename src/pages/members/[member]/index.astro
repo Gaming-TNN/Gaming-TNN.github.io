@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import {
+  DISCORD_STATUS_LABEL,
+  MEMBERS,
+  WOW_FOREVER_GAME,
+  type Member,
+  memberSlug,
+  wowCharacters,
+} from '../../../data/members';
+import { wowHref } from '../../../lib/characters';
+
+export function getStaticPaths() {
+  return MEMBERS.map((member) => ({
+    params: { member: memberSlug(member) },
+    props: { member },
+  }));
+}
+
+interface Props {
+  member: Member;
+}
+
+const { member } = Astro.props;
+const wow = wowCharacters(member);
+const title = `${member.handle} | Top-Notch Gaming`;
+
+function memberMark(m: Member) {
+  if (m.mark) return m.mark;
+  const letters = m.handle.replace(/[^a-zA-Z]/g, '');
+  return (letters.slice(0, 2) || m.handle.slice(0, 2) || '?').toUpperCase();
+}
+---
+<BaseLayout title={title} description={`Member profile for ${member.handle} on Top-Notch Gaming.`}>
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+    <nav class="text-[10px] font-bold tracking-widest text-zinc-500 mb-8" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/members/" class="hover:text-[#e4e4e7] transition">Members</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-400 normal-case">{member.handle}</li>
+      </ol>
+    </nav>
+
+    <header class="flex items-start gap-4 mb-14">
+      <div class="relative shrink-0 w-16 h-16 bg-black border border-[#c20e0e]/70 flex items-center justify-center shadow-[0_0_25px_rgba(194,14,14,0.25)]" aria-hidden="true">
+        <div class="tng-scanlines absolute inset-0 pointer-events-none"></div>
+        <span class="relative font-black tracking-widest text-lg text-[#e4e4e7]">{memberMark(member)}</span>
+        <span class="absolute bottom-1 right-1 w-1.5 h-1.5 bg-[#c20e0e]"></span>
+      </div>
+      <div class="min-w-0">
+        <p class="text-[#c20e0e] text-xs font-black tracking-widest mb-3">// MEMBER</p>
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight text-[#e4e4e7] normal-case leading-tight m-0">{member.handle}</h1>
+        <p class="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-zinc-400 mt-4 mb-0" title="Discord status (placeholder until the server widget is connected)">
+          <span class="inline-block size-2 rounded-full bg-zinc-500" aria-hidden="true"></span>
+          <span>Discord {DISCORD_STATUS_LABEL[member.discordStatus]}</span>
+        </p>
+      </div>
+    </header>
+
+    <section class="mb-14" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-4">ABOUT</h2>
+      {member.about ? (
+        <p class="text-zinc-300 text-sm md:text-base normal-case tracking-normal leading-relaxed max-w-3xl m-0">{member.about}</p>
+      ) : (
+        <div class="border border-dashed border-amber-700/50 bg-[#121215] px-5 py-6">
+          <p class="text-[10px] font-black tracking-widest text-amber-500 m-0 mb-2">PLACEHOLDER — FOR SETH TO FILL</p>
+          <p class="text-zinc-400 text-sm normal-case tracking-normal leading-relaxed m-0">Add this member's about text to the <code class="text-zinc-300">about</code> field in <code class="text-zinc-300">src/data/members.ts</code>.</p>
+        </div>
+      )}
+    </section>
+
+    <section class="mb-14" aria-labelledby="experience-heading">
+      <h2 id="experience-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-4">EXPERIENCE</h2>
+      {member.experience ? (
+        <p class="text-zinc-300 text-sm md:text-base normal-case tracking-normal leading-relaxed max-w-3xl m-0">{member.experience}</p>
+      ) : (
+        <div class="border border-dashed border-amber-700/50 bg-[#121215] px-5 py-6">
+          <p class="text-[10px] font-black tracking-widest text-amber-500 m-0 mb-2">PLACEHOLDER — FOR SETH TO FILL</p>
+          <p class="text-zinc-400 text-sm normal-case tracking-normal leading-relaxed m-0">Add this member's experience to the <code class="text-zinc-300">experience</code> field in <code class="text-zinc-300">src/data/members.ts</code>.</p>
+        </div>
+      )}
+    </section>
+
+    <section aria-labelledby="playing-heading">
+      <h2 id="playing-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-4">CURRENTLY PLAYING</h2>
+      {wow.length > 0 && WOW_FOREVER_GAME ? (
+        <ul class="grid sm:grid-cols-2 gap-4">
+          <li>
+            <a href={wowHref(member)} class="flex items-center gap-4 bg-black border border-[#27272a] hover:border-[#c20e0e]/60 p-4 transition-colors group min-w-0">
+              <img
+                src="/images/games/wow-forever-icon-128.webp"
+                srcset="/images/games/wow-forever-icon-128.webp 128w, /images/games/wow-forever-icon-256.webp 256w"
+                sizes="48px"
+                width="48"
+                height="48"
+                alt=""
+                class="size-12 rounded-md object-cover border border-[#27272a] bg-[#0a0a0c] shrink-0"
+              />
+              <span class="min-w-0">
+                <span class="block font-black text-sm text-[#e4e4e7] group-hover:text-[#c20e0e] transition-colors">{WOW_FOREVER_GAME.name}</span>
+                <span class="block text-[10px] font-bold tracking-widest text-zinc-500 mt-1">{wow.length} {wow.length === 1 ? 'CHARACTER' : 'CHARACTERS'} →</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      ) : (
+        <p class="text-zinc-500 text-sm normal-case m-0">No games listed yet.</p>
+      )}
+    </section>
+  </section>
+</BaseLayout>

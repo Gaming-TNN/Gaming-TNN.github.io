@@ -20,7 +20,7 @@ export const DISCORD_INVITE_URL = '';
 export const NAV = [
   { label: 'About', href: '/about/' },
   { label: 'Games', href: '/games/' },
-  { label: 'Squad', href: '/squad/' },
+  { label: 'Members', href: '/members/' },
   { label: 'Community', href: '/community/' },
 ];
 

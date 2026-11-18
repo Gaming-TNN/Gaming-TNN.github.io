@@ -1,13 +1,12 @@
 ---
-import type { SquadMember, WowForeverCharacter } from '../data/squad';
-import { memberSlug } from '../data/squad';
+import type { Member, WowForeverCharacter } from '../data/members';
+import { memberHref, memberSlug } from '../data/members';
 import {
   type CharacterSnapshot,
   EQUIPMENT_SLOTS,
   PAPERDOLL_BOTTOM,
   PAPERDOLL_LEFT,
   PAPERDOLL_RIGHT,
-  activeSpecializations,
   armoryUrl,
   characterDisplayName,
   formatWhen,
@@ -16,9 +15,10 @@ import {
   mediaAsset,
   qualityClass,
 } from '../lib/characters';
+import WowTalentTrees from './WowTalentTrees.astro';
 
 interface Props {
-  member: SquadMember;
+  member: Member;
   character: WowForeverCharacter;
   snapshot?: CharacterSnapshot;
 }
@@ -30,7 +30,6 @@ const faction = profile?.faction?.name;
 const slots = itemBySlot(snapshot);
 const render = mediaAsset(snapshot, 'main-raw') || mediaAsset(snapshot, 'main-sd-raw');
 const avatar = mediaAsset(snapshot, 'avatar');
-const specs = activeSpecializations(snapshot);
 const primaries = snapshot?.professions?.primaries ?? [];
 const secondaries = snapshot?.professions?.secondaries ?? [];
 const known = Boolean(character.name && character.surname && character.name !== 'TBD');
@@ -46,11 +45,13 @@ function slotRow(type: string) {
 <header class="mb-10">
   <nav class="text-[10px] font-bold tracking-widest text-zinc-500 mb-6" aria-label="Breadcrumb">
     <ol class="flex flex-wrap items-center gap-2">
-      <li><a href="/squad/" class="hover:text-[#e4e4e7] transition">Squad</a></li>
+      <li><a href="/members/" class="hover:text-[#e4e4e7] transition">Members</a></li>
       <li aria-hidden="true">/</li>
-      <li><a href={`/squad/${memberSlug(member)}/wow/`} class="hover:text-[#e4e4e7] transition">{member.handle}</a></li>
+      <li><a href={memberHref(member)} class="hover:text-[#e4e4e7] transition normal-case">{member.handle}</a></li>
       <li aria-hidden="true">/</li>
-      <li class="text-zinc-400">WoW Forever</li>
+      <li><a href={`/members/${memberSlug(member)}/wow/`} class="hover:text-[#e4e4e7] transition">WoW Forever</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="text-zinc-400 normal-case">{displayName}</li>
     </ol>
   </nav>
   <p class="text-[#c20e0e] text-xs font-black tracking-widest mb-3">// {member.handle}</p>
@@ -163,34 +164,7 @@ function slotRow(type: string) {
   </ul>
 </section>
 
-<section class="mb-14" aria-labelledby="spec-heading">
-  <h2 id="spec-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-6">SPECIALIZATION &amp; TALENTS</h2>
-  {specs.length === 0 ? (
-    <p class="text-zinc-500 text-sm normal-case">Talent snapshot not available yet.</p>
-  ) : (
-    <div class="grid md:grid-cols-2 gap-4">
-      {specs.map((spec) => (
-        <div class="bg-[#121215] border border-[#27272a] p-6">
-          <h3 class="text-lg font-black text-[#e4e4e7] m-0">{spec.specialization_name ?? 'Specialization'}</h3>
-          {spec.spent_points != null && <p class="text-[10px] font-bold tracking-widest text-zinc-500 mt-1 mb-4">{spec.spent_points} points spent</p>}
-          <ul class="grid gap-3">
-            {(spec.talents ?? []).map((t) => (
-              <li>
-                <p class="text-sm font-bold text-[#e4e4e7] normal-case m-0">
-                  {t.talent?.name ?? 'Talent'}
-                  {t.talent_rank != null && <span class="text-zinc-500 font-medium"> · Rank {t.talent_rank}</span>}
-                </p>
-                {t.spell_tooltip?.description && (
-                  <p class="text-zinc-400 text-xs normal-case tracking-normal leading-relaxed m-0 mt-1">{t.spell_tooltip.description}</p>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  )}
-</section>
+<WowTalentTrees snapshot={snapshot} />
 
 <section class="mb-14" aria-labelledby="professions-heading">
   <h2 id="professions-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-6">PROFESSIONS</h2>

@@ -1,7 +1,7 @@
 // Helpers for WoW Forever character snapshots written by scripts/fetch-characters.mjs.
 
-import type { SquadMember, WowForeverCharacter } from '../data/squad';
-import { officialWowArmoryUrl, wowCharacterSlug } from '../data/squad';
+import type { Member, WowForeverCharacter } from '../data/members';
+import { officialWowArmoryUrl, wowCharacterSlug } from '../data/members';
 
 export interface CharacterSnapshot {
   fetchedAt: string;
@@ -170,7 +170,7 @@ export function armoryUrl(character: WowForeverCharacter): string {
   return officialWowArmoryUrl(character);
 }
 
-export function wowHref(member: SquadMember, character?: WowForeverCharacter): string {
-  const base = `/squad/${(member.slug ?? member.handle).toLowerCase()}/wow/`;
+export function wowHref(member: Member, character?: WowForeverCharacter): string {
+  const base = `/members/${(member.slug ?? member.handle).toLowerCase()}/wow/`;
   return character ? `${base}${wowCharacterSlug(character)}/` : base;
 }

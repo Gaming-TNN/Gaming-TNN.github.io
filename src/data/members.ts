@@ -1,4 +1,4 @@
-// Squad members shown in the homepage hero panel and /squad/ pages.
+// Members shown in the homepage hero panel and /members/ pages.
 // Discord status is a static placeholder until the Discord server widget is wired up.
 // EverQuest types stay here so EQ can return to member cards later; it is omitted from
 // members for now. WoW Forever supports multiple characters per member (Horde and Alliance).
@@ -36,7 +36,7 @@ export interface WowForeverCharacter {
   region: 'us' | 'eu' | 'kr' | 'tw';
 }
 
-export interface SquadMember {
+export interface Member {
   /** Public handle shown on the card. */
   handle: string;
   /** URL slug; defaults to the lowercased handle. */
@@ -54,9 +54,13 @@ export interface SquadMember {
   everquest?: EverQuestCharacter | EverQuestCharacter[];
   /** Zero or more WoW Forever characters (Alliance and/or Horde). */
   wowForever?: WowForeverCharacter[];
+  /** Optional profile bio for the member main page. Leave empty for the placeholder. */
+  about?: string;
+  /** Optional experience blurb for the member main page. Leave empty for the placeholder. */
+  experience?: string;
 }
 
-export const SQUAD: SquadMember[] = [
+export const MEMBERS: Member[] = [
   {
     handle: 'zTOPN0TCHz',
     discordStatus: 'unknown',
@@ -67,7 +71,7 @@ export const SQUAD: SquadMember[] = [
 export const EVERQUEST_GAME: Game | undefined = GAMES.find((g) => g.slug === 'everquest-legends');
 export const WOW_FOREVER_GAME: Game | undefined = GAMES.find((g) => g.slug === 'wow-forever');
 
-export function memberSlug(member: SquadMember): string {
+export function memberSlug(member: Member): string {
   return (member.slug ?? member.handle).toLowerCase();
 }
 
@@ -75,12 +79,16 @@ export function wowCharacterSlug(character: WowForeverCharacter): string {
   return `${character.name}-${character.surname}`.toLowerCase();
 }
 
-export function wowCharacters(member: SquadMember): WowForeverCharacter[] {
+export function wowCharacters(member: Member): WowForeverCharacter[] {
   return member.wowForever ?? [];
 }
 
-export function findMember(slug: string): SquadMember | undefined {
-  return SQUAD.find((m) => memberSlug(m) === slug);
+export function findMember(slug: string): Member | undefined {
+  return MEMBERS.find((m) => memberSlug(m) === slug);
+}
+
+export function memberHref(member: Member): string {
+  return `/members/${memberSlug(member)}/`;
 }
 
 export function officialWowArmoryUrl(character: WowForeverCharacter): string {

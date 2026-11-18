@@ -3,18 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import DiscordButton from '../components/DiscordButton.astro';
 import GameLogo from '../components/GameLogo.astro';
-import SquadPanel from '../components/SquadPanel.astro';
+import MembersPanel from '../components/MembersPanel.astro';
 import { GAMES } from '../data/games';
 
 const pillars = [
-  { code: '01 // SQUAD', title: 'COMMUNITY FIRST', description: 'A welcoming place to queue up, trade strats, and hang out with people who love games as much as you do.' },
+  { code: '01 // COMMUNITY', title: 'COMMUNITY FIRST', description: 'A welcoming place to queue up, trade strats, and hang out with people who love games as much as you do.' },
   { code: '02 // PLAY', title: 'GAME NIGHTS & EVENTS', description: 'Community play sessions and events. Dates are announced in the community first, so keep an eye on the Discord.' },
   { code: '03 // CREATE', title: 'ROOM FOR CREATORS', description: 'Clips, content, and creative projects from players in the Top-Notch family, with a community behind them.' },
   { code: '04 // NETWORK', title: 'PART OF TOP-NOTCH', description: 'Top-Notch Gaming is the gaming arm of Top-Notch Network, built on the same standard: show up, play fair, lift others up.' },
 ];
 
 ---
-<BaseLayout title="Top-Notch Gaming | Community & Game Nights" description="Top-Notch Gaming is the gaming arm of Top-Notch Network: community game nights, squads, and a place for players to connect.">
+<BaseLayout title="Top-Notch Gaming | Community & Game Nights" description="Top-Notch Gaming is the gaming arm of Top-Notch Network: community game nights and a place for players to connect.">
 
     <!-- Hero Section -->
     <section class="relative overflow-hidden">
@@ -27,10 +27,10 @@ const pillars = [
             <span class="text-[#c20e0e]">TOGETHER</span>
           </h1>
           <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed mb-4">
-            Squads, game nights, and good company from the gaming side of Top-Notch Network.
+            Members, game nights, and good company from the gaming side of Top-Notch Network.
           </p>
           <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed mb-10">
-            Top-Notch Gaming brings players together. Jump into the community, find your squad, and play with people who keep it top-notch.
+            Top-Notch Gaming brings players together. Jump into the community, find your people, and play with people who keep it top-notch.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/community/" class="bg-[#c20e0e] hover:bg-[#9e0b0b] text-white font-black px-8 py-4 text-xs tracking-widest text-center border border-[#d30000] shadow-[0_0_20px_rgba(194,14,14,0.25)] transition">
@@ -42,7 +42,7 @@ const pillars = [
           </div>
         </div>
 
-        <SquadPanel />
+        <MembersPanel />
       </div>
     </section>
 

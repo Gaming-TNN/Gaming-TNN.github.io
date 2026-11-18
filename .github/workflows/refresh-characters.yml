@@ -53,7 +53,7 @@ jobs:
             Profile API (profile-forever namespace).
           title: Update WoW Forever character snapshots
           body: |
-            Automated snapshot of squad WoW Forever characters from the official Battle.net Profile API.
+            Automated snapshot of member WoW Forever characters from the official Battle.net Profile API.
 
             This PR only updates JSON under `src/data/characters/`. It does not deploy or merge itself — please review and merge when ready.
           labels: data

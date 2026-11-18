@@ -1,15 +1,17 @@
 ---
-// Squad roster for the homepage hero. Each member card matches the
+// Member roster for the homepage hero. Each member card matches the
 // "Games we play" strip card: wide, short, black, thin border, icon left + bold title.
-// Cards stack vertically. A square WoW Forever tile links to that member's characters.
+// Cards stack vertically. The handle links to the member page; a square WoW Forever
+// tile links to that member's WoW Forever subpage.
 import {
-  SQUAD,
+  MEMBERS,
   DISCORD_STATUS_LABEL,
   type DiscordStatus,
-  type SquadMember,
+  type Member,
+  memberHref,
   memberSlug,
   wowCharacters,
-} from '../data/squad';
+} from '../data/members';
 
 const statusDot: Record<DiscordStatus, string> = {
   online: 'bg-emerald-400',
@@ -19,20 +21,20 @@ const statusDot: Record<DiscordStatus, string> = {
   unknown: 'bg-zinc-500',
 };
 
-function memberMark(member: SquadMember) {
+function memberMark(member: Member) {
   if (member.mark) return member.mark;
   const letters = member.handle.replace(/[^a-zA-Z]/g, '');
   return (letters.slice(0, 2) || member.handle.slice(0, 2) || '?').toUpperCase();
 }
 ---
-<aside class="tng-cut relative border border-[#27272a] bg-[#121215] p-5 sm:p-6 shadow-[0_0_40px_rgba(194,14,14,0.18)] overflow-hidden" aria-labelledby="squad-heading">
+<aside class="tng-cut relative border border-[#27272a] bg-[#121215] p-5 sm:p-6 shadow-[0_0_40px_rgba(194,14,14,0.18)] overflow-hidden" aria-labelledby="members-heading">
   <div class="tng-scanlines absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative flex items-center justify-between gap-3 mb-5">
-    <h2 id="squad-heading" class="text-[10px] font-black tracking-widest text-[#c20e0e] m-0">● SQUAD</h2>
-    <a href="/squad/" class="text-[10px] font-black tracking-widest text-zinc-500 hover:text-[#e4e4e7] transition">TNG // MEMBERS</a>
+    <h2 id="members-heading" class="text-[10px] font-black tracking-widest text-[#c20e0e] m-0">● MEMBERS</h2>
+    <a href="/members/" class="text-[10px] font-black tracking-widest text-zinc-500 hover:text-[#e4e4e7] transition">TNG // MEMBERS</a>
   </div>
   <ul class="relative grid grid-cols-1 gap-4">
-    {SQUAD.map((member) => {
+    {MEMBERS.map((member) => {
       const wow = wowCharacters(member);
       const label = `${member.handle} on WoW Forever`;
       return (
@@ -44,7 +46,7 @@ function memberMark(member: SquadMember) {
           </div>
           <div class="min-w-0 flex-1">
             <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-              <p class="font-black text-sm text-[#e4e4e7] min-w-0 truncate m-0">{member.handle}</p>
+              <a href={memberHref(member)} class="font-black text-sm text-[#e4e4e7] min-w-0 truncate m-0 normal-case hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c20e0e] focus-visible:ring-offset-2 focus-visible:ring-offset-black">{member.handle}</a>
               <p class="shrink-0 flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-zinc-400 m-0" title="Discord status (placeholder until the server widget is connected)">
                 <span class={`inline-block size-2 rounded-full ${statusDot[member.discordStatus]}`} aria-hidden="true"></span>
                 <span><span class="hidden sm:inline">Discord </span>{DISCORD_STATUS_LABEL[member.discordStatus]}</span>
@@ -53,7 +55,7 @@ function memberMark(member: SquadMember) {
             {wow.length > 0 && (
               <div class="mt-2">
                 <a
-                  href={`/squad/${memberSlug(member)}/wow/`}
+                  href={`/members/${memberSlug(member)}/wow/`}
                   aria-label={label}
                   class="inline-flex size-10 rounded-md border border-[#27272a] bg-[#0a0a0c] overflow-hidden transition hover:border-[#c20e0e] hover:shadow-[0_0_16px_rgba(194,14,14,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c20e0e] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                 >
