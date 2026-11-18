@@ -9,6 +9,14 @@ import { GAMES } from './games';
 /** Presence values the Discord widget can later fill in. */
 export type DiscordStatus = 'online' | 'idle' | 'dnd' | 'offline' | 'unknown';
 
+/**
+ * Gaming positions used to section the /members/ roster, in display order.
+ * Edit this list to add or rename roles; empty sections are not rendered.
+ */
+export const MEMBER_POSITIONS = ['Leadership', 'Officers', 'Members'] as const;
+export type MemberPosition = (typeof MEMBER_POSITIONS)[number];
+export const DEFAULT_MEMBER_POSITION: MemberPosition = 'Members';
+
 export const DISCORD_STATUS_LABEL: Record<DiscordStatus, string> = {
   online: 'Online',
   idle: 'Idle',
@@ -64,6 +72,8 @@ export interface Member {
    * in this file so it can be restored by flipping the flag.
    */
   hidden?: boolean;
+  /** Roster section on /members/. Defaults to Members if omitted. */
+  position?: MemberPosition;
 }
 
 export const MEMBERS: Member[] = [
@@ -77,6 +87,7 @@ export const MEMBERS: Member[] = [
     handle: 'zTOPMULLETz',
     slug: 'ztopmulletz',
     mark: 'ZM',
+    position: 'Members',
     discordStatus: 'unknown',
     wowForever: [{ name: 'Buster', surname: 'Skulls', region: 'us' }],
   },
@@ -125,6 +136,19 @@ export function isMemberHidden(member: Member): boolean {
 /** Members that may appear on the public site. Hidden members are omitted. */
 export function visibleMembers(): Member[] {
   return MEMBERS.filter((member) => !isMemberHidden(member));
+}
+
+export function memberPosition(member: Member): MemberPosition {
+  return member.position ?? DEFAULT_MEMBER_POSITION;
+}
+
+/** Visible members grouped in MEMBER_POSITIONS order. Empty sections are omitted. */
+export function visibleMembersByPosition(): Array<{ position: MemberPosition; members: Member[] }> {
+  const visible = visibleMembers();
+  return MEMBER_POSITIONS.flatMap((position) => {
+    const members = visible.filter((m) => memberPosition(m) === position);
+    return members.length ? [{ position, members }] : [];
+  });
 }
 
 export function findMember(slug: string): Member | undefined {

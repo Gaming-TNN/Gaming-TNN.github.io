@@ -2,20 +2,33 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import MemberGameTiles from '../../components/MemberGameTiles.astro';
-import { memberHref, visibleMembers } from '../../data/members';
+import { memberHref, visibleMembersByPosition } from '../../data/members';
+
+const groups = visibleMembersByPosition();
 ---
 <BaseLayout title="Members | Top-Notch Gaming" description="Members of Top-Notch Gaming and the games they play.">
   <section class="max-w-7xl mx-auto px-6 pt-20 pb-24">
     <SectionHeader kicker="TNG // ROSTER" title="MEMBERS" class="mb-12" />
-    <ul class="grid gap-6">
-      {visibleMembers().map((member) => (
-        <li class="bg-[#121215] border border-[#27272a] p-6">
-          <h2 class="text-2xl font-black text-[#e4e4e7] m-0 mb-5 normal-case tracking-wide">
-            <a href={memberHref(member)} class="hover:text-white transition">{member.handle}</a>
-          </h2>
-          <MemberGameTiles member={member} size={56} />
-        </li>
-      ))}
-    </ul>
+    {groups.length === 0 ? (
+      <p class="text-zinc-500 text-sm normal-case m-0">No members listed yet.</p>
+    ) : (
+      <div class="grid gap-12">
+        {groups.map((group) => (
+          <section aria-labelledby={`position-${group.position.toLowerCase()}`}>
+            <h2 id={`position-${group.position.toLowerCase()}`} class="text-xs font-black tracking-widest text-[#c20e0e] mb-5">{group.position}</h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {group.members.map((member) => (
+                <li class="bg-[#121215] border border-[#27272a] p-6 min-w-0">
+                  <h3 class="text-2xl font-black text-[#e4e4e7] m-0 mb-5 normal-case tracking-wide">
+                    <a href={memberHref(member)} class="hover:text-white transition">{member.handle}</a>
+                  </h3>
+                  <MemberGameTiles member={member} size={56} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    )}
   </section>
 </BaseLayout>
