@@ -3,23 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import DiscordButton from '../components/DiscordButton.astro';
 import GameLogo from '../components/GameLogo.astro';
+import VoicePanel from '../components/VoicePanel.astro';
 import { GAMES } from '../data/games';
 
 const pillars = [
-  { code: '01 // SQUAD', title: 'COMMUNITY FIRST', description: 'A welcoming place to queue up, trade strats, and hang out with people who love games as much as you do.' },
+  { code: '01 // COMMUNITY', title: 'COMMUNITY FIRST', description: 'A welcoming place to queue up, trade strats, and hang out with people who love games as much as you do.' },
   { code: '02 // PLAY', title: 'GAME NIGHTS & EVENTS', description: 'Community play sessions and events. Dates are announced in the community first, so keep an eye on the Discord.' },
   { code: '03 // CREATE', title: 'ROOM FOR CREATORS', description: 'Clips, content, and creative projects from players in the Top-Notch family, with a community behind them.' },
-  { code: '04 // NETWORK', title: 'PART OF TOP-NOTCH', description: 'Top-Notch Gaming is the gaming arm of Top-Notch Network, built on the same standard: show up, play fair, lift others up.' },
+  { code: '04 // NETWORK', title: 'Part of the Top-Notch Network', description: 'Top-Notch Gaming is an extension of the Top-Notch Network. Elevating those who elevate the world.' },
 ];
 
-const hud = [
-  ['MODE', 'CO-OP'],
-  ['LOBBY', 'OPEN'],
-  ['SKILL LEVEL', 'ALL WELCOME'],
-  ['NETWORK', 'TOP-NOTCH'],
-];
 ---
-<BaseLayout title="Top-Notch Gaming | Community & Game Nights" description="Top-Notch Gaming is the gaming arm of Top-Notch Network: community game nights, squads, and a place for players to connect.">
+<BaseLayout title="Top-Notch Gaming | Community & Game Nights" description="Top-Notch Gaming is the gaming arm of Top-Notch Network: community game nights and a place for players to connect.">
 
     <!-- Hero Section -->
     <section class="relative overflow-hidden">
@@ -32,10 +27,10 @@ const hud = [
             <span class="text-[#c20e0e]">TOGETHER</span>
           </h1>
           <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed mb-4">
-            Squads, game nights, and good company from the gaming side of Top-Notch Network.
+            Members, game nights, and good company from the gaming side of Top-Notch Network.
           </p>
           <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed mb-10">
-            Top-Notch Gaming brings players together. Jump into the community, find your squad, and play with people who keep it top-notch.
+            Top-Notch Gaming brings players together. Jump into the community, find your people, and play with people who keep it top-notch.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/community/" class="bg-[#c20e0e] hover:bg-[#9e0b0b] text-white font-black px-8 py-4 text-xs tracking-widest text-center border border-[#d30000] shadow-[0_0_20px_rgba(194,14,14,0.25)] transition">
@@ -47,25 +42,7 @@ const hud = [
           </div>
         </div>
 
-        <!-- HUD panel -->
-        <div class="tng-cut relative border border-[#27272a] bg-[#121215] p-8 shadow-[0_0_40px_rgba(194,14,14,0.18)] overflow-hidden" aria-hidden="true">
-          <div class="tng-scanlines absolute inset-0 pointer-events-none"></div>
-          <div class="relative flex items-center justify-between mb-8">
-            <span class="text-[10px] font-black tracking-widest text-[#c20e0e]">● PLAYER 1 READY</span>
-            <span class="text-[10px] font-black tracking-widest text-zinc-500">TNG // HUB</span>
-          </div>
-          <div class="relative flex justify-center mb-8">
-            <img src="/tnn-emblem.png" width="198" height="210" alt="" class="h-32 sm:h-40 w-auto drop-shadow-[0_0_30px_rgba(194,14,14,0.5)]" />
-          </div>
-          <dl class="relative grid grid-cols-2 gap-px bg-[#27272a] border border-[#27272a]">
-            {hud.map(([k, v]) => (
-              <div class="bg-black px-4 py-3">
-                <dt class="text-[10px] font-bold tracking-widest text-zinc-500">{k}</dt>
-                <dd class="text-xs font-black tracking-widest text-[#e4e4e7]">{v}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+        <VoicePanel />
       </div>
     </section>
 
@@ -109,7 +86,7 @@ const hud = [
     <section class="border-t border-[#27272a] bg-[#121215] py-20 px-6">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-5xl font-black text-[#e4e4e7] mb-6">
-          READY, <span class="text-[#c20e0e]">PLAYER TWO?</span>
+          READY <span class="text-[#c20e0e]">PLAYER?</span>
         </h2>
         <p class="text-zinc-400 text-sm normal-case max-w-xl mx-auto mb-8">
           The community hub is warming up. Grab a spot on the Discord as soon as the invite goes live.

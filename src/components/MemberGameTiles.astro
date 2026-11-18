@@ -1,0 +1,67 @@
+---
+// Square game tiles for member cards. Active games (with characters and a
+// page) are full-color links. Games with no characters are greyscale and
+// not clickable. EverQuest Legends has no member subpage yet, so it is
+// never a link even when characters exist.
+import { GAMES } from '../data/games';
+import type { Member } from '../data/members';
+import { memberGameHref, memberHasGame } from '../data/members';
+
+interface Props {
+  member: Member;
+  /** Tile size in pixels. */
+  size?: 40 | 48 | 56;
+}
+
+const { member, size = 48 } = Astro.props;
+const tileClass =
+  'inline-flex rounded-md border border-[#27272a] bg-[#0a0a0c] overflow-hidden shrink-0';
+---
+<ul class="flex flex-wrap items-center gap-3 m-0 p-0 list-none">
+  {GAMES.map((game) => {
+    const icon = game.icon;
+    if (!icon) return null;
+    const hasCharacters = memberHasGame(member, game);
+    const href = hasCharacters ? memberGameHref(member, game) : undefined;
+    const label = `${member.handle} on ${game.name}`;
+    const img = (
+      <img
+        src={`${icon.src}-128.webp`}
+        srcset={`${icon.src}-128.webp 128w, ${icon.src}-256.webp 256w`}
+        sizes={`${size}px`}
+        width={size}
+        height={size}
+        alt=""
+        class="object-cover"
+        style={`width:${size}px;height:${size}px;`}
+      />
+    );
+    return (
+      <li class="m-0 p-0">
+        {href ? (
+          <a
+            href={href}
+            aria-label={label}
+            class={`${tileClass} transition hover:border-[#c20e0e] hover:shadow-[0_0_16px_rgba(194,14,14,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c20e0e] focus-visible:ring-offset-2 focus-visible:ring-offset-black`}
+          >
+            {img}
+          </a>
+        ) : hasCharacters ? (
+          <span class={tileClass} aria-disabled="true" title="Coming soon">
+            {img}
+            <span class="sr-only">{game.name}: coming soon</span>
+          </span>
+        ) : (
+          <span
+            class={`${tileClass} opacity-40 grayscale`}
+            aria-disabled="true"
+            title="No characters yet"
+          >
+            {img}
+            <span class="sr-only">{game.name}: No characters yet</span>
+          </span>
+        )}
+      </li>
+    );
+  })}
+</ul>
