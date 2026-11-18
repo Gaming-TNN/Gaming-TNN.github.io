@@ -16,9 +16,9 @@ const groups = visibleMembersByPosition();
         {groups.map((group) => (
           <section aria-labelledby={`position-${group.position.toLowerCase()}`}>
             <h2 id={`position-${group.position.toLowerCase()}`} class="text-xs font-black tracking-widest text-[#c20e0e] mb-5">{group.position}</h2>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ul class="flex flex-wrap gap-6">
               {group.members.map((member) => (
-                <li class="bg-[#121215] border border-[#27272a] p-6 min-w-0">
+                <li class="w-full max-w-[28rem] bg-[#121215] border border-[#27272a] p-6 min-w-0">
                   <h3 class="text-2xl font-black text-[#e4e4e7] m-0 mb-5 normal-case tracking-wide">
                     <a href={memberHref(member)} class="hover:text-white transition">{member.handle}</a>
                   </h3>
