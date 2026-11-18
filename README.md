@@ -43,7 +43,8 @@ Requires Node 22.12+ (CI uses Node 24).
 
 - `.github/workflows/ci.yml`: `build` job on pull requests and pushes to `main` (`npm ci && npm run build`, plus a CNAME check).
 - `.github/workflows/deploy.yml`: builds with `withastro/action` and deploys to GitHub Pages on push to `main`. Requires the repo's Pages source to be set to **GitHub Actions**.
-- `.github/workflows/refresh-characters.yml`: fetches character snapshots and the talent-tree cache, then opens a PR if anything changed. Data-only PRs targeting the default branch are squash-merged automatically after the required `build` check passes; the workflow then dispatches `deploy.yml`. Any other files leave the PR open for review. Needs `BNET_CLIENT_ID` and `BNET_CLIENT_SECRET` repository secrets (not added yet). Does not force-push or delete its data branch.
+- `.github/workflows/refresh-characters.yml`: every 15 minutes (and on `workflow_dispatch`), fetches character snapshots and the talent-tree cache. If nothing changed, it stops there. Otherwise it reuses the fixed `data/wow-characters` branch (merge or fast-forward from `main`, never a force-push) and opens or updates one PR. Data-only PRs targeting the default branch are squash-merged automatically after the required `build` check passes; the workflow then dispatches `deploy.yml`. Any other files leave the PR open for review. Needs `BNET_CLIENT_ID` and `BNET_CLIENT_SECRET` repository secrets (not added yet). The data branch is not deleted.
+- `.github/workflows/cleanup-workflow-runs.yml`: weekly (and on `workflow_dispatch`), deletes completed Actions runs older than 7 days. It does not delete branches.
 
 The previous Jekyll (Chirpy) site is preserved on the `jekyll-backup` branch.
 
