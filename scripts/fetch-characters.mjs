@@ -3,7 +3,11 @@
  * Fetch WoW Forever character snapshots from the official Battle.net Profile API
  * and write them under src/data/characters/<member-slug>/<first>-<surname>.json.
  * Also caches WoW Forever talent-tree layouts (positions, ranks, prerequisites,
- * icons) from the Game Data API under src/data/talent-trees/forever-us.json.
+ * and spell icons) from the Game Data API under src/data/talent-trees/forever-us.json,
+ * and official profession icons under src/data/professions/forever-us.json.
+ * Spell and profession media requests retry with backoff so rate limits do not
+ * leave blank icons. Out-of-range display coordinates from the API are snapped
+ * back onto the tree so a typo like row 63 cannot stretch the layout.
  *
  * Auth: client-credentials token from BNET_CLIENT_ID and BNET_CLIENT_SECRET.
  * Those values, and the access token, are never printed.
@@ -19,6 +23,22 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const MEMBERS_PATH = join(ROOT, 'src/data/members.ts');
 const OUT_DIR = join(ROOT, 'src/data/characters');
 const TREE_PATH = join(ROOT, 'src/data/talent-trees/forever-us.json');
+const PROFESSION_PATH = join(ROOT, 'src/data/professions/forever-us.json');
+/** Classic profession skill spell IDs, used only if profession media has no icon. */
+const CLASSIC_PROFESSION_SPELLS = {
+  129: 3273,
+  164: 2018,
+  165: 2108,
+  171: 2259,
+  182: 2366,
+  185: 2550,
+  186: 2575,
+  197: 3908,
+  202: 4036,
+  333: 7411,
+  356: 7620,
+  393: 8613,
+};
 const TOKEN_URL = 'https://oauth.battle.net/token';
 const LOCALE = 'en_US';
 const STATIC_HOST = 'https://us.api.blizzard.com';
@@ -91,16 +111,82 @@ function asEn(value) {
   return '';
 }
 
-async function apiGet(url, token) {
-  const res = await fetch(withLocale(url), { headers: { Authorization: `Bearer ${token}` } });
-  const text = await res.text();
-  let json = null;
-  try {
-    json = text ? JSON.parse(text) : null;
-  } catch {
-    json = null;
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function retryDelayMs(attempt, retryAfterHeader) {
+  const hinted = Number(retryAfterHeader);
+  if (Number.isFinite(hinted) && hinted >= 0) return Math.min(30_000, hinted * 1000);
+  const base = Math.min(8_000, 400 * 2 ** attempt);
+  return base + Math.floor(Math.random() * 250);
+}
+
+async function apiGet(url, token, { tries = 6 } = {}) {
+  let lastStatus = 0;
+  for (let attempt = 0; attempt < tries; attempt += 1) {
+    try {
+      const res = await fetch(withLocale(url), { headers: { Authorization: `Bearer ${token}` } });
+      lastStatus = res.status;
+      if (res.status === 429 || res.status >= 500) {
+        if (attempt === tries - 1) {
+          const text = await res.text();
+          let json = null;
+          try {
+            json = text ? JSON.parse(text) : null;
+          } catch {
+            json = null;
+          }
+          return { status: res.status, json };
+        }
+        await sleep(retryDelayMs(attempt, res.headers.get('retry-after')));
+        continue;
+      }
+      const text = await res.text();
+      let json = null;
+      try {
+        json = text ? JSON.parse(text) : null;
+      } catch {
+        json = null;
+      }
+      return { status: res.status, json };
+    } catch {
+      if (attempt === tries - 1) return { status: lastStatus || 0, json: null };
+      await sleep(retryDelayMs(attempt));
+    }
   }
-  return { status: res.status, json };
+  return { status: lastStatus || 0, json: null };
+}
+
+function mediaIcon(json) {
+  return json?.assets?.find((a) => a.key === 'icon')?.value ?? json?.assets?.[0]?.value ?? '';
+}
+
+async function fetchSpellIcon(token, spellId) {
+  if (!spellId) return '';
+  const { status, json } = await apiGet(
+    `${STATIC_HOST}/data/wow/media/spell/${spellId}?namespace=${STATIC_NS}&locale=${LOCALE}`,
+    token,
+  );
+  return status === 200 ? mediaIcon(json) : '';
+}
+
+async function fetchTalentIcon(token, talentId) {
+  if (!talentId) return '';
+  const { status, json } = await apiGet(
+    `${STATIC_HOST}/data/wow/media/talent/${talentId}?namespace=${STATIC_NS}&locale=${LOCALE}`,
+    token,
+  );
+  return status === 200 ? mediaIcon(json) : '';
+}
+
+async function fetchProfessionMediaIcon(token, professionId) {
+  if (!professionId) return '';
+  const { status, json } = await apiGet(
+    `${STATIC_HOST}/data/wow/media/profession/${professionId}?namespace=${STATIC_NS}&locale=${LOCALE}`,
+    token,
+  );
+  return status === 200 ? mediaIcon(json) : '';
 }
 
 function characterSlug(c) {
@@ -201,6 +287,107 @@ function compactNode(node) {
   };
 }
 
+function typoCorrect(value, clusterMin, clusterMax) {
+  if (value >= clusterMin && value <= clusterMax) return value;
+  const digits = String(value);
+  for (let i = 1; i < digits.length; i += 1) {
+    const head = Number(digits.slice(0, i));
+    if (head >= clusterMin && head <= clusterMax) return head;
+  }
+  return value;
+}
+
+/** Tightest range that still holds the dense classic 4×7 talent block. */
+function denseRange(values, maxSpan) {
+  const sorted = [...values].sort((a, b) => a - b);
+  let bestMin = sorted[0];
+  let bestMax = sorted[0];
+  let bestCount = 1;
+  for (let i = 0; i < sorted.length; i += 1) {
+    for (let j = i; j < sorted.length; j += 1) {
+      if (sorted[j] - sorted[i] > maxSpan) break;
+      const count = j - i + 1;
+      const span = sorted[j] - sorted[i];
+      const bestSpan = bestMax - bestMin;
+      if (count > bestCount || (count === bestCount && span < bestSpan)) {
+        bestMin = sorted[i];
+        bestMax = sorted[j];
+        bestCount = count;
+      }
+    }
+  }
+  return { min: bestMin, max: bestMax };
+}
+
+/** Snap API display typo coordinates (row 63, col 170, …) back onto the dense tree. */
+function normalizeSpecNodes(nodes) {
+  if (nodes.length === 0) return nodes;
+  const rows = nodes.map((n) => n.row);
+  const cols = nodes.map((n) => n.col);
+  const rowRange = denseRange(rows, 8);
+  const colRange = denseRange(cols, 5);
+  const rMin = rowRange.min;
+  const rMax = rowRange.max;
+  const cMin = colRange.min;
+  const cMax = colRange.max;
+  const inCluster = (row, col) => row >= rMin && row <= rMax && col >= cMin && col <= cMax;
+  const occupied = new Set(
+    nodes.filter((n) => inCluster(n.row, n.col)).map((n) => `${n.row},${n.col}`),
+  );
+  const result = [];
+  for (const node of nodes) {
+    if (inCluster(node.row, node.col)) {
+      result.push(node);
+      continue;
+    }
+    const row = typoCorrect(node.row, rMin, rMax);
+    const col = typoCorrect(node.col, cMin, cMax);
+    const duplicate = result.find((other) => other.name === node.name && other.spellId === node.spellId);
+    if (duplicate && !inCluster(row, col)) {
+      const aliases = new Set([...(duplicate.aliasTalentIds ?? []), node.talentId].filter(Boolean));
+      duplicate.aliasTalentIds = [...aliases];
+      continue;
+    }
+    const next = { ...node, row, col };
+    if (!inCluster(next.row, next.col)) {
+      outer: for (let r = rMax; r >= rMin; r -= 1) {
+        for (let c = cMax; c >= cMin; c -= 1) {
+          if (!occupied.has(`${r},${c}`)) {
+            next.row = r;
+            next.col = c;
+            break outer;
+          }
+        }
+      }
+    }
+    occupied.add(`${next.row},${next.col}`);
+    result.push(next);
+  }
+  return result;
+}
+
+async function resolveNodeIcon(token, node, cache) {
+  const spellIds = [
+    node.spellId,
+    ...(node.ranks ?? []).map((r) => r.spellId),
+  ].filter((id, i, all) => id && all.indexOf(id) === i);
+  for (const spellId of spellIds) {
+    const key = `spell:${spellId}`;
+    if (!Object.prototype.hasOwnProperty.call(cache, key)) {
+      cache[key] = await fetchSpellIcon(token, spellId);
+    }
+    if (cache[key]) return cache[key];
+  }
+  if (node.talentId) {
+    const key = `talent:${node.talentId}`;
+    if (!Object.prototype.hasOwnProperty.call(cache, key)) {
+      cache[key] = await fetchTalentIcon(token, node.talentId);
+    }
+    if (cache[key]) return cache[key];
+  }
+  return '';
+}
+
 async function fetchTalentTrees(token) {
   const q = `namespace=${STATIC_NS}&locale=${LOCALE}`;
   const { status, json: index } = await apiGet(`${STATIC_HOST}/data/wow/talent-tree/index?${q}`, token);
@@ -227,7 +414,7 @@ async function fetchTalentTrees(token) {
         continue;
       }
       classId = specTree.playable_class?.id ?? classId;
-      const nodes = (specTree.spec_talent_nodes ?? []).map(compactNode);
+      const nodes = normalizeSpecNodes((specTree.spec_talent_nodes ?? []).map(compactNode));
       const cols = nodes.map((n) => n.col);
       const rows = nodes.map((n) => n.row);
       let icon;
@@ -238,7 +425,7 @@ async function fetchTalentTrees(token) {
       if (mediaHref) {
         const media = await apiGet(mediaHref, token);
         if (media.status === 200) {
-          icon = media.json?.assets?.find((a) => a.key === 'icon')?.value;
+          icon = mediaIcon(media.json);
         }
       }
       specs.push({
@@ -256,22 +443,19 @@ async function fetchTalentTrees(token) {
     console.log(`OK  talent tree ${className}  ${specs.length} specs  ${specs.reduce((n, s) => n + s.nodes.length, 0)} nodes`);
   }
 
-  const spellIds = [...new Set(classes.flatMap((c) => c.specializations.flatMap((s) => s.nodes.map((n) => n.spellId).filter(Boolean))))];
-  const icons = {};
-  await mapPool(spellIds, 6, async (spellId) => {
-    const { status: iconStatus, json } = await apiGet(`${STATIC_HOST}/data/wow/media/spell/${spellId}?${q}`, token);
-    if (iconStatus === 200) {
-      const url = json?.assets?.find((a) => a.key === 'icon')?.value;
-      if (url) icons[spellId] = url;
-    }
+  const nodes = classes.flatMap((c) => c.specializations.flatMap((s) => s.nodes));
+  const cache = {};
+  await mapPool(nodes, 3, async (node) => {
+    const icon = await resolveNodeIcon(token, node, cache);
+    if (icon) node.icon = icon;
   });
-  for (const c of classes) {
-    for (const s of c.specializations) {
-      for (const n of s.nodes) {
-        if (n.spellId && icons[n.spellId]) n.icon = icons[n.spellId];
-      }
-    }
+  const withIcons = nodes.filter((n) => n.icon).length;
+  const missing = nodes.length - withIcons;
+  if (missing) {
+    const names = nodes.filter((n) => !n.icon).map((n) => n.name || `node ${n.id}`);
+    console.error(`WARN  ${missing} talent icon(s) unavailable after retries: ${names.join(', ')}`);
   }
+  console.log(`OK  talent icons  ${withIcons}/${nodes.length}  (${missing} unavailable)`);
 
   const payload = {
     fetchedAt: new Date().toISOString(),
@@ -282,7 +466,43 @@ async function fetchTalentTrees(token) {
   };
   mkdirSync(dirname(TREE_PATH), { recursive: true });
   writeFileSync(TREE_PATH, `${JSON.stringify(payload, null, 2)}\n`);
-  console.log(`OK  talent trees  ${classes.length} classes  ${Object.keys(icons).length} icons  -> src/data/talent-trees/forever-us.json`);
+  console.log(`OK  talent trees  ${classes.length} classes  ${withIcons} icons  -> src/data/talent-trees/forever-us.json`);
+}
+
+async function fetchProfessionIcons(token) {
+  const q = `namespace=${STATIC_NS}&locale=${LOCALE}`;
+  const { status, json: index } = await apiGet(`${STATIC_HOST}/data/wow/profession/index?${q}`, token);
+  if (status !== 200 || !index) fail(`Profession index failed (${status}).`);
+
+  const professions = [];
+  let missing = 0;
+  for (const entry of index.professions ?? []) {
+    const id = entry.id;
+    const name = asEn(entry.name) || entry.name || '';
+    let icon = await fetchProfessionMediaIcon(token, id);
+    let source = icon ? 'profession-media' : '';
+    if (!icon && CLASSIC_PROFESSION_SPELLS[id]) {
+      icon = await fetchSpellIcon(token, CLASSIC_PROFESSION_SPELLS[id]);
+      if (icon) source = 'spell-media';
+    }
+    if (!icon) {
+      missing += 1;
+      console.error(`WARN  profession icon unavailable after retries: ${name || id}`);
+    }
+    professions.push({ id, name, icon: icon || undefined, iconSource: source || undefined });
+  }
+
+  const withIcons = professions.filter((p) => p.icon).length;
+  const payload = {
+    fetchedAt: new Date().toISOString(),
+    namespace: STATIC_NS,
+    locale: LOCALE,
+    source: `${STATIC_HOST}/data/wow/profession/index?namespace=${STATIC_NS}`,
+    professions,
+  };
+  mkdirSync(dirname(PROFESSION_PATH), { recursive: true });
+  writeFileSync(PROFESSION_PATH, `${JSON.stringify(payload, null, 2)}\n`);
+  console.log(`OK  profession icons  ${withIcons}/${professions.length}  (${missing} unavailable)  -> src/data/professions/forever-us.json`);
 }
 
 async function main() {
@@ -296,12 +516,14 @@ async function main() {
 
   if (treesOnly) {
     await fetchTalentTrees(token);
+    await fetchProfessionIcons(token);
     return;
   }
 
   if (jobs.length === 0) {
     console.log('No WoW Forever characters listed in src/data/members.ts.');
     await fetchTalentTrees(token);
+    await fetchProfessionIcons(token);
     return;
   }
 
@@ -322,6 +544,7 @@ async function main() {
   }
   if (failed) fail(`${failed} character(s) failed.`);
   await fetchTalentTrees(token);
+  await fetchProfessionIcons(token);
 }
 
 main().catch((err) => fail(err instanceof Error ? err.message : String(err)));
