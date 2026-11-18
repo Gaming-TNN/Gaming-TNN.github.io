@@ -3,21 +3,24 @@
 #
 # When (and only when) the diff is limited to src/data/characters/** and
 # src/data/talent-trees/**, the PR targets the default branch, and the
-# required "build" check passes, this workflow squash-merges the PR and
-# then dispatches the Deploy to GitHub Pages workflow. Any other files
-# keep the PR open for Seth's go-ahead. Unchanged data produces no PR
-# and does not touch the data branch.
+# required "build" check passes, this workflow squash-merges the PR.
+# A DATA_PR_TOKEN merge starts deploy.yml via push to main; a GITHUB_TOKEN
+# merge does not, so deploy.yml is dispatched in that case (and if a PAT
+# push deploy does not appear). Any other files keep the PR open for
+# Seth's go-ahead. Unchanged data produces no PR and does not touch the
+# data branch.
 #
 # Pushes and pull requests made with GITHUB_TOKEN do not run other
-# workflows. A pull_request opened with GITHUB_TOKEN still creates a CI
-# check suite that finishes as action_required with zero jobs; that suite
-# is what blocks merge ("base branch policy prohibits the merge") because
-# the required "build" check is not reported on the PR (even if a
-# workflow_dispatch "build" on the same SHA succeeded). After dispatch CI
-# succeeds, this workflow deletes those stub runs and retries the merge.
-# Optional repository secret DATA_PR_TOKEN (a narrowly scoped PAT) makes
-# pull_request CI run normally and is the more reliable path. Deploy after
-# a GITHUB_TOKEN merge is started with workflow_dispatch on main.
+# workflows, so without DATA_PR_TOKEN this job dispatches ci.yml (and,
+# after merge, deploy.yml) with GITHUB_TOKEN.
+#
+# Optional DATA_PR_TOKEN (narrowly scoped PAT) is used to push the data
+# branch and open/merge the PR so pull_request CI runs normally. When it
+# is set, do not dispatch ci.yml (the PAT cannot; it also is not needed).
+# Wait for the pull_request "build" check on the PR head to succeed, then
+# squash-merge with the PAT (no --admin). A PAT merge is a normal push to
+# main, which starts deploy.yml; only dispatch deploy with GITHUB_TOKEN if
+# that push-triggered run does not appear.
 #
 # The workflow reuses a single fixed branch, data/wow-characters: it is
 # brought up to date with the default branch by a normal merge or
@@ -32,6 +35,7 @@
 #   DATA_PR_TOKEN — PAT used to push the data branch and open/merge the
 #   data PR so pull_request CI runs (GITHUB_TOKEN cannot). Fine-grained
 #   Contents + Pull requests write on this repo only; not an admin token.
+#   It does not need Actions/workflows permission.
 
 name: Refresh character data
 
@@ -268,6 +272,8 @@ jobs:
           github.ref_name == github.event.repository.default_branch
         env:
           GH_TOKEN: ${{ secrets.DATA_PR_TOKEN || secrets.GITHUB_TOKEN }}
+          ACTIONS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HAS_DATA_PR_TOKEN: ${{ secrets.DATA_PR_TOKEN != '' }}
           PR_NUMBER: ${{ steps.cpr_data.outputs.pull-request-number }}
           PR_BRANCH: ${{ steps.cpr_data.outputs.pull-request-branch }}
           PR_SHA: ${{ steps.cpr_data.outputs.pull-request-head-sha }}
@@ -280,55 +286,72 @@ jobs:
             exit 1
           fi
 
-          RUN_ID=$(gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,conclusion,event,status --jq "[.[] | select(.headSha==\"${PR_SHA}\" and .conclusion==\"success\")][0].databaseId // empty")
-          if [ -z "${RUN_ID}" ]; then
-            RUN_ID=$(gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,conclusion,event,status --jq "[.[] | select(.headSha==\"${PR_SHA}\" and (.status==\"in_progress\" or .status==\"queued\" or .status==\"pending\" or .status==\"waiting\"))][0].databaseId // empty")
-          fi
+          merge_body="Automated data refresh. Squash-merged by the Refresh character data workflow after the required build check passed. Only files under src/data/characters/ and src/data/talent-trees/ were changed."
 
-          if [ -z "${RUN_ID}" ]; then
-            gh workflow run ci.yml --ref "${PR_BRANCH}"
-            for _ in $(seq 1 60); do
-              RUN_ID=$(gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,event --jq "[.[] | select(.headSha==\"${PR_SHA}\" and .event==\"workflow_dispatch\")][0].databaseId // empty")
-              if [ -n "${RUN_ID}" ]; then
+          if [ "${HAS_DATA_PR_TOKEN}" = "true" ]; then
+            echo "DATA_PR_TOKEN is set: waiting for the pull_request build check (not dispatching ci.yml)."
+            found=false
+            for _ in $(seq 1 120); do
+              head=$(gh pr view "${PR_NUMBER}" --json headRefOid --jq '.headRefOid')
+              if [ "${head}" != "${PR_SHA}" ]; then
+                echo "PR #${PR_NUMBER} head is ${head}, expected ${PR_SHA}."
+                gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped because the PR head SHA changed while waiting for the \`build\` check. This PR needs Seth's go-ahead."
+                exit 1
+              fi
+              # DATA_PR_TOKEN has no Actions permission, so poll PR-reported
+              # checks (not gh run list / workflow_dispatch).
+              merge_state=$(gh pr view "${PR_NUMBER}" --json mergeStateStatus --jq '.mergeStateStatus // empty')
+              check=$(gh pr view "${PR_NUMBER}" --json statusCheckRollup --jq '[.statusCheckRollup[]? | select(.name=="build")][0] // {} | [(.status // "none"), (.conclusion // "none")] | @tsv')
+              build_status=$(printf '%s' "${check}" | cut -f1 | tr '[:lower:]' '[:upper:]')
+              build_conclusion=$(printf '%s' "${check}" | cut -f2 | tr '[:lower:]' '[:upper:]')
+              echo "PR #${PR_NUMBER} build status=${build_status} conclusion=${build_conclusion} mergeable_state=${merge_state}"
+              if [ "${build_status}" = "COMPLETED" ] && [ "${build_conclusion}" = "SUCCESS" ]; then
+                found=true
                 break
+              fi
+              if [ "${build_status}" = "COMPLETED" ] && [ "${build_conclusion}" != "SUCCESS" ] && [ "${build_conclusion}" != "NONE" ]; then
+                gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped because the required \`build\` check failed (\`${build_conclusion}\`). This PR needs Seth's go-ahead."
+                exit 1
               fi
               sleep 5
             done
-          fi
-
-          if [ -z "${RUN_ID}" ]; then
-            echo "Timed out waiting for the dispatched CI run to start. The PR will stay open."
-            gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped: the dispatched CI \`build\` check never started. This PR needs Seth's go-ahead."
-            exit 1
-          fi
-
-          CONCLUSION=$(gh run view "${RUN_ID}" --json conclusion --jq '.conclusion // empty')
-          if [ "$CONCLUSION" != "success" ]; then
-            if ! gh run watch "${RUN_ID}" --exit-status; then
-              gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped because the required \`build\` check failed. This PR needs Seth's go-ahead."
+            if [ "${found}" != true ]; then
+              echo "Timed out waiting for the pull_request build check."
+              gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped: the pull_request \`build\` check did not complete within 10 minutes. This PR needs Seth's go-ahead."
               exit 1
             fi
           else
-            echo "Reusing successful CI run ${RUN_ID} for ${PR_SHA}."
+            echo "No DATA_PR_TOKEN: dispatching ci.yml with GITHUB_TOKEN."
+            RUN_ID=$(GH_TOKEN="${ACTIONS_TOKEN}" gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,conclusion,event,status --jq "[.[] | select(.headSha==\"${PR_SHA}\" and .conclusion==\"success\")][0].databaseId // empty")
+            if [ -z "${RUN_ID}" ]; then
+              RUN_ID=$(GH_TOKEN="${ACTIONS_TOKEN}" gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,conclusion,event,status --jq "[.[] | select(.headSha==\"${PR_SHA}\" and (.status==\"in_progress\" or .status==\"queued\" or .status==\"pending\" or .status==\"waiting\"))][0].databaseId // empty")
+            fi
+            if [ -z "${RUN_ID}" ]; then
+              GH_TOKEN="${ACTIONS_TOKEN}" gh workflow run ci.yml --ref "${PR_BRANCH}"
+              for _ in $(seq 1 60); do
+                RUN_ID=$(GH_TOKEN="${ACTIONS_TOKEN}" gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,event --jq "[.[] | select(.headSha==\"${PR_SHA}\" and .event==\"workflow_dispatch\")][0].databaseId // empty")
+                if [ -n "${RUN_ID}" ]; then
+                  break
+                fi
+                sleep 5
+              done
+            fi
+            if [ -z "${RUN_ID}" ]; then
+              echo "Timed out waiting for the dispatched CI run to start. The PR will stay open."
+              gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped: the dispatched CI \`build\` check never started. This PR needs Seth's go-ahead."
+              exit 1
+            fi
+            CONCLUSION=$(GH_TOKEN="${ACTIONS_TOKEN}" gh run view "${RUN_ID}" --json conclusion --jq '.conclusion // empty')
+            if [ "${CONCLUSION}" != "success" ]; then
+              if ! GH_TOKEN="${ACTIONS_TOKEN}" gh run watch "${RUN_ID}" --exit-status; then
+                gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped because the required \`build\` check failed. This PR needs Seth's go-ahead."
+                exit 1
+              fi
+            else
+              echo "Reusing successful CI run ${RUN_ID} for ${PR_SHA}."
+            fi
           fi
 
-          # GITHUB_TOKEN-created PRs still open a pull_request CI suite that
-          # finishes as action_required with zero jobs. That suite blocks
-          # merge even after a successful workflow_dispatch "build" on the
-          # same SHA (required check is not reported on the PR). Drop the
-          # stub runs, then retry the merge. No --admin bypass.
-          mapfile -t stub_runs < <(gh api "repos/${GH_REPO}/actions/runs?head_sha=${PR_SHA}&status=completed&per_page=100" --jq '.workflow_runs[] | select(.conclusion=="action_required" and .path==".github/workflows/ci.yml") | .id')
-          if [ "${#stub_runs[@]}" -gt 0 ]; then
-            for stub_id in "${stub_runs[@]}"; do
-              [ -n "${stub_id}" ] || continue
-              echo "Deleting action_required CI stub run ${stub_id} so it does not block merge."
-              gh api -X DELETE "repos/${GH_REPO}/actions/runs/${stub_id}" --silent || echo "Could not delete run ${stub_id}; will still try to merge."
-            done
-          else
-            echo "No action_required CI stub runs on ${PR_SHA}."
-          fi
-
-          merge_body="Automated data refresh. Squash-merged by the Refresh character data workflow after the required build check passed. Only files under src/data/characters/ and src/data/talent-trees/ were changed."
           merged=false
           for _ in $(seq 1 12); do
             state=$(gh api "repos/${GH_REPO}/pulls/${PR_NUMBER}" --jq '.mergeable_state // empty')
@@ -339,10 +362,33 @@ jobs:
             fi
             sleep 5
           done
-
           if [ "${merged}" != true ]; then
-            gh pr comment "${PR_NUMBER}" --body "Auto-merge is still blocked by the \`main\` branch policy after the required \`build\` check ran and after removing any \`action_required\` CI stub. This usually means GitHub is not reporting that \`build\` check on the PR (GITHUB_TOKEN-created PRs). A narrowly scoped \`DATA_PR_TOKEN\` repo secret (Contents + Pull requests write on this repo only, not an admin token) lets pull_request CI run normally. This PR needs Seth's go-ahead until then."
+            gh pr comment "${PR_NUMBER}" --body "Auto-merge is still blocked after the required \`build\` check passed (no \`--admin\` bypass). This PR needs Seth's go-ahead."
             exit 1
           fi
 
-          gh workflow run deploy.yml --ref "${DEFAULT_BRANCH}"
+          MERGE_SHA=$(gh pr view "${PR_NUMBER}" --json mergeCommit --jq '.mergeCommit.oid // empty')
+          if [ -z "${MERGE_SHA}" ]; then
+            MERGE_SHA=$(GH_TOKEN="${ACTIONS_TOKEN}" gh api "repos/${GH_REPO}/commits/${DEFAULT_BRANCH}" --jq '.sha')
+          fi
+          echo "Merged PR #${PR_NUMBER} as ${MERGE_SHA}"
+
+          if [ "${HAS_DATA_PR_TOKEN}" = "true" ]; then
+            echo "Waiting for push-triggered deploy.yml on ${MERGE_SHA} (PAT merges fire push workflows)."
+            deploy_id=""
+            for _ in $(seq 1 18); do
+              deploy_id=$(GH_TOKEN="${ACTIONS_TOKEN}" gh run list --workflow=deploy.yml --branch="${DEFAULT_BRANCH}" --limit 15 --json databaseId,headSha,event --jq "[.[] | select(.headSha==\"${MERGE_SHA}\" and .event==\"push\")][0].databaseId // empty")
+              if [ -n "${deploy_id}" ]; then
+                echo "Push-triggered deploy already started: ${deploy_id}"
+                break
+              fi
+              sleep 5
+            done
+            if [ -z "${deploy_id}" ]; then
+              echo "No push-triggered deploy appeared; dispatching deploy.yml with GITHUB_TOKEN."
+              GH_TOKEN="${ACTIONS_TOKEN}" gh workflow run deploy.yml --ref "${DEFAULT_BRANCH}"
+            fi
+          else
+            echo "GITHUB_TOKEN merge does not trigger push workflows; dispatching deploy.yml."
+            GH_TOKEN="${ACTIONS_TOKEN}" gh workflow run deploy.yml --ref "${DEFAULT_BRANCH}"
+          fi
