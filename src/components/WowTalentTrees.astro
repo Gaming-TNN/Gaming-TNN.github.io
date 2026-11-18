@@ -12,12 +12,13 @@ const totalPoints = trees.reduce((sum, t) => sum + t.points, 0);
 const className = snapshot?.profile?.character_class?.name;
 
 const CELL = 40;
-const GAP = 4;
+const COL_GAP = 10;
+const ROW_GAP = 12;
 
 function cellCenter(col: number, row: number) {
   return {
-    x: (col - 1) * (CELL + GAP) + CELL / 2,
-    y: (row - 1) * (CELL + GAP) + CELL / 2,
+    x: (col - 1) * (CELL + COL_GAP) + CELL / 2,
+    y: (row - 1) * (CELL + ROW_GAP) + CELL / 2,
   };
 }
 
@@ -38,8 +39,8 @@ function edgeCoords(fromCol: number, fromRow: number, toCol: number, toRow: numb
 
 function treeSize(cols: number, rows: number) {
   return {
-    width: cols * CELL + (cols - 1) * GAP,
-    height: rows * CELL + (rows - 1) * GAP,
+    width: cols * CELL + (cols - 1) * COL_GAP,
+    height: rows * CELL + (rows - 1) * ROW_GAP,
   };
 }
 ---
@@ -58,11 +59,11 @@ function treeSize(cols: number, rows: number) {
             const size = treeSize(tree.cols, tree.rows);
             return (
               <div
-                class="talent-tree-card min-w-0 w-full overflow-x-clip bg-[#121215] border border-[#27272a] p-3 sm:p-4"
+                class="talent-tree-card min-w-0 w-full overflow-x-clip bg-[#121215] border border-[#27272a] px-3 sm:px-4 pt-5 pb-7"
                 data-talent-tree={tree.shortName}
-                style={`--tree-w:${size.width};--tree-h:${size.height};--cols:${tree.cols};--rows:${tree.rows};`}
+                style={`--tree-w:${size.width};--tree-h:${size.height};--cols:${tree.cols};--rows:${tree.rows};--col-gap:${COL_GAP};--row-gap:${ROW_GAP};`}
               >
-                <header class="flex items-center justify-between gap-3 mb-3">
+                <header class="flex items-center justify-between gap-3 mb-5">
                   <h3 class="text-sm font-black text-[#e4e4e7] m-0 tracking-wide">{tree.shortName}</h3>
                   <p class="text-[10px] font-bold tracking-widest text-zinc-400 m-0">{tree.points} {tree.points === 1 ? 'POINT' : 'POINTS'}</p>
                 </header>
@@ -187,7 +188,7 @@ function treeSize(cols: number, rows: number) {
     justify-self: stretch;
     container-type: inline-size;
   }
-  /* 40px tiles, 4px gaps; board is content-sized and centered in the full-width panel. */
+  /* 40px tiles, ~10px column / 12px row gaps; board centered in the full-width panel. */
   .tree-board {
     width: calc(var(--tree-w) * 1px);
     max-width: 100%;
@@ -201,7 +202,8 @@ function treeSize(cols: number, rows: number) {
     height: 100%;
     grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
     grid-template-rows: repeat(var(--rows), minmax(0, 1fr));
-    gap: calc(4 / var(--tree-w) * 100cqi);
+    column-gap: calc(var(--col-gap) / var(--tree-w) * 100cqi);
+    row-gap: calc(var(--row-gap) / var(--tree-w) * 100cqi);
   }
   .talent-rank {
     right: -0.15em;
