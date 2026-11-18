@@ -12,7 +12,7 @@ const totalPoints = trees.reduce((sum, t) => sum + t.points, 0);
 const className = snapshot?.profile?.character_class?.name;
 
 const CELL = 40;
-const GAP = 8;
+const GAP = 4;
 
 function cellCenter(col: number, row: number) {
   return {
@@ -58,7 +58,7 @@ function treeSize(cols: number, rows: number) {
             const size = treeSize(tree.cols, tree.rows);
             return (
               <div
-                class="talent-tree-card min-w-0 overflow-x-clip bg-[#121215] border border-[#27272a] p-3"
+                class="talent-tree-card min-w-0 w-full overflow-x-clip bg-[#121215] border border-[#27272a] p-3 sm:p-4"
                 data-talent-tree={tree.shortName}
                 style={`--tree-w:${size.width};--tree-h:${size.height};--cols:${tree.cols};--rows:${tree.rows};`}
               >
@@ -169,28 +169,31 @@ function treeSize(cols: number, rows: number) {
   .talent-tree-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    justify-items: center;
+    justify-items: stretch;
     gap: 1rem;
     min-width: 0;
   }
   @container (min-width: 42rem) {
     .talent-tree-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      justify-items: center;
+      justify-items: stretch;
       gap: 1rem;
     }
   }
   .talent-tree-card {
-    /* 100% is the grid column (definite), so this will not collapse. */
-    width: min(100%, calc(var(--tree-w) * 1px + 1.5rem + 2px));
+    width: 100%;
     max-width: 100%;
-    justify-self: center;
+    min-width: 0;
+    justify-self: stretch;
     container-type: inline-size;
   }
+  /* 40px tiles, 4px gaps; board is content-sized and centered in the full-width panel. */
   .tree-board {
-    width: 100%;
+    width: calc(var(--tree-w) * 1px);
+    max-width: 100%;
     aspect-ratio: var(--tree-w) / var(--tree-h);
     margin-inline: auto;
+    container-type: inline-size;
   }
   .tree-grid {
     display: grid;
@@ -198,7 +201,7 @@ function treeSize(cols: number, rows: number) {
     height: 100%;
     grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
     grid-template-rows: repeat(var(--rows), minmax(0, 1fr));
-    gap: calc(8 / var(--tree-w) * 100cqi);
+    gap: calc(4 / var(--tree-w) * 100cqi);
   }
   .talent-rank {
     right: -0.15em;
