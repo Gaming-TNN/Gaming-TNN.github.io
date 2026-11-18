@@ -66,6 +66,13 @@ export const MEMBERS: Member[] = [
     discordStatus: 'unknown',
     wowForever: [{ name: 'Vhexz', surname: 'Warfarin', region: 'us' }],
   },
+  {
+    handle: 'zTOPMULLETz',
+    slug: 'ztopmulletz',
+    mark: 'ZM',
+    discordStatus: 'unknown',
+    wowForever: [{ name: 'Buster', surname: 'Skulls', region: 'us' }],
+  },
 ];
 
 export const EVERQUEST_GAME: Game | undefined = GAMES.find((g) => g.slug === 'everquest-legends');
