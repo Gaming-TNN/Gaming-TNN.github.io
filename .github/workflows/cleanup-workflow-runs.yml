@@ -1,0 +1,58 @@
+# Delete completed GitHub Actions workflow runs older than 7 days.
+# This removes run records only. It does not delete, force-push, or
+# otherwise change any git branches.
+
+name: Cleanup old workflow runs
+
+on:
+  schedule:
+    # Weekly, Sunday 08:00 UTC (1:00 AM America/Phoenix, MST).
+    - cron: '0 8 * * 0'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: cleanup-workflow-runs
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    name: delete-old-runs
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Delete completed workflow runs older than 7 days
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          cutoff=$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)
+          echo "Deleting completed workflow runs created before ${cutoff}."
+          echo "Branches are not deleted."
+
+          deleted=0
+          failed=0
+
+          mapfile -t run_ids < <(gh api --paginate "repos/${GH_REPO}/actions/runs?status=completed&per_page=100" --jq '.workflow_runs[] | {id, created_at}' | jq -sr --arg cutoff "$cutoff" '.[] | select(.created_at < $cutoff) | .id')
+
+          echo "Found ${#run_ids[@]} completed run(s) older than 7 days."
+
+          for id in "${run_ids[@]}"; do
+            [ -n "$id" ] || continue
+            if gh api -X DELETE "repos/${GH_REPO}/actions/runs/${id}" --silent; then
+              deleted=$((deleted + 1))
+              printf 'deleted run %s\n' "$id"
+            else
+              failed=$((failed + 1))
+              printf 'failed to delete run %s\n' "$id"
+            fi
+          done
+
+          echo "Deleted ${deleted} run(s); ${failed} failure(s)."
+          if [ "$failed" -gt 0 ]; then
+            exit 1
+          fi

@@ -1,29 +1,33 @@
 # Refresh WoW Forever character snapshots and talent-tree cache from the
-# Battle.net APIs and open a pull request.
+# Battle.net APIs and open (or update) a pull request.
 #
 # When (and only when) the diff is limited to src/data/characters/** and
 # src/data/talent-trees/**, the PR targets the default branch, and the
 # required "build" check passes, this workflow squash-merges the PR and
 # then dispatches the Deploy to GitHub Pages workflow. Any other files
-# keep the PR open for Seth's go-ahead. Unchanged data produces no PR.
+# keep the PR open for Seth's go-ahead. Unchanged data produces no PR
+# and does not touch the data branch.
 #
 # Pushes and pull requests made with GITHUB_TOKEN do not trigger other
 # workflows, so CI is started with workflow_dispatch on the data branch
 # (the "build" check attaches to that head SHA) and deploy is started
 # with workflow_dispatch on main after the merge.
 #
+# The workflow reuses a single fixed branch, data/wow-characters: it is
+# brought up to date with the default branch by a normal merge or
+# fast-forward, the new data is committed, and it is pushed without
+# --force. An existing open PR for that branch is updated in place. The
+# branch is never force-pushed or deleted.
+#
 # Required repository secrets (add later; do not commit them):
 #   BNET_CLIENT_ID
 #   BNET_CLIENT_SECRET
-#
-# A unique branch is used for each run so the data branch is not force-pushed.
-# Data branches are not deleted after the PR is opened or merged.
 
 name: Refresh character data
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -43,6 +47,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -94,51 +100,138 @@ jobs:
         continue-on-error: true
         run: npm ci && npm run build
 
-      - name: Open data-only pull request
+      - name: Skip PR on non-default branch
+        if: steps.changes.outputs.has_changes == 'true' && github.ref_name != github.event.repository.default_branch
+        run: echo "Changes found, but the fixed data/wow-characters branch is only updated when this workflow runs on the default branch. Skipping PR."
+
+      - name: Update data branch and open or update PR
         id: cpr_data
-        if: steps.changes.outputs.has_changes == 'true' && steps.changes.outputs.data_only == 'true'
-        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
-        with:
-          base: ${{ github.ref_name }}
-          branch: data/wow-characters-${{ github.run_id }}
-          delete-branch: false
-          add-paths: |
-            src/data/characters
-            src/data/talent-trees
-          commit-message: |
-            Update WoW Forever character snapshots
+        if: steps.changes.outputs.has_changes == 'true' && github.ref_name == github.event.repository.default_branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          DATA_BRANCH: data/wow-characters
+          DATA_ONLY: ${{ steps.changes.outputs.data_only }}
+        run: |
+          set -euo pipefail
 
-            Snapshot and talent-tree cache written by scripts/fetch-characters.mjs
-            from the Battle.net Profile and Game Data APIs.
-          title: Update WoW Forever character snapshots
-          body: |
-            Automated snapshot of member WoW Forever characters and talent-tree cache from the official Battle.net APIs.
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-            This PR only updates JSON under `src/data/characters/` and `src/data/talent-trees/`. When it targets the default branch and the required `build` check passes, the Refresh character data workflow squash-merges it and dispatches the Pages deploy workflow. It does not force-push or delete its data branch.
-          labels: data
+          stash_dir=$(mktemp -d)
+          mapfile -t files < <(git status --porcelain --untracked-files=all | while IFS= read -r line; do
+            printf '%s\n' "${line:3}"
+          done)
+          for path in "${files[@]}"; do
+            if [ -e "$path" ] || [ -L "$path" ]; then
+              mkdir -p "$stash_dir/$(dirname "$path")"
+              cp -a "$path" "$stash_dir/$path"
+            else
+              mkdir -p "$stash_dir/$(dirname "$path")"
+              printf 'deleted\n' > "$stash_dir/${path}.__deleted__"
+            fi
+          done
 
-      - name: Open pull request for unexpected files
-        if: steps.changes.outputs.has_changes == 'true' && steps.changes.outputs.data_only == 'false'
-        uses: peter-evans/create-pull-request@3ffccacd46053766916f087ce41d627c0b8cf2d1 # v8.1.3
-        with:
-          base: ${{ github.ref_name }}
-          branch: data/wow-characters-${{ github.run_id }}
-          delete-branch: false
-          commit-message: |
-            Update WoW Forever data (unexpected files included)
+          git reset --hard HEAD
+          git clean -fd -- src/data/characters src/data/talent-trees
 
-            The refresh script produced changes outside src/data/characters/
-            and src/data/talent-trees/. This PR must be reviewed before merge.
-          title: Update WoW Forever data (needs review)
-          body: |
-            Automated refresh produced changes outside `src/data/characters/` and `src/data/talent-trees/`:
+          git fetch origin "refs/heads/${DEFAULT_BRANCH}:refs/remotes/origin/${DEFAULT_BRANCH}"
+          if git fetch origin "refs/heads/${DATA_BRANCH}:refs/remotes/origin/${DATA_BRANCH}"; then
+            git checkout -B "$DATA_BRANCH" "origin/${DATA_BRANCH}"
+            if ! git merge --no-edit "origin/${DEFAULT_BRANCH}"; then
+              echo "Merge conflicts while updating ${DATA_BRANCH} from ${DEFAULT_BRANCH}; resolving with the default branch, then overlaying fresh data."
+              git checkout --theirs -- .
+              git add -A
+              GIT_EDITOR=true git merge --continue
+            fi
+          else
+            echo "No existing ${DATA_BRANCH} branch; creating it from ${DEFAULT_BRANCH}."
+            git checkout -B "$DATA_BRANCH" "origin/${DEFAULT_BRANCH}"
+          fi
 
-            ```
-            ${{ steps.changes.outputs.changed_files }}
-            ```
+          restore_tree() {
+            local path="$1"
+            local deleted_mark="${stash_dir}/${path}.__deleted__"
+            if [ -f "$deleted_mark" ]; then
+              rm -f "$path" "$deleted_mark"
+              return
+            fi
+            if [ -e "${stash_dir}/${path}" ] || [ -L "${stash_dir}/${path}" ]; then
+              mkdir -p "$(dirname "$path")"
+              rm -rf "$path"
+              cp -a "${stash_dir}/${path}" "$path"
+            fi
+          }
 
-            This PR will **not** auto-merge. It needs Seth's go-ahead.
-          labels: data
+          if [ "$DATA_ONLY" = "true" ]; then
+            if [ -d "$stash_dir/src/data/characters" ]; then
+              rm -rf src/data/characters
+              mkdir -p src/data
+              cp -a "$stash_dir/src/data/characters" src/data/characters
+            fi
+            if [ -d "$stash_dir/src/data/talent-trees" ]; then
+              rm -rf src/data/talent-trees
+              mkdir -p src/data
+              cp -a "$stash_dir/src/data/talent-trees" src/data/talent-trees
+            fi
+            git add -- src/data/characters src/data/talent-trees
+          else
+            for path in "${files[@]}"; do
+              restore_tree "$path"
+            done
+            git add -- "${files[@]}"
+          fi
+
+          if git diff --cached --quiet; then
+            echo "No new data commit; the data branch already has this tree."
+          elif [ "$DATA_ONLY" = "true" ]; then
+            git commit -m "Update WoW Forever character snapshots"$'\n\n'"Snapshot and talent-tree cache written by scripts/fetch-characters.mjs"$'\n'"from the Battle.net Profile and Game Data APIs."
+          else
+            git commit -m "Update WoW Forever data (unexpected files included)"$'\n\n'"The refresh script produced changes outside src/data/characters/"$'\n'"and src/data/talent-trees/. This PR must be reviewed before merge."
+          fi
+
+          if ! git rev-parse --verify --quiet "origin/${DATA_BRANCH}" || [ "$(git rev-parse HEAD)" != "$(git rev-parse "origin/${DATA_BRANCH}")" ]; then
+            git push origin "HEAD:refs/heads/${DATA_BRANCH}"
+          else
+            echo "Remote ${DATA_BRANCH} already points at $(git rev-parse --short HEAD); nothing to push."
+          fi
+
+          if [ "$DATA_ONLY" = "true" ]; then
+            title="Update WoW Forever character snapshots"
+            body_file=$(mktemp)
+            printf '%s\n' "Automated snapshot of member WoW Forever characters and talent-tree cache from the official Battle.net APIs." "" "This PR only updates JSON under \`src/data/characters/\` and \`src/data/talent-trees/\`. When it targets the default branch and the required \`build\` check passes, the Refresh character data workflow squash-merges it and dispatches the Pages deploy workflow. It reuses the fixed \`data/wow-characters\` branch, brought up to date with a normal merge or fast-forward, and does not force-push or delete that branch." > "$body_file"
+          else
+            title="Update WoW Forever data (needs review)"
+            body_file=$(mktemp)
+            {
+              printf '%s\n' "Automated refresh produced changes outside \`src/data/characters/\` and \`src/data/talent-trees/\`:" "" "\`\`\`"
+              printf '%s\n' "${files[@]}"
+              printf '%s\n' "\`\`\`" "" "This PR will **not** auto-merge. It needs Seth's go-ahead. It reuses the fixed \`data/wow-characters\` branch and does not force-push or delete it."
+            } > "$body_file"
+          fi
+
+          gh label create data --description "Automated data refresh" --force >/dev/null
+
+          pr_number=$(gh pr list --base "$DEFAULT_BRANCH" --head "$DATA_BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -z "$pr_number" ]; then
+            gh pr create --base "$DEFAULT_BRANCH" --head "$DATA_BRANCH" --title "$title" --body-file "$body_file" --label data
+            pr_number=$(gh pr list --base "$DEFAULT_BRANCH" --head "$DATA_BRANCH" --state open --json number --jq '.[0].number // empty')
+            if [ -z "$pr_number" ]; then
+              echo "Failed to determine the new pull request number."
+              exit 1
+            fi
+            echo "pull-request-operation=created" >> "$GITHUB_OUTPUT"
+          else
+            gh pr edit "$pr_number" --title "$title" --body-file "$body_file"
+            echo "pull-request-operation=updated" >> "$GITHUB_OUTPUT"
+          fi
+
+          {
+            echo "pull-request-number=${pr_number}"
+            echo "pull-request-branch=${DATA_BRANCH}"
+            echo "pull-request-head-sha=$(git rev-parse HEAD)"
+          } >> "$GITHUB_OUTPUT"
+          echo "PR #${pr_number} on ${DATA_BRANCH} at $(git rev-parse --short HEAD)"
 
       - name: Comment when pre-merge build fails
         if: >
@@ -158,7 +251,7 @@ jobs:
           steps.changes.outputs.has_changes == 'true' &&
           steps.changes.outputs.data_only == 'true' &&
           steps.prebuild.outcome == 'success' &&
-          steps.cpr_data.outputs.pull-request-operation == 'created' &&
+          steps.cpr_data.outputs.pull-request-number != '' &&
           github.ref_name == github.event.repository.default_branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -173,25 +266,36 @@ jobs:
             exit 1
           fi
 
-          gh workflow run ci.yml --ref "${PR_BRANCH}"
+          RUN_ID=$(gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,conclusion,event,status --jq "[.[] | select(.headSha==\"${PR_SHA}\" and .conclusion==\"success\")][0].databaseId // empty")
+          if [ -z "${RUN_ID}" ]; then
+            RUN_ID=$(gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,conclusion,event,status --jq "[.[] | select(.headSha==\"${PR_SHA}\" and (.status==\"in_progress\" or .status==\"queued\" or .status==\"pending\" or .status==\"waiting\"))][0].databaseId // empty")
+          fi
 
-          RUN_ID=""
-          for _ in $(seq 1 60); do
-            RUN_ID=$(gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,event --jq "[.[] | select(.headSha==\"${PR_SHA}\" and .event==\"workflow_dispatch\")][0].databaseId // empty")
-            if [ -n "${RUN_ID}" ]; then
-              break
-            fi
-            sleep 5
-          done
+          if [ -z "${RUN_ID}" ]; then
+            gh workflow run ci.yml --ref "${PR_BRANCH}"
+            for _ in $(seq 1 60); do
+              RUN_ID=$(gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,event --jq "[.[] | select(.headSha==\"${PR_SHA}\" and .event==\"workflow_dispatch\")][0].databaseId // empty")
+              if [ -n "${RUN_ID}" ]; then
+                break
+              fi
+              sleep 5
+            done
+          fi
+
           if [ -z "${RUN_ID}" ]; then
             echo "Timed out waiting for the dispatched CI run to start. The PR will stay open."
             gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped: the dispatched CI \`build\` check never started. This PR needs Seth's go-ahead."
             exit 1
           fi
 
-          if ! gh run watch "${RUN_ID}" --exit-status; then
-            gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped because the required \`build\` check failed. This PR needs Seth's go-ahead."
-            exit 1
+          CONCLUSION=$(gh run view "${RUN_ID}" --json conclusion --jq '.conclusion // empty')
+          if [ "$CONCLUSION" != "success" ]; then
+            if ! gh run watch "${RUN_ID}" --exit-status; then
+              gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped because the required \`build\` check failed. This PR needs Seth's go-ahead."
+              exit 1
+            fi
+          else
+            echo "Reusing successful CI run ${RUN_ID} for ${PR_SHA}."
           fi
 
           gh pr merge "${PR_NUMBER}" --squash --body "Automated data refresh. Squash-merged by the Refresh character data workflow after the required build check passed. Only files under src/data/characters/ and src/data/talent-trees/ were changed."
