@@ -1,0 +1,30 @@
+---
+// Shared SEO head tags (same set as the TNN site).
+import { SITE } from '../lib/site';
+interface Props { title: string; description: string; type?: string }
+const { title, description, type = 'website' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const ogImage = new URL(SITE.ogDefault, SITE.url).href;
+const ld = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE.name,
+  url: SITE.url,
+  parentOrganization: { '@type': 'Organization', name: SITE.parentName, url: SITE.parentUrl },
+};
+---
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<script type="application/ld+json" set:html={JSON.stringify(ld)} />

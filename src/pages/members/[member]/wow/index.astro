@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import {
+  memberHref,
+  memberSlug,
+  visibleMembers,
+  wowCharacterSlug,
+  wowCharacters,
+} from '../../../../data/members';
+import {
+  characterDisplayName,
+  factionOf,
+  loadSnapshot,
+  mediaAsset,
+  wowHref,
+} from '../../../../lib/characters';
+
+export function getStaticPaths() {
+  return visibleMembers().filter((m) => wowCharacters(m).length > 0).map((member) => ({
+    params: { member: memberSlug(member) },
+    props: { member },
+  }));
+}
+
+const { member } = Astro.props;
+const characters = wowCharacters(member);
+const cards = characters.map((character) => {
+  const snapshot = loadSnapshot(memberSlug(member), wowCharacterSlug(character));
+  return { character, snapshot, faction: factionOf(snapshot) };
+});
+const alliance = cards.filter((c) => c.faction === 'ALLIANCE');
+const horde = cards.filter((c) => c.faction === 'HORDE');
+const unknown = cards.filter((c) => c.faction === 'UNKNOWN');
+
+const title = `${member.handle} · WoW Forever | Top-Notch Gaming`;
+
+---
+<BaseLayout title={title} description={`World of Warcraft: Forever characters for ${member.handle}.`}>
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+    <nav class="text-[10px] font-bold tracking-widest text-zinc-500 mb-8" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/members/" class="hover:text-[#e4e4e7] transition">Members</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href={memberHref(member)} class="hover:text-[#e4e4e7] transition normal-case">{member.handle}</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-400">WoW Forever</li>
+      </ol>
+    </nav>
+    <p class="text-[#c20e0e] text-xs font-black tracking-widest mb-3">// {member.handle}</p>
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight text-[#e4e4e7] leading-tight mb-14">WoW Forever</h1>
+
+    <div class="grid gap-10 md:grid-cols-2 md:gap-8 items-start">
+      <section aria-labelledby="alliance-heading">
+        <h2 id="alliance-heading" class="text-xs font-black tracking-widest text-[#3b82f6] mb-4">ALLIANCE</h2>
+        {alliance.length === 0 ? (
+          <p class="text-zinc-500 text-sm normal-case border border-dashed border-[#27272a] bg-[#121215] px-4 py-6 m-0">No Alliance characters yet.</p>
+        ) : (
+          <ul class="grid gap-4">
+            {alliance.map((card) => (
+              <li>
+                <a href={wowHref(member, card.character)} class="flex items-center gap-4 bg-black border border-[#27272a] hover:border-[#3b82f6]/70 p-4 transition-colors">
+                  {mediaAsset(card.snapshot, 'avatar') ? (
+                    <img src={mediaAsset(card.snapshot, 'avatar')} alt="" width="56" height="56" class="size-14 object-cover border border-[#27272a] shrink-0" />
+                  ) : (
+                    <span class="size-14 border border-dashed border-[#3f3f46] shrink-0" aria-hidden="true"></span>
+                  )}
+                  <span class="min-w-0">
+                    <span class="block font-black text-lg text-[#e4e4e7] normal-case">{characterDisplayName(card.character, card.snapshot)}</span>
+                    <span class="block text-xs text-zinc-400 normal-case tracking-normal mt-1">
+                      {card.snapshot?.profile?.level != null ? `Level ${card.snapshot.profile.level}` : 'Level TBD'}
+                      {card.snapshot?.profile?.race?.name && ` ${card.snapshot.profile.race.name}`}
+                      {card.snapshot?.profile?.character_class?.name && ` ${card.snapshot.profile.character_class.name}`}
+                      {card.snapshot?.profile?.average_item_level != null && ` · iLvl ${card.snapshot.profile.average_item_level}`}
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section aria-labelledby="horde-heading">
+        <h2 id="horde-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-4">HORDE</h2>
+        {horde.length === 0 ? (
+          <p class="text-zinc-500 text-sm normal-case border border-dashed border-[#27272a] bg-[#121215] px-4 py-6 m-0">No Horde characters yet.</p>
+        ) : (
+          <ul class="grid gap-4">
+            {horde.map((card) => (
+              <li>
+                <a href={wowHref(member, card.character)} class="flex items-center gap-4 bg-black border border-[#27272a] hover:border-[#c20e0e]/70 p-4 transition-colors">
+                  {mediaAsset(card.snapshot, 'avatar') ? (
+                    <img src={mediaAsset(card.snapshot, 'avatar')} alt="" width="56" height="56" class="size-14 object-cover border border-[#27272a] shrink-0" />
+                  ) : (
+                    <span class="size-14 border border-dashed border-[#3f3f46] shrink-0" aria-hidden="true"></span>
+                  )}
+                  <span class="min-w-0">
+                    <span class="block font-black text-lg text-[#e4e4e7] normal-case">{characterDisplayName(card.character, card.snapshot)}</span>
+                    <span class="block text-xs text-zinc-400 normal-case tracking-normal mt-1">
+                      {card.snapshot?.profile?.level != null ? `Level ${card.snapshot.profile.level}` : 'Level TBD'}
+                      {card.snapshot?.profile?.race?.name && ` ${card.snapshot.profile.race.name}`}
+                      {card.snapshot?.profile?.character_class?.name && ` ${card.snapshot.profile.character_class.name}`}
+                      {card.snapshot?.profile?.average_item_level != null && ` · iLvl ${card.snapshot.profile.average_item_level}`}
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </div>
+
+    {unknown.length > 0 && (
+      <section class="mt-10" aria-labelledby="unknown-heading">
+        <h2 id="unknown-heading" class="text-xs font-black tracking-widest text-zinc-500 mb-4">FACTION UNKNOWN</h2>
+        <ul class="grid sm:grid-cols-2 gap-4">
+          {unknown.map((card) => (
+            <li>
+              <a href={wowHref(member, card.character)} class="flex items-center gap-4 bg-black border border-[#27272a] hover:border-zinc-500 p-4 transition-colors">
+                <span class="min-w-0">
+                  <span class="block font-black text-lg text-[#e4e4e7] normal-case">{characterDisplayName(card.character, card.snapshot)}</span>
+                  <span class="block text-xs text-zinc-500 normal-case tracking-normal mt-1">Snapshot not fetched yet</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </section>
+</BaseLayout>

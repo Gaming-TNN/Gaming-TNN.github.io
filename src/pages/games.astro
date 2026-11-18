@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GameLogo from '../components/GameLogo.astro';
+import DiscordButton from '../components/DiscordButton.astro';
+import { GAMES, GAMES_TRADEMARK_NOTICE } from '../data/games';
+---
+<BaseLayout title="Games | Top-Notch Gaming" description="The games Top-Notch Gaming plays, with clan and guild info coming soon.">
+
+    <section class="relative overflow-hidden">
+      <div class="tng-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-16">
+        <span class="text-[#c20e0e] text-xs font-black tracking-widest block mb-4">// SELECT YOUR GAME</span>
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[#e4e4e7] leading-tight mb-6">
+          GAMES <br />
+          <span class="text-[#c20e0e]">WE PLAY</span>
+        </h1>
+        <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed">
+          Where you'll find Top-Notch Gaming in-game. Clan and guild details for each game are on the way.
+        </p>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+      <div class="grid md:grid-cols-2 gap-8">
+        {GAMES.map((g, i) => (
+          <article id={g.slug} class="tng-cut bg-[#121215] border border-[#27272a] hover:border-[#c20e0e]/60 transition-colors group flex flex-col scroll-mt-24">
+            <div class="relative h-56 sm:h-60 bg-black border-b border-[#27272a] flex items-center justify-center px-8 overflow-hidden">
+              <div class="tng-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+              <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(194,14,14,0.18),transparent_65%)]" aria-hidden="true"></div>
+              <GameLogo game={g} />
+            </div>
+            <div class="p-8 flex-1">
+              <div class="text-xs font-black text-[#c20e0e] mb-2">{String(i + 1).padStart(2, '0')} // {g.genre}</div>
+              <h2 class="text-2xl md:text-3xl font-black text-[#e4e4e7] leading-tight mb-4 group-hover:text-[#c20e0e] transition-colors">{g.name}</h2>
+              <p class="text-zinc-400 text-sm normal-case leading-relaxed">{g.description}</p>
+            </div>
+            <div class="border-t border-[#27272a] p-8 pt-6">
+              <div class="text-[10px] font-black tracking-widest text-zinc-500 mb-3">// CLAN / GUILD</div>
+              {g.guild ? (
+                <div>
+                  <div class="text-lg font-black text-[#e4e4e7]">{g.guild.name}</div>
+                  {g.guild.server && <div class="text-xs text-zinc-400 mt-1">{g.guild.server}</div>}
+                  {g.guild.details && <p class="text-zinc-400 text-sm normal-case mt-2">{g.guild.details}</p>}
+                  {g.guild.url && <a href={g.guild.url} target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-xs font-black text-[#c20e0e] hover:text-white transition">MORE INFO →</a>}
+                </div>
+              ) : (
+                <div class="border border-dashed border-[#27272a] bg-black/40 px-4 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4" data-guild-placeholder>
+                  <span class="text-xs font-black tracking-widest text-zinc-400 whitespace-nowrap">○ COMING SOON</span>
+                  <span class="text-[11px] text-zinc-500 normal-case sm:text-right">Details will be posted here and in the Discord.</span>
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="mt-10 text-[11px] text-zinc-500 normal-case tracking-normal leading-relaxed max-w-4xl" data-trademark-notice>
+        {GAMES_TRADEMARK_NOTICE}
+      </p>
+    </section>
+
+    <section class="border-t border-[#27272a] bg-[#121215] py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-black text-[#e4e4e7] mb-6">
+          WANT IN ON A <span class="text-[#c20e0e]">RAID?</span>
+        </h2>
+        <p class="text-zinc-400 text-sm normal-case max-w-xl mx-auto mb-8">
+          Group-ups and guild news will run through the community Discord.
+        </p>
+        <DiscordButton />
+      </div>
+    </section>
+
+</BaseLayout>

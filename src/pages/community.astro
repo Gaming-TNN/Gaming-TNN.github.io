@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import DiscordButton from '../components/DiscordButton.astro';
+import { DISCORD_INVITE_URL } from '../lib/site';
+
+const features = [
+  { code: 'CH // 01', title: 'ANNOUNCEMENTS', description: 'News, events, and updates from Top-Notch Gaming.' },
+  { code: 'CH // 02', title: 'LFG & GROUPS', description: 'Find teammates for whatever you are playing tonight.' },
+  { code: 'CH // 03', title: 'GAME NIGHTS', description: 'Community events and play sessions, announced here first.' },
+  { code: 'CH // 04', title: 'HANGOUT', description: 'Off-topic chat, clips, and good company between sessions.' },
+];
+
+const rules = [
+  'Be respectful. No harassment, hate, or personal attacks.',
+  'Keep it safe for work.',
+  'No spam, scams, or unsolicited self-promotion.',
+  'Respect the mods. Keep it top-notch.',
+];
+---
+<BaseLayout title="Community | Top-Notch Gaming" description="Join the Top-Notch Gaming community: Discord, game nights, and announcements.">
+
+    <section class="relative overflow-hidden">
+      <div class="tng-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-16">
+        <span class="text-[#c20e0e] text-xs font-black tracking-widest block mb-4">// MULTIPLAYER MODE</span>
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[#e4e4e7] leading-tight mb-6">
+          FIND YOUR <br />
+          <span class="text-[#c20e0e]">PEOPLE</span>
+        </h1>
+        <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed">
+          The Top-Notch Gaming community is where players meet up between sessions. Queue up, swap strats, and catch every event.
+        </p>
+      </div>
+    </section>
+
+    <!-- Discord -->
+    <section id="discord" class="max-w-7xl mx-auto px-6 pb-20 scroll-mt-24">
+      <div class="tng-cut relative border border-[#5865F2]/60 bg-[#121215] p-8 md:p-12 shadow-[0_0_40px_rgba(88,101,242,0.15)]">
+        <div class="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+          <div>
+            <span class="text-[#8b93f8] text-xs font-black tracking-widest block mb-2">// OFFICIAL DISCORD</span>
+            <h2 class="text-3xl md:text-4xl font-black text-[#e4e4e7] mb-4">THE TOP-NOTCH GAMING DISCORD</h2>
+            <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl leading-relaxed mb-6">
+              Our home base for announcements, looking-for-group, community game nights, and hanging out.
+            </p>
+            {!DISCORD_INVITE_URL && (
+              <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-widest text-[#8b93f8] border border-[#5865F2]/60 bg-[#5865F2]/10 px-3 py-2 mb-6" data-discord-placeholder-note>
+                ⚠ INVITE LINK COMING SOON · CHECK BACK SHORTLY
+              </p>
+            )}
+            <div><DiscordButton /></div>
+          </div>
+          <svg class="hidden lg:block w-40 h-40 text-[#5865F2]/80" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.5C.6 9.1-.3 13.6.1 18.1a19.9 19.9 0 0 0 6 3l1.3-2.1a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.8 19.8 0 0 0 6-3c.5-5.2-.8-9.7-3.6-13.7ZM8 15.4c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.6 8 10.6s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z" /></svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+      <SectionHeader kicker="INSIDE THE SERVER" title="WHAT YOU'LL FIND" />
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {features.map((f) => (
+          <div class="bg-[#121215] border border-[#27272a] p-6 hover:border-[#c20e0e]/60 transition-colors group">
+            <div class="text-xs font-black text-[#c20e0e] mb-3">{f.code}</div>
+            <h3 class="text-lg font-black text-[#e4e4e7] mb-2 group-hover:text-[#c20e0e] transition-colors">{f.title}</h3>
+            <p class="text-zinc-400 text-sm normal-case leading-relaxed">{f.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-[#121215] border-y border-[#27272a] py-20">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="tng-cut border border-[#27272a] bg-black p-8 order-last lg:order-first flex flex-col items-center justify-center gap-6 min-h-64 relative overflow-hidden">
+          <div class="tng-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+          <img src="/tnn-emblem.png" width="198" height="210" alt="" class="relative h-28 w-auto drop-shadow-[0_0_25px_rgba(194,14,14,0.45)]" loading="lazy" />
+          <div class="relative text-xs font-black tracking-widest text-zinc-400">PLAY FAIR · LIFT THE LOBBY · KEEP IT TOP-NOTCH</div>
+        </div>
+        <div>
+          <SectionHeader kicker="GROUND RULES" title="KEEP IT TOP-NOTCH" class="mb-8" />
+          <ol class="space-y-4">
+            {rules.map((r, i) => (
+              <li class="flex gap-4 text-zinc-400 text-sm normal-case leading-relaxed">
+                <span class="text-[#c20e0e] font-black text-xs tracking-widest pt-0.5">{String(i + 1).padStart(2, '0')}</span>
+                <span>{r}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-black text-[#e4e4e7] mb-6">
+          NEW HERE? <span class="text-[#c20e0e]">START HERE.</span>
+        </h2>
+        <p class="text-zinc-400 text-sm normal-case max-w-xl mx-auto mb-8">
+          Learn what Top-Notch Gaming is about and the standard we play by.
+        </p>
+        <a href="/about/" class="inline-block bg-[#c20e0e] hover:bg-[#9e0b0b] text-white font-black px-10 py-5 text-xs tracking-widest border border-[#d30000] shadow-[0_0_25px_rgba(194,14,14,0.3)] transition">
+          ABOUT TOP-NOTCH GAMING
+        </a>
+      </div>
+    </section>
+
+</BaseLayout>

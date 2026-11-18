@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import DiscordButton from '../components/DiscordButton.astro';
+import GameLogo from '../components/GameLogo.astro';
+import VoicePanel from '../components/VoicePanel.astro';
+import { GAMES } from '../data/games';
+
+const pillars = [
+  { code: '01 // COMMUNITY', title: 'COMMUNITY FIRST', description: 'A welcoming place to queue up, trade strats, and hang out with people who love games as much as you do.' },
+  { code: '02 // PLAY', title: 'GAME NIGHTS & EVENTS', description: 'Community play sessions and events. Dates are announced in the community first, so keep an eye on the Discord.' },
+  { code: '03 // CREATE', title: 'ROOM FOR CREATORS', description: 'Clips, content, and creative projects from players in the Top-Notch family, with a community behind them.' },
+  { code: '04 // NETWORK', title: 'Part of the Top-Notch Network', description: 'Top-Notch Gaming is an extension of the Top-Notch Network. Elevating those who elevate the world.' },
+];
+
+---
+<BaseLayout title="Top-Notch Gaming | Community & Game Nights" description="Top-Notch Gaming is the gaming arm of Top-Notch Network: community game nights and a place for players to connect.">
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+      <div class="tng-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-20 grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
+        <div>
+          <span class="text-[#c20e0e] text-xs font-black tracking-widest block mb-4">// PRESS START · TOP-NOTCH GAMING</span>
+          <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[#e4e4e7] leading-tight mb-6">
+            LEVEL UP <br />
+            <span class="text-[#c20e0e]">TOGETHER</span>
+          </h1>
+          <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed mb-4">
+            Members, game nights, and good company from the gaming side of Top-Notch Network.
+          </p>
+          <p class="text-zinc-400 text-sm md:text-base normal-case max-w-2xl font-normal leading-relaxed mb-10">
+            Top-Notch Gaming brings players together. Jump into the community, find your people, and play with people who keep it top-notch.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/community/" class="bg-[#c20e0e] hover:bg-[#9e0b0b] text-white font-black px-8 py-4 text-xs tracking-widest text-center border border-[#d30000] shadow-[0_0_20px_rgba(194,14,14,0.25)] transition">
+              JOIN THE COMMUNITY
+            </a>
+            <a href="/about/" class="bg-[#121215] hover:bg-zinc-800 text-zinc-300 font-bold px-8 py-4 text-xs tracking-widest text-center border border-[#27272a] transition">
+              ABOUT TNG
+            </a>
+          </div>
+        </div>
+
+        <VoicePanel />
+      </div>
+    </section>
+
+    <!-- Games We Play strip -->
+    <section class="border-y border-[#27272a] bg-[#121215] py-14">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row lg:items-center gap-8">
+        <div class="shrink-0">
+          <span class="text-[#c20e0e] text-xs font-black tracking-widest block mb-2">// NOW PLAYING</span>
+          <h2 class="text-2xl md:text-3xl font-black text-[#e4e4e7]">GAMES WE PLAY</h2>
+        </div>
+        <div class="flex-1 grid sm:grid-cols-2 gap-4">
+          {GAMES.map((g) => (
+            <a href={`/games/#${g.slug}`} class="flex items-center gap-4 bg-black border border-[#27272a] hover:border-[#c20e0e]/60 p-4 transition-colors group min-w-0">
+              <GameLogo game={g} size="sm" />
+              <span class="font-black text-sm text-[#e4e4e7] group-hover:text-[#c20e0e] transition-colors min-w-0">{g.name}</span>
+            </a>
+          ))}
+        </div>
+        <a href="/games/" class="shrink-0 text-center bg-transparent hover:bg-[#c20e0e] text-[#c20e0e] hover:text-white font-black px-6 py-3 text-xs tracking-widest border border-[#c20e0e] transition">
+          ALL GAMES
+        </a>
+      </div>
+      <p class="max-w-7xl mx-auto px-6 mt-6 text-[10px] text-zinc-500 normal-case tracking-normal">Game names and logos are trademarks of their respective owners. <a href="/games/" class="underline hover:text-zinc-300">See credits</a>.</p>
+    </section>
+
+    <!-- Pillars Grid -->
+    <section class="max-w-7xl mx-auto px-6 py-24">
+      <SectionHeader kicker="WHAT WE DO" title="GAMING, THE TOP-NOTCH WAY" class="mb-16" />
+      <div class="grid md:grid-cols-2 gap-8">
+        {pillars.map((s) => (
+          <div class="bg-[#121215] border border-[#27272a] p-8 hover:border-[#c20e0e]/60 transition-colors group">
+            <div class="text-xs font-black text-[#c20e0e] mb-4">{s.code}</div>
+            <h3 class="text-xl font-black text-[#e4e4e7] mb-3 group-hover:text-[#c20e0e] transition-colors">{s.title}</h3>
+            <p class="text-zinc-400 text-sm normal-case leading-relaxed">{s.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="border-t border-[#27272a] bg-[#121215] py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-black text-[#e4e4e7] mb-6">
+          READY <span class="text-[#c20e0e]">PLAYER?</span>
+        </h2>
+        <p class="text-zinc-400 text-sm normal-case max-w-xl mx-auto mb-8">
+          The community hub is warming up. Grab a spot on the Discord as soon as the invite goes live.
+        </p>
+        <DiscordButton />
+      </div>
+    </section>
+
+</BaseLayout>

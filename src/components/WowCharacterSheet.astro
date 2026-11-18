@@ -1,0 +1,204 @@
+---
+import type { Member, WowForeverCharacter } from '../data/members';
+import { memberHref, memberSlug } from '../data/members';
+import {
+  type CharacterSnapshot,
+  EQUIPMENT_SLOTS,
+  PAPERDOLL_BOTTOM,
+  PAPERDOLL_LEFT,
+  PAPERDOLL_RIGHT,
+  armoryUrl,
+  characterDisplayName,
+  formatWhen,
+  itemBySlot,
+  itemIcon,
+  mediaAsset,
+  qualityClass,
+} from '../lib/characters';
+import WowTalentTrees from './WowTalentTrees.astro';
+
+interface Props {
+  member: Member;
+  character: WowForeverCharacter;
+  snapshot?: CharacterSnapshot;
+}
+
+const { member, character, snapshot } = Astro.props;
+const displayName = characterDisplayName(character, snapshot);
+const profile = snapshot?.profile;
+const faction = profile?.faction?.name;
+const slots = itemBySlot(snapshot);
+const render = mediaAsset(snapshot, 'main-raw') || mediaAsset(snapshot, 'main-sd-raw');
+const avatar = mediaAsset(snapshot, 'avatar');
+const primaries = snapshot?.professions?.primaries ?? [];
+const secondaries = snapshot?.professions?.secondaries ?? [];
+const known = Boolean(character.name && character.surname && character.name !== 'TBD');
+
+const slotMeta = Object.fromEntries(EQUIPMENT_SLOTS.map((s) => [s.type, s]));
+
+function slotRow(type: string) {
+  const meta = slotMeta[type] ?? { type, name: type };
+  const item = slots.get(type);
+  return { type, name: meta.name, item, icon: itemIcon(snapshot, item), empty: !item };
+}
+---
+<header class="mb-10">
+  <nav class="text-[10px] font-bold tracking-widest text-zinc-500 mb-6" aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center gap-2">
+      <li><a href="/members/" class="hover:text-[#e4e4e7] transition">Members</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href={memberHref(member)} class="hover:text-[#e4e4e7] transition normal-case">{member.handle}</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href={`/members/${memberSlug(member)}/wow/`} class="hover:text-[#e4e4e7] transition">WoW Forever</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="text-zinc-400 normal-case">{displayName}</li>
+    </ol>
+  </nav>
+  <p class="text-[#c20e0e] text-xs font-black tracking-widest mb-3">// {member.handle}</p>
+  <div class="flex items-start gap-4">
+    {avatar ? (
+      <img src={avatar} alt="" width="64" height="64" class="size-16 border border-[#27272a] bg-black object-cover shrink-0" />
+    ) : (
+      <div class="size-16 border border-dashed border-[#27272a] bg-[#121215] shrink-0" aria-hidden="true"></div>
+    )}
+    <div class="min-w-0">
+      <h1 class="text-3xl md:text-5xl font-black tracking-tight text-[#e4e4e7] normal-case leading-tight m-0">{displayName}</h1>
+      <p class="text-zinc-400 text-sm normal-case mt-3 mb-0">
+        {profile?.level != null ? `Level ${profile.level}` : 'Level TBD'}
+        {faction && ` · ${faction}`}
+        {profile?.race?.name && ` ${profile.race.name}`}
+        {profile?.character_class?.name && ` ${profile.character_class.name}`}
+        {profile?.average_item_level != null && ` · iLvl ${profile.average_item_level}`}
+        {profile?.ruleset?.name && ` · ${profile.ruleset.name}`}
+        {` · ${(character.region || snapshot?.region || 'us').toUpperCase()}`}
+      </p>
+    </div>
+  </div>
+</header>
+
+<section class="mb-14" aria-labelledby="equipment-heading">
+  <h2 id="equipment-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-6">EQUIPMENT</h2>
+  <div class="grid lg:grid-cols-[1fr_minmax(0,16rem)_1fr] gap-4 items-start">
+    <ul class="grid gap-2">
+      {PAPERDOLL_LEFT.map((type) => {
+        const row = slotRow(type);
+        return (
+          <li class="flex items-center gap-3 bg-[#121215] border border-[#27272a] px-3 py-2 min-h-[3.25rem]">
+            {row.icon ? (
+              <img src={row.icon} alt="" width="32" height="32" class="size-8 shrink-0 border border-black" />
+            ) : (
+              <span class="size-8 shrink-0 border border-dashed border-[#3f3f46] bg-black" aria-hidden="true"></span>
+            )}
+            <div class="min-w-0">
+              <p class="text-[10px] font-bold tracking-widest text-zinc-500 m-0">{row.name}</p>
+              {row.item ? (
+                <p class:list={['text-sm font-bold normal-case tracking-normal m-0 truncate', qualityClass(row.item)]}>
+                  {row.item.name}
+                  {row.item.level?.value != null && <span class="text-zinc-500 font-medium ml-2">iLvl {row.item.level.value}</span>}
+                </p>
+              ) : (
+                <p class="text-xs text-zinc-600 normal-case tracking-normal m-0 italic">Empty</p>
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+    <div class="relative border border-[#27272a] bg-black min-h-64 flex items-end justify-center overflow-hidden">
+      {render ? (
+        <img src={render} alt={`${displayName} character render`} class="max-h-[28rem] w-auto max-w-full object-contain" />
+      ) : (
+        <p class="text-[10px] font-bold tracking-widest text-zinc-600 p-8 text-center">Character render not available yet</p>
+      )}
+    </div>
+    <ul class="grid gap-2">
+      {PAPERDOLL_RIGHT.map((type) => {
+        const row = slotRow(type);
+        return (
+          <li class="flex items-center gap-3 bg-[#121215] border border-[#27272a] px-3 py-2 min-h-[3.25rem]">
+            {row.icon ? (
+              <img src={row.icon} alt="" width="32" height="32" class="size-8 shrink-0 border border-black" />
+            ) : (
+              <span class="size-8 shrink-0 border border-dashed border-[#3f3f46] bg-black" aria-hidden="true"></span>
+            )}
+            <div class="min-w-0">
+              <p class="text-[10px] font-bold tracking-widest text-zinc-500 m-0">{row.name}</p>
+              {row.item ? (
+                <p class:list={['text-sm font-bold normal-case tracking-normal m-0 truncate', qualityClass(row.item)]}>
+                  {row.item.name}
+                  {row.item.level?.value != null && <span class="text-zinc-500 font-medium ml-2">iLvl {row.item.level.value}</span>}
+                </p>
+              ) : (
+                <p class="text-xs text-zinc-600 normal-case tracking-normal m-0 italic">Empty</p>
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+  <ul class="grid sm:grid-cols-3 gap-2 mt-4">
+    {PAPERDOLL_BOTTOM.map((type) => {
+      const row = slotRow(type);
+      return (
+        <li class="flex items-center gap-3 bg-[#121215] border border-[#27272a] px-3 py-2 min-h-[3.25rem]">
+          {row.icon ? (
+            <img src={row.icon} alt="" width="32" height="32" class="size-8 shrink-0 border border-black" />
+          ) : (
+            <span class="size-8 shrink-0 border border-dashed border-[#3f3f46] bg-black" aria-hidden="true"></span>
+          )}
+          <div class="min-w-0">
+            <p class="text-[10px] font-bold tracking-widest text-zinc-500 m-0">{row.name}</p>
+            {row.item ? (
+              <p class:list={['text-sm font-bold normal-case tracking-normal m-0 truncate', qualityClass(row.item)]}>
+                {row.item.name}
+                {row.item.level?.value != null && <span class="text-zinc-500 font-medium ml-2">iLvl {row.item.level.value}</span>}
+              </p>
+            ) : (
+              <p class="text-xs text-zinc-600 normal-case tracking-normal m-0 italic">Empty</p>
+            )}
+          </div>
+        </li>
+      );
+    })}
+  </ul>
+</section>
+
+<WowTalentTrees snapshot={snapshot} />
+
+<section class="mb-14" aria-labelledby="professions-heading">
+  <h2 id="professions-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-6">PROFESSIONS</h2>
+  {primaries.length === 0 && secondaries.length === 0 ? (
+    <p class="text-zinc-500 text-sm normal-case">Profession snapshot not available yet.</p>
+  ) : (
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {[...primaries, ...secondaries].map((block) => {
+        const tier = block.tiers?.[0];
+        return (
+          <div class="bg-[#121215] border border-[#27272a] px-4 py-3">
+            <p class="font-black text-sm text-[#e4e4e7] m-0">{block.profession?.name ?? 'Profession'}</p>
+            {tier && (
+              <p class="text-xs text-zinc-400 normal-case m-0 mt-1">{tier.skill_points ?? 0} / {tier.max_skill_points ?? 0}</p>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  )}
+</section>
+
+<footer class="border-t border-[#27272a] pt-6 text-zinc-500 text-xs normal-case tracking-normal">
+  {snapshot?.fetchedAt ? (
+    <p class="m-0">Last updated {formatWhen(snapshot.fetchedAt)} (America/Phoenix snapshot from the Battle.net Profile API).</p>
+  ) : (
+    <p class="m-0 italic">No snapshot yet. Character data will appear after the next fetch.</p>
+  )}
+  {snapshot?.profile?.last_login_timestamp && (
+    <p class="m-0 mt-1">Character last logout {formatWhen(snapshot.profile.last_login_timestamp)} (America/Phoenix).</p>
+  )}
+  {known && (
+    <p class="m-0 mt-3">
+      <a href={armoryUrl(character)} class="text-[#e4e4e7] underline hover:text-white" rel="noopener noreferrer">View on the official Blizzard Forever Armory</a>
+    </p>
+  )}
+</footer>

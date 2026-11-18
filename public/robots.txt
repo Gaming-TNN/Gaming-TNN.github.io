@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gaming.top-notchnetwork.com/sitemap-index.xml
