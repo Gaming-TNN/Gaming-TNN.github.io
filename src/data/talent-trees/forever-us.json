@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T21:31:08.318Z",
+  "fetchedAt": "2026-11-19T21:45:58.461Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3377,7 +3377,8 @@
                   "description": "Increases the chance to apply Poisons to your target by 10%, and gives Poison applications a 50% chance to not consume a charge.",
                   "spellId": 14113
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132273.jpg"
             },
             {
               "id": 113633,
@@ -3415,7 +3416,8 @@
                   "description": "Your finishing moves have a 20% chance per Combo Point to restore 25 Energy.",
                   "spellId": 14179
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132340.jpg"
             },
             {
               "id": 105712,
@@ -3435,7 +3437,8 @@
                   "description": "Causes your Shank ability to increase your Poison damage by 30% and your chance to apply Poisons by 20% for 6 sec.",
                   "spellId": 1329328
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135341.jpg"
             },
             {
               "id": 105711,
@@ -5769,8 +5772,7 @@
                   "description": "Reduces the mana cost of your Frost spells by 15% and reduces the threat caused by your Frost spells by 30%.",
                   "spellId": 11160
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135860.jpg"
+              ]
             },
             {
               "id": 105771,
@@ -5798,8 +5800,7 @@
                   "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 40% for 1.5 sec.",
                   "spellId": 11185
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135857.jpg"
+              ]
             },
             {
               "id": 105767,
@@ -5819,8 +5820,7 @@
                   "description": "Deals 28 to 33 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.",
                   "spellId": 1312002
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135844.jpg"
+              ]
             },
             {
               "id": 105770,
@@ -6296,7 +6296,8 @@
                   "description": "Reduces the mana cost of your Smite, Holy Fire, and instant cast spells by 10%.",
                   "spellId": 14520
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132156.jpg"
             },
             {
               "id": 105844,
@@ -6314,7 +6315,8 @@
                   "description": "When activated, reduces the Mana cost of your next spell by 100% and increases its critical effect chance by 25% if it is a non-periodic spell and capable of a critical effect.",
                   "spellId": 14751
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135863.jpg"
             },
             {
               "id": 105846,
@@ -6344,7 +6346,8 @@
                   "description": "Increases the damage absorbed by your Power Word: Shield by 20%.",
                   "spellId": 14748
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135940.jpg"
             },
             {
               "id": 105843,
@@ -8775,8 +8778,7 @@
                   "description": "Reduces the Mana cost of your Destruction spells by 10%.",
                   "spellId": 17778
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135831.jpg"
+              ]
             },
             {
               "id": 105886,
@@ -8814,8 +8816,7 @@
                   "description": "Increases the initial damage of your Immolate spell by 50% and your Conflagrate spell has a 100% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.",
                   "spellId": 18119
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135805.jpg"
+              ]
             },
             {
               "id": 105883,
@@ -8853,8 +8854,7 @@
                   "description": "Increases the critical strike damage bonus of your Destruction spells by 100%.",
                   "spellId": 17959
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136207.jpg"
+              ]
             },
             {
               "id": 105884,
@@ -9307,7 +9307,8 @@
                   "description": "Generates 1 Rage every 3 sec while in combat, and reduces Rage loss while out of combat by 30%.",
                   "spellId": 12296
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135881.jpg"
             },
             {
               "id": 105950,
@@ -9339,7 +9340,8 @@
                   "description": "Your critical strikes cause your opponent to Bleed, dealing 60% of your melee weapon's average damage over 12 sec.",
                   "spellId": 12834
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132090.jpg"
             },
             {
               "id": 105949,
@@ -9357,7 +9359,8 @@
                   "description": "A brutal attack that deals 75% weapon damage. Deals an additional 75% weapon damage against Giants, Dragonkin, and mounted targets. Mounted targets are dismounted.",
                   "spellId": 1310222
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135124.jpg"
             },
             {
               "id": 105948,
@@ -11864,8 +11867,7 @@
                   "description": "Gives your Wing Clip ability a 20% chance to immobilize the target for 5 sec.",
                   "spellId": 19228
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132309.jpg"
+              ]
             },
             {
               "id": 104991,
@@ -11888,8 +11890,7 @@
                   "description": "Increases the duration of Freezing and Frost trap effects by 30% and the damage of Immolation and Explosive trap effects by 30%.",
                   "spellId": 19239
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136106.jpg"
+              ]
             },
             {
               "id": 104987,
@@ -11917,8 +11918,7 @@
                   "description": "Increases your hit chance by 3% and reduces the duration of movement impairing effects on you by 30%.",
                   "spellId": 19290
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132219.jpg"
+              ]
             },
             {
               "id": 104986,
@@ -12377,7 +12377,8 @@
                   "description": "Reduces the cooldown of your Shock spells by 1.0 sec.",
                   "spellId": 16040
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135850.jpg"
             },
             {
               "id": 104771,
@@ -12436,7 +12437,8 @@
                   "description": "Increases the damage done by your Fire Totems and by your Flame Shock and Fire Nova spells by 15%, as well as increases the duration of your Flame Shock spell by 9 sec.",
                   "spellId": 16038
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135817.jpg"
             },
             {
               "id": 104768,
@@ -12454,7 +12456,8 @@
                   "description": "Gives you a 10% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell.  The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
                   "spellId": 16164
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136170.jpg"
             },
             {
               "id": 104765,
