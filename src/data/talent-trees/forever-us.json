@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T20:00:58.620Z",
+  "fetchedAt": "2026-11-19T20:16:01.831Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5243,7 +5243,8 @@
                   "description": "Gives your Fire spells a 70% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by 30%.",
                   "spellId": 11083
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135805.jpg"
             },
             {
               "id": 105791,
@@ -5271,7 +5272,8 @@
                   "description": "Increases the critical strike chance of your Flamestrike spell by 15%.",
                   "spellId": 11108
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135826.jpg"
             },
             {
               "id": 105790,
@@ -5291,7 +5293,8 @@
                   "description": "Hurls an immense fiery boulder that causes 411 to 472 Fire damage and an additional 236 Fire damage over 12 sec.",
                   "spellId": 11366
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135808.jpg"
             },
             {
               "id": 105797,
@@ -8225,7 +8228,8 @@
                   "description": "Increases the effectiveness of your Demon Skin and Demon Armor spells by 30%.",
                   "spellId": 1235316
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136185.jpg"
             },
             {
               "id": 105904,
@@ -8253,7 +8257,8 @@
                   "description": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, Sacrifice, and Suffering spells by 30%.",
                   "spellId": 18705
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136221.jpg"
             },
             {
               "id": 105903,
@@ -8281,7 +8286,8 @@
                   "description": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by 15%, and increases your maximum Mana by 15%.",
                   "spellId": 18731
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136150.jpg"
             },
             {
               "id": 105899,
@@ -11249,7 +11255,8 @@
                   "description": "Increases the damage of your Serpent Sting ability by 20%, reduces the cooldown of your Viper Sting ability by 6 sec, and increases the duration of your Scorpid Sting ability by 45 sec.",
                   "spellId": 1310661
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132204.jpg"
             },
             {
               "id": 105009,
@@ -11287,7 +11294,8 @@
                   "description": "Reduces the Mana cost of your Shots, Stings, and melee abilities by 15%.",
                   "spellId": 19416
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
             },
             {
               "id": 105008,
@@ -11327,7 +11335,8 @@
                   "description": "Increases your Attack Power by 100% of your Intellect.",
                   "spellId": 1223984
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132217.jpg"
             },
             {
               "id": 105005,
