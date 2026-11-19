@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T05:03:50.487Z",
+  "fetchedAt": "2026-11-19T08:07:50.992Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -47,8 +47,8 @@
       },
       "slug": "lower-expectations"
     },
-    "level": 28,
-    "experience": 12859,
+    "level": 29,
+    "experience": 17199,
     "achievement_points": 0,
     "achievements": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/achievements?namespace=profile-forever-us"
@@ -65,8 +65,8 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795059163000,
-    "average_item_level": 23,
+    "last_login_timestamp": 1795071667000,
+    "average_item_level": 24,
     "equipped_item_level": 23,
     "specializations": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/specializations?namespace=profile-forever-us"
@@ -555,6 +555,23 @@
           },
           "id": 7133
         },
+        "enchantments": [
+          {
+            "display_string": "Enchanted: Stamina +3 and Armor +24",
+            "source_item": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/item/4265?namespace=static-1.60.1_70399-forever-us"
+              },
+              "name": "Heavy Armor Kit",
+              "id": 4265
+            },
+            "enchantment_id": 8484,
+            "enchantment_slot": {
+              "id": 0,
+              "type": "PERMANENT"
+            }
+          }
+        ],
         "slot": {
           "type": "CHEST",
           "name": "Chest"
@@ -1272,25 +1289,43 @@
       {
         "item": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item/3485?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/item/7129?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 3485
+          "id": 7129
         },
+        "enchantments": [
+          {
+            "display_string": "Enchanted: Stamina +3 and Armor +24",
+            "source_item": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/item/4265?namespace=static-1.60.1_70399-forever-us"
+              },
+              "name": "Heavy Armor Kit",
+              "id": 4265
+            },
+            "enchantment_id": 8484,
+            "enchantment_slot": {
+              "id": 0,
+              "type": "PERMANENT"
+            }
+          }
+        ],
         "slot": {
           "type": "HANDS",
           "name": "Hands"
         },
         "quantity": 1,
+        "context": 11,
         "quality": {
           "type": "UNCOMMON",
           "name": "Uncommon"
         },
-        "name": "Green Iron Gauntlets",
+        "name": "Brutal Gauntlets",
         "media": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/media/item/3485?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/media/item/7129?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 3485
+          "id": 7129
         },
         "item_class": {
           "key": {
@@ -1311,13 +1346,13 @@
           "name": "Hands"
         },
         "binding": {
-          "type": "ON_EQUIP",
-          "name": "Binds when equipped"
+          "type": "ON_ACQUIRE",
+          "name": "Binds when picked up"
         },
         "armor": {
-          "value": 124,
+          "value": 126,
           "display": {
-            "display_string": "124 Armor",
+            "display_string": "126 Armor",
             "color": {
               "r": 255,
               "g": 255,
@@ -1332,9 +1367,9 @@
               "type": "STRENGTH",
               "name": "Strength"
             },
-            "value": 5,
+            "value": 6,
             "display": {
-              "display_string": "+5 Strength",
+              "display_string": "+6 Strength",
               "color": {
                 "r": 255,
                 "g": 255,
@@ -1361,23 +1396,31 @@
           }
         ],
         "sell_price": {
-          "value": 1295,
+          "value": 1546,
           "display_strings": {
             "header": "Sell Price:",
             "gold": "0",
-            "silver": "12",
-            "copper": "95"
+            "silver": "15",
+            "copper": "46"
           }
         },
         "requirements": {
-          "level": {
-            "value": 25,
-            "display_string": "Requires Level 25"
+          "playable_classes": {
+            "links": [
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/playable-class/1?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Warrior",
+                "id": 1
+              }
+            ],
+            "display_string": "Classes: Warrior"
           }
         },
         "level": {
-          "value": 30,
-          "display_string": "Item Level 30"
+          "value": 31,
+          "display_string": "Item Level 31"
         },
         "transmog": {
           "item": {
@@ -1709,26 +1752,25 @@
       {
         "item": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item/16886?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/item/3849?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 16886
+          "id": 3849
         },
         "slot": {
           "type": "MAIN_HAND",
           "name": "Main Hand"
         },
         "quantity": 1,
-        "context": 11,
         "quality": {
-          "type": "RARE",
-          "name": "Rare"
+          "type": "UNCOMMON",
+          "name": "Uncommon"
         },
-        "name": "Outlaw Sabre",
+        "name": "Hardened Iron Shortsword",
         "media": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/media/item/16886?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/media/item/3849?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 16886
+          "id": 3849
         },
         "item_class": {
           "key": {
@@ -1749,54 +1791,59 @@
           "name": "One-Hand"
         },
         "binding": {
-          "type": "ON_ACQUIRE",
-          "name": "Binds when picked up"
+          "type": "ON_EQUIP",
+          "name": "Binds when equipped"
         },
         "weapon": {
           "damage": {
-            "min_value": 38,
-            "max_value": 72,
-            "display_string": "38 - 72 Damage",
+            "min_value": 21,
+            "max_value": 39,
+            "display_string": "21 - 39 Damage",
             "damage_class": {
               "type": "PHYSICAL",
               "name": "Physical"
             }
           },
           "attack_speed": {
-            "value": 2700,
-            "display_string": "Speed 2.70"
+            "value": 1800,
+            "display_string": "Speed 1.80"
           },
           "dps": {
-            "value": 20.37037,
-            "display_string": "(20.4 damage per second)"
+            "value": 16.666666,
+            "display_string": "(16.7 damage per second)"
           }
         },
         "stats": [
           {
             "type": {
-              "type": "ATTACK_POWER",
-              "name": "Attack Power"
+              "type": "STAMINA",
+              "name": "Stamina"
             },
-            "value": 16,
-            "is_equip_bonus": true,
+            "value": 5,
             "display": {
-              "display_string": "+16 Attack Power",
+              "display_string": "+5 Stamina",
               "color": {
-                "r": 0,
+                "r": 255,
                 "g": 255,
-                "b": 0,
+                "b": 255,
                 "a": 1
               }
             }
           }
         ],
         "sell_price": {
-          "value": 6522,
+          "value": 5468,
           "display_strings": {
             "header": "Sell Price:",
             "gold": "0",
-            "silver": "65",
-            "copper": "22"
+            "silver": "54",
+            "copper": "68"
+          }
+        },
+        "requirements": {
+          "level": {
+            "value": 27,
+            "display_string": "Requires Level 27"
           }
         },
         "level": {
@@ -1815,8 +1862,8 @@
           "item_modified_appearance_id": 161278
         },
         "durability": {
-          "value": 90,
-          "display_string": "Durability 90 / 90"
+          "value": 75,
+          "display_string": "Durability 75 / 75"
         }
       },
       {
@@ -1826,6 +1873,23 @@
           },
           "id": 7002
         },
+        "enchantments": [
+          {
+            "display_string": "Enchanted: Iron Spike (8-12)",
+            "source_item": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/item/6042?namespace=static-1.60.1_70399-forever-us"
+              },
+              "name": "Iron Shield Spike",
+              "id": 6042
+            },
+            "enchantment_id": 43,
+            "enchantment_slot": {
+              "id": 0,
+              "type": "PERMANENT"
+            }
+          }
+        ],
         "slot": {
           "type": "OFF_HAND",
           "name": "Off Hand"
@@ -2158,11 +2222,11 @@
                     "name": "Improved Thunder Clap",
                     "id": 12287
                   },
-                  "description": "Reduces the Rage cost of your Thunder Clap ability by 4.",
+                  "description": "Reduces the Rage cost of your Thunder Clap ability by 6.",
                   "cast_time": "Passive",
                   "power_cost": null
                 },
-                "talent_rank": 2
+                "talent_rank": 3
               },
               {
                 "talent": {
@@ -2229,7 +2293,7 @@
               }
             ],
             "specialization_name": "Protection",
-            "spent_points": 19
+            "spent_points": 20
           }
         ]
       }
@@ -2295,13 +2359,20 @@
         },
         "tiers": [
           {
-            "skill_points": 140,
+            "skill_points": 175,
             "max_skill_points": 225,
             "tier": {
               "name": "Mining",
               "id": 2946
             },
             "known_recipes": [
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1846?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Smelt Gold",
+                "id": 1846
+              },
               {
                 "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/1847?namespace=static-1.60.1_70399-forever-us"
@@ -2372,13 +2443,41 @@
         },
         "tiers": [
           {
-            "skill_points": 150,
-            "max_skill_points": 150,
+            "skill_points": 160,
+            "max_skill_points": 225,
             "tier": {
               "name": "Blacksmithing",
               "id": 2938
             },
             "known_recipes": [
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1985?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Hardened Iron Shortsword",
+                "id": 1985
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1993?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Green Iron Bracers",
+                "id": 1993
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1994?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Green Iron Helm",
+                "id": 1994
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1998?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Green Iron Leggings",
+                "id": 1998
+              },
               {
                 "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/7836?namespace=static-1.60.1_70399-forever-us"
@@ -2567,6 +2666,13 @@
                 },
                 "name": "Bronze Warhammer",
                 "id": 5339
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/4207?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Iron Shield Spike",
+                "id": 4207
               },
               {
                 "key": {
@@ -2843,15 +2949,15 @@
     ]
   },
   "itemIcons": {
-    "3485": "https://render.worldofwarcraft.com/forever-us/icons/56/132939.jpg",
     "3582": "https://render.worldofwarcraft.com/forever-us/icons/56/133753.jpg",
+    "3849": "https://render.worldofwarcraft.com/forever-us/icons/56/135321.jpg",
     "6125": "https://render.worldofwarcraft.com/forever-us/icons/56/132719.jpg",
     "6414": "https://render.worldofwarcraft.com/forever-us/icons/56/133357.jpg",
     "7002": "https://render.worldofwarcraft.com/forever-us/icons/56/134948.jpg",
+    "7129": "https://render.worldofwarcraft.com/forever-us/icons/56/132938.jpg",
     "7133": "https://render.worldofwarcraft.com/forever-us/icons/56/132629.jpg",
     "13131": "https://render.worldofwarcraft.com/forever-us/icons/56/135049.jpg",
     "15517": "https://render.worldofwarcraft.com/forever-us/icons/56/132615.jpg",
-    "16886": "https://render.worldofwarcraft.com/forever-us/icons/56/135343.jpg",
     "250514": "https://render.worldofwarcraft.com/forever-us/icons/56/132504.jpg",
     "250524": "https://render.worldofwarcraft.com/forever-us/icons/56/134668.jpg",
     "250528": "https://render.worldofwarcraft.com/forever-us/icons/56/133141.jpg",
