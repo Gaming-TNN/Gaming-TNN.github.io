@@ -5,10 +5,9 @@ on:
     branches: [main]
   push:
     branches: [main]
-  # workflow_dispatch is used by refresh-characters.yml so the required
-  # "build" check can run on PRs opened with GITHUB_TOKEN (those events
-  # do not trigger pull_request or push workflows). Dispatch against the
-  # PR branch so the check run attaches to that head SHA.
+  # Manual runs only. Refresh no longer opens data PRs or dispatches CI;
+  # pull request and push-to-main CI builds use the data committed on
+  # that ref and do not overlay data-live.
   workflow_dispatch:
 
 permissions:

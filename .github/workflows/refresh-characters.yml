@@ -1,41 +1,35 @@
-# Refresh WoW Forever character snapshots and talent-tree cache from the
-# Battle.net APIs and open (or update) a pull request.
+# Refresh WoW Forever character snapshots, talent-tree layouts, and
+# profession icons from the Battle.net APIs.
 #
 # When (and only when) the diff is limited to src/data/characters/**,
-# src/data/talent-trees/**, and src/data/professions/**, the PR targets the default branch, and the
-# required "build" check passes, this workflow squash-merges the PR.
-# A DATA_PR_TOKEN merge starts deploy.yml via push to main; a GITHUB_TOKEN
-# merge does not, so deploy.yml is dispatched in that case (and if a PAT
-# push deploy does not appear). Any other files keep the PR open for
-# Seth's go-ahead. Unchanged data produces no PR and does not touch the
-# data branch.
+# src/data/talent-trees/**, and src/data/professions/**, and this
+# workflow is running on the default branch, the new data is committed
+# to the unprotected data-live branch (a regular commit, never a
+# force-push) and this workflow then calls deploy.yml so Pages is built
+# from main with those data files overlaid.
 #
-# Pushes and pull requests made with GITHUB_TOKEN do not run other
-# workflows, so without DATA_PR_TOKEN this job dispatches ci.yml (and,
-# after merge, deploy.yml) with GITHUB_TOKEN.
+# The branch is named data-live, not data, because Git cannot create
+# refs/heads/data while refs/heads/data/wow-characters still exists.
+# data/wow-characters is left in place and is no longer updated here.
 #
-# Optional DATA_PR_TOKEN (narrowly scoped PAT) is used to push the data
-# branch and open/merge the PR so pull_request CI runs normally. When it
-# is set, do not dispatch ci.yml (the PAT cannot; it also is not needed).
-# Wait for the pull_request "build" check on the PR head to succeed, then
-# squash-merge with the PAT (no --admin). A PAT merge is a normal push to
-# main, which starts deploy.yml; only dispatch deploy with GITHUB_TOKEN if
-# that push-triggered run does not appear.
+# Unchanged data produces no commit and does not call deploy. Unexpected
+# files outside the data paths fail the job so they can be reviewed.
 #
-# The workflow reuses a single fixed branch, data/wow-characters: it is
-# brought up to date with the default branch by a normal merge or
-# fast-forward, the new data is committed, and it is pushed without
-# --force. An existing open PR for that branch is updated in place. The
-# branch is never force-pushed or deleted.
+# GITHUB_TOKEN is enough: it can push to the unprotected data-live
+# branch (contents: write), and deploy is invoked with workflow_call
+# (same run; no “token cannot trigger workflows” issue). workflow_dispatch
+# of another workflow also works with GITHUB_TOKEN (GitHub’s documented
+# exception, along with repository_dispatch), but calling deploy.yml
+# directly is simpler and does not depend on that.
+#
+# The Cloudflare worker can keep dispatching this workflow on main
+# (workflow_dispatch, ref main).
 #
 # Required repository secrets (do not commit them):
 #   BNET_CLIENT_ID
 #   BNET_CLIENT_SECRET
-# Optional:
-#   DATA_PR_TOKEN — PAT used to push the data branch and open/merge the
-#   data PR so pull_request CI runs (GITHUB_TOKEN cannot). Fine-grained
-#   Contents + Pull requests write on this repo only; not an admin token.
-#   It does not need Actions/workflows permission.
+# Unused by this workflow (safe to delete from repo secrets):
+#   DATA_PR_TOKEN — previously used to open and squash-merge data PRs.
 
 name: Refresh character data
 
@@ -46,8 +40,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
-  actions: write
 
 concurrency:
   group: refresh-characters
@@ -55,17 +47,16 @@ concurrency:
 
 jobs:
   refresh:
-    name: fetch-and-pr
+    name: fetch-and-publish
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    outputs:
+      published: ${{ steps.publish.outputs.published || 'false' }}
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
-          # Prefer DATA_PR_TOKEN so git push is not done with GITHUB_TOKEN
-          # (a GITHUB_TOKEN push does not trigger pull_request CI).
-          token: ${{ secrets.DATA_PR_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Set up Node
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -89,7 +80,7 @@ jobs:
           if [ "${#files[@]}" -eq 0 ]; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
             echo "data_only=false" >> "$GITHUB_OUTPUT"
-            echo "No data changes; skipping PR."
+            echo "No data changes; nothing to publish."
             exit 0
           fi
           data_only=true
@@ -111,26 +102,35 @@ jobs:
           } >> "$GITHUB_OUTPUT"
           echo "has_changes=true data_only=${data_only}"
 
-      - name: Build site (data-only auto-merge path)
-        id: prebuild
-        if: steps.changes.outputs.has_changes == 'true' && steps.changes.outputs.data_only == 'true' && github.ref_name == github.event.repository.default_branch
-        continue-on-error: true
+      - name: Fail if unexpected files changed
+        if: steps.changes.outputs.has_changes == 'true' && steps.changes.outputs.data_only != 'true'
+        run: |
+          echo "Refresh produced changes outside src/data/characters/, src/data/talent-trees/, and src/data/professions/. Not publishing."
+          exit 1
+
+      - name: Skip publish on non-default branch
+        if: steps.changes.outputs.has_changes == 'true' && github.ref_name != github.event.repository.default_branch
+        run: echo "Changes found, but data-live is only updated when this workflow runs on the default branch. Skipping publish."
+
+      - name: Build site with the new data
+        if: >
+          steps.changes.outputs.has_changes == 'true' &&
+          steps.changes.outputs.data_only == 'true' &&
+          github.ref_name == github.event.repository.default_branch
         run: npm ci && npm run build
 
-      - name: Skip PR on non-default branch
-        if: steps.changes.outputs.has_changes == 'true' && github.ref_name != github.event.repository.default_branch
-        run: echo "Changes found, but the fixed data/wow-characters branch is only updated when this workflow runs on the default branch. Skipping PR."
-
-      - name: Update data branch and open or update PR
-        id: cpr_data
-        if: steps.changes.outputs.has_changes == 'true' && github.ref_name == github.event.repository.default_branch
+      - name: Commit data to data-live
+        id: publish
+        if: >
+          steps.changes.outputs.has_changes == 'true' &&
+          steps.changes.outputs.data_only == 'true' &&
+          github.ref_name == github.event.repository.default_branch
         env:
-          GH_TOKEN: ${{ secrets.DATA_PR_TOKEN || secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-          DATA_BRANCH: data/wow-characters
-          DATA_ONLY: ${{ steps.changes.outputs.data_only }}
+          DATA_BRANCH: data-live
         run: |
           set -euo pipefail
+          echo "published=false" >> "$GITHUB_OUTPUT"
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -155,245 +155,43 @@ jobs:
           git fetch origin "refs/heads/${DEFAULT_BRANCH}:refs/remotes/origin/${DEFAULT_BRANCH}"
           if git fetch origin "refs/heads/${DATA_BRANCH}:refs/remotes/origin/${DATA_BRANCH}"; then
             git checkout -B "$DATA_BRANCH" "origin/${DATA_BRANCH}"
-            if ! git merge --no-edit "origin/${DEFAULT_BRANCH}"; then
-              echo "Merge conflicts while updating ${DATA_BRANCH} from ${DEFAULT_BRANCH}; resolving with the default branch, then overlaying fresh data."
-              git checkout --theirs -- .
-              git add -A
-              GIT_EDITOR=true git merge --continue
-            fi
           else
             echo "No existing ${DATA_BRANCH} branch; creating it from ${DEFAULT_BRANCH}."
             git checkout -B "$DATA_BRANCH" "origin/${DEFAULT_BRANCH}"
           fi
 
-          restore_tree() {
-            local path="$1"
-            local deleted_mark="${stash_dir}/${path}.__deleted__"
+          for path in "${files[@]}"; do
+            deleted_mark="${stash_dir}/${path}.__deleted__"
             if [ -f "$deleted_mark" ]; then
               rm -f "$path" "$deleted_mark"
-              return
+              continue
             fi
             if [ -e "${stash_dir}/${path}" ] || [ -L "${stash_dir}/${path}" ]; then
               mkdir -p "$(dirname "$path")"
               rm -rf "$path"
               cp -a "${stash_dir}/${path}" "$path"
             fi
-          }
-
-          if [ "$DATA_ONLY" = "true" ]; then
-            if [ -d "$stash_dir/src/data/characters" ]; then
-              rm -rf src/data/characters
-              mkdir -p src/data
-              cp -a "$stash_dir/src/data/characters" src/data/characters
-            fi
-            if [ -d "$stash_dir/src/data/talent-trees" ]; then
-              rm -rf src/data/talent-trees
-              mkdir -p src/data
-              cp -a "$stash_dir/src/data/talent-trees" src/data/talent-trees
-            fi
-            if [ -d "$stash_dir/src/data/professions" ]; then
-              rm -rf src/data/professions
-              mkdir -p src/data
-              cp -a "$stash_dir/src/data/professions" src/data/professions
-            fi
-            git add -- src/data/characters src/data/talent-trees src/data/professions
-          else
-            for path in "${files[@]}"; do
-              restore_tree "$path"
-            done
-            git add -- "${files[@]}"
-          fi
-
-          if git diff --cached --quiet; then
-            echo "No new data commit; the data branch already has this tree."
-          elif [ "$DATA_ONLY" = "true" ]; then
-            git commit -m "Update WoW Forever character snapshots"$'\n\n'"Snapshot and talent-tree cache written by scripts/fetch-characters.mjs"$'\n'"from the Battle.net Profile and Game Data APIs."
-          else
-            git commit -m "Update WoW Forever data (unexpected files included)"$'\n\n'"The refresh script produced changes outside src/data/characters/,"$'\n'"src/data/talent-trees/, and src/data/professions/. This PR must be reviewed before merge."
-          fi
-
-          if ! git rev-parse --verify --quiet "origin/${DATA_BRANCH}" || [ "$(git rev-parse HEAD)" != "$(git rev-parse "origin/${DATA_BRANCH}")" ]; then
-            git push origin "HEAD:refs/heads/${DATA_BRANCH}"
-          else
-            echo "Remote ${DATA_BRANCH} already points at $(git rev-parse --short HEAD); nothing to push."
-          fi
-
-          if [ "$DATA_ONLY" = "true" ]; then
-            title="Update WoW Forever character snapshots"
-            body_file=$(mktemp)
-            printf '%s\n' "Automated snapshot of member WoW Forever characters and talent-tree cache from the official Battle.net APIs." "" "This PR only updates JSON under \`src/data/characters/\`, \`src/data/talent-trees/\`, and \`src/data/professions/\`. When it targets the default branch and the required \`build\` check passes, the Refresh character data workflow squash-merges it and dispatches the Pages deploy workflow. It reuses the fixed \`data/wow-characters\` branch, brought up to date with a normal merge or fast-forward, and does not force-push or delete that branch." > "$body_file"
-          else
-            title="Update WoW Forever data (needs review)"
-            body_file=$(mktemp)
-            {
-              printf '%s\n' "Automated refresh produced changes outside \`src/data/characters/\`, \`src/data/talent-trees/\`, and \`src/data/professions/\`:" "" "\`\`\`"
-              printf '%s\n' "${files[@]}"
-              printf '%s\n' "\`\`\`" "" "This PR will **not** auto-merge. It needs Seth's go-ahead. It reuses the fixed \`data/wow-characters\` branch and does not force-push or delete it."
-            } > "$body_file"
-          fi
-
-          gh label create data --description "Automated data refresh" --force >/dev/null
-
-          pr_number=$(gh pr list --base "$DEFAULT_BRANCH" --head "$DATA_BRANCH" --state open --json number --jq '.[0].number // empty')
-          if [ -z "$pr_number" ]; then
-            gh pr create --base "$DEFAULT_BRANCH" --head "$DATA_BRANCH" --title "$title" --body-file "$body_file" --label data
-            pr_number=$(gh pr list --base "$DEFAULT_BRANCH" --head "$DATA_BRANCH" --state open --json number --jq '.[0].number // empty')
-            if [ -z "$pr_number" ]; then
-              echo "Failed to determine the new pull request number."
-              exit 1
-            fi
-            echo "pull-request-operation=created" >> "$GITHUB_OUTPUT"
-          else
-            gh pr edit "$pr_number" --title "$title" --body-file "$body_file"
-            echo "pull-request-operation=updated" >> "$GITHUB_OUTPUT"
-          fi
-
-          {
-            echo "pull-request-number=${pr_number}"
-            echo "pull-request-branch=${DATA_BRANCH}"
-            echo "pull-request-head-sha=$(git rev-parse HEAD)"
-          } >> "$GITHUB_OUTPUT"
-          echo "PR #${pr_number} on ${DATA_BRANCH} at $(git rev-parse --short HEAD)"
-
-      - name: Comment when pre-merge build fails
-        if: >
-          steps.changes.outputs.has_changes == 'true' &&
-          steps.changes.outputs.data_only == 'true' &&
-          steps.prebuild.outcome == 'failure' &&
-          steps.cpr_data.outputs.pull-request-number != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ steps.cpr_data.outputs.pull-request-number }}
-        run: >
-          gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped because \`npm ci && npm run build\` failed in the refresh workflow.
-          This PR needs Seth's go-ahead."
-
-      - name: Auto-merge data-only PR after build
-        if: >
-          steps.changes.outputs.has_changes == 'true' &&
-          steps.changes.outputs.data_only == 'true' &&
-          steps.prebuild.outcome == 'success' &&
-          steps.cpr_data.outputs.pull-request-number != '' &&
-          github.ref_name == github.event.repository.default_branch
-        env:
-          GH_TOKEN: ${{ secrets.DATA_PR_TOKEN || secrets.GITHUB_TOKEN }}
-          ACTIONS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HAS_DATA_PR_TOKEN: ${{ secrets.DATA_PR_TOKEN != '' }}
-          PR_NUMBER: ${{ steps.cpr_data.outputs.pull-request-number }}
-          PR_BRANCH: ${{ steps.cpr_data.outputs.pull-request-branch }}
-          PR_SHA: ${{ steps.cpr_data.outputs.pull-request-head-sha }}
-          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          set -euo pipefail
-          if [ -z "${PR_NUMBER}" ] || [ -z "${PR_BRANCH}" ] || [ -z "${PR_SHA}" ]; then
-            echo "Missing pull request outputs; leaving the PR for review."
-            exit 1
-          fi
-
-          merge_body="Automated data refresh. Squash-merged by the Refresh character data workflow after the required build check passed. Only files under src/data/characters/, src/data/talent-trees/, and src/data/professions/ were changed."
-
-          if [ "${HAS_DATA_PR_TOKEN}" = "true" ]; then
-            echo "DATA_PR_TOKEN is set: waiting for the pull_request build check (not dispatching ci.yml)."
-            found=false
-            for _ in $(seq 1 120); do
-              head=$(gh pr view "${PR_NUMBER}" --json headRefOid --jq '.headRefOid')
-              if [ "${head}" != "${PR_SHA}" ]; then
-                echo "PR #${PR_NUMBER} head is ${head}, expected ${PR_SHA}."
-                gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped because the PR head SHA changed while waiting for the \`build\` check. This PR needs Seth's go-ahead."
-                exit 1
-              fi
-              # DATA_PR_TOKEN has no Actions permission, so poll PR-reported
-              # checks (not gh run list / workflow_dispatch).
-              merge_state=$(gh pr view "${PR_NUMBER}" --json mergeStateStatus --jq '.mergeStateStatus // empty')
-              check=$(gh pr view "${PR_NUMBER}" --json statusCheckRollup --jq '[.statusCheckRollup[]? | select(.name=="build")][0] // {} | [(.status // "none"), (.conclusion // "none")] | @tsv')
-              build_status=$(printf '%s' "${check}" | cut -f1 | tr '[:lower:]' '[:upper:]')
-              build_conclusion=$(printf '%s' "${check}" | cut -f2 | tr '[:lower:]' '[:upper:]')
-              echo "PR #${PR_NUMBER} build status=${build_status} conclusion=${build_conclusion} mergeable_state=${merge_state}"
-              if [ "${build_status}" = "COMPLETED" ] && [ "${build_conclusion}" = "SUCCESS" ]; then
-                found=true
-                break
-              fi
-              if [ "${build_status}" = "COMPLETED" ] && [ "${build_conclusion}" != "SUCCESS" ] && [ "${build_conclusion}" != "NONE" ]; then
-                gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped because the required \`build\` check failed (\`${build_conclusion}\`). This PR needs Seth's go-ahead."
-                exit 1
-              fi
-              sleep 5
-            done
-            if [ "${found}" != true ]; then
-              echo "Timed out waiting for the pull_request build check."
-              gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped: the pull_request \`build\` check did not complete within 10 minutes. This PR needs Seth's go-ahead."
-              exit 1
-            fi
-          else
-            echo "No DATA_PR_TOKEN: dispatching ci.yml with GITHUB_TOKEN."
-            RUN_ID=$(GH_TOKEN="${ACTIONS_TOKEN}" gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,conclusion,event,status --jq "[.[] | select(.headSha==\"${PR_SHA}\" and .conclusion==\"success\")][0].databaseId // empty")
-            if [ -z "${RUN_ID}" ]; then
-              RUN_ID=$(GH_TOKEN="${ACTIONS_TOKEN}" gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,conclusion,event,status --jq "[.[] | select(.headSha==\"${PR_SHA}\" and (.status==\"in_progress\" or .status==\"queued\" or .status==\"pending\" or .status==\"waiting\"))][0].databaseId // empty")
-            fi
-            if [ -z "${RUN_ID}" ]; then
-              GH_TOKEN="${ACTIONS_TOKEN}" gh workflow run ci.yml --ref "${PR_BRANCH}"
-              for _ in $(seq 1 60); do
-                RUN_ID=$(GH_TOKEN="${ACTIONS_TOKEN}" gh run list --workflow=ci.yml --branch="${PR_BRANCH}" --limit 20 --json databaseId,headSha,event --jq "[.[] | select(.headSha==\"${PR_SHA}\" and .event==\"workflow_dispatch\")][0].databaseId // empty")
-                if [ -n "${RUN_ID}" ]; then
-                  break
-                fi
-                sleep 5
-              done
-            fi
-            if [ -z "${RUN_ID}" ]; then
-              echo "Timed out waiting for the dispatched CI run to start. The PR will stay open."
-              gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped: the dispatched CI \`build\` check never started. This PR needs Seth's go-ahead."
-              exit 1
-            fi
-            CONCLUSION=$(GH_TOKEN="${ACTIONS_TOKEN}" gh run view "${RUN_ID}" --json conclusion --jq '.conclusion // empty')
-            if [ "${CONCLUSION}" != "success" ]; then
-              if ! GH_TOKEN="${ACTIONS_TOKEN}" gh run watch "${RUN_ID}" --exit-status; then
-                gh pr comment "${PR_NUMBER}" --body "Auto-merge skipped because the required \`build\` check failed. This PR needs Seth's go-ahead."
-                exit 1
-              fi
-            else
-              echo "Reusing successful CI run ${RUN_ID} for ${PR_SHA}."
-            fi
-          fi
-
-          merged=false
-          for _ in $(seq 1 12); do
-            state=$(gh api "repos/${GH_REPO}/pulls/${PR_NUMBER}" --jq '.mergeable_state // empty')
-            echo "PR #${PR_NUMBER} mergeable_state=${state}"
-            if gh pr merge "${PR_NUMBER}" --squash --body "${merge_body}"; then
-              merged=true
-              break
-            fi
-            sleep 5
           done
-          if [ "${merged}" != true ]; then
-            gh pr comment "${PR_NUMBER}" --body "Auto-merge is still blocked after the required \`build\` check passed (no \`--admin\` bypass). This PR needs Seth's go-ahead."
-            exit 1
+
+          git add -- src/data/characters src/data/talent-trees src/data/professions
+          if git diff --cached --quiet; then
+            echo "No new data commit; ${DATA_BRANCH} already has this tree."
+            exit 0
           fi
 
-          MERGE_SHA=$(gh pr view "${PR_NUMBER}" --json mergeCommit --jq '.mergeCommit.oid // empty')
-          if [ -z "${MERGE_SHA}" ]; then
-            MERGE_SHA=$(GH_TOKEN="${ACTIONS_TOKEN}" gh api "repos/${GH_REPO}/commits/${DEFAULT_BRANCH}" --jq '.sha')
-          fi
-          echo "Merged PR #${PR_NUMBER} as ${MERGE_SHA}"
+          when=$(date -u +'%Y-%m-%d %H:%M UTC')
+          names=$(git diff --cached --name-only | xargs -n1 basename | awk '{printf sep $0; sep=", "}')
+          git commit -m "data: refresh ${when} (${names})"
+          git push origin "HEAD:refs/heads/${DATA_BRANCH}"
+          echo "published=true" >> "$GITHUB_OUTPUT"
+          echo "Published to ${DATA_BRANCH}: data: refresh ${when} (${names})"
 
-          if [ "${HAS_DATA_PR_TOKEN}" = "true" ]; then
-            echo "Waiting for push-triggered deploy.yml on ${MERGE_SHA} (PAT merges fire push workflows)."
-            deploy_id=""
-            for _ in $(seq 1 18); do
-              deploy_id=$(GH_TOKEN="${ACTIONS_TOKEN}" gh run list --workflow=deploy.yml --branch="${DEFAULT_BRANCH}" --limit 15 --json databaseId,headSha,event --jq "[.[] | select(.headSha==\"${MERGE_SHA}\" and .event==\"push\")][0].databaseId // empty")
-              if [ -n "${deploy_id}" ]; then
-                echo "Push-triggered deploy already started: ${deploy_id}"
-                break
-              fi
-              sleep 5
-            done
-            if [ -z "${deploy_id}" ]; then
-              echo "No push-triggered deploy appeared; dispatching deploy.yml with GITHUB_TOKEN."
-              GH_TOKEN="${ACTIONS_TOKEN}" gh workflow run deploy.yml --ref "${DEFAULT_BRANCH}"
-            fi
-          else
-            echo "GITHUB_TOKEN merge does not trigger push workflows; dispatching deploy.yml."
-            GH_TOKEN="${ACTIONS_TOKEN}" gh workflow run deploy.yml --ref "${DEFAULT_BRANCH}"
-          fi
+  deploy:
+    name: deploy
+    needs: refresh
+    if: needs.refresh.outputs.published == 'true'
+    uses: ./.github/workflows/deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
