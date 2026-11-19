@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T16:30:59.203Z",
+  "fetchedAt": "2026-11-19T16:46:07.428Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4107,7 +4107,8 @@
                   "description": "Reduces the chance enemies have to detect you while in Stealth mode as if you were 3 levels higher.",
                   "spellId": 13958
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136129.jpg"
             },
             {
               "id": 105760,
@@ -4145,7 +4146,8 @@
                   "description": "Increases the damage dealt by your Backstab, Garrote, Ambush, and Mutilate abilities by 20%.",
                   "spellId": 14057
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132366.jpg"
             },
             {
               "id": 105745,
@@ -9966,7 +9968,8 @@
                   "description": "Your Berserker Rage ability will instantly generate 10 Rage and has a 100% chance to remove all movement impairing effects when activated.",
                   "spellId": 20500
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136009.jpg"
             },
             {
               "id": 105927,
@@ -9986,7 +9989,8 @@
                   "description": "When activated, increases your Physical damage done by 20% and makes you immune to Fear effects, but increases all damage you take by 5%. Lasts 30 sec.",
                   "spellId": 12328
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136146.jpg"
             },
             {
               "id": 113569,
@@ -10011,7 +10015,8 @@
                   "description": "Your Enrage, Berserker Rage, Bloodrage, Death Wish, Reckless Swings, and Bloodthirst abilities cause your next 3 melee attacks to restore 1.0% of your maximum Health.",
                   "spellId": 1323967
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135727.jpg"
             },
             {
               "id": 105926,
