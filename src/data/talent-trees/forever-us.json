@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T17:01:06.303Z",
+  "fetchedAt": "2026-11-19T17:15:58.271Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3773,8 +3773,7 @@
                   "description": "A strike that becomes active after parrying an opponent's attack.  This attack deals 150% weapon damage and disarms the target for 6 sec.",
                   "spellId": 14251
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132336.jpg"
+              ]
             },
             {
               "id": 105759,
@@ -3797,8 +3796,7 @@
                   "description": "Increases the Energy cost reduction of your Poised ability by 10.",
                   "spellId": 1329265
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132296.jpg"
+              ]
             },
             {
               "id": 105733,
@@ -3821,8 +3819,7 @@
                   "description": "Gives your Kick ability a 100% chance to Silence the target for 2 sec.",
                   "spellId": 13754
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132219.jpg"
+              ]
             },
             {
               "id": 108100,
@@ -6715,8 +6712,7 @@
                   "description": "Reduces all spell damage taken by 10%.",
                   "spellId": 27900
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135976.jpg"
+              ]
             },
             {
               "id": 105863,
@@ -6756,8 +6752,7 @@
                   "description": "Reduces the casting time of your Smite, Holy Fire, Heal, and Greater Heal spells by 0.5 sec.",
                   "spellId": 18530
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135971.jpg"
+              ]
             },
             {
               "id": 105862,
@@ -9705,8 +9700,7 @@
                   "description": "Increases the time before your Rage begins to decay after leaving combat by 10 sec.",
                   "spellId": 1323964
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132356.jpg"
+              ]
             },
             {
               "id": 105937,
@@ -9744,8 +9738,7 @@
                   "description": "Gives you a 60% chance to generate 1 additional Rage when you deal melee damage with a weapon.",
                   "spellId": 12322
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136097.jpg"
+              ]
             },
             {
               "id": 105953,
@@ -12740,8 +12733,7 @@
                   "description": "Increases the health of your Stoneclaw Totem by 50% and the radius of your Earthbind Totem by 20%.",
                   "spellId": 16043
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136097.jpg"
+              ]
             },
             {
               "id": 104753,
@@ -12779,8 +12771,7 @@
                   "description": "Improves your chance to get a critical strike with all spells and attacks by 5%.",
                   "spellId": 16255
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132325.jpg"
+              ]
             },
             {
               "id": 104756,
@@ -12818,8 +12809,7 @@
                   "description": "Increases your Intellect by 10%.",
                   "spellId": 17485
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136162.jpg"
+              ]
             },
             {
               "id": 104754,
