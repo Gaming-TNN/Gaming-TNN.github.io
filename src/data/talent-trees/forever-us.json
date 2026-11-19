@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T19:15:59.995Z",
+  "fetchedAt": "2026-11-19T19:31:59.360Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4637,7 +4637,8 @@
                   "description": "Increases your Armor by an amount equal to 75% of your Intellect.",
                   "spellId": 28574
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135733.jpg"
             },
             {
               "id": 105812,
@@ -4660,7 +4661,8 @@
                   "description": "Reduces your target's resistance to all your spells by 15 and reduces the threat caused by your Arcane spells by 30%.",
                   "spellId": 11210
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135894.jpg"
             },
             {
               "id": 105811,
@@ -4683,7 +4685,8 @@
                   "description": "Increases all your resistances by 10 and causes all spells you fully resist to restore 2% of your total mana. Cannot trigger more often than 1 time per sec.",
                   "spellId": 29441
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136011.jpg"
             },
             {
               "id": 105810,
@@ -7608,7 +7611,8 @@
                   "description": "Increases the amount of Mana awarded by your Life Tap spell by 20%.",
                   "spellId": 18182
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136126.jpg"
             },
             {
               "id": 105925,
@@ -7646,7 +7650,8 @@
                   "description": "Improves your chance to hit by 5% and reduces all threat you generate by 20%.",
                   "spellId": 18174
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136230.jpg"
             },
             {
               "id": 105924,
@@ -7684,7 +7689,8 @@
                   "description": "Reduces the casting time of your Corruption spell by 2 sec and increases the damage it deals by 10%.",
                   "spellId": 17810
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136118.jpg"
             },
             {
               "id": 105923,
@@ -10606,7 +10612,8 @@
                   "description": "Increases all damage you deal by 10% while a shield is equipped.",
                   "spellId": 16538
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134950.jpg"
             },
             {
               "id": 105959,
@@ -10626,7 +10633,8 @@
                   "description": "Slam the target with your shield, causing 421 to 439 damage, increased by your Block Value, and has a 50% chance of dispelling 1 magic effect on the target. Causes a very high amount of threat.",
                   "spellId": 23922
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134951.jpg"
             }
           ]
         }
@@ -10681,7 +10689,8 @@
                   "description": "While Aspect of the Hawk is active, Auto Shot has a 10% chance of increasing ranged attack speed by 30% for 12 sec. While Aspect of the Beast is active, all melee auto attacks have a 10% chance of increasing melee attack speed by 30% for 12 sec.",
                   "spellId": 19552
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136076.jpg"
             },
             {
               "id": 104976,
@@ -13719,7 +13728,8 @@
                   "description": "Heals a friendly target for 600 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
                   "spellId": 408521
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/252995.jpg"
             }
           ]
         }
