@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T20:30:48.640Z",
+  "fetchedAt": "2026-11-19T20:45:58.256Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -48,7 +48,7 @@
       "slug": "lower-expectations"
     },
     "level": 29,
-    "experience": 29960,
+    "experience": 42977,
     "achievement_points": 0,
     "achievements": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/achievements?namespace=profile-forever-us"
@@ -65,8 +65,8 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795105710000,
-    "average_item_level": 25,
+    "last_login_timestamp": 1795121016000,
+    "average_item_level": 24,
     "equipped_item_level": 24,
     "specializations": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/specializations?namespace=profile-forever-us"
@@ -264,8 +264,8 @@
           "item_modified_appearance_id": 77344
         },
         "durability": {
-          "value": 66,
-          "display_string": "Durability 66 / 70"
+          "value": 68,
+          "display_string": "Durability 68 / 70"
         }
       },
       {
@@ -493,8 +493,8 @@
           "second_item_modified_appearance_id": 77343
         },
         "durability": {
-          "value": 68,
-          "display_string": "Durability 68 / 70"
+          "value": 70,
+          "display_string": "Durability 70 / 70"
         }
       },
       {
@@ -725,8 +725,8 @@
           "item_modified_appearance_id": 104602
         },
         "durability": {
-          "value": 110,
-          "display_string": "Durability 110 / 120"
+          "value": 120,
+          "display_string": "Durability 120 / 120"
         }
       },
       {
@@ -868,8 +868,8 @@
           "item_modified_appearance_id": 84223
         },
         "durability": {
-          "value": 29,
-          "display_string": "Durability 29 / 30"
+          "value": 28,
+          "display_string": "Durability 28 / 30"
         }
       },
       {
@@ -1028,8 +1028,8 @@
           "item_modified_appearance_id": 198608
         },
         "durability": {
-          "value": 88,
-          "display_string": "Durability 88 / 90"
+          "value": 86,
+          "display_string": "Durability 86 / 90"
         }
       },
       {
@@ -1167,53 +1167,32 @@
           "item_modified_appearance_id": 306411
         },
         "durability": {
-          "value": 57,
-          "display_string": "Durability 57 / 60"
+          "value": 59,
+          "display_string": "Durability 59 / 60"
         }
       },
       {
         "item": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item/15517?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/item/3835?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 15517
+          "id": 3835
         },
-        "enchantments": [
-          {
-            "display_string": "Enchanted: Defense +3",
-            "source_item": {
-              "key": {
-                "href": "https://us.api.blizzard.com/data/wow/item/273461?namespace=static-1.60.1_70399-forever-us"
-              },
-              "name": "Enchant Bracer - Minor Deflect",
-              "id": 273461
-            },
-            "enchantment_id": 924,
-            "enchantment_slot": {
-              "id": 0,
-              "type": "PERMANENT"
-            }
-          }
-        ],
         "slot": {
           "type": "WRIST",
           "name": "Wrist"
         },
         "quantity": 1,
-        "context": 1,
-        "bonus_list": [
-          12733
-        ],
         "quality": {
           "type": "UNCOMMON",
           "name": "Uncommon"
         },
-        "name": "Spiked Chain Wristbands of Power",
+        "name": "Green Iron Bracers",
         "media": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/media/item/15517?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/media/item/3835?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 15517
+          "id": 3835
         },
         "item_class": {
           "key": {
@@ -1238,9 +1217,9 @@
           "name": "Binds when equipped"
         },
         "armor": {
-          "value": 80,
+          "value": 91,
           "display": {
-            "display_string": "80 Armor",
+            "display_string": "91 Armor",
             "color": {
               "r": 255,
               "g": 255,
@@ -1252,40 +1231,55 @@
         "stats": [
           {
             "type": {
-              "type": "ATTACK_POWER",
-              "name": "Attack Power"
+              "type": "STRENGTH",
+              "name": "Strength"
             },
-            "value": 10,
-            "is_equip_bonus": true,
+            "value": 4,
             "display": {
-              "display_string": "+10 Attack Power",
+              "display_string": "+4 Strength",
               "color": {
-                "r": 0,
+                "r": 255,
                 "g": 255,
-                "b": 0,
+                "b": 255,
+                "a": 1
+              }
+            }
+          },
+          {
+            "type": {
+              "type": "STAMINA",
+              "name": "Stamina"
+            },
+            "value": 5,
+            "display": {
+              "display_string": "+5 Stamina",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
                 "a": 1
               }
             }
           }
         ],
         "sell_price": {
-          "value": 850,
+          "value": 1106,
           "display_strings": {
             "header": "Sell Price:",
             "gold": "0",
-            "silver": "8",
-            "copper": "50"
+            "silver": "11",
+            "copper": "6"
           }
         },
         "requirements": {
           "level": {
-            "value": 20,
-            "display_string": "Requires Level 20"
+            "value": 28,
+            "display_string": "Requires Level 28"
           }
         },
         "level": {
-          "value": 25,
-          "display_string": "Item Level 25"
+          "value": 33,
+          "display_string": "Item Level 33"
         },
         "transmog": {
           "item": {
@@ -1299,8 +1293,8 @@
           "item_modified_appearance_id": 104604
         },
         "durability": {
-          "value": 27,
-          "display_string": "Durability 27 / 30"
+          "value": 34,
+          "display_string": "Durability 34 / 35"
         }
       },
       {
@@ -1879,8 +1873,8 @@
           "item_modified_appearance_id": 161278
         },
         "durability": {
-          "value": 71,
-          "display_string": "Durability 71 / 75"
+          "value": 70,
+          "display_string": "Durability 70 / 75"
         }
       },
       {
@@ -2046,8 +2040,8 @@
           "item_modified_appearance_id": 160906
         },
         "durability": {
-          "value": 97,
-          "display_string": "Durability 97 / 100"
+          "value": 100,
+          "display_string": "Durability 100 / 100"
         }
       },
       {
@@ -2147,8 +2141,8 @@
           "display_string": "Item Level 27"
         },
         "durability": {
-          "value": 195,
-          "display_string": "Durability 195 / 200"
+          "value": 198,
+          "display_string": "Durability 198 / 200"
         }
       }
     ]
@@ -2376,7 +2370,7 @@
         },
         "tiers": [
           {
-            "skill_points": 178,
+            "skill_points": 201,
             "max_skill_points": 225,
             "tier": {
               "name": "Mining",
@@ -2434,10 +2428,24 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/2037?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Smelt Steel",
+                "id": 2037
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/3324?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Smelt Copper",
                 "id": 3324
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/5387?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Smelt Mithril",
+                "id": 5387
               },
               {
                 "key": {
@@ -2460,7 +2468,7 @@
         },
         "tiers": [
           {
-            "skill_points": 160,
+            "skill_points": 185,
             "max_skill_points": 225,
             "tier": {
               "name": "Blacksmithing",
@@ -2504,10 +2512,31 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/7837?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Truesilver Rod",
+                "id": 7837
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/5316?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Heavy Mithril Gauntlet",
+                "id": 5316
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/1798?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Rough Weightstone",
                 "id": 1798
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1800?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Coarse Weightstone",
+                "id": 1800
               },
               {
                 "key": {
@@ -2602,6 +2631,13 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1635?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Runed Copper Bracers",
+                "id": 1635
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/1636?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Coarse Sharpening Stone",
@@ -2644,6 +2680,20 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1646?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Copper Mace",
+                "id": 1646
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1651?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Copper Axe",
+                "id": 1651
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/1652?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Copper Shortsword",
@@ -2658,6 +2708,13 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/4389?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Rough Bronze Boots",
+                "id": 4389
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/4390?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Silver Rod",
@@ -2665,10 +2722,31 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/11184?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Golden Skeleton Key",
+                "id": 11184
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/4910?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Copper Dagger",
                 "id": 4910
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/5312?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Solid Sharpening Stone",
+                "id": 5312
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/5314?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Solid Grinding Stone",
+                "id": 5314
               },
               {
                 "key": {
@@ -2683,6 +2761,13 @@
                 },
                 "name": "Bronze Warhammer",
                 "id": 5339
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/4206?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Golden Scale Bracers",
+                "id": 4206
               },
               {
                 "key": {
@@ -2704,6 +2789,20 @@
                 },
                 "name": "Gemmed Copper Boots",
                 "id": 54692
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/54693?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Strange Copper Boots",
+                "id": 54693
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/54694?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Glowing Copper Boots",
+                "id": 54694
               },
               {
                 "key": {
@@ -2770,13 +2869,20 @@
         },
         "tiers": [
           {
-            "skill_points": 150,
+            "skill_points": 225,
             "max_skill_points": 225,
             "tier": {
               "name": "Cooking",
               "id": 2939
             },
             "known_recipes": [
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/11873?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Mithril Headed Trout",
+                "id": 11873
+              },
               {
                 "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/1535?namespace=static-1.60.1_70399-forever-us"
@@ -2889,7 +2995,7 @@
         },
         "tiers": [
           {
-            "skill_points": 181,
+            "skill_points": 197,
             "max_skill_points": 225,
             "tier": {
               "name": "First Aid",
@@ -2968,6 +3074,13 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/54194?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Greater Healing Potion",
+                "id": 54194
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/55743?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Woolen Tourniquet",
@@ -2988,6 +3101,7 @@
   },
   "itemIcons": {
     "3582": "https://render.worldofwarcraft.com/forever-us/icons/56/133753.jpg",
+    "3835": "https://render.worldofwarcraft.com/forever-us/icons/56/132605.jpg",
     "3849": "https://render.worldofwarcraft.com/forever-us/icons/56/135321.jpg",
     "6125": "https://render.worldofwarcraft.com/forever-us/icons/56/132719.jpg",
     "6414": "https://render.worldofwarcraft.com/forever-us/icons/56/133357.jpg",
@@ -2996,7 +3110,6 @@
     "7133": "https://render.worldofwarcraft.com/forever-us/icons/56/132629.jpg",
     "13127": "https://render.worldofwarcraft.com/forever-us/icons/56/133126.jpg",
     "13131": "https://render.worldofwarcraft.com/forever-us/icons/56/135049.jpg",
-    "15517": "https://render.worldofwarcraft.com/forever-us/icons/56/132615.jpg",
     "250514": "https://render.worldofwarcraft.com/forever-us/icons/56/132504.jpg",
     "250524": "https://render.worldofwarcraft.com/forever-us/icons/56/134668.jpg",
     "273842": "https://render.worldofwarcraft.com/forever-us/icons/56/132536.jpg",
