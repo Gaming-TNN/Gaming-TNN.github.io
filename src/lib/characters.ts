@@ -48,12 +48,54 @@ export interface CharacterSnapshot {
   itemIcons?: Record<string, string>;
 }
 
+export interface TooltipColor {
+  r?: number;
+  g?: number;
+  b?: number;
+  a?: number;
+}
+
+export interface TooltipDisplay {
+  display_string?: string;
+  color?: TooltipColor;
+}
+
 export interface EquippedItem {
   name?: string;
   item?: { id?: number };
   slot?: { type?: string; name?: string };
   quality?: { type?: string; name?: string };
   level?: { value?: number; display_string?: string };
+  binding?: { type?: string; name?: string };
+  item_class?: { name?: string; id?: number };
+  item_subclass?: { name?: string; id?: number };
+  inventory_type?: { type?: string; name?: string };
+  is_subclass_hidden?: boolean;
+  armor?: { value?: number; display?: TooltipDisplay };
+  shield_block?: { value?: number; display?: TooltipDisplay };
+  weapon?: {
+    damage?: { min_value?: number; max_value?: number; display_string?: string; damage_class?: { name?: string } };
+    attack_speed?: { value?: number; display_string?: string };
+    dps?: { value?: number; display_string?: string };
+  };
+  stats?: Array<{
+    type?: { type?: string; name?: string };
+    value?: number;
+    is_equip_bonus?: boolean;
+    display?: TooltipDisplay;
+  }>;
+  enchantments?: Array<{ display_string?: string; source_item?: { name?: string } }>;
+  spells?: Array<{ spell?: { name?: string; id?: number }; description?: string }>;
+  set?: { item_set?: { name?: string }; items?: unknown[]; effects?: Array<{ display_string?: string; required_count?: number; is_active?: boolean }> };
+  durability?: { value?: number; display_string?: string };
+  requirements?: {
+    level?: { value?: number; display_string?: string };
+    playable_classes?: { display_string?: string };
+  };
+  sell_price?: {
+    value?: number;
+    display_strings?: { header?: string; gold?: string; silver?: string; copper?: string };
+  };
 }
 
 export interface ProfessionBlock {

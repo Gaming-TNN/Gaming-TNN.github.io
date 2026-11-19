@@ -13,9 +13,9 @@ import {
   itemBySlot,
   itemIcon,
   mediaAsset,
-  qualityClass,
 } from '../lib/characters';
 import WowTalentTrees from './WowTalentTrees.astro';
+import WowGearSlot from './WowGearSlot.astro';
 import { professionIcon } from '../lib/professions';
 
 interface Props {
@@ -83,26 +83,7 @@ function slotRow(type: string) {
     <ul class="grid gap-2">
       {PAPERDOLL_LEFT.map((type) => {
         const row = slotRow(type);
-        return (
-          <li class="flex items-center gap-3 bg-[#121215] border border-[#27272a] px-3 py-2 min-h-[3.25rem]">
-            {row.icon ? (
-              <img src={row.icon} alt="" width="32" height="32" class="size-8 shrink-0 border border-black" />
-            ) : (
-              <span class="size-8 shrink-0 border border-dashed border-[#3f3f46] bg-black" aria-hidden="true"></span>
-            )}
-            <div class="min-w-0">
-              <p class="text-[10px] font-bold tracking-widest text-zinc-500 m-0">{row.name}</p>
-              {row.item ? (
-                <p class:list={['text-sm font-bold normal-case tracking-normal m-0 truncate', qualityClass(row.item)]}>
-                  {row.item.name}
-                  {row.item.level?.value != null && <span class="text-zinc-500 font-medium ml-2">iLvl {row.item.level.value}</span>}
-                </p>
-              ) : (
-                <p class="text-xs text-zinc-600 normal-case tracking-normal m-0 italic">Empty</p>
-              )}
-            </div>
-          </li>
-        );
+        return <WowGearSlot slotName={row.name} item={row.item} icon={row.icon} />;
       })}
     </ul>
     <div class="relative border border-[#27272a] bg-black min-h-64 flex items-end justify-center overflow-hidden">
@@ -115,52 +96,14 @@ function slotRow(type: string) {
     <ul class="grid gap-2">
       {PAPERDOLL_RIGHT.map((type) => {
         const row = slotRow(type);
-        return (
-          <li class="flex items-center gap-3 bg-[#121215] border border-[#27272a] px-3 py-2 min-h-[3.25rem]">
-            {row.icon ? (
-              <img src={row.icon} alt="" width="32" height="32" class="size-8 shrink-0 border border-black" />
-            ) : (
-              <span class="size-8 shrink-0 border border-dashed border-[#3f3f46] bg-black" aria-hidden="true"></span>
-            )}
-            <div class="min-w-0">
-              <p class="text-[10px] font-bold tracking-widest text-zinc-500 m-0">{row.name}</p>
-              {row.item ? (
-                <p class:list={['text-sm font-bold normal-case tracking-normal m-0 truncate', qualityClass(row.item)]}>
-                  {row.item.name}
-                  {row.item.level?.value != null && <span class="text-zinc-500 font-medium ml-2">iLvl {row.item.level.value}</span>}
-                </p>
-              ) : (
-                <p class="text-xs text-zinc-600 normal-case tracking-normal m-0 italic">Empty</p>
-              )}
-            </div>
-          </li>
-        );
+        return <WowGearSlot slotName={row.name} item={row.item} icon={row.icon} />;
       })}
     </ul>
   </div>
   <ul class="grid sm:grid-cols-3 gap-2 mt-4">
     {PAPERDOLL_BOTTOM.map((type) => {
       const row = slotRow(type);
-      return (
-        <li class="flex items-center gap-3 bg-[#121215] border border-[#27272a] px-3 py-2 min-h-[3.25rem]">
-          {row.icon ? (
-            <img src={row.icon} alt="" width="32" height="32" class="size-8 shrink-0 border border-black" />
-          ) : (
-            <span class="size-8 shrink-0 border border-dashed border-[#3f3f46] bg-black" aria-hidden="true"></span>
-          )}
-          <div class="min-w-0">
-            <p class="text-[10px] font-bold tracking-widest text-zinc-500 m-0">{row.name}</p>
-            {row.item ? (
-              <p class:list={['text-sm font-bold normal-case tracking-normal m-0 truncate', qualityClass(row.item)]}>
-                {row.item.name}
-                {row.item.level?.value != null && <span class="text-zinc-500 font-medium ml-2">iLvl {row.item.level.value}</span>}
-              </p>
-            ) : (
-              <p class="text-xs text-zinc-600 normal-case tracking-normal m-0 italic">Empty</p>
-            )}
-          </div>
-        </li>
-      );
+      return <WowGearSlot slotName={row.name} item={row.item} icon={row.icon} />;
     })}
   </ul>
 </section>
@@ -217,3 +160,109 @@ function slotRow(type: string) {
     </p>
   )}
 </footer>
+
+<script is:inline>
+(() => {
+  const fineHover = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const margin = 8;
+  let openBtn = null;
+
+  function tipOf(btn) {
+    return btn && btn.querySelector('[data-item-tooltip]');
+  }
+
+  function hide() {
+    if (!openBtn) return;
+    const tip = tipOf(openBtn);
+    if (tip) {
+      tip.classList.add('invisible', 'opacity-0');
+      tip.classList.remove('is-open');
+    }
+    openBtn.setAttribute('aria-expanded', 'false');
+    openBtn = null;
+  }
+
+  function place(btn) {
+    const tip = tipOf(btn);
+    if (!tip) return;
+    tip.classList.remove('invisible');
+    tip.classList.add('is-open');
+    tip.style.left = '0px';
+    tip.style.top = '0px';
+    const br = btn.getBoundingClientRect();
+    const tr = tip.getBoundingClientRect();
+    let top = br.top - tr.height - margin;
+    if (top < margin) top = br.bottom + margin;
+    if (top + tr.height > window.innerHeight - margin) {
+      top = Math.max(margin, window.innerHeight - margin - tr.height);
+    }
+    let left = br.left;
+    if (left + tr.width > window.innerWidth - margin) left = window.innerWidth - margin - tr.width;
+    if (left < margin) left = margin;
+    tip.style.top = top + 'px';
+    tip.style.left = left + 'px';
+    tip.classList.remove('opacity-0');
+  }
+
+  function show(btn) {
+    if (openBtn && openBtn !== btn) hide();
+    openBtn = btn;
+    btn.setAttribute('aria-expanded', 'true');
+    place(btn);
+  }
+
+  function triggerFrom(node) {
+    const el = node && node.nodeType === 1 ? node : node && node.parentElement;
+    return el && el.closest ? el.closest('[data-item-tip-trigger]') : null;
+  }
+
+  document.addEventListener('mouseover', (e) => {
+    if (!fineHover()) return;
+    const btn = triggerFrom(e.target);
+    const from = triggerFrom(e.relatedTarget);
+    if (btn && from !== btn) show(btn);
+  });
+
+  document.addEventListener('mouseout', (e) => {
+    if (!fineHover()) return;
+    const btn = triggerFrom(e.target);
+    const to = triggerFrom(e.relatedTarget);
+    if (btn && to !== btn && openBtn === btn) hide();
+  });
+
+  document.addEventListener('focusin', (e) => {
+    const btn = triggerFrom(e.target);
+    if (btn) show(btn);
+  });
+
+  document.addEventListener('focusout', (e) => {
+    const btn = triggerFrom(e.target);
+    const next = triggerFrom(e.relatedTarget);
+    if (btn && next !== btn && openBtn === btn) hide();
+  });
+
+  document.addEventListener('pointerup', (e) => {
+    const btn = triggerFrom(e.target);
+    const isFineMouse = e.pointerType === 'mouse' && fineHover();
+    if (!btn) {
+      if (openBtn && !isFineMouse) hide();
+      return;
+    }
+    if (isFineMouse) return;
+    e.preventDefault();
+    if (openBtn === btn) hide();
+    else show(btn);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && openBtn) {
+      const btn = openBtn;
+      hide();
+      btn.focus();
+    }
+  });
+
+  window.addEventListener('resize', () => { if (openBtn) place(openBtn); });
+  window.addEventListener('scroll', () => { if (openBtn) place(openBtn); }, true);
+})();
+</script>
