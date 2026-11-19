@@ -12,12 +12,13 @@ const totalPoints = trees.reduce((sum, t) => sum + t.points, 0);
 const className = snapshot?.profile?.character_class?.name;
 
 const CELL = 40;
-const GAP = 12;
+const COL_GAP = 10;
+const ROW_GAP = 12;
 
 function cellCenter(col: number, row: number) {
   return {
-    x: (col - 1) * (CELL + GAP) + CELL / 2,
-    y: (row - 1) * (CELL + GAP) + CELL / 2,
+    x: (col - 1) * (CELL + COL_GAP) + CELL / 2,
+    y: (row - 1) * (CELL + ROW_GAP) + CELL / 2,
   };
 }
 
@@ -38,12 +39,12 @@ function edgeCoords(fromCol: number, fromRow: number, toCol: number, toRow: numb
 
 function treeSize(cols: number, rows: number) {
   return {
-    width: cols * CELL + (cols - 1) * GAP,
-    height: rows * CELL + (rows - 1) * GAP,
+    width: cols * CELL + (cols - 1) * COL_GAP,
+    height: rows * CELL + (rows - 1) * ROW_GAP,
   };
 }
 ---
-<section class="mb-14" aria-labelledby="spec-heading">
+<section class="mb-14 min-w-0" aria-labelledby="spec-heading" data-talent-trees>
   <h2 id="spec-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-2">SPECIALIZATION &amp; TALENTS</h2>
   {trees.length === 0 ? (
     <p class="text-zinc-500 text-sm normal-case">Talent tree layout not available yet.</p>
@@ -52,18 +53,22 @@ function treeSize(cols: number, rows: number) {
       <p class="text-zinc-400 text-xs normal-case tracking-normal mb-6">
         {className ? `${className} · ` : ''}{totalPoints} point{totalPoints === 1 ? '' : 's'} spent
       </p>
-      <div class="-mx-6 px-6 overflow-x-auto overscroll-x-contain">
-        <div class="flex gap-4 lg:gap-6 min-w-min lg:min-w-0 lg:grid lg:grid-cols-3">
+      <div class="talent-tree-scope min-w-0">
+        <div class="talent-tree-grid">
           {trees.map((tree) => {
             const size = treeSize(tree.cols, tree.rows);
             return (
-              <div class="shrink-0 w-[17.5rem] lg:w-auto bg-[#121215] border border-[#27272a] p-4">
-                <header class="flex items-center justify-between gap-3 mb-4">
+              <div
+                class="talent-tree-card min-w-0 w-full overflow-x-clip bg-[#121215] border border-[#27272a] px-3 sm:px-4 pt-5 pb-7"
+                data-talent-tree={tree.shortName}
+                style={`--tree-w:${size.width};--tree-h:${size.height};--cols:${tree.cols};--rows:${tree.rows};--col-gap:${COL_GAP};--row-gap:${ROW_GAP};`}
+              >
+                <header class="flex items-center justify-between gap-3 mb-5">
                   <h3 class="text-sm font-black text-[#e4e4e7] m-0 tracking-wide">{tree.shortName}</h3>
                   <p class="text-[10px] font-bold tracking-widest text-zinc-400 m-0">{tree.points} {tree.points === 1 ? 'POINT' : 'POINTS'}</p>
                 </header>
-                <div class="relative mx-auto" style={`width:${size.width}px;height:${size.height}px;`}>
-                  <svg class="absolute inset-0 pointer-events-none" width={size.width} height={size.height} viewBox={`0 0 ${size.width} ${size.height}`} aria-hidden="true">
+                <div class="tree-board relative mx-auto">
+                  <svg class="absolute inset-0 h-full w-full pointer-events-none" viewBox={`0 0 ${size.width} ${size.height}`} preserveAspectRatio="xMidYMid meet" aria-hidden="true">
                     <defs>
                       <marker id={`arrow-${tree.id}`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                         <path d="M 0 0 L 10 5 L 0 10 z" fill="#a16207" />
@@ -84,20 +89,18 @@ function treeSize(cols: number, rows: number) {
                       );
                     })}
                   </svg>
-                  <div
-                    class="relative grid"
-                    style={`grid-template-columns:repeat(${tree.cols},${CELL}px);grid-template-rows:repeat(${tree.rows},${CELL}px);gap:${GAP}px;width:${size.width}px;height:${size.height}px;`}
-                  >
+                  <div class="tree-grid relative">
                     {tree.nodes.map((node) => {
                       const spent = node.rank > 0;
                       const maxed = node.rank >= node.maxRank;
                       const label = `${node.name}, rank ${node.rank} of ${node.maxRank}. ${node.description}`;
                       const tooltipBelow = node.gridRow > tree.rows - 2;
+                      const tooltipAlign = node.gridCol === 1 ? 'left' : node.gridCol === tree.cols ? 'right' : 'center';
                       return (
                         <button
                           type="button"
                           class:list={[
-                            'group relative size-10 border bg-black p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c20e0e] focus-visible:ring-offset-2 focus-visible:ring-offset-[#121215]',
+                            'group relative h-full w-full border bg-black p-0 overflow-visible focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c20e0e] focus-visible:ring-offset-1 focus-visible:ring-offset-[#121215]',
                             spent ? 'border-[#ffd100] shadow-[0_0_8px_rgba(255,209,0,0.35)]' : node.available ? 'border-[#52525b]' : 'border-[#27272a]',
                           ]}
                           style={`grid-column:${node.gridCol};grid-row:${node.gridRow};`}
@@ -109,14 +112,18 @@ function treeSize(cols: number, rows: number) {
                               alt=""
                               width="40"
                               height="40"
-                              class:list={['size-10 object-cover', spent ? '' : node.available ? 'opacity-80' : 'opacity-35 grayscale']}
+                              class:list={['h-full w-full object-cover', spent ? '' : node.available ? 'opacity-80' : 'opacity-35 grayscale']}
+                              onerror="this.removeAttribute('src'); this.style.display='none'; this.nextElementSibling?.removeAttribute('hidden');"
                             />
-                          ) : (
-                            <span class:list={['block size-10', spent ? 'bg-zinc-700' : 'bg-zinc-900']} aria-hidden="true"></span>
-                          )}
+                          ) : null}
+                          <span
+                            class:list={['talent-fallback', spent ? 'bg-zinc-700' : 'bg-zinc-900']}
+                            hidden={Boolean(node.icon)}
+                            aria-hidden="true"
+                          ></span>
                           <span
                             class:list={[
-                              'absolute -bottom-1 -right-1 min-w-[1.15rem] px-0.5 text-[9px] font-black leading-tight text-center border border-black',
+                              'talent-rank absolute font-black leading-tight text-center border border-black',
                               maxed ? 'bg-[#ffd100] text-black' : spent ? 'bg-[#ca8a04] text-black' : 'bg-[#18181b] text-zinc-400',
                             ]}
                           >
@@ -125,8 +132,11 @@ function treeSize(cols: number, rows: number) {
                           <span
                             role="tooltip"
                             class:list={[
-                              'pointer-events-none invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100 absolute z-30 left-1/2 -translate-x-1/2 w-56 p-3 bg-black border border-[#ffd100]/70 text-left shadow-[0_0_24px_rgba(0,0,0,0.8)] normal-case tracking-normal',
+                              'pointer-events-none invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100 absolute z-30 w-52 max-w-[calc(100cqi-0.75rem)] p-3 bg-black border border-[#ffd100]/70 text-left shadow-[0_0_24px_rgba(0,0,0,0.8)] normal-case tracking-normal',
                               tooltipBelow ? 'top-full mt-2' : 'bottom-full mb-2',
+                              tooltipAlign === 'left' && 'left-0',
+                              tooltipAlign === 'right' && 'right-0',
+                              tooltipAlign === 'center' && 'left-1/2 -translate-x-1/2',
                             ]}
                           >
                             <span class="block text-sm font-black text-[#ffd100] leading-tight">{node.name}</span>
@@ -152,3 +162,62 @@ function treeSize(cols: number, rows: number) {
   )}
 </section>
 
+<style>
+  .talent-tree-scope {
+    container-type: inline-size;
+    overflow-x: clip;
+  }
+  .talent-tree-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
+    gap: 1rem;
+    min-width: 0;
+  }
+  @container (min-width: 42rem) {
+    .talent-tree-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      justify-items: stretch;
+      gap: 1rem;
+    }
+  }
+  .talent-tree-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    justify-self: stretch;
+    container-type: inline-size;
+  }
+  /* 40px tiles, ~10px column / 12px row gaps; board centered in the full-width panel. */
+  .tree-board {
+    width: calc(var(--tree-w) * 1px);
+    max-width: 100%;
+    aspect-ratio: var(--tree-w) / var(--tree-h);
+    margin-inline: auto;
+    container-type: inline-size;
+  }
+  .tree-grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    grid-template-rows: repeat(var(--rows), minmax(0, 1fr));
+    column-gap: calc(var(--col-gap) / var(--tree-w) * 100cqi);
+    row-gap: calc(var(--row-gap) / var(--tree-w) * 100cqi);
+  }
+  .talent-rank {
+    right: -0.15em;
+    bottom: -0.15em;
+    min-width: 1.15em;
+    padding-inline: 0.15em;
+    font-size: clamp(7px, calc(9 / var(--tree-w) * 100cqi), 9px);
+  }
+  .talent-fallback {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .talent-fallback[hidden] {
+    display: none;
+  }
+</style>

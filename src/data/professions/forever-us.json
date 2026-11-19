@@ -1,0 +1,86 @@
+{
+  "fetchedAt": "2026-11-18T21:00:55.731Z",
+  "namespace": "static-forever-us",
+  "locale": "en_US",
+  "source": "https://us.api.blizzard.com/data/wow/profession/index?namespace=static-forever-us",
+  "professions": [
+    {
+      "id": 197,
+      "name": "Tailoring",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136249.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 185,
+      "name": "Cooking",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/133971.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 165,
+      "name": "Leatherworking",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136247.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 393,
+      "name": "Skinning",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134366.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 333,
+      "name": "Enchanting",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136244.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 186,
+      "name": "Mining",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136248.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 164,
+      "name": "Blacksmithing",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136241.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 202,
+      "name": "Engineering",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136243.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 356,
+      "name": "Fishing",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136245.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 171,
+      "name": "Alchemy",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136240.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 182,
+      "name": "Herbalism",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136246.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 129,
+      "name": "First Aid",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135966.jpg",
+      "iconSource": "profession-media"
+    },
+    {
+      "id": 2933,
+      "name": "Test Profession [DNT]",
+      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134400.jpg",
+      "iconSource": "profession-media"
+    }
+  ]
+}

@@ -20,6 +20,8 @@ export interface TalentNode {
   unlocks: number[];
   ranks: TalentRank[];
   icon?: string;
+  /** Alternate talent IDs (API duplicates with bad coordinates) that spend into this node. */
+  aliasTalentIds?: number[];
 }
 
 export interface TalentSpecTree {
@@ -126,7 +128,9 @@ export function buildSpecView(tree: TalentSpecTree, spent: Map<number, number>):
   const minCol = tree.minCol;
   const minRow = tree.minRow;
   const nodes: TalentNodeView[] = tree.nodes.map((node) => {
-    const rank = spent.get(node.talentId) ?? 0;
+    const rank = spent.get(node.talentId)
+      ?? (node.aliasTalentIds ?? []).reduce((found, id) => found ?? spent.get(id), undefined)
+      ?? 0;
     const rowIndex = node.row - minRow; // 0-based tier
     const tierUnlocked = points >= rowIndex * 5;
     const available = rank > 0 || (tierUnlocked && prerequisiteMet(node, byId, spent));

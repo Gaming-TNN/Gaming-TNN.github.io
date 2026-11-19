@@ -16,6 +16,7 @@ import {
   qualityClass,
 } from '../lib/characters';
 import WowTalentTrees from './WowTalentTrees.astro';
+import { professionIcon } from '../lib/professions';
 
 interface Props {
   member: Member;
@@ -174,12 +175,26 @@ function slotRow(type: string) {
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
       {[...primaries, ...secondaries].map((block) => {
         const tier = block.tiers?.[0];
+        const icon = professionIcon(block.profession?.id, block.profession?.name);
         return (
-          <div class="bg-[#121215] border border-[#27272a] px-4 py-3">
-            <p class="font-black text-sm text-[#e4e4e7] m-0">{block.profession?.name ?? 'Profession'}</p>
-            {tier && (
-              <p class="text-xs text-zinc-400 normal-case m-0 mt-1">{tier.skill_points ?? 0} / {tier.max_skill_points ?? 0}</p>
+          <div class="flex items-center gap-3 bg-[#121215] border border-[#27272a] px-4 py-3">
+            {icon ? (
+              <img
+                src={icon}
+                alt=""
+                width="32"
+                height="32"
+                class="size-8 shrink-0 border border-black bg-black object-cover"
+              />
+            ) : (
+              <span class="size-8 shrink-0 border border-dashed border-[#3f3f46] bg-black" aria-hidden="true"></span>
             )}
+            <div class="min-w-0">
+              <p class="font-black text-sm text-[#e4e4e7] m-0">{block.profession?.name ?? 'Profession'}</p>
+              {tier && (
+                <p class="text-xs text-zinc-400 normal-case m-0 mt-1">{tier.skill_points ?? 0} / {tier.max_skill_points ?? 0}</p>
+              )}
+            </div>
           </div>
         );
       })}

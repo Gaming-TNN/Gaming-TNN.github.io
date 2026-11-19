@@ -1,8 +1,8 @@
 # Refresh WoW Forever character snapshots and talent-tree cache from the
 # Battle.net APIs and open (or update) a pull request.
 #
-# When (and only when) the diff is limited to src/data/characters/** and
-# src/data/talent-trees/**, the PR targets the default branch, and the
+# When (and only when) the diff is limited to src/data/characters/**,
+# src/data/talent-trees/**, and src/data/professions/**, the PR targets the default branch, and the
 # required "build" check passes, this workflow squash-merges the PR.
 # A DATA_PR_TOKEN merge starts deploy.yml via push to main; a GITHUB_TOKEN
 # merge does not, so deploy.yml is dispatched in that case (and if a PAT
@@ -95,7 +95,7 @@ jobs:
           data_only=true
           for path in "${files[@]}"; do
             case "$path" in
-              src/data/characters/*|src/data/talent-trees/*) ;;
+              src/data/characters/*|src/data/talent-trees/*|src/data/professions/*) ;;
               *)
                 data_only=false
                 ;;
@@ -150,7 +150,7 @@ jobs:
           done
 
           git reset --hard HEAD
-          git clean -fd -- src/data/characters src/data/talent-trees
+          git clean -fd -- src/data/characters src/data/talent-trees src/data/professions
 
           git fetch origin "refs/heads/${DEFAULT_BRANCH}:refs/remotes/origin/${DEFAULT_BRANCH}"
           if git fetch origin "refs/heads/${DATA_BRANCH}:refs/remotes/origin/${DATA_BRANCH}"; then
@@ -191,7 +191,12 @@ jobs:
               mkdir -p src/data
               cp -a "$stash_dir/src/data/talent-trees" src/data/talent-trees
             fi
-            git add -- src/data/characters src/data/talent-trees
+            if [ -d "$stash_dir/src/data/professions" ]; then
+              rm -rf src/data/professions
+              mkdir -p src/data
+              cp -a "$stash_dir/src/data/professions" src/data/professions
+            fi
+            git add -- src/data/characters src/data/talent-trees src/data/professions
           else
             for path in "${files[@]}"; do
               restore_tree "$path"
@@ -204,7 +209,7 @@ jobs:
           elif [ "$DATA_ONLY" = "true" ]; then
             git commit -m "Update WoW Forever character snapshots"$'\n\n'"Snapshot and talent-tree cache written by scripts/fetch-characters.mjs"$'\n'"from the Battle.net Profile and Game Data APIs."
           else
-            git commit -m "Update WoW Forever data (unexpected files included)"$'\n\n'"The refresh script produced changes outside src/data/characters/"$'\n'"and src/data/talent-trees/. This PR must be reviewed before merge."
+            git commit -m "Update WoW Forever data (unexpected files included)"$'\n\n'"The refresh script produced changes outside src/data/characters/,"$'\n'"src/data/talent-trees/, and src/data/professions/. This PR must be reviewed before merge."
           fi
 
           if ! git rev-parse --verify --quiet "origin/${DATA_BRANCH}" || [ "$(git rev-parse HEAD)" != "$(git rev-parse "origin/${DATA_BRANCH}")" ]; then
@@ -216,12 +221,12 @@ jobs:
           if [ "$DATA_ONLY" = "true" ]; then
             title="Update WoW Forever character snapshots"
             body_file=$(mktemp)
-            printf '%s\n' "Automated snapshot of member WoW Forever characters and talent-tree cache from the official Battle.net APIs." "" "This PR only updates JSON under \`src/data/characters/\` and \`src/data/talent-trees/\`. When it targets the default branch and the required \`build\` check passes, the Refresh character data workflow squash-merges it and dispatches the Pages deploy workflow. It reuses the fixed \`data/wow-characters\` branch, brought up to date with a normal merge or fast-forward, and does not force-push or delete that branch." > "$body_file"
+            printf '%s\n' "Automated snapshot of member WoW Forever characters and talent-tree cache from the official Battle.net APIs." "" "This PR only updates JSON under \`src/data/characters/\`, \`src/data/talent-trees/\`, and \`src/data/professions/\`. When it targets the default branch and the required \`build\` check passes, the Refresh character data workflow squash-merges it and dispatches the Pages deploy workflow. It reuses the fixed \`data/wow-characters\` branch, brought up to date with a normal merge or fast-forward, and does not force-push or delete that branch." > "$body_file"
           else
             title="Update WoW Forever data (needs review)"
             body_file=$(mktemp)
             {
-              printf '%s\n' "Automated refresh produced changes outside \`src/data/characters/\` and \`src/data/talent-trees/\`:" "" "\`\`\`"
+              printf '%s\n' "Automated refresh produced changes outside \`src/data/characters/\`, \`src/data/talent-trees/\`, and \`src/data/professions/\`:" "" "\`\`\`"
               printf '%s\n' "${files[@]}"
               printf '%s\n' "\`\`\`" "" "This PR will **not** auto-merge. It needs Seth's go-ahead. It reuses the fixed \`data/wow-characters\` branch and does not force-push or delete it."
             } > "$body_file"
@@ -286,7 +291,7 @@ jobs:
             exit 1
           fi
 
-          merge_body="Automated data refresh. Squash-merged by the Refresh character data workflow after the required build check passed. Only files under src/data/characters/ and src/data/talent-trees/ were changed."
+          merge_body="Automated data refresh. Squash-merged by the Refresh character data workflow after the required build check passed. Only files under src/data/characters/, src/data/talent-trees/, and src/data/professions/ were changed."
 
           if [ "${HAS_DATA_PR_TOKEN}" = "true" ]; then
             echo "DATA_PR_TOKEN is set: waiting for the pull_request build check (not dispatching ci.yml)."
