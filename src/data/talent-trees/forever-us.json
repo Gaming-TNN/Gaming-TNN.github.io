@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T22:15:57.734Z",
+  "fetchedAt": "2026-11-19T22:31:05.381Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3129,8 +3129,7 @@
                   "description": "Increases your critical strike chance with all attacks and Poisons by 5%.",
                   "spellId": 14138
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
+              ]
             },
             {
               "id": 105721,
@@ -3158,8 +3157,7 @@
                   "description": "Gives your finishing moves a 60% chance to add a Combo Point to your target.",
                   "spellId": 14156
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132122.jpg"
+              ]
             },
             {
               "id": 105717,
@@ -3182,8 +3180,7 @@
                   "description": "Reduces the Energy cost of your Expose Armor ability by 10, and refunds 2 Combo Points when cast with 5 Combo Points.",
                   "spellId": 14168
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132354.jpg"
+              ]
             },
             {
               "id": 105739,
@@ -4803,7 +4800,8 @@
                   "description": "Increases the critical strike chance of your Arcane spells by 6%.",
                   "spellId": 11242
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136116.jpg"
             },
             {
               "id": 105806,
@@ -4823,7 +4821,8 @@
                   "description": "Blasts the target with energy, dealing 166 to 183 Arcane damage. Each time you cast Arcane Blast, you gain 12% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 100%. Effect stacks up to 4 times and lasts 18 sec from time of initial application.",
                   "spellId": 400574
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135735.jpg"
             },
             {
               "id": 105805,
@@ -4846,7 +4845,8 @@
                   "description": "Decreases the Mana lost per point of damage taken when your Mana Shield spell is active by 33% and increases the resistances granted by your Mage Armor spell by 50%.",
                   "spellId": 11252
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136153.jpg"
             },
             {
               "id": 105804,
@@ -6006,8 +6006,7 @@
                   "description": "Gives your Frostbolt and Fingers of Frost empowered Ice Lance spells a 100% chance to apply Winter's Chill, increasing the target's damage taken from your next Cone of Cold by 20% and it gains an additional 7% of your spell damage, stacking up to 5 times.",
                   "spellId": 11180
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135836.jpg"
+              ]
             },
             {
               "id": 105762,
@@ -6027,8 +6026,7 @@
                   "description": "Shield yourself, absorbing 480 damage and increasing your Frost damage by 15% for 1 min. While shielded, your Frost damage is increased by an additional 5% and you do not lose casting time when you take damage.",
                   "spellId": 11426
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135988.jpg"
+              ]
             }
           ]
         }
@@ -6083,8 +6081,7 @@
                   "description": "Your Smite and Penance spells deal 10% increased damage to targets afflicted with your Holy Fire or Shadow Word: Pain.",
                   "spellId": 1309969
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135972.jpg"
+              ]
             },
             {
               "id": 105850,
@@ -7787,7 +7784,8 @@
                   "description": "Increases the damage done by your Bane of Agony by 10%.",
                   "spellId": 18827
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136139.jpg"
             },
             {
               "id": 105918,
@@ -7815,7 +7813,8 @@
                   "description": "Gives your Drain Life, Drain Mana, Drain Soul, and Wrack spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 17783
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136157.jpg"
             },
             {
               "id": 105916,
@@ -7835,7 +7834,8 @@
                   "description": "Increases the effect of your next Curse of Weakness or Bane of Agony by 50%, or your next Curse of Exhaustion by 20%.  Lasts 30 sec.",
                   "spellId": 18288
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136132.jpg"
             },
             {
               "id": 105917,
@@ -9031,8 +9031,7 @@
                   "description": "Increases the critical strike chance of your Conflagrate spell by 25%.",
                   "spellId": 412751
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135821.jpg"
+              ]
             },
             {
               "id": 105875,
@@ -9070,8 +9069,7 @@
                   "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by 20% for 20 sec, and hitting an enemy with Shadowburn increases all Fire damage you deal by 20% for 20 sec. In addition, Conflagrate has a 100% chance not to consume Immolate, and Shadowburn has a 100% chance to instantly refund a Soul Shard.",
                   "spellId": 426316
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135823.jpg"
+              ]
             },
             {
               "id": 105874,
@@ -9091,8 +9089,7 @@
                   "description": "Deals 323 to 345 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate.",
                   "spellId": 412758
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135789.jpg"
+              ]
             }
           ]
         }
@@ -10799,7 +10796,8 @@
                   "description": "Revive Pet's casting time is reduced by 6 sec, mana cost is reduced by 40%, and increases the health your pet returns with by an additional 30%.",
                   "spellId": 24443
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132163.jpg"
             },
             {
               "id": 104973,
@@ -10822,7 +10820,8 @@
                   "description": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 6%.",
                   "spellId": 19559
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132242.jpg"
             },
             {
               "id": 104970,
@@ -10842,7 +10841,8 @@
                   "description": "Increases the movement speed of your pets by 30%.",
                   "spellId": 19596
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132120.jpg"
             },
             {
               "id": 104969,
@@ -12096,8 +12096,7 @@
                   "description": "Reduces the cooldown of your Trap and Deterrence abilities by 40%.",
                   "spellId": 1310496
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132178.jpg"
+              ]
             },
             {
               "id": 104981,
@@ -12115,8 +12114,7 @@
                   "description": "A powerful kick that deals 100% melee weapon damage and increases movement speed by 30% for 3 sec.",
                   "spellId": 1317257
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132198.jpg"
+              ]
             },
             {
               "id": 110859,
@@ -12154,8 +12152,7 @@
                   "description": "Increases your Agility by 15%.",
                   "spellId": 19168
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136047.jpg"
+              ]
             },
             {
               "id": 104984,
