@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T23:39:55.240Z",
+  "fetchedAt": "2026-11-19T23:46:04.397Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3866,7 +3866,8 @@
                   "description": "Reduces the chance for your attacks to be Dodged or Parried by 2%.",
                   "spellId": 30919
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135882.jpg"
             },
             {
               "id": 105730,
@@ -3894,7 +3895,8 @@
                   "description": "Increases the damage of your Sinister Strike and Eviscerate abilities by 15%.",
                   "spellId": 18427
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132275.jpg"
             },
             {
               "id": 113635,
@@ -3917,7 +3919,8 @@
                   "description": "Increases the damage done by your off-hand weapon by 50%.",
                   "spellId": 13715
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132147.jpg"
             },
             {
               "id": 105728,
@@ -6830,7 +6833,8 @@
                   "description": "Your non-periodic critical heals increase your target's Armor by 25% for 15 sec.",
                   "spellId": 14892
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135928.jpg"
             },
             {
               "id": 105859,
@@ -6853,7 +6857,8 @@
                   "description": "Increases the range of your Smite and Holy Fire spells and the radius of your Prayer of Healing and Holy Nova spells by 20%.",
                   "spellId": 27789
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135949.jpg"
             },
             {
               "id": 105858,
@@ -6881,7 +6886,8 @@
                   "description": "Reduces the Mana cost of your Lesser Heal, Heal, Greater Heal, Penance, and Prayer of Mending spells by 15%.",
                   "spellId": 14912
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135916.jpg"
             },
             {
               "id": 105857,
@@ -12836,7 +12842,8 @@
                   "description": "Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by 20% and reduces the cooldown of your Grounding Totem by 2 sec.",
                   "spellId": 16258
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136098.jpg"
             },
             {
               "id": 104755,
@@ -12866,7 +12873,8 @@
                   "description": "Increases your Attack Power by an amount equal to 100% of your Intellect.",
                   "spellId": 415140
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136055.jpg"
             },
             {
               "id": 104751,
@@ -12894,7 +12902,8 @@
                   "description": "Increases the damage done by your Lightning Shield orbs by 15%.",
                   "spellId": 16261
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136051.jpg"
             },
             {
               "id": 104750,
