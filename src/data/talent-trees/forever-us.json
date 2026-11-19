@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T21:16:10.469Z",
+  "fetchedAt": "2026-11-19T21:31:08.318Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -2958,7 +2958,8 @@
                   "description": "Increases your Physical and Holy damage dealt by 3% for 30 sec after landing a non-periodic critical strike.  Stacks up to 5 times.",
                   "spellId": 20049
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132275.jpg"
             },
             {
               "id": 110882,
@@ -2996,7 +2997,8 @@
                   "description": "Increases your spell damage by up to 60% of your Intellect, and reduces the cast time of your Hammer of Wrath by 1.0 sec.",
                   "spellId": 1311084
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236251.jpg"
             },
             {
               "id": 105692,
@@ -3016,7 +3018,8 @@
                   "description": "Your melee attacks store a copy of your active Seal for 15 sec, stacking up to 3 times. Landing an attack with a different Seal consumes all stacks, giving the stored Seal its normal chance to activate once per stack.",
                   "spellId": 1310735
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135878.jpg"
             }
           ]
         }
@@ -3374,8 +3377,7 @@
                   "description": "Increases the chance to apply Poisons to your target by 10%, and gives Poison applications a 50% chance to not consume a charge.",
                   "spellId": 14113
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132273.jpg"
+              ]
             },
             {
               "id": 113633,
@@ -3413,8 +3415,7 @@
                   "description": "Your finishing moves have a 20% chance per Combo Point to restore 25 Energy.",
                   "spellId": 14179
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132340.jpg"
+              ]
             },
             {
               "id": 105712,
@@ -3434,8 +3435,7 @@
                   "description": "Causes your Shank ability to increase your Poison damage by 30% and your chance to apply Poisons by 20% for 6 sec.",
                   "spellId": 1329328
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135341.jpg"
+              ]
             },
             {
               "id": 105711,
@@ -5862,7 +5862,8 @@
                   "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec, but during that time you cannot attack, move, or cast spells.",
                   "spellId": 11958
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135841.jpg"
             },
             {
               "id": 105768,
@@ -5890,7 +5891,8 @@
                   "description": "Increases the critical strike chance of all your spells against Frozen targets by 50%.",
                   "spellId": 11170
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135849.jpg"
             },
             {
               "id": 105765,
@@ -5918,7 +5920,8 @@
                   "description": "Increases the damage dealt by your Cone of Cold spell by 35%.",
                   "spellId": 11190
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135852.jpg"
             },
             {
               "id": 105766,
@@ -6293,8 +6296,7 @@
                   "description": "Reduces the mana cost of your Smite, Holy Fire, and instant cast spells by 10%.",
                   "spellId": 14520
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132156.jpg"
+              ]
             },
             {
               "id": 105844,
@@ -6312,8 +6314,7 @@
                   "description": "When activated, reduces the Mana cost of your next spell by 100% and increases its critical effect chance by 25% if it is a non-periodic spell and capable of a critical effect.",
                   "spellId": 14751
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135863.jpg"
+              ]
             },
             {
               "id": 105846,
@@ -6343,8 +6344,7 @@
                   "description": "Increases the damage absorbed by your Power Word: Shield by 20%.",
                   "spellId": 14748
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135940.jpg"
+              ]
             },
             {
               "id": 105843,
@@ -8903,7 +8903,8 @@
                   "description": "Gives your Destruction spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 18135
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135819.jpg"
             },
             {
               "id": 105879,
@@ -8931,7 +8932,8 @@
                   "description": "Increases the critical strike chance of your Searing Pain spell by 10% and the damage done by all your Destruction spells by 10%.",
                   "spellId": 17927
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135827.jpg"
             },
             {
               "id": 105880,
@@ -8951,7 +8953,8 @@
                   "description": "Ignites a target that is already afflicted by your Immolate spell, dealing 233 to 234 Fire damage and consuming your Immolate effect.",
                   "spellId": 1293817
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135807.jpg"
             },
             {
               "id": 105878,
@@ -9304,8 +9307,7 @@
                   "description": "Generates 1 Rage every 3 sec while in combat, and reduces Rage loss while out of combat by 30%.",
                   "spellId": 12296
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135881.jpg"
+              ]
             },
             {
               "id": 105950,
@@ -9337,8 +9339,7 @@
                   "description": "Your critical strikes cause your opponent to Bleed, dealing 60% of your melee weapon's average damage over 12 sec.",
                   "spellId": 12834
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132090.jpg"
+              ]
             },
             {
               "id": 105949,
@@ -9356,8 +9357,7 @@
                   "description": "A brutal attack that deals 75% weapon damage. Deals an additional 75% weapon damage against Giants, Dragonkin, and mounted targets. Mounted targets are dismounted.",
                   "spellId": 1310222
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135124.jpg"
+              ]
             },
             {
               "id": 105948,
@@ -11962,7 +11962,8 @@
                   "description": "Increases your chance to hit with your Trap and Feign Death abilities by 10%.",
                   "spellId": 19376
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132149.jpg"
             },
             {
               "id": 110861,
@@ -12000,7 +12001,8 @@
                   "description": "Increases your melee ability critical strike damage by 30% and your Off Hand weapon damage by 50%.",
                   "spellId": 1310627
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132147.jpg"
             },
             {
               "id": 104989,
@@ -12020,7 +12022,8 @@
                   "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 50% weapon damage plus 13 and immobilizes the target for 5 sec. Counterattack cannot be blocked, dodged, or parried.",
                   "spellId": 19306
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132336.jpg"
             },
             {
               "id": 104983,
@@ -12374,8 +12377,7 @@
                   "description": "Reduces the cooldown of your Shock spells by 1.0 sec.",
                   "spellId": 16040
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135850.jpg"
+              ]
             },
             {
               "id": 104771,
@@ -12434,8 +12436,7 @@
                   "description": "Increases the damage done by your Fire Totems and by your Flame Shock and Fire Nova spells by 15%, as well as increases the duration of your Flame Shock spell by 9 sec.",
                   "spellId": 16038
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135817.jpg"
+              ]
             },
             {
               "id": 104768,
@@ -12453,8 +12454,7 @@
                   "description": "Gives you a 10% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell.  The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
                   "spellId": 16164
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136170.jpg"
+              ]
             },
             {
               "id": 104765,
