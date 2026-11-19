@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T00:51:00.344Z",
+  "fetchedAt": "2026-11-19T05:03:50.487Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -47,8 +47,8 @@
       },
       "slug": "lower-expectations"
     },
-    "level": 27,
-    "experience": 36010,
+    "level": 28,
+    "experience": 12859,
     "achievement_points": 0,
     "achievements": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/achievements?namespace=profile-forever-us"
@@ -65,9 +65,9 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1794985452000,
+    "last_login_timestamp": 1795059163000,
     "average_item_level": 23,
-    "equipped_item_level": 22,
+    "equipped_item_level": 23,
     "specializations": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/specializations?namespace=profile-forever-us"
     },
@@ -247,8 +247,8 @@
           "item_modified_appearance_id": 77344
         },
         "durability": {
-          "value": 32,
-          "display_string": "Durability 32 / 65"
+          "value": 65,
+          "display_string": "Durability 65 / 65"
         }
       },
       {
@@ -476,8 +476,8 @@
           "second_item_modified_appearance_id": 77343
         },
         "durability": {
-          "value": 39,
-          "display_string": "Durability 39 / 70"
+          "value": 70,
+          "display_string": "Durability 70 / 70"
         }
       },
       {
@@ -834,8 +834,8 @@
           "item_modified_appearance_id": 84223
         },
         "durability": {
-          "value": 13,
-          "display_string": "Durability 13 / 30"
+          "value": 30,
+          "display_string": "Durability 30 / 30"
         }
       },
       {
@@ -994,8 +994,8 @@
           "item_modified_appearance_id": 198608
         },
         "durability": {
-          "value": 49,
-          "display_string": "Durability 49 / 90"
+          "value": 90,
+          "display_string": "Durability 90 / 90"
         }
       },
       {
@@ -1133,8 +1133,8 @@
           "item_modified_appearance_id": 306411
         },
         "durability": {
-          "value": 31,
-          "display_string": "Durability 31 / 60"
+          "value": 60,
+          "display_string": "Durability 60 / 60"
         }
       },
       {
@@ -1265,49 +1265,32 @@
           "item_modified_appearance_id": 104604
         },
         "durability": {
-          "value": 15,
-          "display_string": "Durability 15 / 30"
+          "value": 30,
+          "display_string": "Durability 30 / 30"
         }
       },
       {
         "item": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item/250509?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/item/3485?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 250509
+          "id": 3485
         },
-        "enchantments": [
-          {
-            "display_string": "Enchanted: Attack Power +4 and Armor +16",
-            "source_item": {
-              "key": {
-                "href": "https://us.api.blizzard.com/data/wow/item/252437?namespace=static-1.60.1_70399-forever-us"
-              },
-              "name": "Forceful Medium Armor Kit",
-              "id": 252437
-            },
-            "enchantment_id": 8483,
-            "enchantment_slot": {
-              "id": 0,
-              "type": "PERMANENT"
-            }
-          }
-        ],
         "slot": {
           "type": "HANDS",
           "name": "Hands"
         },
         "quantity": 1,
         "quality": {
-          "type": "RARE",
-          "name": "Rare"
+          "type": "UNCOMMON",
+          "name": "Uncommon"
         },
-        "name": "Guard's Gloves",
+        "name": "Green Iron Gauntlets",
         "media": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/media/item/250509?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/media/item/3485?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 250509
+          "id": 3485
         },
         "item_class": {
           "key": {
@@ -1328,13 +1311,13 @@
           "name": "Hands"
         },
         "binding": {
-          "type": "ON_ACQUIRE",
-          "name": "Binds when picked up"
+          "type": "ON_EQUIP",
+          "name": "Binds when equipped"
         },
         "armor": {
-          "value": 115,
+          "value": 124,
           "display": {
-            "display_string": "115 Armor",
+            "display_string": "124 Armor",
             "color": {
               "r": 255,
               "g": 255,
@@ -1365,9 +1348,9 @@
               "type": "STAMINA",
               "name": "Stamina"
             },
-            "value": 5,
+            "value": 6,
             "display": {
-              "display_string": "+5 Stamina",
+              "display_string": "+6 Stamina",
               "color": {
                 "r": 255,
                 "g": 255,
@@ -1375,43 +1358,26 @@
                 "a": 1
               }
             }
-          },
-          {
-            "type": {
-              "type": "DEFENSE_SKILL_RATING",
-              "name": "Defense"
-            },
-            "value": 3,
-            "is_equip_bonus": true,
-            "display": {
-              "display_string": "+3 Defense",
-              "color": {
-                "r": 0,
-                "g": 255,
-                "b": 0,
-                "a": 1
-              }
-            }
           }
         ],
         "sell_price": {
-          "value": 489,
+          "value": 1295,
           "display_strings": {
             "header": "Sell Price:",
             "gold": "0",
-            "silver": "4",
-            "copper": "89"
+            "silver": "12",
+            "copper": "95"
           }
         },
         "requirements": {
           "level": {
-            "value": 15,
-            "display_string": "Requires Level 15"
+            "value": 25,
+            "display_string": "Requires Level 25"
           }
         },
         "level": {
-          "value": 20,
-          "display_string": "Item Level 20"
+          "value": 30,
+          "display_string": "Item Level 30"
         },
         "transmog": {
           "item": {
@@ -1425,8 +1391,8 @@
           "item_modified_appearance_id": 158301
         },
         "durability": {
-          "value": 22,
-          "display_string": "Durability 22 / 35"
+          "value": 35,
+          "display_string": "Durability 35 / 35"
         }
       },
       {
@@ -1849,8 +1815,8 @@
           "item_modified_appearance_id": 161278
         },
         "durability": {
-          "value": 48,
-          "display_string": "Durability 48 / 90"
+          "value": 90,
+          "display_string": "Durability 90 / 90"
         }
       },
       {
@@ -1999,8 +1965,8 @@
           "item_modified_appearance_id": 160906
         },
         "durability": {
-          "value": 91,
-          "display_string": "Durability 91 / 100"
+          "value": 100,
+          "display_string": "Durability 100 / 100"
         }
       },
       {
@@ -2100,8 +2066,8 @@
           "display_string": "Item Level 27"
         },
         "durability": {
-          "value": 113,
-          "display_string": "Durability 113 / 200"
+          "value": 200,
+          "display_string": "Durability 200 / 200"
         }
       }
     ]
@@ -2192,11 +2158,11 @@
                     "name": "Improved Thunder Clap",
                     "id": 12287
                   },
-                  "description": "Reduces the Rage cost of your Thunder Clap ability by 2.",
+                  "description": "Reduces the Rage cost of your Thunder Clap ability by 4.",
                   "cast_time": "Passive",
                   "power_cost": null
                 },
-                "talent_rank": 1
+                "talent_rank": 2
               },
               {
                 "talent": {
@@ -2263,7 +2229,7 @@
               }
             ],
             "specialization_name": "Protection",
-            "spent_points": 18
+            "spent_points": 19
           }
         ]
       }
@@ -2406,7 +2372,7 @@
         },
         "tiers": [
           {
-            "skill_points": 126,
+            "skill_points": 150,
             "max_skill_points": 150,
             "tier": {
               "name": "Blacksmithing",
@@ -2468,6 +2434,13 @@
                 },
                 "name": "Coarse Grinding Stone",
                 "id": 1861
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1867?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Green Iron Gauntlets",
+                "id": 1867
               },
               {
                 "key": {
@@ -2534,6 +2507,13 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1642?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Patterned Bronze Bracers",
+                "id": 1642
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/1644?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Heavy Sharpening Stone",
@@ -2555,6 +2535,13 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/4847?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Iron Buckle",
+                "id": 4847
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/4390?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Silver Rod",
@@ -2573,6 +2560,13 @@
                 },
                 "name": "Copper Claymore",
                 "id": 5338
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/5339?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Bronze Warhammer",
+                "id": 5339
               },
               {
                 "key": {
@@ -2849,6 +2843,7 @@
     ]
   },
   "itemIcons": {
+    "3485": "https://render.worldofwarcraft.com/forever-us/icons/56/132939.jpg",
     "3582": "https://render.worldofwarcraft.com/forever-us/icons/56/133753.jpg",
     "6125": "https://render.worldofwarcraft.com/forever-us/icons/56/132719.jpg",
     "6414": "https://render.worldofwarcraft.com/forever-us/icons/56/133357.jpg",
@@ -2857,7 +2852,6 @@
     "13131": "https://render.worldofwarcraft.com/forever-us/icons/56/135049.jpg",
     "15517": "https://render.worldofwarcraft.com/forever-us/icons/56/132615.jpg",
     "16886": "https://render.worldofwarcraft.com/forever-us/icons/56/135343.jpg",
-    "250509": "https://render.worldofwarcraft.com/forever-us/icons/56/132949.jpg",
     "250514": "https://render.worldofwarcraft.com/forever-us/icons/56/132504.jpg",
     "250524": "https://render.worldofwarcraft.com/forever-us/icons/56/134668.jpg",
     "250528": "https://render.worldofwarcraft.com/forever-us/icons/56/133141.jpg",
