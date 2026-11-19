@@ -1,0 +1,73 @@
+---
+import type { EquippedItem } from '../lib/characters';
+import { qualityClass } from '../lib/characters';
+import { itemTypeLine, sellPriceParts, tooltipRgb } from '../lib/item-tooltip';
+
+interface Props {
+  item: EquippedItem;
+  id: string;
+}
+
+const { item, id } = Astro.props;
+const typeLine = itemTypeLine(item);
+const sell = sellPriceParts(item);
+const weapon = item.weapon;
+---
+<div
+  id={id}
+  role="tooltip"
+  data-item-tooltip
+  class="item-tooltip pointer-events-none invisible opacity-0 fixed z-50 w-72 max-w-[calc(100vw-1.5rem)] p-3 bg-black border border-[#ffd100]/70 text-left shadow-[0_0_24px_rgba(0,0,0,0.8)] normal-case tracking-normal"
+>
+  <p class:list={['m-0 text-sm font-black leading-tight', qualityClass(item)]}>{item.name}</p>
+  {item.binding?.name && <p class="m-0 mt-1 text-xs text-zinc-300">{item.binding.name}</p>}
+  {typeLine && <p class="m-0 mt-1 text-xs text-zinc-300">{typeLine}</p>}
+  {weapon && (
+    <div class="mt-1 text-xs text-zinc-200">
+      <p class="m-0 flex justify-between gap-4">
+        <span>{weapon.damage?.display_string}</span>
+        {weapon.attack_speed?.display_string && <span>{weapon.attack_speed.display_string}</span>}
+      </p>
+      {weapon.dps?.display_string && <p class="m-0">{weapon.dps.display_string}</p>}
+    </div>
+  )}
+  {item.armor?.display?.display_string && (
+    <p class="m-0 mt-1 text-xs text-zinc-200" style={tooltipRgb(item.armor.display.color) ? `color:${tooltipRgb(item.armor.display.color)}` : undefined}>
+      {item.armor.display.display_string}
+    </p>
+  )}
+  {item.shield_block?.display?.display_string && (
+    <p class="m-0 text-xs text-zinc-200" style={tooltipRgb(item.shield_block.display.color) ? `color:${tooltipRgb(item.shield_block.display.color)}` : undefined}>
+      {item.shield_block.display.display_string}
+    </p>
+  )}
+  {item.stats?.map((stat) => (
+    stat.display?.display_string && (
+      <p class="m-0 mt-0.5 text-xs text-zinc-200" style={tooltipRgb(stat.display.color) ? `color:${tooltipRgb(stat.display.color)}` : undefined}>
+        {stat.display.display_string}
+      </p>
+    )
+  ))}
+  {item.enchantments?.map((ench) => (
+    ench.display_string && <p class="m-0 mt-1 text-xs text-[#1eff00]">{ench.display_string}</p>
+  ))}
+  {item.spells?.map((sp) => (
+    sp.description && <p class="m-0 mt-1 text-xs text-[#1eff00] leading-relaxed">{sp.description}</p>
+  ))}
+  {item.set?.item_set?.name && <p class="m-0 mt-1 text-xs text-[#ffd100]">{item.set.item_set.name}</p>}
+  {item.set?.effects?.map((fx) => (
+    fx.display_string && <p class="m-0 text-xs text-zinc-400">{fx.display_string}</p>
+  ))}
+  {item.durability?.display_string && <p class="m-0 mt-1 text-xs text-zinc-300">{item.durability.display_string}</p>}
+  {item.level?.display_string && <p class="m-0 mt-1 text-xs text-[#ffd100]">{item.level.display_string}</p>}
+  {item.requirements?.level?.display_string && <p class="m-0 text-xs text-zinc-300">{item.requirements.level.display_string}</p>}
+  {item.requirements?.playable_classes?.display_string && <p class="m-0 text-xs text-zinc-300">{item.requirements.playable_classes.display_string}</p>}
+  {sell && (
+    <p class="m-0 mt-1 text-xs text-zinc-300">
+      Sell Price:
+      {sell.gold > 0 && <span class="text-[#ffd100] ml-1">{sell.gold}g</span>}
+      {(sell.gold > 0 || sell.silver > 0) && <span class="text-zinc-200 ml-1">{sell.silver}s</span>}
+      <span class="text-[#c0793a] ml-1">{sell.copper}c</span>
+    </p>
+  )}
+</div>

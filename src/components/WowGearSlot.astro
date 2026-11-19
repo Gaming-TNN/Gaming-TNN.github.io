@@ -1,0 +1,48 @@
+---
+import type { EquippedItem } from '../lib/characters';
+import { qualityClass } from '../lib/characters';
+import WowItemTooltip from './WowItemTooltip.astro';
+
+interface Props {
+  slotName: string;
+  item?: EquippedItem;
+  icon?: string;
+}
+
+const { slotName, item, icon } = Astro.props;
+const tipId = `item-tip-${slotName.replace(/\s+/g, '-').toLowerCase()}`;
+---
+{item ? (
+  <li class="min-w-0">
+    <button
+      type="button"
+      class="item-tip-trigger relative flex w-full items-center gap-3 bg-[#121215] border border-[#27272a] px-3 py-2 min-h-[3.25rem] text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c20e0e] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+      aria-describedby={tipId}
+      aria-label={`${slotName}: ${item.name ?? 'item'}`}
+      data-item-tip-trigger
+      aria-expanded="false"
+    >
+      {icon ? (
+        <img src={icon} alt="" width="32" height="32" class="size-8 shrink-0 border border-black" />
+      ) : (
+        <span class="size-8 shrink-0 border border-dashed border-[#3f3f46] bg-black" aria-hidden="true"></span>
+      )}
+      <span class="min-w-0">
+        <span class="block text-[10px] font-bold tracking-widest text-zinc-500">{slotName}</span>
+        <span class:list={['block text-sm font-bold normal-case tracking-normal truncate', qualityClass(item)]}>
+          {item.name}
+          {item.level?.value != null && <span class="text-zinc-500 font-medium ml-2">iLvl {item.level.value}</span>}
+        </span>
+      </span>
+      <WowItemTooltip item={item} id={tipId} />
+    </button>
+  </li>
+) : (
+  <li class="flex items-center gap-3 bg-[#121215] border border-[#27272a] px-3 py-2 min-h-[3.25rem]">
+    <span class="size-8 shrink-0 border border-dashed border-[#3f3f46] bg-black" aria-hidden="true"></span>
+    <div class="min-w-0">
+      <p class="text-[10px] font-bold tracking-widest text-zinc-500 m-0">{slotName}</p>
+      <p class="text-xs text-zinc-600 normal-case tracking-normal m-0 italic">Empty</p>
+    </div>
+  </li>
+)}
