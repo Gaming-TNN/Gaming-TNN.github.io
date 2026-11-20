@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T16:16:01.654Z",
+  "fetchedAt": "2026-11-20T16:31:06.462Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5272,7 +5272,8 @@
                   "description": "Increases the critical strike chance of your Flamestrike spell by 15%.",
                   "spellId": 11108
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135826.jpg"
             },
             {
               "id": 105790,
@@ -5292,7 +5293,8 @@
                   "description": "Hurls an immense fiery boulder that causes 411 to 472 Fire damage and an additional 236 Fire damage over 12 sec.",
                   "spellId": 11366
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135808.jpg"
             },
             {
               "id": 105797,
@@ -5315,7 +5317,8 @@
                   "description": "Reduces the cooldown of your Fire Blast spell by 2 sec and increases its range by 15 yards.",
                   "spellId": 11078
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135819.jpg"
             },
             {
               "id": 105788,
