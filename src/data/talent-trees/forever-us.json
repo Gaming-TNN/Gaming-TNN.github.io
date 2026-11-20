@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T21:22:44.857Z",
+  "fetchedAt": "2026-11-20T21:30:57.347Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -6475,8 +6475,7 @@
                   "description": "Launches a volley of holy light at the target, causing 81 Holy damage to an enemy, or 232 healing to an ally, instantly and every 1 sec for 2 sec.",
                   "spellId": 402174
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237545.jpg"
+              ]
             },
             {
               "id": 105835,
@@ -6516,8 +6515,7 @@
                   "description": "Your heals from Flash Heal, Lesser Heal, Heal, Greater Heal, and Penance gain 10% increased critical strike chance when cast on targets with Weakened Soul, and reduce the remaining duration of Weakened Soul on their target by 5 sec.",
                   "spellId": 425280
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135923.jpg"
+              ]
             },
             {
               "id": 105840,
@@ -6545,8 +6543,7 @@
                   "description": "Your non-periodic critical heals create a protective shield on the target, absorbing 15% of the amount healed. Shields up to 1,200 damage and lasts 12 sec.",
                   "spellId": 431622
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237539.jpg"
+              ]
             },
             {
               "id": 105836,
@@ -12518,8 +12515,7 @@
                   "description": "Increases the damage done by your Fire Nova spell by 20% and reduces its cooldown by 4 sec, and increases the duration of your Magma Totem by 20 sec.",
                   "spellId": 16086
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135824.jpg"
+              ]
             },
             {
               "id": 104763,
@@ -12547,8 +12543,7 @@
                   "description": "Gives your Lightning Bolt and Chain Lightning spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 29062
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136032.jpg"
+              ]
             },
             {
               "id": 104762,
