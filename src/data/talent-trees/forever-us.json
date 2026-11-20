@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T16:45:57.543Z",
+  "fetchedAt": "2026-11-20T17:01:13.427Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -8713,7 +8713,8 @@
                   "description": "Reduces the casting time of your Shadow Bolt, Immolate, and Incinerate spells by 0.5 sec and your Soul Fire spell by 2 sec.",
                   "spellId": 17788
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136146.jpg"
             },
             {
               "id": 105885,
@@ -11741,7 +11742,8 @@
                   "description": "Increases your Parry chance by 5%.",
                   "spellId": 19295
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
             },
             {
               "id": 104994,
