@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T04:01:18.222Z",
+  "fetchedAt": "2026-11-20T04:15:57.554Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5801,8 +5801,7 @@
                   "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 40% for 1.5 sec.",
                   "spellId": 11185
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135857.jpg"
+              ]
             },
             {
               "id": 105767,
