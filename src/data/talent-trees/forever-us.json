@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T22:45:56.118Z",
+  "fetchedAt": "2026-11-20T23:01:00.220Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4333,7 +4333,8 @@
                   "description": "Causes your attacks to ignore 9% of your target's Armor and increases the damage dealt by your Rupture ability by 30%.",
                   "spellId": 14171
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135315.jpg"
             },
             {
               "id": 105753,
@@ -4356,7 +4357,8 @@
                   "description": "Reduces the cooldown of your Vanish and Blind abilities by 90 sec.",
                   "spellId": 13981
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135994.jpg"
             },
             {
               "id": 105754,
@@ -4374,7 +4376,8 @@
                   "description": "A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage, increases your chance to dodge by 15% for 7 sec, and causes your next Ambush or Garrote cast within 7 sec to not require Stealth.  Awards 1 combo point.",
                   "spellId": 14278
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136136.jpg"
             },
             {
               "id": 110867,
@@ -7304,7 +7307,8 @@
                   "description": "Reduces the cooldown of your Psychic Scream spell by 4 sec.",
                   "spellId": 15392
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136184.jpg"
             },
             {
               "id": 105826,
@@ -10262,7 +10266,8 @@
                   "description": "Increases your Defense Skill by 20.",
                   "spellId": 12297
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136056.jpg"
             },
             {
               "id": 105969,
@@ -10290,7 +10295,8 @@
                   "description": "Increases damage dealt by your Revenge ability by 60%.",
                   "spellId": 12797
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132353.jpg"
             },
             {
               "id": 105972,
@@ -10318,7 +10324,8 @@
                   "description": "Reduces the Rage cost of your Thunder Clap ability by 6.",
                   "spellId": 12287
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132326.jpg"
             },
             {
               "id": 105970,
