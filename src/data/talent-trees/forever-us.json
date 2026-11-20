@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T14:46:06.690Z",
+  "fetchedAt": "2026-11-20T15:01:25.805Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4750,7 +4750,8 @@
                   "description": "Gives your Arcane Blast spell a 40% chance, and your Arcane Wrath, Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles fire every 0.5 sec.",
                   "spellId": 400588
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236221.jpg"
             },
             {
               "id": 105808,
@@ -4773,7 +4774,8 @@
                   "description": "Increases the range of your Arcane spells by 6 yards.",
                   "spellId": 11247
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/6035311.jpg"
             },
             {
               "id": 105807,
@@ -4801,7 +4803,8 @@
                   "description": "Increases the critical strike chance of your Arcane spells by 6%.",
                   "spellId": 11242
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136116.jpg"
             },
             {
               "id": 105806,
@@ -7734,7 +7737,8 @@
                   "description": "Killing a non-trivial target afflicted by your Drain Soul increases your Mana regeneration by 100% for 10 sec and allows 100% of normal Mana regeneration to continue while casting.",
                   "spellId": 437032
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132851.jpg"
             },
             {
               "id": 105920,
@@ -7762,7 +7766,8 @@
                   "description": "Increases Health drained, damage done, or Mana drained by your Drain Life, Drain Soul, and Drain Mana spells by 20%.",
                   "spellId": 403511
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136163.jpg"
             },
             {
               "id": 105919,
@@ -7785,7 +7790,8 @@
                   "description": "Increases the damage done by your Bane of Agony by 10%.",
                   "spellId": 18827
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136139.jpg"
             },
             {
               "id": 105918,
@@ -10746,7 +10752,8 @@
                   "description": "Increases all damage you and your pet deal by 2% while your pet is active.",
                   "spellId": 1223755
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135539.jpg"
             },
             {
               "id": 104974,
@@ -10774,7 +10781,8 @@
                   "description": "Increases the Dodge bonus of your Aspect of the Monkey by 6%. Additionally, your pet gains 50% of the effect of your Aspect of the Monkey ability.",
                   "spellId": 19549
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132159.jpg"
             },
             {
               "id": 104972,
@@ -10797,7 +10805,8 @@
                   "description": "Revive Pet's casting time is reduced by 6 sec, mana cost is reduced by 40%, and increases the health your pet returns with by an additional 30%.",
                   "spellId": 24443
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132163.jpg"
             },
             {
               "id": 104973,
