@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T02:30:56.238Z",
+  "fetchedAt": "2026-11-20T02:46:03.119Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4039,7 +4039,8 @@
                   "description": "Increases your Energy regeneration rate by 100% for 15 sec.",
                   "spellId": 13750
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136206.jpg"
             }
           ]
         },
@@ -9919,7 +9920,8 @@
                   "description": "Your next 4 melee attacks generate 5 additional Rage. Lasts 8 sec.",
                   "spellId": 1329555
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132334.jpg"
             },
             {
               "id": 105932,
@@ -9942,7 +9944,8 @@
                   "description": "Reduces the Rage cost of your Execute ability by 5.",
                   "spellId": 20502
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135358.jpg"
             },
             {
               "id": 105978,
@@ -9965,7 +9968,8 @@
                   "description": "Your Berserker Rage ability will instantly generate 10 Rage and has a 100% chance to remove all movement impairing effects when activated.",
                   "spellId": 20500
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136009.jpg"
             },
             {
               "id": 105927,
