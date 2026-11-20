@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T05:45:52.348Z",
+  "fetchedAt": "2026-11-20T06:00:48.139Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -65,7 +65,7 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795152561000,
+    "last_login_timestamp": 1795154249000,
     "average_item_level": 25,
     "equipped_item_level": 25,
     "specializations": {
@@ -2794,6 +2794,13 @@
                 },
                 "name": "Iron Shield Spike",
                 "id": 4207
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/4285?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Heavy Copper Maul",
+                "id": 4285
               },
               {
                 "key": {
