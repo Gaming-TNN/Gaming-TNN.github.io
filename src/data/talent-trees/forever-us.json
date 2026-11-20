@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T22:30:56.521Z",
+  "fetchedAt": "2026-11-20T22:45:56.118Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3088,7 +3088,8 @@
                   "description": "After killing a non-trivial enemy, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
                   "spellId": 14144
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132151.jpg"
             },
             {
               "id": 105722,
@@ -3128,7 +3129,8 @@
                   "description": "Increases your critical strike chance with all attacks and Poisons by 5%.",
                   "spellId": 14138
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
             },
             {
               "id": 105721,
@@ -3156,7 +3158,8 @@
                   "description": "Gives your finishing moves a 60% chance to add a Combo Point to your target.",
                   "spellId": 14156
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132122.jpg"
             },
             {
               "id": 105717,
@@ -4330,8 +4333,7 @@
                   "description": "Causes your attacks to ignore 9% of your target's Armor and increases the damage dealt by your Rupture ability by 30%.",
                   "spellId": 14171
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135315.jpg"
+              ]
             },
             {
               "id": 105753,
@@ -4354,8 +4356,7 @@
                   "description": "Reduces the cooldown of your Vanish and Blind abilities by 90 sec.",
                   "spellId": 13981
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135994.jpg"
+              ]
             },
             {
               "id": 105754,
@@ -4373,8 +4374,7 @@
                   "description": "A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage, increases your chance to dodge by 15% for 7 sec, and causes your next Ambush or Garrote cast within 7 sec to not require Stealth.  Awards 1 combo point.",
                   "spellId": 14278
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136136.jpg"
+              ]
             },
             {
               "id": 110867,
@@ -7304,8 +7304,7 @@
                   "description": "Reduces the cooldown of your Psychic Scream spell by 4 sec.",
                   "spellId": 15392
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136184.jpg"
+              ]
             },
             {
               "id": 105826,
@@ -8935,7 +8934,8 @@
                   "description": "Increases the critical strike chance of your Searing Pain spell by 10% and the damage done by all your Destruction spells by 10%.",
                   "spellId": 17927
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135827.jpg"
             },
             {
               "id": 105880,
@@ -8981,7 +8981,8 @@
                   "description": "Gives your Soul Fire spell a 26% chance to Stun the target for 3 sec, and your Rain of Fire and Hellfire spells a 26% chance over their duration to Stun targets they damage for 3 sec.",
                   "spellId": 18073
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135830.jpg"
             },
             {
               "id": 105876,
@@ -10261,8 +10262,7 @@
                   "description": "Increases your Defense Skill by 20.",
                   "spellId": 12297
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136056.jpg"
+              ]
             },
             {
               "id": 105969,
@@ -10290,8 +10290,7 @@
                   "description": "Increases damage dealt by your Revenge ability by 60%.",
                   "spellId": 12797
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132353.jpg"
+              ]
             },
             {
               "id": 105972,
@@ -10319,8 +10318,7 @@
                   "description": "Reduces the Rage cost of your Thunder Clap ability by 6.",
                   "spellId": 12287
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132326.jpg"
+              ]
             },
             {
               "id": 105970,
