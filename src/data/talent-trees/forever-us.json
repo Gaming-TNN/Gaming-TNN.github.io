@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T06:31:06.022Z",
+  "fetchedAt": "2026-11-20T06:45:58.104Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4402,8 +4402,7 @@
                   "description": "Increases the maximum number of targets you may have Sapped by 1, and increases your movement speed by 30% for 3 sec after Sapping a target.",
                   "spellId": 1310728
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/458797.jpg"
+              ]
             },
             {
               "id": 105747,
@@ -4426,8 +4425,7 @@
                   "description": "Increases your Stealth detection as if you were 3 levels higher and reduces your chance to be hit by spells and ranged attacks by 4%.",
                   "spellId": 30894
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132089.jpg"
+              ]
             },
             {
               "id": 105746,
@@ -4447,8 +4445,7 @@
                   "description": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
                   "spellId": 14185
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136121.jpg"
+              ]
             },
             {
               "id": 105748,
@@ -10324,8 +10321,7 @@
                   "description": "Reduces the Rage cost of your Thunder Clap ability by 6.",
                   "spellId": 12287
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132326.jpg"
+              ]
             },
             {
               "id": 105970,
@@ -10343,8 +10339,7 @@
                   "description": "When activated, this ability temporarily grants you 30% of your maximum health for 20 sec. After the effect expires, the health is lost.",
                   "spellId": 12975
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135871.jpg"
+              ]
             },
             {
               "id": 105971,
@@ -10369,8 +10364,7 @@
                   "description": "Grants you a 100% chance to generate 5 Rage when you Dodge or Parry while a shield is equipped.",
                   "spellId": 1310316
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132359.jpg"
+              ]
             },
             {
               "id": 105967,
