@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T22:16:02.347Z",
+  "fetchedAt": "2026-11-20T22:30:56.521Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3088,8 +3088,7 @@
                   "description": "After killing a non-trivial enemy, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
                   "spellId": 14144
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132151.jpg"
+              ]
             },
             {
               "id": 105722,
@@ -3129,8 +3128,7 @@
                   "description": "Increases your critical strike chance with all attacks and Poisons by 5%.",
                   "spellId": 14138
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
+              ]
             },
             {
               "id": 105721,
@@ -3158,8 +3156,7 @@
                   "description": "Gives your finishing moves a 60% chance to add a Combo Point to your target.",
                   "spellId": 14156
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132122.jpg"
+              ]
             },
             {
               "id": 105717,
@@ -8938,8 +8935,7 @@
                   "description": "Increases the critical strike chance of your Searing Pain spell by 10% and the damage done by all your Destruction spells by 10%.",
                   "spellId": 17927
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135827.jpg"
+              ]
             },
             {
               "id": 105880,
@@ -8985,8 +8981,7 @@
                   "description": "Gives your Soul Fire spell a 26% chance to Stun the target for 3 sec, and your Rain of Fire and Hellfire spells a 26% chance over their duration to Stun targets they damage for 3 sec.",
                   "spellId": 18073
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135830.jpg"
+              ]
             },
             {
               "id": 105876,

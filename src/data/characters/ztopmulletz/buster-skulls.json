@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-20T22:15:50.335Z",
+  "fetchedAt": "2026-11-20T22:30:48.613Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -65,7 +65,7 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795154249000,
+    "last_login_timestamp": 1795213291000,
     "average_item_level": 25,
     "equipped_item_level": 25,
     "specializations": {
