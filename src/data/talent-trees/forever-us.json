@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T08:45:55.460Z",
+  "fetchedAt": "2026-11-21T09:00:57.114Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4357,8 +4357,7 @@
                   "description": "Reduces the cooldown of your Vanish and Blind abilities by 90 sec.",
                   "spellId": 13981
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135994.jpg"
+              ]
             },
             {
               "id": 105754,
@@ -4376,8 +4375,7 @@
                   "description": "A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage, increases your chance to dodge by 15% for 7 sec, and causes your next Ambush or Garrote cast within 7 sec to not require Stealth.  Awards 1 combo point.",
                   "spellId": 14278
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136136.jpg"
+              ]
             },
             {
               "id": 110867,
@@ -4402,8 +4400,7 @@
                   "description": "Increases the maximum number of targets you may have Sapped by 1, and increases your movement speed by 30% for 3 sec after Sapping a target.",
                   "spellId": 1310728
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/458797.jpg"
+              ]
             },
             {
               "id": 105747,
@@ -5772,7 +5769,8 @@
                   "description": "Reduces the mana cost of your Frost spells by 15% and reduces the threat caused by your Frost spells by 30%.",
                   "spellId": 11160
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135860.jpg"
             },
             {
               "id": 105771,
@@ -5800,7 +5798,8 @@
                   "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 40% for 1.5 sec.",
                   "spellId": 11185
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135857.jpg"
             },
             {
               "id": 105767,
@@ -5820,7 +5819,8 @@
                   "description": "Deals 28 to 33 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.",
                   "spellId": 1312002
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135844.jpg"
             },
             {
               "id": 105770,
@@ -7325,8 +7325,7 @@
                   "description": "Assault the target's mind with Shadow energy, causing 159 Shadow damage over 3 sec  and slowing their movement speed by 50%.",
                   "spellId": 15407
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136208.jpg"
+              ]
             },
             {
               "id": 105825,
@@ -8778,7 +8777,8 @@
                   "description": "Reduces the Mana cost of your Destruction spells by 10%.",
                   "spellId": 17778
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135831.jpg"
             },
             {
               "id": 105886,
@@ -8816,7 +8816,8 @@
                   "description": "Increases the initial damage of your Immolate spell by 50% and your Conflagrate spell has a 100% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.",
                   "spellId": 18119
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135805.jpg"
             },
             {
               "id": 105883,
@@ -8854,7 +8855,8 @@
                   "description": "Increases the critical strike damage bonus of your Destruction spells by 100%.",
                   "spellId": 17959
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136207.jpg"
             },
             {
               "id": 105884,
@@ -10289,8 +10291,7 @@
                   "description": "Increases damage dealt by your Revenge ability by 60%.",
                   "spellId": 12797
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132353.jpg"
+              ]
             },
             {
               "id": 105972,
@@ -11867,7 +11868,8 @@
                   "description": "Gives your Wing Clip ability a 20% chance to immobilize the target for 5 sec.",
                   "spellId": 19228
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132309.jpg"
             },
             {
               "id": 104991,
@@ -11890,7 +11892,8 @@
                   "description": "Increases the duration of Freezing and Frost trap effects by 30% and the damage of Immolation and Explosive trap effects by 30%.",
                   "spellId": 19239
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136106.jpg"
             },
             {
               "id": 104987,
@@ -11918,7 +11921,8 @@
                   "description": "Increases your hit chance by 3% and reduces the duration of movement impairing effects on you by 30%.",
                   "spellId": 19290
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132219.jpg"
             },
             {
               "id": 104986,
@@ -13314,8 +13318,7 @@
                   "description": "Reduces the Mana cost of your healing spells by 5% and improves your chance to hit by 5%.",
                   "spellId": 16179
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135859.jpg"
+              ]
             },
             {
               "id": 104734,
@@ -13343,8 +13346,7 @@
                   "description": "Allows 50% of your Mana regeneration to continue while casting.",
                   "spellId": 1223033
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136090.jpg"
+              ]
             },
             {
               "id": 104736,
@@ -13372,8 +13374,7 @@
                   "description": "Reduces the threat generated by your spells by 15%.",
                   "spellId": 29187
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136041.jpg"
+              ]
             },
             {
               "id": 104735,
