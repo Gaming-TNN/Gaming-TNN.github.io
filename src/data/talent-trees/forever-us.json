@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T20:00:55.531Z",
+  "fetchedAt": "2026-11-21T20:16:10.831Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5661,7 +5661,8 @@
                   "description": "Increases the critical strike damage bonus of your Frost spells by 100%.",
                   "spellId": 11207
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135855.jpg"
             },
             {
               "id": 105774,
@@ -5689,7 +5690,8 @@
                   "description": "Gives your Chill effects a 15% chance to Freeze the target for 5 sec.",
                   "spellId": 11071
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135842.jpg"
             },
             {
               "id": 105775,
@@ -5712,7 +5714,8 @@
                   "description": "Reduces the cooldown of your Frost Nova spell by 4 sec.",
                   "spellId": 11165
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135840.jpg"
             },
             {
               "id": 105776,
@@ -11612,7 +11615,8 @@
                   "description": "A long-range shot that deals ranged damage plus 320 and increases the range of your next 3 Shots by 10 yards for 10 sec.",
                   "spellId": 1310687
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/1412205.jpg"
             },
             {
               "id": 105003,
@@ -11650,7 +11654,8 @@
                   "description": "Increases the damage done by your Serpent Sting by 10%.",
                   "spellId": 19464
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132204.jpg"
             }
           ]
         },
@@ -11698,7 +11703,8 @@
                   "description": "While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by 5%.",
                   "spellId": 24293
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134154.jpg"
             },
             {
               "id": 104995,
