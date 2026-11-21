@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T09:00:57.114Z",
+  "fetchedAt": "2026-11-21T09:16:54.916Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3064,8 +3064,7 @@
                   "description": "Increases the duration of your Gouge ability by 1.5 sec.",
                   "spellId": 13741
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132155.jpg"
+              ]
             },
             {
               "id": 105723,
@@ -3088,8 +3087,7 @@
                   "description": "After killing a non-trivial enemy, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
                   "spellId": 14144
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132151.jpg"
+              ]
             },
             {
               "id": 105722,
@@ -3129,8 +3127,7 @@
                   "description": "Increases your critical strike chance with all attacks and Poisons by 5%.",
                   "spellId": 14138
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
+              ]
             },
             {
               "id": 105721,
@@ -4357,7 +4354,8 @@
                   "description": "Reduces the cooldown of your Vanish and Blind abilities by 90 sec.",
                   "spellId": 13981
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135994.jpg"
             },
             {
               "id": 105754,
@@ -4375,7 +4373,8 @@
                   "description": "A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage, increases your chance to dodge by 15% for 7 sec, and causes your next Ambush or Garrote cast within 7 sec to not require Stealth.  Awards 1 combo point.",
                   "spellId": 14278
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136136.jpg"
             },
             {
               "id": 110867,
@@ -4400,7 +4399,8 @@
                   "description": "Increases the maximum number of targets you may have Sapped by 1, and increases your movement speed by 30% for 3 sec after Sapping a target.",
                   "spellId": 1310728
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/458797.jpg"
             },
             {
               "id": 105747,
@@ -5941,8 +5941,7 @@
                   "description": "Finishes the remaining cooldown on all your other Frost spells.",
                   "spellId": 12472
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
+              ]
             },
             {
               "id": 105764,
@@ -5967,8 +5966,7 @@
                   "description": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 2 spells cast as if the target were Frozen. Lasts 15 sec.",
                   "spellId": 400647
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236227.jpg"
+              ]
             },
             {
               "id": 105763,
@@ -6006,8 +6004,7 @@
                   "description": "Gives your Frostbolt and Fingers of Frost empowered Ice Lance spells a 100% chance to apply Winter's Chill, increasing the target's damage taken from your next Cone of Cold by 20% and it gains an additional 7% of your spell damage, stacking up to 5 times.",
                   "spellId": 11180
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135836.jpg"
+              ]
             },
             {
               "id": 105762,
@@ -7325,7 +7322,8 @@
                   "description": "Assault the target's mind with Shadow energy, causing 159 Shadow damage over 3 sec  and slowing their movement speed by 50%.",
                   "spellId": 15407
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136208.jpg"
             },
             {
               "id": 105825,
@@ -10291,7 +10289,8 @@
                   "description": "Increases damage dealt by your Revenge ability by 60%.",
                   "spellId": 12797
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132353.jpg"
             },
             {
               "id": 105972,
@@ -13318,7 +13317,8 @@
                   "description": "Reduces the Mana cost of your healing spells by 5% and improves your chance to hit by 5%.",
                   "spellId": 16179
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135859.jpg"
             },
             {
               "id": 104734,
@@ -13346,7 +13346,8 @@
                   "description": "Allows 50% of your Mana regeneration to continue while casting.",
                   "spellId": 1223033
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136090.jpg"
             },
             {
               "id": 104736,
@@ -13374,7 +13375,8 @@
                   "description": "Reduces the threat generated by your spells by 15%.",
                   "spellId": 29187
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136041.jpg"
             },
             {
               "id": 104735,
