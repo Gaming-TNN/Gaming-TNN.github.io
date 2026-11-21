@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T04:31:06.374Z",
+  "fetchedAt": "2026-11-21T04:47:01.898Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -2927,8 +2927,7 @@
                   "description": "Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. Any damage caused will awaken the target. Only works against Humanoids.",
                   "spellId": 20066
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135942.jpg"
+              ]
             },
             {
               "id": 105693,
@@ -2958,8 +2957,7 @@
                   "description": "Increases your Physical and Holy damage dealt by 3% for 30 sec after landing a non-periodic critical strike.  Stacks up to 5 times.",
                   "spellId": 20049
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132275.jpg"
+              ]
             },
             {
               "id": 110882,
@@ -2997,8 +2995,7 @@
                   "description": "Increases your spell damage by up to 60% of your Intellect, and reduces the cast time of your Hammer of Wrath by 1.0 sec.",
                   "spellId": 1311084
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236251.jpg"
+              ]
             },
             {
               "id": 105692,
