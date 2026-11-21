@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T18:46:05.816Z",
+  "fetchedAt": "2026-11-21T19:00:57.467Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3129,8 +3129,7 @@
                   "description": "Increases your critical strike chance with all attacks and Poisons by 5%.",
                   "spellId": 14138
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
+              ]
             },
             {
               "id": 105721,
@@ -3158,8 +3157,7 @@
                   "description": "Gives your finishing moves a 60% chance to add a Combo Point to your target.",
                   "spellId": 14156
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132122.jpg"
+              ]
             },
             {
               "id": 105717,
@@ -3182,8 +3180,7 @@
                   "description": "Reduces the Energy cost of your Expose Armor ability by 10, and refunds 2 Combo Points when cast with 5 Combo Points.",
                   "spellId": 14168
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132354.jpg"
+              ]
             },
             {
               "id": 105739,
@@ -6009,8 +6006,7 @@
                   "description": "Gives your Frostbolt and Fingers of Frost empowered Ice Lance spells a 100% chance to apply Winter's Chill, increasing the target's damage taken from your next Cone of Cold by 20% and it gains an additional 7% of your spell damage, stacking up to 5 times.",
                   "spellId": 11180
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135836.jpg"
+              ]
             },
             {
               "id": 105762,
@@ -6086,8 +6082,7 @@
                   "description": "Your Smite and Penance spells deal 10% increased damage to targets afflicted with your Holy Fire or Shadow Word: Pain.",
                   "spellId": 1309969
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135972.jpg"
+              ]
             },
             {
               "id": 105850,
@@ -9037,8 +9032,7 @@
                   "description": "Increases the critical strike chance of your Conflagrate spell by 25%.",
                   "spellId": 412751
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135821.jpg"
+              ]
             },
             {
               "id": 105875,
