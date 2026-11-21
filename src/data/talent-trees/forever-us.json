@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T09:16:54.916Z",
+  "fetchedAt": "2026-11-21T09:31:00.690Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3064,7 +3064,8 @@
                   "description": "Increases the duration of your Gouge ability by 1.5 sec.",
                   "spellId": 13741
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132155.jpg"
             },
             {
               "id": 105723,
@@ -3087,7 +3088,8 @@
                   "description": "After killing a non-trivial enemy, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
                   "spellId": 14144
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132151.jpg"
             },
             {
               "id": 105722,
@@ -3127,7 +3129,8 @@
                   "description": "Increases your critical strike chance with all attacks and Poisons by 5%.",
                   "spellId": 14138
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
             },
             {
               "id": 105721,
@@ -5941,7 +5944,8 @@
                   "description": "Finishes the remaining cooldown on all your other Frost spells.",
                   "spellId": 12472
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
             },
             {
               "id": 105764,
@@ -5966,7 +5970,8 @@
                   "description": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 2 spells cast as if the target were Frozen. Lasts 15 sec.",
                   "spellId": 400647
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236227.jpg"
             },
             {
               "id": 105763,
@@ -6004,7 +6009,8 @@
                   "description": "Gives your Frostbolt and Fingers of Frost empowered Ice Lance spells a 100% chance to apply Winter's Chill, increasing the target's damage taken from your next Cone of Cold by 20% and it gains an additional 7% of your spell damage, stacking up to 5 times.",
                   "spellId": 11180
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135836.jpg"
             },
             {
               "id": 105762,
