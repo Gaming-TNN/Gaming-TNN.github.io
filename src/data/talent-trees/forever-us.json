@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T02:37:30.789Z",
+  "fetchedAt": "2026-11-21T02:45:59.064Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4468,8 +4468,7 @@
                   "description": "An instant strike that deals 100% weapon damage (145% if a Dagger is equipped) and causes the target to take 15% increased Rupture and Garrote damage from the Rogue. Lasts 15 sec. Awards 1 Combo Point.",
                   "spellId": 16511
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136168.jpg"
+              ]
             },
             {
               "id": 105750,
@@ -4507,8 +4506,7 @@
                   "description": "Grants your Shank ability a 100% chance to add 2 Combo Points to the target.",
                   "spellId": 1329286
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135342.jpg"
+              ]
             },
             {
               "id": 110866,
@@ -4528,8 +4526,7 @@
                   "description": "Finishing move that marks the target, storing a portion of the damage dealt by your attacks per Combo Point. Garrote and Rupture damage is stored at twice the rate. After 6 sec, the stored damage is dealt, up to a maximum increased by Attack Power and Critical Strike chance:\r\n   1 point  : 12% stored, 215 damage cap\r\n   2 points: 24% stored, 360 damage cap\r\n   3 points: 36% stored, 505 damage cap\r\n   4 points: 48% stored, 649 damage cap\r\n   5 points: 60% stored, 794 damage cap",
                   "spellId": 1316709
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132094.jpg"
+              ]
             }
           ]
         }
@@ -7462,8 +7459,7 @@
                   "description": "Silences the target, preventing them from casting spells for 5 sec and interrupting their spellcasts for 3 sec.",
                   "spellId": 15487
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136164.jpg"
+              ]
             },
             {
               "id": 105819,
@@ -7486,8 +7482,7 @@
                   "description": "Reduces the mana cost of your Devouring Plague by 50%.\r\n\r\nTargets that die while Devouring Plague is active spreads it, jumping to 2 nearby enemies within 10 yds for the remaining duration.\r\n",
                   "spellId": 1309950
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/252996.jpg"
+              ]
             },
             {
               "id": 110854,
@@ -7510,8 +7505,7 @@
                   "description": "Increases Shadow Word: Death's critical strike chance on targets at or below 20% health by 30%.",
                   "spellId": 1310076
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136149.jpg"
+              ]
             },
             {
               "id": 105818,
@@ -10475,8 +10469,7 @@
                   "description": "Your Charge ability is now usable while in Defensive Stance.",
                   "spellId": 1310317
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/4667427.jpg"
+              ]
             },
             {
               "id": 105963,
@@ -13521,8 +13514,7 @@
                   "description": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds.  Lasts 10 min.\r\n\r\nOnly one Elemental Shield can be active on the Shaman at any one time.",
                   "spellId": 408510
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132315.jpg"
+              ]
             },
             {
               "id": 104738,
@@ -13560,8 +13552,7 @@
                   "description": "Increases the critical effect chance of your healing spells by 5%.",
                   "spellId": 16194
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136107.jpg"
+              ]
             },
             {
               "id": 104730,
@@ -13599,8 +13590,7 @@
                   "description": "Increases the effect of your Mana Spring Totem by 25% and increases the effect of your Healing Stream Totem by 50%.",
                   "spellId": 16187
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136053.jpg"
+              ]
             },
             {
               "id": 104728,
