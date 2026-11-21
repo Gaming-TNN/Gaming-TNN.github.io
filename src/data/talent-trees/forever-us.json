@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T08:31:03.841Z",
+  "fetchedAt": "2026-11-21T08:45:55.460Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5772,8 +5772,7 @@
                   "description": "Reduces the mana cost of your Frost spells by 15% and reduces the threat caused by your Frost spells by 30%.",
                   "spellId": 11160
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135860.jpg"
+              ]
             },
             {
               "id": 105771,
@@ -5801,8 +5800,7 @@
                   "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 40% for 1.5 sec.",
                   "spellId": 11185
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135857.jpg"
+              ]
             },
             {
               "id": 105767,
@@ -5822,8 +5820,7 @@
                   "description": "Deals 28 to 33 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.",
                   "spellId": 1312002
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135844.jpg"
+              ]
             },
             {
               "id": 105770,
@@ -8781,8 +8778,7 @@
                   "description": "Reduces the Mana cost of your Destruction spells by 10%.",
                   "spellId": 17778
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135831.jpg"
+              ]
             },
             {
               "id": 105886,
@@ -8820,8 +8816,7 @@
                   "description": "Increases the initial damage of your Immolate spell by 50% and your Conflagrate spell has a 100% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.",
                   "spellId": 18119
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135805.jpg"
+              ]
             },
             {
               "id": 105883,
@@ -8859,8 +8854,7 @@
                   "description": "Increases the critical strike damage bonus of your Destruction spells by 100%.",
                   "spellId": 17959
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136207.jpg"
+              ]
             },
             {
               "id": 105884,
@@ -11873,8 +11867,7 @@
                   "description": "Gives your Wing Clip ability a 20% chance to immobilize the target for 5 sec.",
                   "spellId": 19228
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132309.jpg"
+              ]
             },
             {
               "id": 104991,
@@ -11897,8 +11890,7 @@
                   "description": "Increases the duration of Freezing and Frost trap effects by 30% and the damage of Immolation and Explosive trap effects by 30%.",
                   "spellId": 19239
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136106.jpg"
+              ]
             },
             {
               "id": 104987,
@@ -11926,8 +11918,7 @@
                   "description": "Increases your hit chance by 3% and reduces the duration of movement impairing effects on you by 30%.",
                   "spellId": 19290
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132219.jpg"
+              ]
             },
             {
               "id": 104986,
