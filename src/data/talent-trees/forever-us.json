@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T07:16:13.150Z",
+  "fetchedAt": "2026-11-21T07:30:56.489Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5661,8 +5661,7 @@
                   "description": "Increases the critical strike damage bonus of your Frost spells by 100%.",
                   "spellId": 11207
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135855.jpg"
+              ]
             },
             {
               "id": 105774,
@@ -5690,8 +5689,7 @@
                   "description": "Gives your Chill effects a 15% chance to Freeze the target for 5 sec.",
                   "spellId": 11071
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135842.jpg"
+              ]
             },
             {
               "id": 105775,
@@ -5714,8 +5712,7 @@
                   "description": "Reduces the cooldown of your Frost Nova spell by 4 sec.",
                   "spellId": 11165
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135840.jpg"
+              ]
             },
             {
               "id": 105776,
@@ -8635,8 +8632,7 @@
                   "description": "Increases the range of your Destruction spells by 20%.",
                   "spellId": 17917
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136133.jpg"
+              ]
             },
             {
               "id": 105889,
@@ -8674,8 +8670,7 @@
                   "description": "Your Shadow Bolt critical strikes increase Shadow damage taken by the target from your attacks by 20% for 12 sec.",
                   "spellId": 17793
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136197.jpg"
+              ]
             },
             {
               "id": 105888,
@@ -8713,8 +8708,7 @@
                   "description": "Reduces the casting time of your Shadow Bolt, Immolate, and Incinerate spells by 0.5 sec and your Soul Fire spell by 2 sec.",
                   "spellId": 17788
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136146.jpg"
+              ]
             },
             {
               "id": 105885,
@@ -11742,8 +11736,7 @@
                   "description": "Increases your Parry chance by 5%.",
                   "spellId": 19295
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
+              ]
             },
             {
               "id": 104994,
@@ -11781,8 +11774,7 @@
                   "description": "When your traps are triggered, all affected targets are Entrapped, preventing them from moving for 5 sec.",
                   "spellId": 19184
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136100.jpg"
+              ]
             },
             {
               "id": 104993,
@@ -11805,8 +11797,7 @@
                   "description": "Increases the critical strike chance of all your melee abilities by 4%.",
                   "spellId": 19159
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
+              ]
             },
             {
               "id": 104992,
