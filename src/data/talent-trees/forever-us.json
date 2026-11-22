@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T15:16:07.388Z",
+  "fetchedAt": "2026-11-22T15:30:59.066Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -1948,7 +1948,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Blasts the target with Holy energy, causing 211 to 223 Holy damage to an enemy, or 324 to 333 healing to an ally.",
+                  "description": "Blasts the target with Holy energy, causing 210 to 218 Holy damage to an enemy, or 333 to 342 healing to an ally.",
                   "spellId": 1311606
                 }
               ],
@@ -2783,7 +2783,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage.  Only one Seal can be active on the Paladin at any one time.  Lasts 30 sec.\r\n\r\nUnleashing this Seal's energy will judge an enemy, instantly causing 110 to 113 Holy damage, 216 to 230 if the target is stunned or incapacitated.",
+                  "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage.  Only one Seal can be active on the Paladin at any one time.  Lasts 30 sec.\r\n\r\nUnleashing this Seal's energy will judge an enemy, instantly causing 108 to 115 Holy damage, 220 to 230 if the target is stunned or incapacitated.",
                   "spellId": 20375
                 }
               ],
@@ -4426,8 +4426,7 @@
                   "description": "Increases your Stealth detection as if you were 3 levels higher and reduces your chance to be hit by spells and ranged attacks by 4%.",
                   "spellId": 30894
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132089.jpg"
+              ]
             },
             {
               "id": 105746,
@@ -4447,8 +4446,7 @@
                   "description": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
                   "spellId": 14185
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136121.jpg"
+              ]
             },
             {
               "id": 105748,
@@ -4468,8 +4466,7 @@
                   "description": "An instant strike that deals 100% weapon damage (145% if a Dagger is equipped) and causes the target to take 15% increased Rupture and Garrote damage from the Rogue. Lasts 15 sec. Awards 1 Combo Point.",
                   "spellId": 16511
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136168.jpg"
+              ]
             },
             {
               "id": 105750,
@@ -4821,7 +4818,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Blasts the target with energy, dealing 166 to 183 Arcane damage. Each time you cast Arcane Blast, you gain 12% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 100%. Effect stacks up to 4 times and lasts 18 sec from time of initial application.",
+                  "description": "Blasts the target with energy, dealing 162 to 169 Arcane damage. Each time you cast Arcane Blast, you gain 12% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 100%. Effect stacks up to 4 times and lasts 18 sec from time of initial application.",
                   "spellId": 400574
                 }
               ],
@@ -4921,7 +4918,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Launches a projectile of pure Arcane energy at the enemy target, causing 440 to 446 Arcane damage. This spell gains additional Spell Damage equal to 5% of your maximum Mana.",
+                  "description": "Launches a projectile of pure Arcane energy at the enemy target, causing 454 to 488 Arcane damage. This spell gains additional Spell Damage equal to 5% of your maximum Mana.",
                   "spellId": 1326079
                 }
               ],
@@ -5290,7 +5287,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Hurls an immense fiery boulder that causes 411 to 472 Fire damage and an additional 236 Fire damage over 12 sec.",
+                  "description": "Hurls an immense fiery boulder that causes 402 to 412 Fire damage and an additional 236 Fire damage over 12 sec.",
                   "spellId": 11366
                 }
               ],
@@ -5467,7 +5464,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 191 to 226 Fire damage, and Dazing them for 50% reduced movement speed for 6 sec.",
+                  "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 198 to 229 Fire damage, and Dazing them for 50% reduced movement speed for 6 sec.",
                   "spellId": 11113
                 }
               ],
@@ -6772,7 +6769,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Causes an explosion of holy light around the caster, causing 46 to 51 Holy damage to all enemy targets within 10 yards and healing all party members within 10 yards for 107 to 116. These effects cause no threat.",
+                  "description": "Causes an explosion of holy light around the caster, causing 45 to 53 Holy damage to all enemy targets within 10 yards and healing all party members within 10 yards for 103 to 112. These effects cause no threat.",
                   "spellId": 15237
                 }
               ],
@@ -7414,8 +7411,7 @@
                   "description": "Afflicts your target with Shadow energy that causes all party members to be healed for 10% of any Shadow spell damage you deal for 30 sec. You receive 100% increased healing on yourself from this effect.",
                   "spellId": 15286
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136230.jpg"
+              ]
             },
             {
               "id": 105821,
@@ -7443,8 +7439,7 @@
                   "description": "Your Shadow damage spells have a 100% chance to increase the Shadow damage the target takes from you by 2% for 15 sec, stacking up to 5 times.",
                   "spellId": 15257
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136123.jpg"
+              ]
             },
             {
               "id": 105824,
@@ -7462,8 +7457,7 @@
                   "description": "Silences the target, preventing them from casting spells for 5 sec and interrupting their spellcasts for 3 sec.",
                   "spellId": 15487
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136164.jpg"
+              ]
             },
             {
               "id": 105819,
@@ -8875,7 +8869,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Instantly blasts the target for 208 to 216 Shadow damage.  If a non-trivial target dies within 8 sec of being hit with Shadowburn, the caster gains a Soul Shard.",
+                  "description": "Instantly blasts the target for 196 to 204 Shadow damage.  If a non-trivial target dies within 8 sec of being hit with Shadowburn, the caster gains a Soul Shard.",
                   "spellId": 17877
                 }
               ],
@@ -8956,7 +8950,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Ignites a target that is already afflicted by your Immolate spell, dealing 233 to 234 Fire damage and consuming your Immolate effect.",
+                  "description": "Ignites a target that is already afflicted by your Immolate spell, dealing 225 to 242 Fire damage and consuming your Immolate effect.",
                   "spellId": 1293817
                 }
               ],
@@ -9094,7 +9088,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Deals 323 to 345 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate.",
+                  "description": "Deals 342 to 345 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate.",
                   "spellId": 412758
                 }
               ],
@@ -10427,8 +10421,7 @@
                   "description": "Increases all threat generated in Defensive stance by an additional 20% while a shield is equipped.",
                   "spellId": 12792
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132347.jpg"
+              ]
             },
             {
               "id": 105968,
@@ -10456,8 +10449,7 @@
                   "description": "Reduces the Rage cost of your Sunder Armor ability by 3.",
                   "spellId": 12308
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132363.jpg"
+              ]
             },
             {
               "id": 105966,
@@ -10475,8 +10467,7 @@
                   "description": "Your Charge ability is now usable while in Defensive Stance.",
                   "spellId": 1310317
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/4667427.jpg"
+              ]
             },
             {
               "id": 105963,
