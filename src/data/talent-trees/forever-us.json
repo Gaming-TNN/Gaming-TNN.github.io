@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T09:59:13.369Z",
+  "fetchedAt": "2026-11-22T10:01:05.057Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4402,8 +4402,7 @@
                   "description": "Increases the maximum number of targets you may have Sapped by 1, and increases your movement speed by 30% for 3 sec after Sapping a target.",
                   "spellId": 1310728
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/458797.jpg"
+              ]
             },
             {
               "id": 105747,
@@ -4426,8 +4425,7 @@
                   "description": "Increases your Stealth detection as if you were 3 levels higher and reduces your chance to be hit by spells and ranged attacks by 4%.",
                   "spellId": 30894
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132089.jpg"
+              ]
             },
             {
               "id": 105746,
@@ -4447,8 +4445,7 @@
                   "description": "When activated, this ability immediately finishes the cooldown on your other Rogue abilities.",
                   "spellId": 14185
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136121.jpg"
+              ]
             },
             {
               "id": 105748,
@@ -7393,8 +7390,7 @@
                   "description": "Your Mind Blast and fully channeled Mind Flay causes Dark Inspiration, increasing yours and your party's Spirit by 15% for 10 sec.",
                   "spellId": 1326159
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/463284.jpg"
+              ]
             },
             {
               "id": 105820,
@@ -7414,8 +7410,7 @@
                   "description": "Afflicts your target with Shadow energy that causes all party members to be healed for 10% of any Shadow spell damage you deal for 30 sec. You receive 100% increased healing on yourself from this effect.",
                   "spellId": 15286
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136230.jpg"
+              ]
             },
             {
               "id": 105821,
@@ -7443,8 +7438,7 @@
                   "description": "Your Shadow damage spells have a 100% chance to increase the Shadow damage the target takes from you by 2% for 15 sec, stacking up to 5 times.",
                   "spellId": 15257
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136123.jpg"
+              ]
             },
             {
               "id": 105824,
@@ -10398,8 +10392,7 @@
                   "description": "Reduces the cooldown of your Disarm ability by 20 secs.",
                   "spellId": 12313
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132343.jpg"
+              ]
             },
             {
               "id": 110856,
@@ -10427,8 +10420,7 @@
                   "description": "Increases all threat generated in Defensive stance by an additional 20% while a shield is equipped.",
                   "spellId": 12792
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132347.jpg"
+              ]
             },
             {
               "id": 105968,
@@ -10456,8 +10448,7 @@
                   "description": "Reduces the Rage cost of your Sunder Armor ability by 3.",
                   "spellId": 12308
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132363.jpg"
+              ]
             },
             {
               "id": 105966,
@@ -13502,8 +13493,7 @@
                   "description": "Gives your healing spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 16181
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136043.jpg"
+              ]
             },
             {
               "id": 104732,
@@ -13521,8 +13511,7 @@
                   "description": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds.  Lasts 10 min.\r\n\r\nOnly one Elemental Shield can be active on the Shaman at any one time.",
                   "spellId": 408510
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132315.jpg"
+              ]
             },
             {
               "id": 104738,
@@ -13560,8 +13549,7 @@
                   "description": "Increases the critical effect chance of your healing spells by 5%.",
                   "spellId": 16194
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136107.jpg"
+              ]
             },
             {
               "id": 104730,
