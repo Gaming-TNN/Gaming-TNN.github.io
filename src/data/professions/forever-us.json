@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T04:45:59.082Z",
+  "fetchedAt": "2026-11-22T05:01:01.359Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/profession/index?namespace=static-forever-us",
@@ -18,9 +18,7 @@
     },
     {
       "id": 165,
-      "name": "Leatherworking",
-      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136247.jpg",
-      "iconSource": "profession-media"
+      "name": "Leatherworking"
     },
     {
       "id": 393,
