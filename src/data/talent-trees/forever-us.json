@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T06:01:00.521Z",
+  "fetchedAt": "2026-11-22T06:16:04.970Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5923,7 +5923,8 @@
                   "description": "Increases the damage dealt by your Cone of Cold spell by 35%.",
                   "spellId": 11190
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135852.jpg"
             },
             {
               "id": 105766,
@@ -5943,7 +5944,8 @@
                   "description": "Finishes the remaining cooldown on all your other Frost spells.",
                   "spellId": 12472
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
             },
             {
               "id": 105764,
@@ -8936,7 +8938,8 @@
                   "description": "Increases the critical strike chance of your Searing Pain spell by 10% and the damage done by all your Destruction spells by 10%.",
                   "spellId": 17927
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135827.jpg"
             },
             {
               "id": 105880,
@@ -8956,7 +8959,8 @@
                   "description": "Ignites a target that is already afflicted by your Immolate spell, dealing 233 to 234 Fire damage and consuming your Immolate effect.",
                   "spellId": 1293817
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135807.jpg"
             },
             {
               "id": 105878,
