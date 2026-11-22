@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T07:46:11.529Z",
+  "fetchedAt": "2026-11-22T08:00:56.036Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4726,8 +4726,7 @@
                   "description": "Gives you a 10% chance of entering a Clearcasting state after any damage spell hits a target.  The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
                   "spellId": 11213
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136170.jpg"
+              ]
             },
             {
               "id": 105809,
@@ -4750,8 +4749,7 @@
                   "description": "Gives your Arcane Blast spell a 40% chance, and your Arcane Wrath, Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles fire every 0.5 sec.",
                   "spellId": 400588
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236221.jpg"
+              ]
             },
             {
               "id": 105808,
@@ -10573,8 +10571,7 @@
                   "description": "Reduces the Rage cost of your offensive abilities by 3.",
                   "spellId": 29787
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132345.jpg"
+              ]
             },
             {
               "id": 105962,
@@ -10612,8 +10609,7 @@
                   "description": "Increases all damage you deal by 10% while a shield is equipped.",
                   "spellId": 16538
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134950.jpg"
+              ]
             },
             {
               "id": 105959,
@@ -10633,8 +10629,7 @@
                   "description": "Slam the target with your shield, causing 421 to 439 damage, increased by your Block Value, and has a 50% chance of dispelling 1 magic effect on the target. Causes a very high amount of threat.",
                   "spellId": 23922
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134951.jpg"
+              ]
             }
           ]
         }
@@ -13707,8 +13702,7 @@
                   "description": "Increases the effectiveness of your healing spells by 10%.",
                   "spellId": 16178
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
+              ]
             },
             {
               "id": 104724,
@@ -13728,8 +13722,7 @@
                   "description": "Heals a friendly target for 600 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
                   "spellId": 408521
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/252995.jpg"
+              ]
             }
           ]
         }
