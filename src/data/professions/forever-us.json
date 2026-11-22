@@ -1,14 +1,12 @@
 {
-  "fetchedAt": "2026-11-22T12:31:00.891Z",
+  "fetchedAt": "2026-11-22T12:46:05.274Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/profession/index?namespace=static-forever-us",
   "professions": [
     {
       "id": 197,
-      "name": "Tailoring",
-      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136249.jpg",
-      "iconSource": "profession-media"
+      "name": "Tailoring"
     },
     {
       "id": 185,

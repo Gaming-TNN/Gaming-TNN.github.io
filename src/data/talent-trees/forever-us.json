@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T12:31:00.240Z",
+  "fetchedAt": "2026-11-22T12:46:04.677Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4685,8 +4685,7 @@
                   "description": "Increases all your resistances by 10 and causes all spells you fully resist to restore 2% of your total mana. Cannot trigger more often than 1 time per sec.",
                   "spellId": 29441
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136011.jpg"
+              ]
             },
             {
               "id": 105810,
@@ -4726,8 +4725,7 @@
                   "description": "Gives you a 10% chance of entering a Clearcasting state after any damage spell hits a target.  The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
                   "spellId": 11213
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136170.jpg"
+              ]
             },
             {
               "id": 105809,
@@ -4750,8 +4748,7 @@
                   "description": "Gives your Arcane Blast spell a 40% chance, and your Arcane Wrath, Fireball, Frostbolt, and Frostfire Bolt spells a 20% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles fire every 0.5 sec.",
                   "spellId": 400588
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236221.jpg"
+              ]
             },
             {
               "id": 105808,
@@ -7689,8 +7686,7 @@
                   "description": "Reduces the casting time of your Corruption spell by 2 sec and increases the damage it deals by 10%.",
                   "spellId": 17810
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136118.jpg"
+              ]
             },
             {
               "id": 105923,
@@ -7713,8 +7709,7 @@
                   "description": "Increases the range of your Affliction spells by 20%.",
                   "spellId": 18218
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136127.jpg"
+              ]
             },
             {
               "id": 105922,
@@ -7737,8 +7732,7 @@
                   "description": "Killing a non-trivial target afflicted by your Drain Soul increases your Mana regeneration by 100% for 10 sec and allows 100% of normal Mana regeneration to continue while casting.",
                   "spellId": 437032
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132851.jpg"
+              ]
             },
             {
               "id": 105920,
@@ -10689,8 +10683,7 @@
                   "description": "While Aspect of the Hawk is active, Auto Shot has a 10% chance of increasing ranged attack speed by 30% for 12 sec. While Aspect of the Beast is active, all melee auto attacks have a 10% chance of increasing melee attack speed by 30% for 12 sec.",
                   "spellId": 19552
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136076.jpg"
+              ]
             },
             {
               "id": 104976,
@@ -10728,8 +10721,7 @@
                   "description": "Increases the Health and Armor of your pets by 15%.",
                   "spellId": 19583
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136080.jpg"
+              ]
             },
             {
               "id": 104975,
@@ -10752,8 +10744,7 @@
                   "description": "Increases all damage you and your pet deal by 2% while your pet is active.",
                   "spellId": 1223755
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135539.jpg"
+              ]
             },
             {
               "id": 104974,
