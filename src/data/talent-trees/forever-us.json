@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T22:01:02.426Z",
+  "fetchedAt": "2026-11-22T22:16:08.922Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -2927,7 +2927,8 @@
                   "description": "Puts the enemy target in a state of meditation, incapacitating them for up to 6 sec. Any damage caused will awaken the target. Only works against Humanoids.",
                   "spellId": 20066
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135942.jpg"
             },
             {
               "id": 105693,
@@ -2957,7 +2958,8 @@
                   "description": "Increases your Physical and Holy damage dealt by 3% for 30 sec after landing a non-periodic critical strike.  Stacks up to 5 times.",
                   "spellId": 20049
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132275.jpg"
             },
             {
               "id": 110882,
@@ -2995,7 +2997,8 @@
                   "description": "Increases your spell damage by up to 60% of your Intellect, and reduces the cast time of your Hammer of Wrath by 1.0 sec.",
                   "spellId": 1311084
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236251.jpg"
             },
             {
               "id": 105692,
@@ -5843,7 +5846,8 @@
                   "description": "Increases the range of your Frostbolt, Ice Lance, and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 20%.",
                   "spellId": 16757
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136141.jpg"
             },
             {
               "id": 105769,
@@ -5861,7 +5865,8 @@
                   "description": "You become encased in a block of ice, protecting you from all physical attacks and spells for 10 sec, but during that time you cannot attack, move, or cast spells.",
                   "spellId": 11958
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135841.jpg"
             },
             {
               "id": 105768,
@@ -5889,7 +5894,8 @@
                   "description": "Increases the critical strike chance of all your spells against Frozen targets by 50%.",
                   "spellId": 11170
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135849.jpg"
             },
             {
               "id": 105765,
@@ -8872,7 +8878,8 @@
                   "description": "Instantly blasts the target for 196 to 204 Shadow damage.  If a non-trivial target dies within 8 sec of being hit with Shadowburn, the caster gains a Soul Shard.",
                   "spellId": 17877
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136191.jpg"
             },
             {
               "id": 105882,
@@ -8902,7 +8909,8 @@
                   "description": "Gives your Destruction spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 18135
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135819.jpg"
             },
             {
               "id": 105879,
@@ -8930,7 +8938,8 @@
                   "description": "Increases the critical strike chance of your Searing Pain spell by 10% and the damage done by all your Destruction spells by 10%.",
                   "spellId": 17927
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135827.jpg"
             },
             {
               "id": 105880,
@@ -11938,7 +11947,8 @@
                   "description": "When activated, increases your Dodge and Parry chance by 25% for 10 sec.",
                   "spellId": 19263
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132369.jpg"
             },
             {
               "id": 104988,
@@ -11961,7 +11971,8 @@
                   "description": "Increases your chance to hit with your Trap and Feign Death abilities by 10%.",
                   "spellId": 19376
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132149.jpg"
             },
             {
               "id": 110861,
@@ -11999,7 +12010,8 @@
                   "description": "Increases your melee ability critical strike damage by 30% and your Off Hand weapon damage by 50%.",
                   "spellId": 1310627
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132147.jpg"
             },
             {
               "id": 104989,
