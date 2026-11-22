@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T06:30:48.580Z",
+  "fetchedAt": "2026-11-22T06:45:47.129Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -35,8 +35,8 @@
       "name": "Warrior",
       "id": 1
     },
-    "level": 30,
-    "experience": 21050,
+    "level": 31,
+    "experience": 7822,
     "achievement_points": 0,
     "achievements": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/achievements?namespace=profile-forever-us"
@@ -53,9 +53,9 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795245200000,
+    "last_login_timestamp": 1795329703000,
     "average_item_level": 25,
-    "equipped_item_level": 25,
+    "equipped_item_level": 24,
     "specializations": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/specializations?namespace=profile-forever-us"
     },
@@ -252,8 +252,8 @@
           "item_modified_appearance_id": 77344
         },
         "durability": {
-          "value": 58,
-          "display_string": "Durability 58 / 70"
+          "value": 70,
+          "display_string": "Durability 70 / 70"
         }
       },
       {
@@ -481,8 +481,8 @@
           "second_item_modified_appearance_id": 77343
         },
         "durability": {
-          "value": 61,
-          "display_string": "Durability 61 / 70"
+          "value": 70,
+          "display_string": "Durability 70 / 70"
         }
       },
       {
@@ -713,8 +713,8 @@
           "item_modified_appearance_id": 104602
         },
         "durability": {
-          "value": 96,
-          "display_string": "Durability 96 / 120"
+          "value": 120,
+          "display_string": "Durability 120 / 120"
         }
       },
       {
@@ -856,8 +856,8 @@
           "item_modified_appearance_id": 84223
         },
         "durability": {
-          "value": 23,
-          "display_string": "Durability 23 / 30"
+          "value": 30,
+          "display_string": "Durability 30 / 30"
         }
       },
       {
@@ -869,15 +869,15 @@
         },
         "enchantments": [
           {
-            "display_string": "Enchanted: Attack Power +4 and Armor +16",
+            "display_string": "Enchanted: Stamina +3 and Armor +24",
             "source_item": {
               "key": {
-                "href": "https://us.api.blizzard.com/data/wow/item/252437?namespace=static-1.60.1_70399-forever-us"
+                "href": "https://us.api.blizzard.com/data/wow/item/4265?namespace=static-1.60.1_70399-forever-us"
               },
-              "name": "Forceful Medium Armor Kit",
-              "id": 252437
+              "name": "Heavy Armor Kit",
+              "id": 4265
             },
-            "enchantment_id": 8483,
+            "enchantment_id": 8484,
             "enchantment_slot": {
               "id": 0,
               "type": "PERMANENT"
@@ -1016,8 +1016,8 @@
           "item_modified_appearance_id": 198608
         },
         "durability": {
-          "value": 80,
-          "display_string": "Durability 80 / 90"
+          "value": 90,
+          "display_string": "Durability 90 / 90"
         }
       },
       {
@@ -1027,6 +1027,23 @@
           },
           "id": 273842
         },
+        "enchantments": [
+          {
+            "display_string": "Enchanted: Stamina +3 and Armor +24",
+            "source_item": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/item/4265?namespace=static-1.60.1_70399-forever-us"
+              },
+              "name": "Heavy Armor Kit",
+              "id": 4265
+            },
+            "enchantment_id": 8484,
+            "enchantment_slot": {
+              "id": 0,
+              "type": "PERMANENT"
+            }
+          }
+        ],
         "slot": {
           "type": "FEET",
           "name": "Feet"
@@ -1155,8 +1172,8 @@
           "item_modified_appearance_id": 306411
         },
         "durability": {
-          "value": 49,
-          "display_string": "Durability 49 / 60"
+          "value": 60,
+          "display_string": "Durability 60 / 60"
         }
       },
       {
@@ -1281,8 +1298,8 @@
           "item_modified_appearance_id": 104604
         },
         "durability": {
-          "value": 24,
-          "display_string": "Durability 24 / 35"
+          "value": 35,
+          "display_string": "Durability 35 / 35"
         }
       },
       {
@@ -1433,8 +1450,8 @@
           "item_modified_appearance_id": 158301
         },
         "durability": {
-          "value": 30,
-          "display_string": "Durability 30 / 35"
+          "value": 35,
+          "display_string": "Durability 35 / 35"
         }
       },
       {
@@ -1632,25 +1649,26 @@
       {
         "item": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item/14752?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/item/6340?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 14752
+          "id": 6340
         },
         "slot": {
           "type": "BACK",
           "name": "Back"
         },
         "quantity": 1,
+        "context": 1,
         "quality": {
-          "type": "UNCOMMON",
-          "name": "Uncommon"
+          "type": "RARE",
+          "name": "Rare"
         },
-        "name": "Slayer's Cape",
+        "name": "Fenrus' Hide",
         "media": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/media/item/14752?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/media/item/6340?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 14752
+          "id": 6340
         },
         "item_class": {
           "key": {
@@ -1671,13 +1689,13 @@
           "name": "Back"
         },
         "binding": {
-          "type": "ON_EQUIP",
-          "name": "Binds when equipped"
+          "type": "ON_ACQUIRE",
+          "name": "Binds when picked up"
         },
         "armor": {
-          "value": 20,
+          "value": 22,
           "display": {
-            "display_string": "20 Armor",
+            "display_string": "22 Armor",
             "color": {
               "r": 255,
               "g": 255,
@@ -1689,12 +1707,12 @@
         "stats": [
           {
             "type": {
-              "type": "STRENGTH",
-              "name": "Strength"
+              "type": "AGILITY",
+              "name": "Agility"
             },
             "value": 4,
             "display": {
-              "display_string": "+4 Strength",
+              "display_string": "+4 Agility",
               "color": {
                 "r": 255,
                 "g": 255,
@@ -1708,9 +1726,9 @@
               "type": "STAMINA",
               "name": "Stamina"
             },
-            "value": 3,
+            "value": 6,
             "display": {
-              "display_string": "+3 Stamina",
+              "display_string": "+6 Stamina",
               "color": {
                 "r": 255,
                 "g": 255,
@@ -1721,12 +1739,12 @@
           }
         ],
         "sell_price": {
-          "value": 978,
+          "value": 1215,
           "display_strings": {
             "header": "Sell Price:",
             "gold": "0",
-            "silver": "9",
-            "copper": "78"
+            "silver": "12",
+            "copper": "15"
           }
         },
         "requirements": {
@@ -1755,25 +1773,26 @@
       {
         "item": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item/3849?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/item/6323?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 3849
+          "id": 6323
         },
         "slot": {
           "type": "MAIN_HAND",
           "name": "Main Hand"
         },
         "quantity": 1,
+        "context": 1,
         "quality": {
-          "type": "UNCOMMON",
-          "name": "Uncommon"
+          "type": "RARE",
+          "name": "Rare"
         },
-        "name": "Hardened Iron Shortsword",
+        "name": "Baron's Scepter",
         "media": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/media/item/3849?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/media/item/6323?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 3849
+          "id": 6323
         },
         "item_class": {
           "key": {
@@ -1784,32 +1803,32 @@
         },
         "item_subclass": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item-class/2/item-subclass/7?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/item-class/2/item-subclass/4?namespace=static-1.60.1_70399-forever-us"
           },
-          "name": "Sword",
-          "id": 7
+          "name": "Mace",
+          "id": 4
         },
         "inventory_type": {
-          "type": "WEAPON",
-          "name": "One-Hand"
+          "type": "WEAPONMAINHAND",
+          "name": "Main Hand"
         },
         "binding": {
-          "type": "ON_EQUIP",
-          "name": "Binds when equipped"
+          "type": "ON_ACQUIRE",
+          "name": "Binds when picked up"
         },
         "weapon": {
           "damage": {
-            "min_value": 21,
-            "max_value": 39,
-            "display_string": "21 - 39 Damage",
+            "min_value": 28,
+            "max_value": 52,
+            "display_string": "28 - 52 Damage",
             "damage_class": {
               "type": "PHYSICAL",
               "name": "Physical"
             }
           },
           "attack_speed": {
-            "value": 1800,
-            "display_string": "Speed 1.80"
+            "value": 2400,
+            "display_string": "Speed 2.40"
           },
           "dps": {
             "value": 16.666666,
@@ -1819,12 +1838,28 @@
         "stats": [
           {
             "type": {
+              "type": "STRENGTH",
+              "name": "Strength"
+            },
+            "value": 2,
+            "display": {
+              "display_string": "+2 Strength",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1
+              }
+            }
+          },
+          {
+            "type": {
               "type": "STAMINA",
               "name": "Stamina"
             },
-            "value": 5,
+            "value": 3,
             "display": {
-              "display_string": "+5 Stamina",
+              "display_string": "+3 Stamina",
               "color": {
                 "r": 255,
                 "g": 255,
@@ -1834,24 +1869,36 @@
             }
           }
         ],
+        "spells": [
+          {
+            "spell": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/spell/1292142?namespace=static-1.60.1_70399-forever-us"
+              },
+              "name": "Benevolence",
+              "id": 1292142
+            },
+            "description": "Equip: Cause party members within 30 yds to regenerate 4 health every 5 sec."
+          }
+        ],
         "sell_price": {
-          "value": 5468,
+          "value": 3681,
           "display_strings": {
             "header": "Sell Price:",
             "gold": "0",
-            "silver": "54",
-            "copper": "68"
+            "silver": "36",
+            "copper": "81"
           }
         },
         "requirements": {
           "level": {
-            "value": 27,
-            "display_string": "Requires Level 27"
+            "value": 21,
+            "display_string": "Requires Level 21"
           }
         },
         "level": {
-          "value": 32,
-          "display_string": "Item Level 32"
+          "value": 26,
+          "display_string": "Item Level 26"
         },
         "transmog": {
           "item": {
@@ -1865,8 +1912,8 @@
           "item_modified_appearance_id": 161278
         },
         "durability": {
-          "value": 47,
-          "display_string": "Durability 47 / 75"
+          "value": 80,
+          "display_string": "Durability 80 / 80"
         }
       },
       {
@@ -2032,8 +2079,8 @@
           "item_modified_appearance_id": 160906
         },
         "durability": {
-          "value": 81,
-          "display_string": "Durability 81 / 100"
+          "value": 100,
+          "display_string": "Durability 100 / 100"
         }
       },
       {
@@ -2133,8 +2180,8 @@
           "display_string": "Item Level 27"
         },
         "durability": {
-          "value": 185,
-          "display_string": "Durability 185 / 200"
+          "value": 200,
+          "display_string": "Durability 200 / 200"
         }
       }
     ]
@@ -2304,14 +2351,14 @@
                     "name": "Focused Rage",
                     "id": 29787
                   },
-                  "description": "Reduces the Rage cost of your offensive abilities by 1.",
+                  "description": "Reduces the Rage cost of your offensive abilities by 2.",
                   "cast_time": "Passive"
                 },
-                "talent_rank": 1
+                "talent_rank": 2
               }
             ],
             "specialization_name": "Protection",
-            "spent_points": 21
+            "spent_points": 22
           }
         ]
       }
@@ -2377,7 +2424,7 @@
         },
         "tiers": [
           {
-            "skill_points": 206,
+            "skill_points": 210,
             "max_skill_points": 225,
             "tier": {
               "name": "Mining",
@@ -2680,6 +2727,13 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/1863?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Silvered Bronze Shoulders",
+                "id": 1863
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/4207?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Iron Shield Spike",
@@ -2848,6 +2902,13 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/54708?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Acolyte's Chain Leggings",
+                "id": 54708
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/1651?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Copper Axe",
@@ -2896,6 +2957,13 @@
                 },
                 "name": "Herb Baked Egg",
                 "id": 4786
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/54504?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Tasty Raptor Bites",
+                "id": 54504
               },
               {
                 "key": {
@@ -3009,7 +3077,7 @@
         },
         "tiers": [
           {
-            "skill_points": 197,
+            "skill_points": 200,
             "max_skill_points": 225,
             "tier": {
               "name": "First Aid",
@@ -3115,15 +3183,15 @@
   },
   "itemIcons": {
     "3835": "https://render.worldofwarcraft.com/forever-us/icons/56/132605.jpg",
-    "3849": "https://render.worldofwarcraft.com/forever-us/icons/56/135321.jpg",
     "6125": "https://render.worldofwarcraft.com/forever-us/icons/56/132719.jpg",
+    "6323": "https://render.worldofwarcraft.com/forever-us/icons/56/133477.jpg",
+    "6340": "https://render.worldofwarcraft.com/forever-us/icons/56/134367.jpg",
     "6414": "https://render.worldofwarcraft.com/forever-us/icons/56/133357.jpg",
     "7002": "https://render.worldofwarcraft.com/forever-us/icons/56/134948.jpg",
     "7129": "https://render.worldofwarcraft.com/forever-us/icons/56/132938.jpg",
     "7133": "https://render.worldofwarcraft.com/forever-us/icons/56/132629.jpg",
     "13127": "https://render.worldofwarcraft.com/forever-us/icons/56/133126.jpg",
     "13131": "https://render.worldofwarcraft.com/forever-us/icons/56/135049.jpg",
-    "14752": "https://render.worldofwarcraft.com/forever-us/icons/56/133760.jpg",
     "250514": "https://render.worldofwarcraft.com/forever-us/icons/56/132504.jpg",
     "250524": "https://render.worldofwarcraft.com/forever-us/icons/56/134668.jpg",
     "273842": "https://render.worldofwarcraft.com/forever-us/icons/56/132536.jpg",
