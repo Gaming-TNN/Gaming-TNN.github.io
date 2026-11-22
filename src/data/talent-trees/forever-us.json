@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T06:16:04.970Z",
+  "fetchedAt": "2026-11-22T06:30:56.032Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4661,8 +4661,7 @@
                   "description": "Reduces your target's resistance to all your spells by 15 and reduces the threat caused by your Arcane spells by 30%.",
                   "spellId": 11210
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135894.jpg"
+              ]
             },
             {
               "id": 105811,
@@ -4685,8 +4684,7 @@
                   "description": "Increases all your resistances by 10 and causes all spells you fully resist to restore 2% of your total mana. Cannot trigger more often than 1 time per sec.",
                   "spellId": 29441
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136011.jpg"
+              ]
             },
             {
               "id": 105810,
@@ -4726,8 +4724,7 @@
                   "description": "Gives you a 10% chance of entering a Clearcasting state after any damage spell hits a target.  The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
                   "spellId": 11213
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136170.jpg"
+              ]
             },
             {
               "id": 105809,
@@ -7650,8 +7647,7 @@
                   "description": "Improves your chance to hit by 5% and reduces all threat you generate by 20%.",
                   "spellId": 18174
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136230.jpg"
+              ]
             },
             {
               "id": 105924,
@@ -10573,8 +10569,7 @@
                   "description": "Reduces the Rage cost of your offensive abilities by 3.",
                   "spellId": 29787
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132345.jpg"
+              ]
             },
             {
               "id": 105962,
@@ -10612,8 +10607,7 @@
                   "description": "Increases all damage you deal by 10% while a shield is equipped.",
                   "spellId": 16538
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134950.jpg"
+              ]
             },
             {
               "id": 105959,
