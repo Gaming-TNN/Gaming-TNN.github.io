@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T18:31:04.519Z",
+  "fetchedAt": "2026-11-22T18:45:56.588Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -11742,8 +11742,7 @@
                   "description": "Increases your Parry chance by 5%.",
                   "spellId": 19295
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
+              ]
             },
             {
               "id": 104994,
