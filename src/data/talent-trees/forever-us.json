@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T02:00:56.160Z",
+  "fetchedAt": "2026-11-22T02:15:56.294Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3642,8 +3642,7 @@
                   "description": "Increases the critical strike chance of your Backstab by 30% and your Mutilate by 15%, and gives Backstab a 45% chance to add an additional Combo Point.",
                   "spellId": 1224716
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132090.jpg"
+              ]
             },
             {
               "id": 105738,
@@ -3673,8 +3672,7 @@
                   "description": "Increases your Parry chance by 6%.",
                   "spellId": 13713
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
+              ]
             },
             {
               "id": 105737,
@@ -3704,8 +3702,7 @@
                   "description": "Improves your chance to hit by 3%.",
                   "spellId": 13705
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132222.jpg"
+              ]
             },
             {
               "id": 105732,
@@ -4107,7 +4104,8 @@
                   "description": "Reduces the chance enemies have to detect you while in Stealth mode as if you were 3 levels higher.",
                   "spellId": 13958
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136129.jpg"
             },
             {
               "id": 105760,
@@ -4145,7 +4143,8 @@
                   "description": "Increases the damage dealt by your Backstab, Garrote, Ambush, and Mutilate abilities by 20%.",
                   "spellId": 14057
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132366.jpg"
             },
             {
               "id": 105745,
@@ -4168,7 +4167,8 @@
                   "description": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 20, and your Garrote ability no longer requires you to be behind your target.",
                   "spellId": 14082
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136220.jpg"
             },
             {
               "id": 105756,
@@ -6542,8 +6542,7 @@
                   "description": "Your non-periodic critical heals create a protective shield on the target, absorbing 15% of the amount healed. Shields up to 1,200 damage and lasts 12 sec.",
                   "spellId": 431622
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237539.jpg"
+              ]
             },
             {
               "id": 105836,
@@ -6563,8 +6562,7 @@
                   "description": "Infuses the target with power, increasing their spell damage and healing done by 20% for 15 sec.",
                   "spellId": 10060
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135939.jpg"
+              ]
             }
           ]
         },
@@ -6602,8 +6600,7 @@
                   "description": "Gives your spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 14913
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135918.jpg"
+              ]
             },
             {
               "id": 105866,
@@ -7041,7 +7038,8 @@
                   "description": "Increases the amount healed by your spells by 10%.",
                   "spellId": 14898
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136057.jpg"
             },
             {
               "id": 105851,
@@ -7061,7 +7059,8 @@
                   "description": "Places a spell on the target that heals them for 395 the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within 20 yards. Jumps up to 5 times and lasts 30 sec after each jump. This spell can only be placed on one target at a time per caster.",
                   "spellId": 401859
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135944.jpg"
             }
           ]
         },
@@ -7109,7 +7108,8 @@
                   "description": "Improves your chance to hit with Shadow spells by 5%.",
                   "spellId": 15260
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136126.jpg"
             },
             {
               "id": 105832,
@@ -9551,8 +9551,7 @@
                   "description": "Gives your Hamstring ability a 15% chance to immobilize the target for 5 sec.",
                   "spellId": 12289
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132316.jpg"
+              ]
             },
             {
               "id": 105941,
@@ -9572,8 +9571,7 @@
                   "description": "A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec.",
                   "spellId": 12294
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132355.jpg"
+              ]
             }
           ]
         },
@@ -9621,8 +9619,7 @@
                   "description": "Increases the area of effect of your Shouts by 50% and reduces the Rage cost by of your Shouts and Howls by 25%.",
                   "spellId": 12321
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136075.jpg"
+              ]
             },
             {
               "id": 105939,
@@ -10057,7 +10054,8 @@
                   "description": "Reduces the cooldown of your Whirlwind ability by 2 sec and increases the damage it deals to the closest enemy by 30%.",
                   "spellId": 1310315
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132369.jpg"
             },
             {
               "id": 105928,
@@ -10085,7 +10083,8 @@
                   "description": "Increases your melee attack speed by 30% for your next 3 swings after dealing a melee critical strike.",
                   "spellId": 12319
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132152.jpg"
             },
             {
               "id": 105930,
@@ -10105,7 +10104,8 @@
                   "description": "Instantly attack the target causing damage equal to 45% of your Attack Power plus 30 and increasing your movement speed by 10% for 10 sec.",
                   "spellId": 23881
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136012.jpg"
             }
           ]
         },
@@ -13114,7 +13114,8 @@
                   "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and increases all threat generated by 30% while Rockbiter Weapon is active.",
                   "spellId": 16268
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
             },
             {
               "id": 104744,
@@ -13165,7 +13166,8 @@
                   "description": "When you Stormstrike, you have a 100% chance to gain 50% mana regeneration while casting spells for 15 sec, and Stormstrike's cooldown has a 100% chance to reset each time you Dodge or Parry.",
                   "spellId": 1223031
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237581.jpg"
             },
             {
               "id": 104741,
@@ -13203,7 +13205,8 @@
                   "description": "When you deal damage with a melee attack, you have a 27% chance (based on weapon speed) to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec.",
                   "spellId": 408498
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237584.jpg"
             },
             {
               "id": 104740,
