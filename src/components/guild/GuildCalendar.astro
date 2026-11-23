@@ -1,0 +1,113 @@
+---
+// Month view + upcoming list. Everything is placed in the viewer's local time zone:
+// the month grid is built in the browser from the event data, and each event time is
+// formatted locally (LocalTime). Past events are hidden from the upcoming list.
+import type { GuildConfig, GuildEvent } from '../../lib/guild';
+import { eventType, instanceOf, planHref } from '../../lib/guild';
+import LocalTime from './LocalTime.astro';
+interface Props { config: GuildConfig; events: GuildEvent[] }
+const { config, events } = Astro.props;
+const calData = events.map((e) => ({ id: e.id, title: e.title, start: e.start, color: eventType(config, e.type).color }));
+---
+<div class="grid lg:grid-cols-[minmax(0,1fr)_22rem] gap-6 items-start" data-guild-calendar>
+  <div class="bg-[#121215] border border-[#27272a] p-3 sm:p-4 min-w-0">
+    <div class="flex items-center justify-between gap-3 mb-3">
+      <button type="button" data-cal-prev class="px-3 py-1.5 text-xs font-black border border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e] disabled:opacity-30 disabled:hover:border-[#27272a]" aria-label="Previous month">‹</button>
+      <h3 class="m-0 text-sm font-black tracking-widest text-[#e4e4e7]" data-cal-label aria-live="polite">Calendar</h3>
+      <button type="button" data-cal-next class="px-3 py-1.5 text-xs font-black border border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e] disabled:opacity-30 disabled:hover:border-[#27272a]" aria-label="Next month">›</button>
+    </div>
+    <div class="grid grid-cols-7 gap-px mb-px">
+      {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d) => <span class="text-center text-[9px] sm:text-[10px] font-bold tracking-widest text-zinc-500 py-1">{d}</span>)}
+    </div>
+    <div class="grid grid-cols-7 gap-px bg-[#27272a] border border-[#27272a]" data-cal-grid>
+      <noscript><p class="col-span-7 bg-black p-4 m-0 text-xs text-zinc-500 normal-case">The calendar needs JavaScript. Events are listed under Upcoming.</p></noscript>
+    </div>
+    <ul class="flex flex-wrap gap-x-4 gap-y-1 mt-3 m-0 p-0 list-none text-[10px] font-bold tracking-widest text-zinc-400">
+      {config.eventTypes.map((t) => <li class="flex items-center gap-1.5"><span class="size-2.5 rounded-full" style={`background:${t.color}`}></span>{t.label}</li>)}
+      <li class="ml-auto normal-case tracking-normal text-zinc-600 font-normal" data-cal-tz>Times in your local time zone</li>
+    </ul>
+  </div>
+
+  <div class="min-w-0">
+    <h3 class="text-xs font-black tracking-widest text-[#c20e0e] m-0 mb-3">UPCOMING</h3>
+    <ol class="grid gap-3 m-0 p-0 list-none">
+      {events.map((e) => {
+        const t = eventType(config, e.type);
+        const inst = instanceOf(config, e.instance);
+        return (
+          <li id={`event-${e.id}`} data-event-end={e.end ?? e.start} class="scroll-mt-28 bg-[#121215] border border-[#27272a] border-l-4 p-4 min-w-0" style={`border-left-color:${t.color}`}>
+            <p class="m-0 flex flex-wrap items-center gap-2 text-[10px] font-black tracking-widest">
+              <span style={`color:${t.color}`}>{t.label}</span>
+              {e.example && <span class="px-1.5 py-0.5 border border-[#ffd100]/60 text-[#ffd100]">EXAMPLE</span>}
+            </p>
+            <p class="m-0 mt-1 text-base font-black text-[#e4e4e7] normal-case tracking-wide">{e.title}</p>
+            <p class="m-0 mt-1 text-xs text-zinc-400 normal-case tracking-normal"><LocalTime start={e.start} end={e.end} />{inst && ` · ${inst.name}`}</p>
+            {e.description && <p class="m-0 mt-2 text-xs text-zinc-500 normal-case tracking-normal leading-relaxed">{e.description}</p>}
+            {e.plan && <a href={planHref(config, e.plan)} class="inline-block mt-3 text-[10px] font-black tracking-widest text-white bg-[#c20e0e] hover:bg-[#9e0b0b] px-3 py-1.5 border border-[#d30000]">VIEW GROUP PLAN</a>}
+          </li>
+        );
+      })}
+    </ol>
+    <p class="text-zinc-500 text-sm normal-case m-0" data-upcoming-empty hidden>No upcoming events.</p>
+  </div>
+  <script type="application/json" data-cal-events set:html={JSON.stringify(calData).replace(/</g, '\\u003c')}></script>
+</div>
+
+<script>
+  type CalEvent = { id: string; title: string; start: string; color: string };
+  const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  const ymd = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  document.querySelectorAll<HTMLElement>('[data-guild-calendar]').forEach((root) => {
+    const events: CalEvent[] = JSON.parse(root.querySelector('[data-cal-events]')?.textContent || '[]');
+    const grid = root.querySelector<HTMLElement>('[data-cal-grid]')!;
+    const label = root.querySelector<HTMLElement>('[data-cal-label]')!;
+    const prev = root.querySelector<HTMLButtonElement>('[data-cal-prev]')!;
+    const next = root.querySelector<HTMLButtonElement>('[data-cal-next]')!;
+    const now = new Date();
+    const mIndex = (d: Date) => d.getFullYear() * 12 + d.getMonth();
+    const all = [mIndex(now), ...events.map((e) => mIndex(new Date(e.start)))];
+    const first = Math.min(...all);
+    const last = Math.max(...all);
+    let cur = mIndex(now);
+    const byDay = new Map<string, CalEvent[]>();
+    events.forEach((e) => { const k = ymd(new Date(e.start)); byDay.set(k, [...(byDay.get(k) ?? []), e]); });
+    const today = ymd(now);
+    const render = () => {
+      const y = Math.floor(cur / 12);
+      const m = cur % 12;
+      label.textContent = new Intl.DateTimeFormat(undefined, { month: 'long', year: 'numeric' }).format(new Date(y, m, 1));
+      const lead = new Date(y, m, 1).getDay();
+      const days = new Date(y, m + 1, 0).getDate();
+      const cells: string[] = [];
+      for (let i = 0; i < lead; i++) cells.push('<div class="bg-[#0b0b0d] min-h-12 sm:min-h-20" aria-hidden="true"></div>');
+      for (let d = 1; d <= days; d++) {
+        const key = ymd(new Date(y, m, d));
+        const evs = byDay.get(key) ?? [];
+        const isToday = key === today;
+        cells.push(`<div class="bg-black min-h-12 sm:min-h-20 p-1 sm:p-1.5 min-w-0${isToday ? ' outline outline-1 outline-[#c20e0e] -outline-offset-1' : ''}">
+          <span class="block text-[10px] sm:text-xs font-bold tabular-nums ${isToday ? 'text-[#c20e0e]' : 'text-zinc-400'}">${d}</span>
+          ${evs.length ? `<span class="flex sm:hidden gap-0.5 mt-1 flex-wrap">${evs.map((e) => `<a href="#event-${esc(e.id)}" class="block size-2.5 rounded-full" style="background:${esc(e.color)}" aria-label="${esc(e.title)}"></a>`).join('')}</span>
+          <span class="hidden sm:grid gap-0.5 mt-1">${evs.map((e) => `<a href="#event-${esc(e.id)}" class="block truncate text-[10px] leading-tight font-bold normal-case tracking-normal text-white px-1 py-0.5 border-l-2 bg-white/5 hover:bg-white/10" style="border-color:${esc(e.color)}" title="${esc(e.title)}">${esc(e.title)}</a>`).join('')}</span>` : ''}
+        </div>`);
+      }
+      while (cells.length % 7) cells.push('<div class="bg-[#0b0b0d] min-h-12 sm:min-h-20" aria-hidden="true"></div>');
+      grid.innerHTML = cells.join('');
+      prev.disabled = cur <= first;
+      next.disabled = cur >= last;
+    };
+    prev.addEventListener('click', () => { if (cur > first) { cur--; render(); } });
+    next.addEventListener('click', () => { if (cur < last) { cur++; render(); } });
+    render();
+    const tz = new Intl.DateTimeFormat(undefined, { timeZoneName: 'short' }).formatToParts(now).find((p) => p.type === 'timeZoneName')?.value;
+    const tzEl = root.querySelector('[data-cal-tz]');
+    if (tzEl && tz) tzEl.textContent = `Times in your time zone (${tz})`;
+    let visible = 0;
+    root.querySelectorAll<HTMLElement>('[data-event-end]').forEach((li) => {
+      const past = Date.parse(li.dataset.eventEnd || '') < now.getTime();
+      li.hidden = past;
+      if (!past) visible++;
+    });
+    const empty = root.querySelector<HTMLElement>('[data-upcoming-empty]');
+    if (empty) empty.hidden = visible > 0;
+  });
+</script>

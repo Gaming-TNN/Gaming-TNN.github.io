@@ -1,0 +1,26 @@
+---
+// Event time shown in the viewer's own time zone (client-side Intl, with the zone
+// abbreviation). Data keeps ISO times with UTC offsets; the server renders a UTC
+// fallback for no-JS visitors.
+interface Props { start: string; end?: string; class?: string }
+const { start, end, class: extra } = Astro.props;
+const utc = (iso: string, o: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', ...o }).format(new Date(iso));
+const fallback = `${utc(start, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}${end ? ` – ${utc(end, { hour: 'numeric', minute: '2-digit' })}` : ''} UTC`;
+---
+<time datetime={start} data-local-start={start} data-local-end={end} class={extra}>{fallback}</time>
+
+<script>
+  function fmtRange(startIso: string, endIso?: string): string {
+    const s = new Date(startIso);
+    const e = endIso ? new Date(endIso) : undefined;
+    const day = new Intl.DateTimeFormat(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+    const time = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' });
+    const tz = new Intl.DateTimeFormat(undefined, { timeZoneName: 'short' }).formatToParts(e ?? s).find((p) => p.type === 'timeZoneName')?.value ?? '';
+    let out = `${day.format(s)}, ${time.format(s)}`;
+    if (e) out += ` – ${s.toDateString() === e.toDateString() ? '' : `${day.format(e)}, `}${time.format(e)}`;
+    return `${out} ${tz}`.trim();
+  }
+  document.querySelectorAll<HTMLTimeElement>('time[data-local-start]').forEach((el) => {
+    el.textContent = fmtRange(el.dataset.localStart!, el.dataset.localEnd || undefined);
+  });
+</script>

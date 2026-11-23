@@ -1,0 +1,1829 @@
+{
+  "$comment": "Per-game guild config. Copy this folder to src/data/guild/{game}/ for another game. guildName is the one place the guild's name is set. Instances: status 'live' or 'upcoming' (upcoming ones show 'Bosses TBA' when no boss list is public). Boss lists and levels are sourced; see each instance's sources. Maps: set map {image, credit, license} on an instance or a boss (image path under /public); without one the labeled placeholder grid is used. See CREDITS.md.",
+  "slug": "wow",
+  "gameSlug": "wow-forever",
+  "name": "World of Warcraft: Forever",
+  "shortName": "WoW Forever",
+  "guildName": "Bad Batch Clan",
+  "rosterSource": "wowForever",
+  "roles": [
+    {
+      "id": "tank",
+      "label": "Tank",
+      "color": "#3b82f6",
+      "icon": "shield"
+    },
+    {
+      "id": "healer",
+      "label": "Healer",
+      "color": "#22c55e",
+      "icon": "cross"
+    },
+    {
+      "id": "dps",
+      "label": "DPS",
+      "color": "#ef4444",
+      "icon": "sword"
+    }
+  ],
+  "classes": [
+    {
+      "id": "warrior",
+      "name": "Warrior",
+      "blizzardId": 1,
+      "color": "#C69B6D"
+    },
+    {
+      "id": "paladin",
+      "name": "Paladin",
+      "blizzardId": 2,
+      "color": "#F48CBA"
+    },
+    {
+      "id": "hunter",
+      "name": "Hunter",
+      "blizzardId": 3,
+      "color": "#AAD372"
+    },
+    {
+      "id": "rogue",
+      "name": "Rogue",
+      "blizzardId": 4,
+      "color": "#FFF468"
+    },
+    {
+      "id": "priest",
+      "name": "Priest",
+      "blizzardId": 5,
+      "color": "#FFFFFF"
+    },
+    {
+      "id": "shaman",
+      "name": "Shaman",
+      "blizzardId": 7,
+      "color": "#0070DD"
+    },
+    {
+      "id": "mage",
+      "name": "Mage",
+      "blizzardId": 8,
+      "color": "#3FC7EB"
+    },
+    {
+      "id": "warlock",
+      "name": "Warlock",
+      "blizzardId": 9,
+      "color": "#8788EE"
+    },
+    {
+      "id": "druid",
+      "name": "Druid",
+      "blizzardId": 11,
+      "color": "#FF7C0A"
+    }
+  ],
+  "eventTypes": [
+    {
+      "id": "raid",
+      "label": "Raid",
+      "color": "#c20e0e"
+    },
+    {
+      "id": "dungeon",
+      "label": "Dungeon",
+      "color": "#ca8a04"
+    },
+    {
+      "id": "pvp",
+      "label": "PvP",
+      "color": "#7c3aed"
+    },
+    {
+      "id": "event",
+      "label": "Event",
+      "color": "#5865F2"
+    }
+  ],
+  "instances": [
+    {
+      "id": "the-hall-of-thanes",
+      "name": "The Hall of Thanes",
+      "type": "dungeon",
+      "status": "live",
+      "new": true,
+      "level": "13–18",
+      "size": 5,
+      "location": "Ironforge (Dun Morogh)",
+      "bosses": [
+        {
+          "id": "faldrim-anvilmar",
+          "name": "Faldrim Anvilmar"
+        },
+        {
+          "id": "magmatus",
+          "name": "Magmatus"
+        },
+        {
+          "id": "plunder",
+          "name": "Plunder"
+        },
+        {
+          "id": "durgen-dirgehammer",
+          "name": "Durgen Dirgehammer"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24301455/explore-the-new-dungeons-of-world-of-warcraft-forever",
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "https://warcraft.wiki.gg/wiki/The_Hall_of_Thanes"
+      ],
+      "note": "Client data names the second boss \"Infurnus\"; Wowhead and Warcraft Wiki list Magmatus."
+    },
+    {
+      "id": "ragefire-chasm",
+      "name": "Ragefire Chasm",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "13–18",
+      "size": 5,
+      "location": "Orgrimmar",
+      "journalName": "Ragefire Chasm",
+      "bosses": [
+        {
+          "id": "oggleflint",
+          "name": "Oggleflint"
+        },
+        {
+          "id": "taragaman-the-hungerer",
+          "name": "Taragaman the Hungerer"
+        },
+        {
+          "id": "jergosh-the-invoker",
+          "name": "Jergosh the Invoker"
+        },
+        {
+          "id": "bazzalan",
+          "name": "Bazzalan"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "ruins-of-lordaeron",
+      "name": "Ruins of Lordaeron",
+      "type": "dungeon",
+      "status": "live",
+      "new": true,
+      "level": "15–20",
+      "size": 5,
+      "location": "Tirisfal Glades (above Undercity)",
+      "bosses": [
+        {
+          "id": "witherfang",
+          "name": "Witherfang"
+        },
+        {
+          "id": "the-baron",
+          "name": "The Baron"
+        },
+        {
+          "id": "viktor-the-vile",
+          "name": "Viktor the Vile"
+        },
+        {
+          "id": "the-abandoned",
+          "name": "The Abandoned"
+        },
+        {
+          "id": "bjork",
+          "name": "Bjork"
+        },
+        {
+          "id": "rathmael",
+          "name": "Rath'mael"
+        },
+        {
+          "id": "lordaeron-captain",
+          "name": "Lordaeron Captain",
+          "optional": true
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24301455/explore-the-new-dungeons-of-world-of-warcraft-forever",
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "https://warcraft.wiki.gg/wiki/Ruins_of_Lordaeron_(instance)"
+      ],
+      "note": "Lordaeron Captain is a rare spawn. Client data lists \"The Butcher\" where Wowhead/Warcraft Wiki list The Baron."
+    },
+    {
+      "id": "wailing-caverns",
+      "name": "Wailing Caverns",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "15–25",
+      "size": 5,
+      "location": "The Barrens",
+      "journalName": "Wailing Caverns",
+      "bosses": [
+        {
+          "id": "lady-anacondra",
+          "name": "Lady Anacondra"
+        },
+        {
+          "id": "lord-cobrahn",
+          "name": "Lord Cobrahn"
+        },
+        {
+          "id": "kresh",
+          "name": "Kresh"
+        },
+        {
+          "id": "lord-pythas",
+          "name": "Lord Pythas"
+        },
+        {
+          "id": "skum",
+          "name": "Skum"
+        },
+        {
+          "id": "lord-serpentis",
+          "name": "Lord Serpentis"
+        },
+        {
+          "id": "verdan-the-everliving",
+          "name": "Verdan the Everliving"
+        },
+        {
+          "id": "mutanus-the-devourer",
+          "name": "Mutanus the Devourer"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "the-deadmines",
+      "name": "The Deadmines",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "18–23",
+      "size": 5,
+      "location": "Westfall",
+      "journalName": "Deadmines",
+      "bosses": [
+        {
+          "id": "rhahkzor",
+          "name": "Rhahk'Zor"
+        },
+        {
+          "id": "miner-johnson",
+          "name": "Miner Johnson"
+        },
+        {
+          "id": "sneed",
+          "name": "Sneed"
+        },
+        {
+          "id": "gilnid",
+          "name": "Gilnid"
+        },
+        {
+          "id": "mr-smite",
+          "name": "Mr. Smite"
+        },
+        {
+          "id": "cookie",
+          "name": "Cookie"
+        },
+        {
+          "id": "captain-greenskin",
+          "name": "Captain Greenskin"
+        },
+        {
+          "id": "edwin-vancleef",
+          "name": "Edwin VanCleef"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "shadowfang-keep",
+      "name": "Shadowfang Keep",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "22–30",
+      "size": 5,
+      "location": "Silverpine Forest",
+      "journalName": "Shadowfang Keep",
+      "bosses": [
+        {
+          "id": "rethilgore",
+          "name": "Rethilgore"
+        },
+        {
+          "id": "razorclaw-the-butcher",
+          "name": "Razorclaw the Butcher"
+        },
+        {
+          "id": "baron-silverlaine",
+          "name": "Baron Silverlaine"
+        },
+        {
+          "id": "commander-springvale",
+          "name": "Commander Springvale"
+        },
+        {
+          "id": "odo-the-blindwatcher",
+          "name": "Odo the Blindwatcher"
+        },
+        {
+          "id": "fenrus-the-devourer",
+          "name": "Fenrus the Devourer"
+        },
+        {
+          "id": "wolf-master-nandos",
+          "name": "Wolf Master Nandos"
+        },
+        {
+          "id": "archmage-arugal",
+          "name": "Archmage Arugal"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "the-stockade",
+      "name": "The Stockade",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "22–30",
+      "size": 5,
+      "location": "Stormwind City",
+      "journalName": "The Stockade",
+      "bosses": [
+        {
+          "id": "targorr-the-dread",
+          "name": "Targorr the Dread"
+        },
+        {
+          "id": "kam-deepfury",
+          "name": "Kam Deepfury"
+        },
+        {
+          "id": "hamhock",
+          "name": "Hamhock"
+        },
+        {
+          "id": "dextren-ward",
+          "name": "Dextren Ward"
+        },
+        {
+          "id": "bazil-thredd",
+          "name": "Bazil Thredd"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "excavation-site-wetlands",
+      "name": "Excavation Site: Wetlands",
+      "type": "dungeon",
+      "status": "live",
+      "new": true,
+      "level": "24–29",
+      "size": 5,
+      "location": "Wetlands",
+      "bosses": [
+        {
+          "id": "saltspine",
+          "name": "Saltspine"
+        },
+        {
+          "id": "shadetooth",
+          "name": "Shadetooth"
+        },
+        {
+          "id": "highland-horror",
+          "name": "Highland Horror",
+          "optional": true
+        },
+        {
+          "id": "relic-guardian",
+          "name": "Relic Guardian"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24301455/explore-the-new-dungeons-of-world-of-warcraft-forever",
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "https://warcraft.wiki.gg/wiki/Excavation_Site:_Wetlands",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ],
+      "note": "Highland Horror is an optional quest boss."
+    },
+    {
+      "id": "blackfathom-deeps",
+      "name": "Blackfathom Deeps",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "24–32",
+      "size": 5,
+      "location": "Ashenvale",
+      "journalName": "Blackfathom Deeps",
+      "bosses": [
+        {
+          "id": "ghamoo-ra",
+          "name": "Ghamoo-ra"
+        },
+        {
+          "id": "lady-sarevess",
+          "name": "Lady Sarevess"
+        },
+        {
+          "id": "gelihast",
+          "name": "Gelihast"
+        },
+        {
+          "id": "lorgus-jett",
+          "name": "Lorgus Jett"
+        },
+        {
+          "id": "old-serrakis",
+          "name": "Old Serra'kis"
+        },
+        {
+          "id": "twilight-lord-kelris",
+          "name": "Twilight Lord Kelris"
+        },
+        {
+          "id": "akumai",
+          "name": "Aku'mai"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "city-of-dalaran",
+      "name": "City of Dalaran",
+      "type": "dungeon",
+      "status": "live",
+      "new": true,
+      "level": "28–33",
+      "size": 5,
+      "location": "Alterac Mountains",
+      "bosses": [
+        {
+          "id": "atrexis-the-grave-knight",
+          "name": "Atrexis the Grave Knight"
+        },
+        {
+          "id": "arcane-anomaly",
+          "name": "Arcane Anomaly"
+        },
+        {
+          "id": "arcanic-enigma",
+          "name": "Arcanic Enigma"
+        },
+        {
+          "id": "unstable-sentinel",
+          "name": "Unstable Sentinel"
+        },
+        {
+          "id": "mana-devourer",
+          "name": "Mana Devourer"
+        },
+        {
+          "id": "fel-ancient",
+          "name": "Fel Ancient"
+        },
+        {
+          "id": "lyn-the-ignored",
+          "name": "Lyn the Ignored"
+        },
+        {
+          "id": "shade-of-the-archmage",
+          "name": "Shade of the Archmage"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24301455/explore-the-new-dungeons-of-world-of-warcraft-forever",
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "https://warcraft.wiki.gg/wiki/City_of_Dalaran"
+      ],
+      "note": "Requires the Dalaran Sewer Key attunement. Client data also lists Mana Elemental and Mana Wraith; not shown until confirmed."
+    },
+    {
+      "id": "scarlet-monastery",
+      "name": "Scarlet Monastery",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "28–45",
+      "size": 5,
+      "location": "Tirisfal Glades",
+      "journalName": "Scarlet Monastery",
+      "bosses": [
+        {
+          "id": "interrogator-vishas",
+          "name": "Interrogator Vishas",
+          "wing": "Graveyard"
+        },
+        {
+          "id": "bloodmage-thalnos",
+          "name": "Bloodmage Thalnos",
+          "wing": "Graveyard"
+        },
+        {
+          "id": "houndmaster-loksey",
+          "name": "Houndmaster Loksey",
+          "wing": "Library"
+        },
+        {
+          "id": "arcanist-doan",
+          "name": "Arcanist Doan",
+          "wing": "Library"
+        },
+        {
+          "id": "herod",
+          "name": "Herod",
+          "wing": "Armory"
+        },
+        {
+          "id": "high-inquisitor-fairbanks",
+          "name": "High Inquisitor Fairbanks",
+          "wing": "Cathedral"
+        },
+        {
+          "id": "high-inquisitor-whitemane",
+          "name": "High Inquisitor Whitemane",
+          "wing": "Cathedral"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "gnomeregan",
+      "name": "Gnomeregan",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "29–38",
+      "size": 5,
+      "location": "Dun Morogh",
+      "journalName": "Gnomeregan",
+      "bosses": [
+        {
+          "id": "grubbis",
+          "name": "Grubbis"
+        },
+        {
+          "id": "viscous-fallout",
+          "name": "Viscous Fallout"
+        },
+        {
+          "id": "electrocutioner-6000",
+          "name": "Electrocutioner 6000"
+        },
+        {
+          "id": "crowd-pummeler-9-60",
+          "name": "Crowd Pummeler 9-60"
+        },
+        {
+          "id": "mekgineer-thermaplugg",
+          "name": "Mekgineer Thermaplugg"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "razorfen-kraul",
+      "name": "Razorfen Kraul",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "30–40",
+      "size": 5,
+      "location": "The Barrens",
+      "journalName": "Razorfen Kraul",
+      "bosses": [
+        {
+          "id": "roogug",
+          "name": "Roogug"
+        },
+        {
+          "id": "aggem-thorncurse",
+          "name": "Aggem Thorncurse"
+        },
+        {
+          "id": "death-speaker-jargba",
+          "name": "Death Speaker Jargba"
+        },
+        {
+          "id": "overlord-ramtusk",
+          "name": "Overlord Ramtusk"
+        },
+        {
+          "id": "agathelos-the-raging",
+          "name": "Agathelos the Raging"
+        },
+        {
+          "id": "charlga-razorflank",
+          "name": "Charlga Razorflank"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "the-drowned-city",
+      "name": "The Drowned City",
+      "type": "dungeon",
+      "status": "live",
+      "new": true,
+      "level": "35–40",
+      "size": 5,
+      "location": "Off the coast of Stranglethorn Vale",
+      "bosses": [
+        {
+          "id": "zulalai",
+          "name": "Zul'Alai"
+        },
+        {
+          "id": "vartaka",
+          "name": "Var'Taka"
+        },
+        {
+          "id": "captain-dreadrise",
+          "name": "Captain Dreadrise"
+        },
+        {
+          "id": "deathless-guardians",
+          "name": "Deathless Guardians"
+        },
+        {
+          "id": "primeval-elemental",
+          "name": "Primeval Elemental"
+        },
+        {
+          "id": "minloth-the-serpent",
+          "name": "Min'loth the Serpent"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24301455/explore-the-new-dungeons-of-world-of-warcraft-forever",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)",
+        "https://forever-hub.com/en/database/instances"
+      ]
+    },
+    {
+      "id": "kroldok-stronghold",
+      "name": "Krol'dok Stronghold",
+      "type": "dungeon",
+      "status": "live",
+      "new": true,
+      "level": "40–45",
+      "size": 5,
+      "location": "Riverglades",
+      "bosses": [
+        {
+          "id": "slavecrusher-grox",
+          "name": "Slavecrusher Grox"
+        },
+        {
+          "id": "twilight-commander-zarmok",
+          "name": "Twilight Commander Zarmok"
+        },
+        {
+          "id": "war-handler-ashka",
+          "name": "War Handler Ashka"
+        },
+        {
+          "id": "nargurk",
+          "name": "Nar'gurk"
+        },
+        {
+          "id": "bossman-toof",
+          "name": "Bossman Toof"
+        },
+        {
+          "id": "overlord-mugg",
+          "name": "Overlord Mugg"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24301455/explore-the-new-dungeons-of-world-of-warcraft-forever",
+        "https://www.wowhead.com/forever/news/infiltrate-kroldok-stronghold-new-dungeon-in-wow-forever-383871"
+      ]
+    },
+    {
+      "id": "razorfen-downs",
+      "name": "Razorfen Downs",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "40–50",
+      "size": 5,
+      "location": "The Barrens",
+      "journalName": "Razorfen Downs",
+      "bosses": [
+        {
+          "id": "plaguemaw-the-rotting",
+          "name": "Plaguemaw the Rotting"
+        },
+        {
+          "id": "tutenkash",
+          "name": "Tuten'kash"
+        },
+        {
+          "id": "mordresh-fire-eye",
+          "name": "Mordresh Fire Eye"
+        },
+        {
+          "id": "glutton",
+          "name": "Glutton"
+        },
+        {
+          "id": "ragglesnout",
+          "name": "Ragglesnout"
+        },
+        {
+          "id": "amnennar-the-coldbringer",
+          "name": "Amnennar the Coldbringer"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "uldaman",
+      "name": "Uldaman",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "42–52",
+      "size": 5,
+      "location": "Badlands",
+      "journalName": "Uldaman",
+      "bosses": [
+        {
+          "id": "revelosh",
+          "name": "Revelosh"
+        },
+        {
+          "id": "the-lost-dwarves",
+          "name": "The Lost Dwarves"
+        },
+        {
+          "id": "ironaya",
+          "name": "Ironaya"
+        },
+        {
+          "id": "obsidian-sentinel",
+          "name": "Obsidian Sentinel"
+        },
+        {
+          "id": "ancient-stone-keeper",
+          "name": "Ancient Stone Keeper"
+        },
+        {
+          "id": "galgann-firehammer",
+          "name": "Galgann Firehammer"
+        },
+        {
+          "id": "grimlok",
+          "name": "Grimlok"
+        },
+        {
+          "id": "archaedas",
+          "name": "Archaedas"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "zulfarrak",
+      "name": "Zul'Farrak",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "44–54",
+      "size": 5,
+      "location": "Tanaris",
+      "journalName": "Zul'Farrak",
+      "bosses": [
+        {
+          "id": "antusul",
+          "name": "Antu'sul"
+        },
+        {
+          "id": "theka-the-martyr",
+          "name": "Theka the Martyr"
+        },
+        {
+          "id": "witch-doctor-zumrah",
+          "name": "Witch Doctor Zum'rah"
+        },
+        {
+          "id": "nekrum-gutchewer",
+          "name": "Nekrum Gutchewer"
+        },
+        {
+          "id": "shadowpriest-sezzziz",
+          "name": "Shadowpriest Sezz'ziz"
+        },
+        {
+          "id": "chief-ukorz-sandscalp",
+          "name": "Chief Ukorz Sandscalp"
+        },
+        {
+          "id": "hydromancer-velratha",
+          "name": "Hydromancer Velratha"
+        },
+        {
+          "id": "gahzrilla",
+          "name": "Gahz'rilla"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "maraudon",
+      "name": "Maraudon",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "45–57",
+      "size": 5,
+      "location": "Desolace",
+      "journalName": "Maraudon",
+      "bosses": [
+        {
+          "id": "noxxion",
+          "name": "Noxxion"
+        },
+        {
+          "id": "razorlash",
+          "name": "Razorlash"
+        },
+        {
+          "id": "tinkerer-gizlock",
+          "name": "Tinkerer Gizlock"
+        },
+        {
+          "id": "lord-vyletongue",
+          "name": "Lord Vyletongue"
+        },
+        {
+          "id": "celebras-the-cursed",
+          "name": "Celebras the Cursed"
+        },
+        {
+          "id": "landslide",
+          "name": "Landslide"
+        },
+        {
+          "id": "rotgrip",
+          "name": "Rotgrip"
+        },
+        {
+          "id": "princess-theradras",
+          "name": "Princess Theradras"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "alcaz-prison",
+      "name": "Alcaz Prison",
+      "type": "dungeon",
+      "status": "live",
+      "new": true,
+      "level": "48–53",
+      "size": 5,
+      "location": "Alcaz Island, Dustwallow Marsh",
+      "bosses": [
+        {
+          "id": "overseer-wrex",
+          "name": "Overseer Wrex"
+        },
+        {
+          "id": "tidemistress-cazass",
+          "name": "Tidemistress Ca'zass"
+        },
+        {
+          "id": "katerina-the-cleaner",
+          "name": "Katerina the Cleaner"
+        },
+        {
+          "id": "the-questioner",
+          "name": "The Questioner"
+        },
+        {
+          "id": "blazeroar",
+          "name": "Blazeroar"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24301455/explore-the-new-dungeons-of-world-of-warcraft-forever",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)",
+        "https://forever-hub.com/en/database/instances"
+      ]
+    },
+    {
+      "id": "sunken-temple",
+      "name": "Sunken Temple",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "50–60",
+      "size": 5,
+      "location": "Swamp of Sorrows",
+      "journalName": "Temple of Atal'hakkar",
+      "bosses": [
+        {
+          "id": "atalalarion",
+          "name": "Atal'alarion"
+        },
+        {
+          "id": "jammalan-the-prophet",
+          "name": "Jammal'an the Prophet"
+        },
+        {
+          "id": "hazzas",
+          "name": "Hazzas"
+        },
+        {
+          "id": "morphaz",
+          "name": "Morphaz"
+        },
+        {
+          "id": "weaver",
+          "name": "Weaver"
+        },
+        {
+          "id": "dreamscythe",
+          "name": "Dreamscythe"
+        },
+        {
+          "id": "shade-of-eranikus",
+          "name": "Shade of Eranikus"
+        },
+        {
+          "id": "avatar-of-hakkar",
+          "name": "Avatar of Hakkar"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "blackrock-depths",
+      "name": "Blackrock Depths",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "52–60",
+      "size": 5,
+      "location": "Searing Gorge / Burning Steppes",
+      "journalName": "Blackrock Depths",
+      "bosses": [
+        {
+          "id": "high-interrogator-gerstahn",
+          "name": "High Interrogator Gerstahn"
+        },
+        {
+          "id": "lord-roccor",
+          "name": "Lord Roccor"
+        },
+        {
+          "id": "houndmaster-grebmar",
+          "name": "Houndmaster Grebmar"
+        },
+        {
+          "id": "ring-of-law",
+          "name": "Ring of Law"
+        },
+        {
+          "id": "pyromancer-loregrain",
+          "name": "Pyromancer Loregrain"
+        },
+        {
+          "id": "lord-incendius",
+          "name": "Lord Incendius"
+        },
+        {
+          "id": "warder-stilgiss",
+          "name": "Warder Stilgiss"
+        },
+        {
+          "id": "fineous-darkvire",
+          "name": "Fineous Darkvire"
+        },
+        {
+          "id": "baelgar",
+          "name": "Bael'Gar"
+        },
+        {
+          "id": "general-angerforge",
+          "name": "General Angerforge"
+        },
+        {
+          "id": "golem-lord-argelmach",
+          "name": "Golem Lord Argelmach"
+        },
+        {
+          "id": "hurley-blackbreath",
+          "name": "Hurley Blackbreath"
+        },
+        {
+          "id": "phalanx",
+          "name": "Phalanx"
+        },
+        {
+          "id": "ribbly-screwspigot",
+          "name": "Ribbly Screwspigot"
+        },
+        {
+          "id": "plugger-spazzring",
+          "name": "Plugger Spazzring"
+        },
+        {
+          "id": "the-vault",
+          "name": "The Vault"
+        },
+        {
+          "id": "ambassador-flamelash",
+          "name": "Ambassador Flamelash"
+        },
+        {
+          "id": "the-seven",
+          "name": "The Seven"
+        },
+        {
+          "id": "magmus",
+          "name": "Magmus"
+        },
+        {
+          "id": "princess-moira-bronzebeard",
+          "name": "Princess Moira Bronzebeard"
+        },
+        {
+          "id": "emperor-dagran-thaurissan",
+          "name": "Emperor Dagran Thaurissan"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "blackmaw-hold",
+      "name": "Blackmaw Hold",
+      "type": "dungeon",
+      "status": "live",
+      "new": true,
+      "level": "55–60",
+      "size": 5,
+      "location": "Azshara",
+      "bosses": [
+        {
+          "id": "withermaw",
+          "name": "Withermaw"
+        },
+        {
+          "id": "impaan-the-imprisoner",
+          "name": "Impaan the Imprisoner"
+        },
+        {
+          "id": "elder-shaman-bloodmane",
+          "name": "Elder Shaman Bloodmane"
+        },
+        {
+          "id": "bonesnout-the-unbroken",
+          "name": "Bonesnout the Unbroken"
+        },
+        {
+          "id": "varrox-bleakhoof",
+          "name": "Varrox Bleakhoof"
+        },
+        {
+          "id": "blackmaw-behemoth",
+          "name": "Blackmaw Behemoth"
+        },
+        {
+          "id": "unbound-spirit",
+          "name": "Unbound Spirit"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24301455/explore-the-new-dungeons-of-world-of-warcraft-forever",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)",
+        "https://forever-hub.com/en/database/instances"
+      ]
+    },
+    {
+      "id": "blackrock-spire",
+      "name": "Blackrock Spire",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "55–60",
+      "size": 10,
+      "location": "Searing Gorge / Burning Steppes",
+      "journalName": "Lower Blackrock Spire",
+      "bosses": [
+        {
+          "id": "highlord-omokk",
+          "name": "Highlord Omokk",
+          "wing": "Lower"
+        },
+        {
+          "id": "shadow-hunter-voshgajin",
+          "name": "Shadow Hunter Vosh'gajin",
+          "wing": "Lower"
+        },
+        {
+          "id": "war-master-voone",
+          "name": "War Master Voone",
+          "wing": "Lower"
+        },
+        {
+          "id": "mother-smolderweb",
+          "name": "Mother Smolderweb",
+          "wing": "Lower"
+        },
+        {
+          "id": "urok-doomhowl",
+          "name": "Urok Doomhowl",
+          "wing": "Lower"
+        },
+        {
+          "id": "quartermaster-zigris",
+          "name": "Quartermaster Zigris",
+          "wing": "Lower"
+        },
+        {
+          "id": "halycon",
+          "name": "Halycon",
+          "wing": "Lower"
+        },
+        {
+          "id": "gizrul-the-slavener",
+          "name": "Gizrul the Slavener",
+          "wing": "Lower"
+        },
+        {
+          "id": "overlord-wyrmthalak",
+          "name": "Overlord Wyrmthalak",
+          "wing": "Lower"
+        },
+        {
+          "id": "pyroguard-emberseer",
+          "name": "Pyroguard Emberseer",
+          "wing": "Upper"
+        },
+        {
+          "id": "warchief-rend-blackhand",
+          "name": "Warchief Rend Blackhand",
+          "wing": "Upper"
+        },
+        {
+          "id": "the-beast",
+          "name": "The Beast",
+          "wing": "Upper"
+        },
+        {
+          "id": "general-drakkisath",
+          "name": "General Drakkisath",
+          "wing": "Upper"
+        },
+        {
+          "id": "lord-valthalak",
+          "name": "Lord Valthalak",
+          "wing": "Upper"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ],
+      "note": "Up to 10 players in Forever. Upper Blackrock Spire needs the Seal of Ascension."
+    },
+    {
+      "id": "the-shapers-terrace",
+      "name": "The Shaper's Terrace",
+      "type": "dungeon",
+      "status": "live",
+      "new": true,
+      "level": "58–60",
+      "size": 5,
+      "location": "Un'Goro Crater",
+      "bosses": [
+        {
+          "id": "titanosaur",
+          "name": "Titanosaur"
+        },
+        {
+          "id": "ravasaur-hunters",
+          "name": "Ravasaur Hunters"
+        },
+        {
+          "id": "thunderhoof",
+          "name": "Thunderhoof"
+        },
+        {
+          "id": "venomridge",
+          "name": "Venomridge"
+        },
+        {
+          "id": "direhorn-matriarch",
+          "name": "Direhorn Matriarch"
+        },
+        {
+          "id": "cinder",
+          "name": "Cinder"
+        },
+        {
+          "id": "king-op",
+          "name": "King Op"
+        },
+        {
+          "id": "snowtalon",
+          "name": "Snowtalon"
+        },
+        {
+          "id": "bolt",
+          "name": "Bolt"
+        },
+        {
+          "id": "vitrix",
+          "name": "Vitrix"
+        },
+        {
+          "id": "nanaya",
+          "name": "Nanaya"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24301455/explore-the-new-dungeons-of-world-of-warcraft-forever",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ],
+      "note": "Cinder appears after using the Archival Panel."
+    },
+    {
+      "id": "dire-maul",
+      "name": "Dire Maul",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "58–60",
+      "size": 5,
+      "location": "Feralas",
+      "journalName": "Dire Maul - Warpwood Quarter",
+      "bosses": [
+        {
+          "id": "pusillin",
+          "name": "Pusillin",
+          "wing": "East"
+        },
+        {
+          "id": "zevrim-thornhoof",
+          "name": "Zevrim Thornhoof",
+          "wing": "East"
+        },
+        {
+          "id": "hydrospawn",
+          "name": "Hydrospawn",
+          "wing": "East"
+        },
+        {
+          "id": "lethtendris",
+          "name": "Lethtendris",
+          "wing": "East"
+        },
+        {
+          "id": "alzzin-the-wildshaper",
+          "name": "Alzzin the Wildshaper",
+          "wing": "East"
+        },
+        {
+          "id": "tendris-warpwood",
+          "name": "Tendris Warpwood",
+          "wing": "West"
+        },
+        {
+          "id": "illyanna-ravenoak",
+          "name": "Illyanna Ravenoak",
+          "wing": "West"
+        },
+        {
+          "id": "magister-kalendris",
+          "name": "Magister Kalendris",
+          "wing": "West"
+        },
+        {
+          "id": "immolthar",
+          "name": "Immol'thar",
+          "wing": "West"
+        },
+        {
+          "id": "prince-tortheldrin",
+          "name": "Prince Tortheldrin",
+          "wing": "West"
+        },
+        {
+          "id": "guard-moldar",
+          "name": "Guard Mol'dar",
+          "wing": "North"
+        },
+        {
+          "id": "stomper-kreeg",
+          "name": "Stomper Kreeg",
+          "wing": "North"
+        },
+        {
+          "id": "guard-fengus",
+          "name": "Guard Fengus",
+          "wing": "North"
+        },
+        {
+          "id": "guard-slipkik",
+          "name": "Guard Slip'kik",
+          "wing": "North"
+        },
+        {
+          "id": "captain-kromcrush",
+          "name": "Captain Kromcrush",
+          "wing": "North"
+        },
+        {
+          "id": "chorush-the-observer",
+          "name": "Cho'Rush the Observer",
+          "wing": "North"
+        },
+        {
+          "id": "king-gordok",
+          "name": "King Gordok",
+          "wing": "North"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "scholomance",
+      "name": "Scholomance",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "58–60",
+      "size": 5,
+      "location": "Western Plaguelands",
+      "journalName": "Scholomance",
+      "bosses": [
+        {
+          "id": "kirtonos",
+          "name": "Kirtonos"
+        },
+        {
+          "id": "jandice-barov",
+          "name": "Jandice Barov"
+        },
+        {
+          "id": "rattlegore",
+          "name": "Rattlegore"
+        },
+        {
+          "id": "marduk-blackpool",
+          "name": "Marduk Blackpool"
+        },
+        {
+          "id": "vectus",
+          "name": "Vectus"
+        },
+        {
+          "id": "ras-frostwhisper",
+          "name": "Ras Frostwhisper"
+        },
+        {
+          "id": "darkmaster-gandling",
+          "name": "Darkmaster Gandling"
+        },
+        {
+          "id": "kormok",
+          "name": "Kormok"
+        },
+        {
+          "id": "instructor-malicia",
+          "name": "Instructor Malicia"
+        },
+        {
+          "id": "doctor-theolen-krastinov",
+          "name": "Doctor Theolen Krastinov"
+        },
+        {
+          "id": "lorekeeper-polkelt",
+          "name": "Lorekeeper Polkelt"
+        },
+        {
+          "id": "the-ravenian",
+          "name": "The Ravenian"
+        },
+        {
+          "id": "lord-alexei-barov",
+          "name": "Lord Alexei Barov"
+        },
+        {
+          "id": "lady-illucia-barov",
+          "name": "Lady Illucia Barov"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "stratholme",
+      "name": "Stratholme",
+      "type": "dungeon",
+      "status": "live",
+      "new": false,
+      "level": "58–60",
+      "size": 5,
+      "location": "Eastern Plaguelands",
+      "journalName": "Stratholme - Main Gate",
+      "bosses": [
+        {
+          "id": "skul",
+          "name": "Skul"
+        },
+        {
+          "id": "ezra-grimm",
+          "name": "Ezra Grimm"
+        },
+        {
+          "id": "hearthsinger-forresten",
+          "name": "Hearthsinger Forresten"
+        },
+        {
+          "id": "the-unforgiven",
+          "name": "The Unforgiven"
+        },
+        {
+          "id": "timmy-the-cruel",
+          "name": "Timmy the Cruel"
+        },
+        {
+          "id": "malor-the-zealous",
+          "name": "Malor the Zealous"
+        },
+        {
+          "id": "cannon-master-willey",
+          "name": "Cannon Master Willey"
+        },
+        {
+          "id": "archivist-galford",
+          "name": "Archivist Galford"
+        },
+        {
+          "id": "balnazzar",
+          "name": "Balnazzar"
+        },
+        {
+          "id": "magistrate-barthilas",
+          "name": "Magistrate Barthilas"
+        },
+        {
+          "id": "ramstein-the-gorger",
+          "name": "Ramstein the Gorger"
+        },
+        {
+          "id": "baron-rivendare",
+          "name": "Baron Rivendare"
+        },
+        {
+          "id": "baroness-anastari",
+          "name": "Baroness Anastari"
+        },
+        {
+          "id": "nerubenkan",
+          "name": "Nerub'enkan"
+        },
+        {
+          "id": "maleki-the-pallid",
+          "name": "Maleki the Pallid"
+        },
+        {
+          "id": "black-guard-swordsmith",
+          "name": "Black Guard Swordsmith"
+        },
+        {
+          "id": "crimson-hammersmith",
+          "name": "Crimson Hammersmith"
+        },
+        {
+          "id": "postmaster-malown",
+          "name": "Postmaster Malown"
+        },
+        {
+          "id": "stonespine",
+          "name": "Stonespine"
+        }
+      ],
+      "sources": [
+        "https://www.wowhead.com/forever/guide/dungeons-overview-locations-details",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ]
+    },
+    {
+      "id": "barrow-deeps",
+      "name": "Barrow Deeps",
+      "type": "raid",
+      "status": "live",
+      "new": true,
+      "level": "60",
+      "size": 10,
+      "location": "Mount Hyjal (entrances via Mount Hyjal, Winterspring, Blackmaw Hold)",
+      "opens": "2026-12-09",
+      "bosses": [
+        {
+          "id": "chillhowl",
+          "name": "Chillhowl"
+        },
+        {
+          "id": "khalith-the-dreadspinner",
+          "name": "Khalith the Dreadspinner"
+        },
+        {
+          "id": "amethrax",
+          "name": "Amethrax"
+        },
+        {
+          "id": "ravus-and-darlissa",
+          "name": "Ravus and Darlissa"
+        },
+        {
+          "id": "elder-tangleclaw",
+          "name": "Elder Tangleclaw"
+        },
+        {
+          "id": "well-of-sorrow",
+          "name": "Well of Sorrow"
+        },
+        {
+          "id": "dellynar-songwood",
+          "name": "Del'lynar Songwood"
+        },
+        {
+          "id": "sonya-darkhallow",
+          "name": "Sonya Darkhallow"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24303009/world-of-warcraft-forever-raid-overviewlocations-raid-sizes-and-attunement",
+        "https://forever-hub.com/en/database/instances"
+      ],
+      "note": "Opens December 9, 2026. Blizzard confirms 8 bosses; names from Forever Hub (not in client data yet)."
+    },
+    {
+      "id": "hyjal-summit",
+      "name": "Hyjal Summit",
+      "type": "raid",
+      "status": "live",
+      "new": true,
+      "level": "60",
+      "size": 20,
+      "location": "Mount Hyjal, near Nordrassil",
+      "opens": "2026-12-09",
+      "bosses": [
+        {
+          "id": "bandalar",
+          "name": "Bandalar"
+        },
+        {
+          "id": "time-lost-battalion",
+          "name": "Time-Lost Battalion"
+        },
+        {
+          "id": "old-gloomlurker",
+          "name": "Old Gloomlurker"
+        },
+        {
+          "id": "kathris-the-haunted",
+          "name": "Kathris the Haunted"
+        },
+        {
+          "id": "elder-minderel",
+          "name": "Elder Minderel"
+        },
+        {
+          "id": "council-of-thorns",
+          "name": "Council of Thorns"
+        },
+        {
+          "id": "the-wild-king",
+          "name": "The Wild King"
+        },
+        {
+          "id": "ancient-of-decay",
+          "name": "Ancient of Decay"
+        },
+        {
+          "id": "sylvestris-dusksong",
+          "name": "Sylvestris Dusksong"
+        },
+        {
+          "id": "gharalis-the-abyssal",
+          "name": "Gharalis the Abyssal"
+        },
+        {
+          "id": "anara-chillwind",
+          "name": "Anara Chillwind"
+        },
+        {
+          "id": "tracker-stillwind",
+          "name": "Tracker Stillwind"
+        },
+        {
+          "id": "nythus-the-dreambound",
+          "name": "Nythus the Dreambound"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24303009/world-of-warcraft-forever-raid-overviewlocations-raid-sizes-and-attunement",
+        "https://forever-hub.com/en/database/instances"
+      ],
+      "note": "Opens December 9, 2026. Blizzard confirms 13 bosses with branching paths; names from Forever Hub (not in client data yet)."
+    },
+    {
+      "id": "onyxias-lair",
+      "name": "Onyxia's Lair",
+      "type": "raid",
+      "status": "live",
+      "new": false,
+      "level": "60",
+      "size": 40,
+      "location": "Dustwallow Marsh",
+      "opens": "2026-12-09",
+      "journalName": "Onyxia's Lair",
+      "bosses": [
+        {
+          "id": "onyxia",
+          "name": "Onyxia"
+        }
+      ],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24303009/world-of-warcraft-forever-raid-overviewlocations-raid-sizes-and-attunement",
+        "WoW: Forever client data, build 1.60.1.71037 (DungeonEncounter table via wago.tools)"
+      ],
+      "note": "Opens December 9, 2026. Every raider needs the Drakefire Amulet."
+    },
+    {
+      "id": "spring-2027-raid-10",
+      "name": "New 10-player raid (Spring 2027)",
+      "type": "raid",
+      "status": "upcoming",
+      "new": true,
+      "size": 10,
+      "level": "60",
+      "when": "Spring 2027",
+      "bosses": [],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap"
+      ],
+      "note": "Announced on the Forever roadmap. Name and bosses TBA."
+    },
+    {
+      "id": "spring-2027-raid-20",
+      "name": "New 20-player raid (Spring 2027)",
+      "type": "raid",
+      "status": "upcoming",
+      "new": true,
+      "size": 20,
+      "level": "60",
+      "when": "Spring 2027",
+      "bosses": [],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap"
+      ],
+      "note": "Announced on the Forever roadmap. Name and bosses TBA."
+    },
+    {
+      "id": "summer-2027-revamped-raid",
+      "name": "Revamped iconic raid (Summer 2027)",
+      "type": "raid",
+      "status": "upcoming",
+      "new": false,
+      "level": "60",
+      "when": "Summer 2027",
+      "bosses": [],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap"
+      ],
+      "note": "Blizzard has not named the raid (Molten Core is only hinted). Size and bosses TBA."
+    },
+    {
+      "id": "summer-2027-raid",
+      "name": "New raid (Summer 2027)",
+      "type": "raid",
+      "status": "upcoming",
+      "new": true,
+      "level": "60",
+      "when": "Summer 2027",
+      "bosses": [],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap"
+      ],
+      "note": "Announced on the Forever roadmap. Name, size and bosses TBA."
+    },
+    {
+      "id": "scarlet-enclave",
+      "name": "Scarlet Enclave",
+      "type": "raid",
+      "status": "upcoming",
+      "new": false,
+      "level": "60",
+      "when": "No date",
+      "bosses": [],
+      "sources": [
+        "https://www.wowhead.com/forever/news/season-of-discoverys-scarlet-enclave-raid-to-return-in-wow-forever-383855"
+      ],
+      "note": "Blizzard confirmed on the official Forever podcast it will return; no date, size or Forever boss list yet."
+    },
+    {
+      "id": "spring-2027-dungeons",
+      "name": "Two new dungeons (Spring 2027)",
+      "type": "dungeon",
+      "status": "upcoming",
+      "new": true,
+      "size": 5,
+      "when": "Spring 2027",
+      "bosses": [],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap"
+      ],
+      "note": "Announced on the Forever roadmap. Names and bosses TBA."
+    },
+    {
+      "id": "summer-2027-dungeons",
+      "name": "Two new dungeons (Summer 2027)",
+      "type": "dungeon",
+      "status": "upcoming",
+      "new": true,
+      "size": 5,
+      "when": "Summer 2027",
+      "bosses": [],
+      "sources": [
+        "https://news.blizzard.com/en-us/article/24303862/world-of-warcraft-forever-whats-next-panel-recap"
+      ],
+      "note": "Announced on the Forever roadmap. Names and bosses TBA."
+    }
+  ]
+}

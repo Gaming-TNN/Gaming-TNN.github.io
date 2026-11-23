@@ -1,0 +1,51 @@
+{
+  "$comment": "Sample plan. Slots: character is 'memberSlug/characterSlug' from src/data/characters; or name + class for someone not on the roster; or leave both out for an open slot. Positions are percentages of the map (x from the left, y from the top), set per boss.",
+  "id": "bfd-example",
+  "example": true,
+  "title": "Blackfathom Deeps example run",
+  "instance": "blackfathom-deeps",
+  "event": "bfd-example-run",
+  "leader": "ztopmulletz/buster-skulls",
+  "notes": "Example plan to show the layout. Open slots are filled by the raid leader before the run.",
+  "groups": [
+    {
+      "id": "g1",
+      "name": "Front line",
+      "color": "#c20e0e",
+      "slots": [
+        { "role": "tank", "character": "ztopmulletz/buster-skulls" },
+        { "role": "dps" }
+      ]
+    },
+    {
+      "id": "g2",
+      "name": "Back line",
+      "color": "#3b82f6",
+      "slots": [
+        { "role": "healer" },
+        { "role": "dps" },
+        { "role": "dps" }
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "boss": "gelihast",
+      "notes": "Front line holds Gelihast at the far wall; back line stays out of the murloc spawns at the doorway.",
+      "bossMarker": { "x": 50, "y": 28 },
+      "positions": [
+        { "group": "g1", "x": 50, "y": 40 },
+        { "group": "g2", "x": 30, "y": 70 }
+      ]
+    },
+    {
+      "boss": "akumai",
+      "notes": "Tank faces Aku'mai away from the group; back line spreads at max range.",
+      "bossMarker": { "x": 50, "y": 22 },
+      "positions": [
+        { "group": "g1", "x": 46, "y": 36 },
+        { "group": "g2", "x": 64, "y": 72 }
+      ]
+    }
+  ]
+}

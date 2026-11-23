@@ -1,0 +1,391 @@
+---
+// Client-side plan builder. Drafts live in this browser (localStorage). Plans on the site
+// are managed by hand: export the JSON and add it as src/data/guild/{game}/plans/{id}.json in a PR.
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { guildEvents, guildGames, guildHref, guildMedia, guildPlans, guildRoster } from '../../../../lib/guild';
+
+export function getStaticPaths() {
+  return guildGames().map((config) => ({ params: { game: config.slug }, props: { config } }));
+}
+const { config } = Astro.props;
+const boot = {
+  slug: config.slug,
+  roles: config.roles,
+  classes: config.classes,
+  instances: config.instances.filter((i) => i.status === 'live'),
+  media: guildMedia(config.slug),
+  roster: guildRoster(config).map(({ key, name, classId, level }) => ({ key, name, classId, level })),
+  events: guildEvents(config.slug).map(({ id, title, start }) => ({ id, title, start })),
+  plans: guildPlans(config.slug),
+};
+const field = 'w-full bg-black border border-[#27272a] px-2 py-1.5 text-sm text-zinc-100 normal-case tracking-normal focus:outline-none focus:border-[#c20e0e]';
+const label = 'block text-[10px] font-black tracking-widest text-zinc-500 mb-1';
+const btn = 'text-[10px] font-black tracking-widest px-3 py-2 border transition';
+---
+<BaseLayout title={`Raid & Dungeon Planner · ${config.shortName} Guild | Top-Notch Gaming`} description="Build a group plan with boss positions and export it.">
+  <article class="max-w-7xl mx-auto px-6 pt-20 pb-24" id="planner" data-field={field}>
+    <nav class="text-[10px] font-bold tracking-widest text-zinc-500 mb-6" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none">
+        <li><a href="/guild/" class="hover:text-[#e4e4e7] transition">Guild</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href={guildHref(config)} class="hover:text-[#e4e4e7] transition">{config.shortName}</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-400">Planner</li>
+      </ol>
+    </nav>
+    <p class="text-[#c20e0e] text-xs font-black tracking-widest m-0 mb-2">// RAID LEADER TOOLS</p>
+    <h1 class="text-3xl md:text-5xl font-black tracking-tight text-[#e4e4e7] leading-tight m-0">PLANNER</h1>
+    <p class="text-zinc-400 text-sm normal-case tracking-normal mt-3 mb-10 max-w-3xl leading-relaxed">
+      Pick a dungeon or raid, fill each group (role, character, class), then drag the group markers on each boss map. Your draft is saved in this browser only.
+      To put it on the site, export the JSON and send it to the site admins; they add it to the guild page.
+    </p>
+
+    <div class="flex flex-wrap gap-2 mb-8">
+      <button type="button" data-act="new" class={`${btn} border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e]`}>NEW PLAN</button>
+      <label class={`${btn} border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e] cursor-pointer`}>LOAD PLAN
+        <select data-load class="ml-2 bg-black text-zinc-200 normal-case tracking-normal text-xs border border-[#27272a]">
+          <option value="">Choose…</option>
+          {boot.plans.map((p) => <option value={p.id}>{p.title}{p.example ? ' (example)' : ''}</option>)}
+        </select>
+      </label>
+      <label class={`${btn} border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e] cursor-pointer`}>IMPORT JSON<input type="file" accept="application/json,.json" data-import class="sr-only" /></label>
+      <button type="button" data-act="export" class={`${btn} border-[#d30000] bg-[#c20e0e] hover:bg-[#9e0b0b] text-white`}>EXPORT JSON</button>
+    </div>
+
+    <section class="bg-[#121215] border border-[#27272a] p-4 mb-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div><label class={label} for="p-title">Title</label><input id="p-title" data-f="title" class={field} /></div>
+      <div><label class={label} for="p-inst">Dungeon / raid</label><select id="p-inst" data-f="instance" class={field}>
+        <optgroup label="Raids">{config.instances.filter((i) => i.status === 'live' && i.type === 'raid').map((i) => <option value={i.id}>{i.name} ({i.size})</option>)}</optgroup>
+        <optgroup label="Dungeons">{config.instances.filter((i) => i.status === 'live' && i.type !== 'raid').map((i) => <option value={i.id}>{i.name} ({i.level})</option>)}</optgroup>
+        <optgroup label="Upcoming (bosses TBA)">{config.instances.filter((i) => i.status === 'upcoming').map((i) => <option value={i.id} disabled>{i.name}</option>)}</optgroup>
+      </select></div>
+      <div><label class={label} for="p-event">Calendar event</label><select id="p-event" data-f="event" class={field}><option value="">None</option>{boot.events.map((e) => <option value={e.id}>{e.title}</option>)}</select></div>
+      <div><label class={label} for="p-leader">Leader</label><select id="p-leader" data-f="leader" class={field}><option value="">None</option>{boot.roster.map((r) => <option value={r.key}>{r.name}</option>)}</select></div>
+      <div class="sm:col-span-2 lg:col-span-4"><label class={label} for="p-notes">Notes</label><textarea id="p-notes" data-f="notes" rows="2" class={field}></textarea></div>
+    </section>
+
+    <section class="mb-12" aria-labelledby="pl-groups">
+      <div class="flex items-center justify-between gap-4 mb-4">
+        <h2 id="pl-groups" class="text-xs font-black tracking-widest text-[#c20e0e] m-0">GROUPS <span class="text-zinc-500" data-count></span></h2>
+        <button type="button" data-act="add-group" class={`${btn} border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e]`}>+ ADD GROUP</button>
+      </div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4" data-groups></div>
+    </section>
+
+    <section class="mb-12" aria-labelledby="pl-maps">
+      <h2 id="pl-maps" class="text-xs font-black tracking-widest text-[#c20e0e] m-0 mb-4">BOSS POSITIONS</h2>
+      <div class="flex flex-wrap gap-2 mb-4" data-bosses></div>
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_18rem] gap-6 items-start">
+        <div>
+          <div class="relative w-full aspect-[16/10] border border-[#27272a] bg-[#0b0b0d] select-none touch-none" data-board>
+            <img data-map-img alt="" class="absolute inset-0 size-full object-cover pointer-events-none" hidden />
+            <div class="planner-grid absolute inset-0 pointer-events-none" aria-hidden="true" data-map-grid>
+              <span class="absolute inset-0 grid place-items-center text-xs font-black tracking-[0.3em] text-zinc-700">PLACEHOLDER MAP</span>
+            </div>
+          </div>
+          <p class="mt-2 text-[10px] text-zinc-600 normal-case tracking-normal" data-map-credit>Drag the boss and group markers. Placeholder grid, not an in-game map.</p>
+        </div>
+        <div class="bg-[#121215] border border-[#27272a] p-4">
+          <label class="flex items-center gap-2 text-[10px] font-black tracking-widest text-zinc-300 mb-3"><input type="checkbox" data-include class="accent-[#c20e0e]" /> INCLUDE THIS BOSS</label>
+          <label class={label} for="b-notes">Boss notes</label>
+          <textarea id="b-notes" rows="4" data-boss-notes class={field}></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="pl-export" data-export-wrap hidden>
+      <h2 id="pl-export" class="text-xs font-black tracking-widest text-[#c20e0e] m-0 mb-2">EXPORT</h2>
+      <p class="text-zinc-500 text-xs normal-case tracking-normal m-0 mb-3" data-export-path></p>
+      <textarea readonly rows="14" data-export class={`${field} font-mono text-xs`}></textarea>
+      <div class="flex gap-2 mt-2">
+        <button type="button" data-act="copy" class={`${btn} border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e]`}>COPY</button>
+        <button type="button" data-act="download" class={`${btn} border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e]`}>DOWNLOAD</button>
+      </div>
+    </section>
+  </article>
+  <script type="application/json" id="planner-boot" set:html={JSON.stringify(boot).replace(/</g, '\\u003c')}></script>
+</BaseLayout>
+
+<style>
+  .planner-grid {
+    background-image:
+      linear-gradient(rgba(194, 14, 14, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(194, 14, 14, 0.12) 1px, transparent 1px);
+    background-size: 10% 10%;
+  }
+</style>
+
+<script>
+  type Slot = { role: string; character?: string; name?: string; class?: string };
+  type Group = { id: string; name: string; color?: string; slots: Slot[] };
+  type Enc = { boss: string; notes?: string; bossMarker?: { x: number; y: number }; positions: Array<{ group: string; x: number; y: number }> };
+  type Plan = { id: string; title: string; instance: string; event?: string; leader?: string; notes?: string; groups: Group[]; encounters: Enc[]; example?: boolean };
+
+  const boot = JSON.parse(document.getElementById('planner-boot')!.textContent || '{}');
+  const root = document.getElementById('planner')!;
+  const FIELD = root.dataset.field || '';
+  const KEY = `tng-guild-planner-${boot.slug}`;
+  const COLORS = ['#c20e0e', '#3b82f6', '#22c55e', '#ca8a04', '#7c3aed', '#db2777', '#0891b2', '#ea580c'];
+  const esc = (s: unknown) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'plan';
+  const $ = <T extends Element = HTMLElement>(sel: string) => root.querySelector<T>(sel)!;
+  const ICONS: Record<string, string> = {
+    shield: '<path d="M12 2.5l7.5 2.8v5.9c0 4.6-3.2 8.6-7.5 10.3-4.3-1.7-7.5-5.7-7.5-10.3V5.3z" fill="currentColor"/>',
+    cross: '<path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" fill="currentColor"/>',
+    sword: '<g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4l-9.5 9.5"/><path d="M20 4h-4M20 4v4"/><path d="M7.5 12.5l4 4"/><path d="M9.5 14.5L4 20"/></g>',
+  };
+
+  function blank(instanceId?: string): Plan {
+    const inst = boot.instances.find((i: any) => i.id === instanceId) ?? boot.instances[0];
+    return {
+      id: 'new-plan', title: 'New plan', instance: inst.id, groups: [newGroup(0, ['tank', 'healer', 'dps', 'dps', 'dps'])], encounters: [],
+    };
+  }
+  function newGroup(i: number, roles = ['dps', 'dps', 'dps', 'dps', 'dps'], existing: Group[] = []): Group {
+    let n = i + 1;
+    while (existing.some((g) => g.id === `g${n}`)) n++;
+    return { id: `g${n}`, name: `Group ${i + 1}`, color: COLORS[i % COLORS.length], slots: roles.map((role) => ({ role })) };
+  }
+
+  let plan: Plan;
+  try { plan = JSON.parse(localStorage.getItem(KEY) || 'null') || blank(); } catch { plan = blank(); }
+  let bossId = '';
+  const inst = () => boot.instances.find((i: any) => i.id === plan.instance) ?? boot.instances[0];
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(plan)); } catch {} };
+
+  function slotInfo(s: Slot) {
+    const r = boot.roster.find((x: any) => x.key === s.character);
+    const classId = r?.classId ?? s.class;
+    return { name: r?.name ?? s.name, classId, cls: boot.classes.find((c: any) => c.id === classId), icon: classId ? boot.media.classIcons?.[classId] : undefined };
+  }
+
+  function renderGroups() {
+    const wrap = $('[data-groups]');
+    const total = plan.groups.reduce((n, g) => n + g.slots.length, 0);
+    $('[data-count]').textContent = `(${total}/${inst().size})`;
+    wrap.innerHTML = plan.groups.map((g, gi) => `
+      <div class="bg-[#121215] border border-[#27272a] p-3 min-w-0" data-g="${gi}">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="inline-grid place-items-center size-6 shrink-0 text-[10px] font-black text-white border border-black" style="background:${esc(g.color)}">G${gi + 1}</span>
+          <input data-gname value="${esc(g.name)}" class="${FIELD} !py-1" aria-label="Group name" />
+          <input type="color" data-gcolor value="${esc(g.color || '#3f3f46')}" class="size-7 shrink-0 bg-black border border-[#27272a]" aria-label="Group color" />
+          <button type="button" data-gdel class="shrink-0 text-zinc-500 hover:text-[#c20e0e] text-lg leading-none px-1" aria-label="Remove group">×</button>
+        </div>
+        <ul class="grid gap-1.5 m-0 p-0 list-none">
+          ${g.slots.map((s, si) => {
+            const info = slotInfo(s);
+            const role = boot.roles.find((r: any) => r.id === s.role);
+            const other = !s.character && (s.name !== undefined);
+            return `
+            <li class="border border-[#27272a] bg-black/40 px-2 py-1.5" data-s="${si}">
+              <div class="grid grid-cols-[5.5rem_minmax(0,1fr)_auto_auto] items-center gap-2">
+                <span class="flex items-center gap-1" style="color:${esc(role?.color)}">
+                  <svg class="size-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">${ICONS[role?.icon] ?? ICONS.sword}</svg>
+                  <select data-role class="min-w-0 w-full bg-transparent text-[10px] font-black tracking-widest uppercase focus:outline-none" style="color:inherit" aria-label="Role">
+                    ${boot.roles.map((r: any) => `<option value="${r.id}" ${r.id === s.role ? 'selected' : ''} class="bg-black">${esc(r.label)}</option>`).join('')}
+                  </select>
+                </span>
+                <select data-char class="min-w-0 w-full bg-black border border-[#27272a] text-sm normal-case tracking-normal py-0.5 focus:outline-none focus:border-[#c20e0e]" style="color:${esc(info.cls?.color ?? '#a1a1aa')}" aria-label="Character">
+                  <option value="" ${!s.character && !other ? 'selected' : ''}>Open slot</option>
+                  ${boot.roster.map((r: any) => `<option value="${esc(r.key)}" ${r.key === s.character ? 'selected' : ''}>${esc(r.name)}</option>`).join('')}
+                  <option value="__other" ${other ? 'selected' : ''}>Someone else…</option>
+                </select>
+                ${info.icon ? `<img src="${esc(info.icon)}" alt="${esc(info.cls?.name)}" title="${esc(info.cls?.name)}" class="size-7 border border-black outline outline-1 outline-[#3f3f46]" />` : '<span class="size-7 border border-dashed border-[#3f3f46]"></span>'}
+                <button type="button" data-sdel class="text-zinc-500 hover:text-[#c20e0e] leading-none px-1" aria-label="Remove slot">×</button>
+              </div>
+              ${other ? `
+              <div class="grid grid-cols-[minmax(0,1fr)_8rem] gap-2 mt-1.5">
+                <input data-oname value="${esc(s.name)}" placeholder="Character name" class="${FIELD} !py-1" aria-label="Character name" />
+                <select data-oclass class="${FIELD} !py-1" aria-label="Class"><option value="">Class…</option>${boot.classes.map((c: any) => `<option value="${c.id}" ${c.id === s.class ? 'selected' : ''}>${esc(c.name)}</option>`).join('')}</select>
+              </div>` : ''}
+            </li>`;
+          }).join('')}
+        </ul>
+        <button type="button" data-sadd class="mt-2 text-[10px] font-black tracking-widest text-zinc-400 hover:text-white">+ ADD SLOT</button>
+      </div>`).join('');
+  }
+
+  function enc(create = false): Enc | undefined {
+    let e = plan.encounters.find((x) => x.boss === bossId);
+    if (!e && create) {
+      e = { boss: bossId, bossMarker: { x: 50, y: 25 }, positions: [] };
+      plan.encounters.push(e);
+    }
+    if (e) {
+      // Every group gets a marker; spread new ones along the bottom.
+      plan.groups.forEach((g, i) => {
+        if (!e!.positions.some((p) => p.group === g.id)) e!.positions.push({ group: g.id, x: Math.min(95, 15 + i * 12), y: 80 });
+      });
+      e.positions = e.positions.filter((p) => plan.groups.some((g) => g.id === p.group));
+    }
+    return e;
+  }
+
+  function renderBosses() {
+    const bosses = inst().bosses;
+    if (!bosses.some((b: any) => b.id === bossId)) bossId = plan.encounters.find((e) => bosses.some((b: any) => b.id === e.boss))?.boss ?? bosses[0]?.id ?? '';
+    $('[data-bosses]').innerHTML = bosses.map((b: any) => {
+      const on = plan.encounters.some((e) => e.boss === b.id);
+      const sel = b.id === bossId;
+      const label = `${b.wing ? `${b.wing}: ` : ''}${b.name}${b.optional ? ' (optional)' : ''}`;
+      return `<button type="button" data-boss="${esc(b.id)}" class="text-[10px] font-black tracking-widest px-3 py-1.5 border ${sel ? 'border-[#c20e0e] text-white bg-[#c20e0e]/20' : 'border-[#27272a] text-zinc-400 hover:text-white'}">${on ? '● ' : ''}${esc(label)}</button>`;
+    }).join('');
+    const e = enc();
+    ($('[data-include]') as HTMLInputElement).checked = Boolean(e);
+    ($('[data-boss-notes]') as HTMLTextAreaElement).value = e?.notes ?? '';
+    ($('[data-boss-notes]') as HTMLTextAreaElement).disabled = !e;
+    renderBoard();
+  }
+
+  function renderBoard() {
+    const board = $('[data-board]');
+    board.querySelectorAll('[data-m]').forEach((n) => n.remove());
+    const e = enc();
+    board.classList.toggle('opacity-40', !e);
+    if (!e) return;
+    const boss = inst().bosses.find((b: any) => b.id === bossId);
+    const map = boss?.map ?? inst().map;
+    const img = board.querySelector<HTMLImageElement>('[data-map-img]')!;
+    img.hidden = !map?.image;
+    if (map?.image) img.src = map.image;
+    (board.querySelector('[data-map-grid]') as HTMLElement).hidden = Boolean(map?.image);
+    $('[data-map-credit]').textContent = map?.image ? `Drag the boss and group markers. Map: ${map.credit} (${map.license}).` : 'Drag the boss and group markers. Placeholder grid, not an in-game map.';
+    const add = (html: string) => board.insertAdjacentHTML('beforeend', html);
+    if (e.bossMarker) add(`<div data-m="boss" class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 cursor-grab touch-none" style="left:${e.bossMarker.x}%;top:${e.bossMarker.y}%"><span class="size-6 rotate-45 bg-[#c20e0e] border-2 border-[#ffd100]/80"></span><span class="text-[10px] font-black tracking-widest text-[#ffd100] bg-black/80 px-1.5 py-0.5 whitespace-nowrap normal-case">${esc(boss?.name)}</span></div>`);
+    e.positions.forEach((p) => {
+      const gi = plan.groups.findIndex((g) => g.id === p.group);
+      const g = plan.groups[gi];
+      add(`<div data-m="${esc(p.group)}" title="${esc(g.name)}" class="absolute -translate-x-1/2 -translate-y-1/2 size-9 rounded-full grid place-items-center border-2 border-black outline outline-2 outline-white/70 text-[11px] font-black text-white cursor-grab touch-none z-10" style="left:${p.x}%;top:${p.y}%;background:${esc(g.color)}">G${gi + 1}</div>`);
+    });
+  }
+
+  function renderForm() {
+    root.querySelectorAll<HTMLInputElement>('[data-f]').forEach((el) => { el.value = (plan as any)[el.dataset.f!] ?? ''; });
+  }
+  function renderAll() { renderForm(); renderGroups(); renderBosses(); save(); }
+
+  function exportJson(): string {
+    const clean: Plan = {
+      id: slugify(plan.id === 'new-plan' ? plan.title : plan.id), title: plan.title, instance: plan.instance,
+      ...(plan.event ? { event: plan.event } : {}), ...(plan.leader ? { leader: plan.leader } : {}), ...(plan.notes ? { notes: plan.notes } : {}),
+      groups: plan.groups.map((g) => ({ id: g.id, name: g.name, color: g.color, slots: g.slots.map((s) => (s.character ? { role: s.role, character: s.character } : s.name ? { role: s.role, name: s.name, ...(s.class ? { class: s.class } : {}) } : { role: s.role })) })),
+      encounters: plan.encounters.filter((e) => inst().bosses.some((b: any) => b.id === e.boss)),
+    };
+    return JSON.stringify(clean, null, 2);
+  }
+
+  // Form fields
+  root.querySelectorAll<HTMLInputElement>('[data-f]').forEach((el) => el.addEventListener('input', () => {
+    (plan as any)[el.dataset.f!] = el.value || undefined;
+    if (el.dataset.f === 'title') plan.title = el.value;
+    if (el.dataset.f === 'instance') { renderGroups(); renderBosses(); }
+    save();
+  }));
+
+  // Group editor (delegated)
+  const groupsEl = $('[data-groups]');
+  groupsEl.addEventListener('input', (ev) => {
+    const t = ev.target as HTMLInputElement;
+    const g = plan.groups[Number(t.closest<HTMLElement>('[data-g]')?.dataset.g)];
+    if (!g) return;
+    const s = g.slots[Number(t.closest<HTMLElement>('[data-s]')?.dataset.s)];
+    if (t.matches('[data-gname]')) { g.name = t.value; save(); return; }
+    if (t.matches('[data-gcolor]')) { g.color = t.value; save(); renderBoard(); (t.previousElementSibling?.previousElementSibling as HTMLElement).style.background = t.value; return; }
+    if (t.matches('[data-oname]') && s) { s.name = t.value; save(); return; }
+  });
+  groupsEl.addEventListener('change', (ev) => {
+    const t = ev.target as HTMLSelectElement;
+    const g = plan.groups[Number(t.closest<HTMLElement>('[data-g]')?.dataset.g)];
+    const s = g?.slots[Number(t.closest<HTMLElement>('[data-s]')?.dataset.s)];
+    if (!s) return;
+    if (t.matches('[data-role]')) s.role = t.value;
+    if (t.matches('[data-char]')) {
+      if (t.value === '__other') { delete s.character; s.name = s.name ?? ''; }
+      else if (t.value) { s.character = t.value; delete s.name; delete s.class; }
+      else { delete s.character; delete s.name; delete s.class; }
+    }
+    if (t.matches('[data-oclass]')) s.class = t.value || undefined;
+    renderGroups(); save();
+  });
+  groupsEl.addEventListener('click', (ev) => {
+    const t = ev.target as HTMLElement;
+    const gi = Number(t.closest<HTMLElement>('[data-g]')?.dataset.g);
+    const g = plan.groups[gi];
+    if (!g) return;
+    if (t.matches('[data-gdel]')) { plan.groups.splice(gi, 1); renderGroups(); renderBoard(); save(); }
+    if (t.matches('[data-sdel]')) { g.slots.splice(Number(t.closest<HTMLElement>('[data-s]')?.dataset.s), 1); renderGroups(); save(); }
+    if (t.matches('[data-sadd]')) { g.slots.push({ role: 'dps' }); renderGroups(); save(); }
+  });
+
+  // Bosses
+  $('[data-bosses]').addEventListener('click', (ev) => {
+    const b = (ev.target as HTMLElement).closest<HTMLElement>('[data-boss]');
+    if (b) { bossId = b.dataset.boss!; renderBosses(); }
+  });
+  $('[data-include]').addEventListener('change', (ev) => {
+    if ((ev.target as HTMLInputElement).checked) enc(true);
+    else plan.encounters = plan.encounters.filter((e) => e.boss !== bossId);
+    renderBosses(); save();
+  });
+  $('[data-boss-notes]').addEventListener('input', (ev) => { const e = enc(); if (e) { e.notes = (ev.target as HTMLTextAreaElement).value; save(); } });
+
+  // Dragging markers
+  const board = $('[data-board]');
+  board.addEventListener('pointerdown', (ev) => {
+    const m = (ev.target as HTMLElement).closest<HTMLElement>('[data-m]');
+    const e = enc();
+    if (!m || !e) return;
+    ev.preventDefault();
+    m.setPointerCapture(ev.pointerId);
+    const target = m.dataset.m === 'boss' ? e.bossMarker! : e.positions.find((p) => p.group === m.dataset.m)!;
+    const move = (pe: PointerEvent) => {
+      const r = board.getBoundingClientRect();
+      target.x = Math.round(Math.min(100, Math.max(0, ((pe.clientX - r.left) / r.width) * 100)) * 2) / 2;
+      target.y = Math.round(Math.min(100, Math.max(0, ((pe.clientY - r.top) / r.height) * 100)) * 2) / 2;
+      m.style.left = `${target.x}%`; m.style.top = `${target.y}%`;
+    };
+    const up = () => { m.removeEventListener('pointermove', move); m.removeEventListener('pointerup', up); save(); };
+    m.addEventListener('pointermove', move);
+    m.addEventListener('pointerup', up);
+  });
+
+  // Toolbar
+  root.addEventListener('click', (ev) => {
+    const act = (ev.target as HTMLElement).closest<HTMLElement>('[data-act]')?.dataset.act;
+    if (!act) return;
+    if (act === 'new') { if (confirm('Start a new plan? Your current draft will be replaced.')) { plan = blank(plan.instance); bossId = ''; renderAll(); } }
+    if (act === 'add-group') { plan.groups.push(newGroup(plan.groups.length, undefined, plan.groups)); renderGroups(); renderBoard(); save(); }
+    if (act === 'export' || act === 'copy' || act === 'download') {
+      const json = exportJson();
+      const wrap = $('[data-export-wrap]'); wrap.hidden = false;
+      ($('[data-export]') as HTMLTextAreaElement).value = json;
+      const id = JSON.parse(json).id;
+      $('[data-export-path]').textContent = `Publish as src/data/guild/${boot.slug}/plans/${id}.json`;
+      if (act === 'export') wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (act === 'copy') navigator.clipboard?.writeText(json);
+      if (act === 'download') {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+        a.download = `${id}.json`; a.click(); URL.revokeObjectURL(a.href);
+      }
+    }
+  });
+  $('[data-load]').addEventListener('change', (ev) => {
+    const sel = ev.target as HTMLSelectElement;
+    const p = boot.plans.find((x: Plan) => x.id === sel.value);
+    if (p) { plan = JSON.parse(JSON.stringify(p)); delete plan.example; bossId = ''; renderAll(); }
+    sel.value = '';
+  });
+  $('[data-import]').addEventListener('change', async (ev) => {
+    const f = (ev.target as HTMLInputElement).files?.[0];
+    if (!f) return;
+    try {
+      const p = JSON.parse(await f.text());
+      if (!p || !Array.isArray(p.groups) || !p.instance) throw new Error('bad');
+      p.encounters ??= []; plan = p; bossId = ''; renderAll();
+    } catch { alert('That file is not a plan JSON.'); }
+    (ev.target as HTMLInputElement).value = '';
+  });
+
+  renderAll();
+</script>
