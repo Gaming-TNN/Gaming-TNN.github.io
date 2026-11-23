@@ -1,0 +1,85 @@
+{
+  "$comment": "Per-game guild config. Copy this folder to src/data/guild/{game}/ for another game. Roles and classes are game-specific; instances list the dungeons/raids a plan can target. Boss names are classic-era (WoW: Forever) and can be edited. Map images: leave map.image empty to use the labeled placeholder grid.",
+  "slug": "wow",
+  "gameSlug": "wow-forever",
+  "name": "World of Warcraft: Forever",
+  "shortName": "WoW Forever",
+  "guildName": null,
+  "timeZone": "America/Phoenix",
+  "rosterSource": "wowForever",
+  "roles": [
+    { "id": "tank", "label": "Tank", "color": "#3b82f6", "icon": "shield" },
+    { "id": "healer", "label": "Healer", "color": "#22c55e", "icon": "cross" },
+    { "id": "dps", "label": "DPS", "color": "#ef4444", "icon": "sword" }
+  ],
+  "classes": [
+    { "id": "warrior", "name": "Warrior", "blizzardId": 1, "color": "#C69B6D" },
+    { "id": "paladin", "name": "Paladin", "blizzardId": 2, "color": "#F48CBA" },
+    { "id": "hunter", "name": "Hunter", "blizzardId": 3, "color": "#AAD372" },
+    { "id": "rogue", "name": "Rogue", "blizzardId": 4, "color": "#FFF468" },
+    { "id": "priest", "name": "Priest", "blizzardId": 5, "color": "#FFFFFF" },
+    { "id": "shaman", "name": "Shaman", "blizzardId": 7, "color": "#0070DD" },
+    { "id": "mage", "name": "Mage", "blizzardId": 8, "color": "#3FC7EB" },
+    { "id": "warlock", "name": "Warlock", "blizzardId": 9, "color": "#8788EE" },
+    { "id": "druid", "name": "Druid", "blizzardId": 11, "color": "#FF7C0A" }
+  ],
+  "eventTypes": [
+    { "id": "raid", "label": "Raid", "color": "#c20e0e" },
+    { "id": "dungeon", "label": "Dungeon", "color": "#ca8a04" },
+    { "id": "pvp", "label": "PvP", "color": "#7c3aed" },
+    { "id": "event", "label": "Event", "color": "#5865F2" }
+  ],
+  "instances": [
+    {
+      "id": "ragefire-chasm", "name": "Ragefire Chasm", "type": "dungeon", "size": 5, "journalId": 226,
+      "bosses": [
+        { "id": "oggleflint", "name": "Oggleflint" },
+        { "id": "taragaman", "name": "Taragaman the Hungerer" },
+        { "id": "jergosh", "name": "Jergosh the Invoker" },
+        { "id": "bazzalan", "name": "Bazzalan" }
+      ]
+    },
+    {
+      "id": "wailing-caverns", "name": "Wailing Caverns", "type": "dungeon", "size": 5, "journalId": 240,
+      "bosses": [
+        { "id": "anacondra", "name": "Lady Anacondra" },
+        { "id": "cobrahn", "name": "Lord Cobrahn" },
+        { "id": "pythas", "name": "Lord Pythas" },
+        { "id": "serpentis", "name": "Lord Serpentis" },
+        { "id": "verdan", "name": "Verdan the Everliving" },
+        { "id": "mutanus", "name": "Mutanus the Devourer" }
+      ]
+    },
+    {
+      "id": "blackfathom-deeps", "name": "Blackfathom Deeps", "type": "dungeon", "size": 5, "journalId": 227,
+      "bosses": [
+        { "id": "ghamoo-ra", "name": "Ghamoo-ra" },
+        { "id": "sarevess", "name": "Lady Sarevess" },
+        { "id": "gelihast", "name": "Gelihast" },
+        { "id": "kelris", "name": "Twilight Lord Kelris" },
+        { "id": "akumai", "name": "Aku'mai" }
+      ]
+    },
+    {
+      "id": "molten-core", "name": "Molten Core", "type": "raid", "size": 40, "journalId": 741,
+      "bosses": [
+        { "id": "lucifron", "name": "Lucifron" },
+        { "id": "magmadar", "name": "Magmadar" },
+        { "id": "gehennas", "name": "Gehennas" },
+        { "id": "garr", "name": "Garr" },
+        { "id": "shazzrah", "name": "Shazzrah" },
+        { "id": "geddon", "name": "Baron Geddon" },
+        { "id": "sulfuron", "name": "Sulfuron Harbinger" },
+        { "id": "golemagg", "name": "Golemagg the Incinerator" },
+        { "id": "majordomo", "name": "Majordomo Executus" },
+        { "id": "ragnaros", "name": "Ragnaros" }
+      ]
+    },
+    {
+      "id": "onyxias-lair", "name": "Onyxia's Lair", "type": "raid", "size": 40, "journalId": 760,
+      "bosses": [
+        { "id": "onyxia", "name": "Onyxia" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+---
+// Group cards for a plan. Each row: role (left), character (middle), class icon (right).
+import type { GuildConfig, GuildPlan, RosterEntry } from '../../lib/guild';
+import { resolveSlot } from '../../lib/guild';
+import GuildMemberRow from './GuildMemberRow.astro';
+interface Props { config: GuildConfig; plan: GuildPlan; roster: RosterEntry[] }
+const { config, plan, roster } = Astro.props;
+---
+<div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+  {plan.groups.map((group, i) => {
+    const filled = group.slots.filter((s) => !resolveSlot(config, roster, s).open).length;
+    return (
+      <section class="bg-[#121215] border border-[#27272a] p-4 min-w-0" aria-label={group.name}>
+        <header class="flex items-center justify-between gap-3 mb-3">
+          <h3 class="m-0 flex items-center gap-2 text-sm font-black text-[#e4e4e7] tracking-wide">
+            <span class="inline-grid place-items-center size-6 text-[10px] font-black text-white border border-black" style={`background:${group.color ?? '#3f3f46'}`}>G{i + 1}</span>
+            <span class="normal-case">{group.name}</span>
+          </h3>
+          <span class="text-[10px] font-bold tracking-widest text-zinc-500">{filled}/{group.slots.length}</span>
+        </header>
+        <ul class="grid gap-1.5 m-0 p-0 list-none">
+          {group.slots.map((slot) => <GuildMemberRow slot={resolveSlot(config, roster, slot)} />)}
+        </ul>
+      </section>
+    );
+  })}
+</div>

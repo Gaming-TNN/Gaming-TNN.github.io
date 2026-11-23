@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import GuildGroupRoster from '../../../../../components/guild/GuildGroupRoster.astro';
+import GuildBossMap from '../../../../../components/guild/GuildBossMap.astro';
+import {
+  type GuildConfig, type GuildPlan, formatEventTime, guildEvents, guildGames, guildHref, guildMedia, guildPlans,
+  guildRoster, instanceOf, resolveSlot, validatePlan,
+} from '../../../../../lib/guild';
+
+export function getStaticPaths() {
+  return guildGames().flatMap((config) =>
+    guildPlans(config.slug).map((plan) => {
+      validatePlan(config, plan);
+      return { params: { game: config.slug, plan: plan.id }, props: { config, plan } };
+    }),
+  );
+}
+const { config, plan } = Astro.props as { config: GuildConfig; plan: GuildPlan };
+const inst = instanceOf(config, plan.instance)!;
+const roster = guildRoster(config);
+const tile = guildMedia(config.slug).instanceTiles?.[plan.instance];
+const event = guildEvents(config.slug).find((e) => e.id === plan.event);
+const leader = plan.leader ? resolveSlot(config, roster, { role: '', character: plan.leader }) : undefined;
+const slotCount = plan.groups.flatMap((g) => g.slots).length;
+---
+<BaseLayout title={`${plan.title} · ${config.shortName} Guild | Top-Notch Gaming`} description={`${inst.name} group plan and boss positions for Top-Notch Gaming.`}>
+  <article class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+    <nav class="text-[10px] font-bold tracking-widest text-zinc-500 mb-6" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none">
+        <li><a href="/guild/" class="hover:text-[#e4e4e7] transition">Guild</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href={guildHref(config)} class="hover:text-[#e4e4e7] transition">{config.shortName}</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-400 normal-case">{plan.title}</li>
+      </ol>
+    </nav>
+    <header class="relative border border-[#27272a] bg-black overflow-hidden mb-14">
+      {tile && <img src={tile} alt="" class="absolute inset-0 size-full object-cover opacity-40" />}
+      <span class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></span>
+      <div class="relative p-6 md:p-8">
+        <p class="m-0 flex flex-wrap items-center gap-2 text-[10px] font-black tracking-widest text-[#c20e0e]">
+          <span>// {inst.type} · {inst.size}-player</span>
+          {plan.example && <span class="px-1.5 py-0.5 border border-[#ffd100]/60 text-[#ffd100]">EXAMPLE</span>}
+        </p>
+        <h1 class="text-3xl md:text-5xl font-black tracking-tight text-[#e4e4e7] normal-case leading-tight m-0 mt-2">{plan.title}</h1>
+        <p class="text-zinc-400 text-sm normal-case mt-3 mb-0">
+          {inst.name}
+          {event && ` · ${formatEventTime(event, config.timeZone)}`}
+          {leader && !leader.open && ` · Leader: ${leader.name}`}
+          {` · ${plan.groups.length} groups, ${slotCount} slots`}
+        </p>
+        {plan.notes && <p class="text-zinc-500 text-xs normal-case tracking-normal mt-3 mb-0 max-w-2xl leading-relaxed">{plan.notes}</p>}
+      </div>
+    </header>
+
+    <section class="mb-16" aria-labelledby="groups-heading">
+      <h2 id="groups-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-6">GROUPS</h2>
+      <GuildGroupRoster config={config} plan={plan} roster={roster} />
+    </section>
+
+    <section aria-labelledby="positions-heading">
+      <h2 id="positions-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-6">BOSS POSITIONS</h2>
+      {plan.encounters.length === 0 ? <p class="text-zinc-500 text-sm normal-case">No boss positions yet.</p> : (
+        <div class="grid gap-12">
+          {plan.encounters.map((enc) => {
+            const boss = inst.bosses.find((b) => b.id === enc.boss)!;
+            return (
+              <section aria-label={boss.name} class="grid lg:grid-cols-[minmax(0,1fr)_18rem] gap-6 items-start">
+                <GuildBossMap config={config} plan={plan} encounter={enc} boss={boss} roster={roster} />
+                <div class="bg-[#121215] border border-[#27272a] p-4 order-first lg:order-none">
+                  <h3 class="m-0 text-lg font-black text-[#e4e4e7] normal-case tracking-wide">{boss.name}</h3>
+                  {enc.notes && <p class="m-0 mt-2 text-xs text-zinc-400 normal-case tracking-normal leading-relaxed">{enc.notes}</p>}
+                  <ul class="grid gap-1.5 mt-4 m-0 p-0 list-none">
+                    {enc.positions.map((pos) => {
+                      const gi = plan.groups.findIndex((g) => g.id === pos.group);
+                      const g = plan.groups[gi];
+                      return g && (
+                        <li class="flex items-center gap-2 text-xs normal-case tracking-normal text-zinc-300">
+                          <span class="inline-grid place-items-center size-6 rounded-full text-[10px] font-black text-white border border-black" style={`background:${g.color ?? '#3f3f46'}`}>G{gi + 1}</span>
+                          {g.name}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </section>
+            );
+          })}
+        </div>
+      )}
+    </section>
+    <p class="text-[10px] text-zinc-600 normal-case tracking-normal mt-10 mb-0">
+      Class icons from the Blizzard Game Data API (static-forever-us). Instance artwork from the Blizzard Game Data API journal (static-us). Build or edit a plan in the <a href={`/guild/${config.slug}/planner/`} class="underline hover:text-zinc-400">planner</a>.
+    </p>
+  </article>
+</BaseLayout>

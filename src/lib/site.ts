@@ -21,6 +21,7 @@ export const NAV = [
   { label: 'About', href: '/about/' },
   { label: 'Games', href: '/games/' },
   { label: 'Members', href: '/members/' },
+  { label: 'Guild', href: '/guild/' },
   { label: 'Community', href: '/community/' },
 ];
 

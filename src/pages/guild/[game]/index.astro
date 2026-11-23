@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SectionHeader from '../../../components/SectionHeader.astro';
+import GuildCalendar from '../../../components/guild/GuildCalendar.astro';
+import { GAMES } from '../../../data/games';
+import {
+  guildEvents, guildGames, guildMedia, guildPlans, guildRoster, instanceOf, planHref, validatePlan,
+} from '../../../lib/guild';
+
+export function getStaticPaths() {
+  return guildGames().map((config) => ({ params: { game: config.slug }, props: { config } }));
+}
+const { config } = Astro.props;
+const game = GAMES.find((g) => g.slug === config.gameSlug);
+const events = guildEvents(config.slug);
+const plans = guildPlans(config.slug);
+plans.forEach((p) => validatePlan(config, p));
+const roster = guildRoster(config);
+const media = guildMedia(config.slug);
+---
+<BaseLayout title={`${config.shortName} Guild | Top-Notch Gaming`} description={`Top-Notch Gaming ${config.name} guild calendar, group plans, and roster.`}>
+  <article class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+    <nav class="text-[10px] font-bold tracking-widest text-zinc-500 mb-6" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none">
+        <li><a href="/guild/" class="hover:text-[#e4e4e7] transition">Guild</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-400">{config.shortName}</li>
+      </ol>
+    </nav>
+    <header class="flex items-center gap-4 mb-14">
+      {game?.icon && <img src={`${game.icon.src}-128.webp`} alt="" width="64" height="64" class="size-16 border border-[#27272a] shrink-0" />}
+      <div class="min-w-0">
+        <p class="text-[#c20e0e] text-xs font-black tracking-widest m-0 mb-2">// TNG GUILD</p>
+        <h1 class="text-3xl md:text-5xl font-black tracking-tight text-[#e4e4e7] normal-case leading-tight m-0">{config.guildName ?? config.name}</h1>
+      </div>
+    </header>
+
+    <section class="mb-16" aria-labelledby="calendar-heading" id="calendar">
+      <h2 id="calendar-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-6">CALENDAR</h2>
+      <GuildCalendar config={config} events={events} />
+    </section>
+
+    <section class="mb-16" aria-labelledby="plans-heading" id="plans">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
+        <h2 id="plans-heading" class="text-xs font-black tracking-widest text-[#c20e0e] m-0">DUNGEON &amp; RAID PLANS</h2>
+        <a href={`/guild/${config.slug}/planner/`} class="text-[10px] font-black tracking-widest text-white bg-[#c20e0e] hover:bg-[#9e0b0b] px-3 py-2 border border-[#d30000]">OPEN PLANNER</a>
+      </div>
+      {plans.length === 0 ? <p class="text-zinc-500 text-sm normal-case">No plans yet.</p> : (
+        <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 m-0 p-0 list-none">
+          {plans.map((p) => {
+            const inst = instanceOf(config, p.instance);
+            const tile = media.instanceTiles?.[p.instance];
+            const slots = p.groups.flatMap((g) => g.slots).length;
+            return (
+              <li class="bg-[#121215] border border-[#27272a] min-w-0 overflow-hidden">
+                <a href={planHref(config, p)} class="block group">
+                  <div class="relative h-28 bg-black overflow-hidden">
+                    {tile && <img src={tile} alt="" loading="lazy" class="absolute inset-0 size-full object-cover opacity-70 group-hover:opacity-90 transition" />}
+                    <span class="absolute inset-0 bg-gradient-to-t from-[#121215] to-transparent"></span>
+                    {p.example && <span class="absolute top-2 right-2 text-[10px] font-black tracking-widest px-1.5 py-0.5 bg-black/80 border border-[#ffd100]/60 text-[#ffd100]">EXAMPLE</span>}
+                  </div>
+                  <div class="p-5 pt-2">
+                    <p class="m-0 text-[10px] font-bold tracking-widest text-zinc-500">{inst?.type} · {inst?.name}</p>
+                    <p class="m-0 mt-1 text-lg font-black text-[#e4e4e7] group-hover:text-white normal-case tracking-wide">{p.title}</p>
+                    <p class="m-0 mt-2 text-xs text-zinc-400 normal-case tracking-normal">{p.groups.length} groups · {slots} slots · {p.encounters.length} boss maps</p>
+                  </div>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </section>
+
+    <section aria-labelledby="roster-heading" id="roster">
+      <h2 id="roster-heading" class="text-xs font-black tracking-widest text-[#c20e0e] mb-6">ROSTER</h2>
+      {roster.length === 0 ? <p class="text-zinc-500 text-sm normal-case">No characters listed yet.</p> : (
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 m-0 p-0 list-none">
+          {roster.map((r) => {
+            const cls = config.classes.find((c) => c.id === r.classId);
+            return (
+              <li class="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 bg-[#121215] border border-[#27272a] px-3 py-2">
+                <span class="min-w-0">
+                  <a href={r.href} class="block truncate text-sm font-bold normal-case tracking-normal hover:underline" style={cls ? `color:${cls.color}` : undefined}>{r.name}</a>
+                  <span class="block text-[10px] font-bold tracking-widest text-zinc-500">{r.member}{r.level != null && ` · LVL ${r.level}`}{cls && ` · ${cls.name}`}</span>
+                </span>
+                {r.classId && media.classIcons?.[r.classId] ? <img src={media.classIcons[r.classId]} alt={cls?.name ?? ''} width="56" height="56" class="size-8 border border-black outline outline-1 outline-[#3f3f46]" /> : <span class="size-8 border border-dashed border-[#3f3f46]"></span>}
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </section>
+    <p class="text-[10px] text-zinc-600 normal-case tracking-normal mt-10 mb-0">Class icons from the Blizzard Game Data API (static-forever-us). Instance artwork from the Blizzard Game Data API journal (static-us). Events and plans tagged EXAMPLE are samples.</p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,35 @@
+{
+  "$comment": "Guild calendar. Times are ISO 8601 with offset. type must match config.eventTypes. plan links to plans/{id}.json. Set example:true on sample entries (they show an EXAMPLE tag).",
+  "events": [
+    {
+      "id": "bfd-example-run",
+      "example": true,
+      "title": "Blackfathom Deeps run",
+      "type": "dungeon",
+      "start": "2026-11-27T19:00:00-07:00",
+      "end": "2026-11-27T21:00:00-07:00",
+      "instance": "blackfathom-deeps",
+      "plan": "bfd-example",
+      "description": "Sample dungeon night with a full group plan and boss positions."
+    },
+    {
+      "id": "guild-social-example",
+      "example": true,
+      "title": "Guild social night",
+      "type": "event",
+      "start": "2026-12-04T19:30:00-07:00",
+      "end": "2026-12-04T21:00:00-07:00",
+      "description": "Sample social event: hang out in Discord voice, sort groups for the week."
+    },
+    {
+      "id": "molten-core-example",
+      "example": true,
+      "title": "Molten Core (first look)",
+      "type": "raid",
+      "start": "2026-12-12T18:00:00-07:00",
+      "end": "2026-12-12T21:00:00-07:00",
+      "instance": "molten-core",
+      "description": "Sample raid entry with no plan attached yet."
+    }
+  ]
+}

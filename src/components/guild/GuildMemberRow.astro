@@ -1,0 +1,28 @@
+---
+// One group member row: role at the left, character name in the middle, class icon at the right.
+import type { ResolvedSlot } from '../../lib/guild';
+import GuildRoleIcon from './GuildRoleIcon.astro';
+interface Props { slot: ResolvedSlot; compact?: boolean }
+const { slot, compact = false } = Astro.props;
+const iconSize = compact ? 'size-6' : 'size-7';
+---
+<li class:list={['grid grid-cols-[5.5rem_minmax(0,1fr)_auto] items-center gap-3 border border-[#27272a] bg-black/40', compact ? 'px-2 py-1' : 'px-3 py-2']}>
+  <span class="inline-flex items-center gap-1.5 text-[10px] font-black tracking-widest" style={`color:${slot.role?.color ?? '#a1a1aa'}`}>
+    <GuildRoleIcon icon={slot.role?.icon} color={slot.role?.color} class="size-4 shrink-0" />
+    {slot.role?.label ?? 'Any'}
+  </span>
+  <span class="min-w-0 truncate normal-case tracking-normal text-sm font-bold">
+    {slot.open ? (
+      <span class="text-zinc-500 italic font-normal">Open slot</span>
+    ) : slot.href ? (
+      <a href={slot.href} class="hover:underline" style={slot.classInfo ? `color:${slot.classInfo.color}` : undefined}>{slot.name}</a>
+    ) : (
+      <span style={slot.classInfo ? `color:${slot.classInfo.color}` : undefined}>{slot.name}</span>
+    )}
+  </span>
+  {slot.classIcon ? (
+    <img src={slot.classIcon} alt={slot.classInfo?.name ?? ''} title={slot.classInfo?.name} width="56" height="56" loading="lazy" class:list={[iconSize, 'border border-black outline outline-1 outline-[#3f3f46] object-cover']} />
+  ) : (
+    <span class:list={[iconSize, 'border border-dashed border-[#3f3f46] bg-[#121215]']} title={slot.open ? 'Class not set' : 'Class unknown'} aria-hidden="true"></span>
+  )}
+</li>

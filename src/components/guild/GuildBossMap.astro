@@ -1,0 +1,70 @@
+---
+// Boss positioning map. Coordinates are percentages (x from left, y from top), per boss.
+// Without a licensed map image the board is a labeled placeholder grid.
+import type { GuildBoss, GuildConfig, GuildPlan, PlanEncounter, RosterEntry } from '../../lib/guild';
+import { resolveSlot } from '../../lib/guild';
+import GuildMemberRow from './GuildMemberRow.astro';
+interface Props { config: GuildConfig; plan: GuildPlan; encounter: PlanEncounter; boss: GuildBoss; roster: RosterEntry[] }
+const { config, plan, encounter, boss, roster } = Astro.props;
+const image = boss.map?.image;
+const aspect = boss.map?.aspect ?? 16 / 10;
+const cols = 'ABCDEFGHIJ'.split('');
+---
+<figure class="m-0">
+  <div class="guild-map relative w-full border border-[#27272a] bg-[#0b0b0d] overflow-visible" style={`aspect-ratio:${aspect}`}>
+    {image ? (
+      <img src={image} alt={`${boss.name} map`} class="absolute inset-0 size-full object-cover" />
+    ) : (
+      <div class="guild-map-grid absolute inset-0" aria-hidden="true">
+        <span class="absolute inset-0 grid place-items-center text-[10px] sm:text-xs font-black tracking-[0.3em] text-zinc-700 select-none">PLACEHOLDER MAP</span>
+        <div class="absolute inset-x-0 top-0 grid grid-cols-10 text-[9px] font-bold text-zinc-600">
+          {cols.map((c) => <span class="text-center pt-0.5">{c}</span>)}
+        </div>
+        <div class="absolute inset-y-0 left-0 grid grid-rows-10 text-[9px] font-bold text-zinc-600">
+          {cols.map((_, i) => <span class="pl-1 flex items-center">{i + 1}</span>)}
+        </div>
+      </div>
+    )}
+    {encounter.bossMarker && (
+      <div class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 pointer-events-none" style={`left:${encounter.bossMarker.x}%;top:${encounter.bossMarker.y}%`}>
+        <span class="size-5 sm:size-6 rotate-45 bg-[#c20e0e] border-2 border-[#ffd100]/80 shadow-[0_0_16px_rgba(194,14,14,0.7)]" aria-hidden="true"></span>
+        <span class="text-[9px] sm:text-[10px] font-black tracking-widest text-[#ffd100] bg-black/80 px-1.5 py-0.5 whitespace-nowrap normal-case">{boss.name}</span>
+      </div>
+    )}
+    {encounter.positions.map((pos) => {
+      const gi = plan.groups.findIndex((g) => g.id === pos.group);
+      const group = plan.groups[gi];
+      if (!group) return null;
+      const below = pos.y < 40;
+      const align = pos.x < 30 ? 'left-0' : pos.x > 70 ? 'right-0' : 'left-1/2 -translate-x-1/2';
+      return (
+        <div class="group absolute -translate-x-1/2 -translate-y-1/2 z-10 hover:z-30 focus-within:z-30" style={`left:${pos.x}%;top:${pos.y}%`}>
+          <button type="button" class="block size-8 sm:size-9 rounded-full border-2 border-black outline outline-2 outline-white/70 text-[11px] font-black text-white shadow-[0_0_12px_rgba(0,0,0,0.9)] focus-visible:outline-[#ffd100]" style={`background:${group.color ?? '#3f3f46'}`} aria-label={`Group ${gi + 1}: ${group.name}`}>
+            G{gi + 1}
+          </button>
+          <div role="tooltip" class:list={[
+            'pointer-events-none invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute w-72 max-w-[80vw] p-3 bg-black border border-[#ffd100]/70 shadow-[0_0_24px_rgba(0,0,0,0.8)] normal-case tracking-normal',
+            below ? 'top-full mt-2' : 'bottom-full mb-2', align,
+          ]}>
+            <p class="m-0 mb-2 text-sm font-black text-[#ffd100]">G{gi + 1} · {group.name}</p>
+            <ul class="grid gap-1 m-0 p-0 list-none">
+              {group.slots.map((slot) => <GuildMemberRow slot={resolveSlot(config, roster, slot)} compact />)}
+            </ul>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+  <figcaption class="mt-2 text-[10px] text-zinc-600 normal-case tracking-normal">
+    {image ? (boss.map?.credit ?? '') : 'Placeholder grid, not an in-game map. Positions are approximate (x/y as % of the board). Hover or tap a group marker to see who is in it.'}
+  </figcaption>
+</figure>
+
+<style>
+  .guild-map-grid {
+    background-image:
+      linear-gradient(rgba(194, 14, 14, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(194, 14, 14, 0.12) 1px, transparent 1px);
+    background-size: 10% 10%;
+  }
+</style>
