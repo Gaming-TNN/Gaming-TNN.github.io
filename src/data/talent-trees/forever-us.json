@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T20:46:04.884Z",
+  "fetchedAt": "2026-11-23T21:00:59.620Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5185,8 +5185,7 @@
                   "description": "Increases the range of your Fire spells by 6 yards.",
                   "spellId": 11100
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135815.jpg"
+              ]
             },
             {
               "id": 105792,
@@ -5214,8 +5213,7 @@
                   "description": "Gives your Fire spells a 10% chance to stun the target for 2 sec.",
                   "spellId": 11103
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135821.jpg"
+              ]
             },
             {
               "id": 105789,
@@ -5243,8 +5241,7 @@
                   "description": "Gives your Fire spells a 70% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by 30%.",
                   "spellId": 11083
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135805.jpg"
+              ]
             },
             {
               "id": 105791,
@@ -8165,8 +8162,7 @@
                   "description": "Increases your total Stamina by 15%.",
                   "spellId": 18697
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136172.jpg"
+              ]
             },
             {
               "id": 105906,
@@ -8204,8 +8200,7 @@
                   "description": "Increases all damage done by your Imp, Voidwalker, Succubus, Incubus, and Felhunter pets by 10%.",
                   "spellId": 18769
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136206.jpg"
+              ]
             },
             {
               "id": 105902,
@@ -8228,8 +8223,7 @@
                   "description": "Increases the effectiveness of your Demon Skin and Demon Armor spells by 30%.",
                   "spellId": 1235316
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136185.jpg"
+              ]
             },
             {
               "id": 105904,
@@ -11187,8 +11181,7 @@
                   "description": "Gives your Concussive Shot a 20% chance to stun the target for 3 sec.",
                   "spellId": 19407
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135860.jpg"
+              ]
             },
             {
               "id": 105011,
@@ -11226,8 +11219,7 @@
                   "description": "Increases your critical strike chance with all attacks by 5%.",
                   "spellId": 19426
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132312.jpg"
+              ]
             },
             {
               "id": 110870,
@@ -11255,8 +11247,7 @@
                   "description": "Increases the damage of your Serpent Sting ability by 20%, reduces the cooldown of your Viper Sting ability by 6 sec, and increases the duration of your Scorpid Sting ability by 45 sec.",
                   "spellId": 1310661
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132204.jpg"
+              ]
             },
             {
               "id": 105009,
