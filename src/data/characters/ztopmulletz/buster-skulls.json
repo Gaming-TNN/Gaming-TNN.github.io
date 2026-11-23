@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T06:30:48.993Z",
+  "fetchedAt": "2026-11-23T06:45:56.134Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -36,7 +36,7 @@
       "id": 1
     },
     "level": 31,
-    "experience": 7822,
+    "experience": 10328,
     "achievement_points": 0,
     "achievements": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/achievements?namespace=profile-forever-us"
@@ -53,7 +53,7 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795384852000,
+    "last_login_timestamp": 1795416114000,
     "average_item_level": 25,
     "equipped_item_level": 24,
     "specializations": {
@@ -252,8 +252,8 @@
           "item_modified_appearance_id": 77344
         },
         "durability": {
-          "value": 70,
-          "display_string": "Durability 70 / 70"
+          "value": 65,
+          "display_string": "Durability 65 / 70"
         }
       },
       {
@@ -481,8 +481,8 @@
           "second_item_modified_appearance_id": 77343
         },
         "durability": {
-          "value": 70,
-          "display_string": "Durability 70 / 70"
+          "value": 60,
+          "display_string": "Durability 60 / 70"
         }
       },
       {
@@ -713,8 +713,8 @@
           "item_modified_appearance_id": 104602
         },
         "durability": {
-          "value": 120,
-          "display_string": "Durability 120 / 120"
+          "value": 101,
+          "display_string": "Durability 101 / 120"
         }
       },
       {
@@ -856,8 +856,8 @@
           "item_modified_appearance_id": 84223
         },
         "durability": {
-          "value": 30,
-          "display_string": "Durability 30 / 30"
+          "value": 27,
+          "display_string": "Durability 27 / 30"
         }
       },
       {
@@ -1016,8 +1016,8 @@
           "item_modified_appearance_id": 198608
         },
         "durability": {
-          "value": 90,
-          "display_string": "Durability 90 / 90"
+          "value": 86,
+          "display_string": "Durability 86 / 90"
         }
       },
       {
@@ -1172,8 +1172,8 @@
           "item_modified_appearance_id": 306411
         },
         "durability": {
-          "value": 60,
-          "display_string": "Durability 60 / 60"
+          "value": 57,
+          "display_string": "Durability 57 / 60"
         }
       },
       {
@@ -1298,8 +1298,8 @@
           "item_modified_appearance_id": 104604
         },
         "durability": {
-          "value": 35,
-          "display_string": "Durability 35 / 35"
+          "value": 31,
+          "display_string": "Durability 31 / 35"
         }
       },
       {
@@ -1450,8 +1450,8 @@
           "item_modified_appearance_id": 158301
         },
         "durability": {
-          "value": 35,
-          "display_string": "Durability 35 / 35"
+          "value": 34,
+          "display_string": "Durability 34 / 35"
         }
       },
       {
@@ -1912,8 +1912,8 @@
           "item_modified_appearance_id": 161278
         },
         "durability": {
-          "value": 80,
-          "display_string": "Durability 80 / 80"
+          "value": 76,
+          "display_string": "Durability 76 / 80"
         }
       },
       {
@@ -2079,8 +2079,8 @@
           "item_modified_appearance_id": 160906
         },
         "durability": {
-          "value": 100,
-          "display_string": "Durability 100 / 100"
+          "value": 92,
+          "display_string": "Durability 92 / 100"
         }
       },
       {
@@ -2180,8 +2180,8 @@
           "display_string": "Item Level 27"
         },
         "durability": {
-          "value": 200,
-          "display_string": "Durability 200 / 200"
+          "value": 197,
+          "display_string": "Durability 197 / 200"
         }
       }
     ]
@@ -2542,6 +2542,13 @@
                 },
                 "name": "Heavy Copper Maul",
                 "id": 4285
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/54707?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Protector's Chain Leggings",
+                "id": 54707
               },
               {
                 "key": {
@@ -3118,6 +3125,13 @@
                 },
                 "name": "Minor Healing Potion",
                 "id": 54191
+              },
+              {
+                "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/57024?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Toxin Study",
+                "id": 57024
               },
               {
                 "key": {
