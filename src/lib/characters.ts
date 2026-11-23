@@ -46,6 +46,7 @@ export interface CharacterSnapshot {
     secondaries?: ProfessionBlock[];
   };
   itemIcons?: Record<string, string>;
+  statistics?: import('./character-stats').CharacterStatistics;
 }
 
 export interface TooltipColor {
