@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T19:15:57.634Z",
+  "fetchedAt": "2026-11-23T19:31:06.347Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5470,7 +5470,8 @@
                   "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 198 to 229 Fire damage, and Dazing them for 50% reduced movement speed for 6 sec.",
                   "spellId": 11113
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135903.jpg"
             },
             {
               "id": 105782,
@@ -8409,7 +8410,8 @@
                   "description": "Reduces the cooldown of your Soul Fire spell by 90%. When you cast Shadow Bolt or Searing Pain on an enemy below 35% health, they deal 6% increased damage, and for the next 10 sec your Soul Fire spell has its cast time reduced by 40% and costs no Soul Shards.",
                   "spellId": 440870
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135808.jpg"
             },
             {
               "id": 105895,
@@ -11417,7 +11419,8 @@
                   "description": "You deal 20% increased damage with all attacks while you do not have an active pet.",
                   "spellId": 415370
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132266.jpg"
             },
             {
               "id": 105004,
