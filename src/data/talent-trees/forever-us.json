@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T09:16:07.382Z",
+  "fetchedAt": "2026-11-23T09:31:03.495Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5622,8 +5622,7 @@
                   "description": "Improves your chance to hit with all spells by 6%.",
                   "spellId": 29438
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135989.jpg"
+              ]
             },
             {
               "id": 105777,
@@ -5661,8 +5660,7 @@
                   "description": "Increases the critical strike damage bonus of your Frost spells by 100%.",
                   "spellId": 11207
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135855.jpg"
+              ]
             },
             {
               "id": 105774,
@@ -5690,8 +5688,7 @@
                   "description": "Gives your Chill effects a 15% chance to Freeze the target for 5 sec.",
                   "spellId": 11071
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135842.jpg"
+              ]
             },
             {
               "id": 105775,
@@ -8601,8 +8598,7 @@
                   "description": "Your Demonic Sacrifice effect is no longer cancelled by summoning a different Demon pet. Resummoning the sacrificed pet will still cancel the effect.\r\n",
                   "spellId": 425464
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/5927650.jpg"
+              ]
             }
           ]
         },
@@ -8635,8 +8631,7 @@
                   "description": "Increases the range of your Destruction spells by 20%.",
                   "spellId": 17917
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136133.jpg"
+              ]
             },
             {
               "id": 105889,
@@ -8674,8 +8669,7 @@
                   "description": "Your Shadow Bolt critical strikes increase Shadow damage taken by the target from your attacks by 20% for 12 sec.",
                   "spellId": 17793
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136197.jpg"
+              ]
             },
             {
               "id": 105888,
@@ -11703,8 +11697,7 @@
                   "description": "While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by 5%.",
                   "spellId": 24293
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134154.jpg"
+              ]
             },
             {
               "id": 104995,
@@ -11742,8 +11735,7 @@
                   "description": "Increases your Parry chance by 5%.",
                   "spellId": 19295
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
+              ]
             },
             {
               "id": 104994,
@@ -11781,8 +11773,7 @@
                   "description": "When your traps are triggered, all affected targets are Entrapped, preventing them from moving for 5 sec.",
                   "spellId": 19184
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136100.jpg"
+              ]
             },
             {
               "id": 104993,
