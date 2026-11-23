@@ -2,9 +2,13 @@
 /**
  * Fetch WoW Forever character snapshots from the official Battle.net Profile API
  * and write them under src/data/characters/<member-slug>/<first>-<surname>.json.
- * Also caches WoW Forever talent-tree layouts (positions, ranks, prerequisites,
- * and spell icons) from the Game Data API under src/data/talent-trees/forever-us.json,
- * and official profession icons under src/data/professions/forever-us.json.
+ * Each snapshot includes profile, equipment, specializations, media, professions,
+ * and character statistics (totals such as health, attributes, and combat ratings)
+ * from the Profile API /statistics endpoint. A missing statistics response does
+ * not fail the rest of the snapshot. Also caches WoW Forever talent-tree layouts
+ * (positions, ranks, prerequisites, and spell icons) from the Game Data API under
+ * src/data/talent-trees/forever-us.json, and official profession icons under
+ * src/data/professions/forever-us.json.
  * Spell and profession media requests retry with backoff so rate limits do not
  * leave blank icons. Out-of-range display coordinates from the API are snapped
  * back onto the tree so a typo like row 63 cannot stretch the layout.
@@ -193,6 +197,12 @@ function characterSlug(c) {
   return `${c.name}-${c.surname}`.toLowerCase();
 }
 
+function compactStatistics(json) {
+  if (!json || typeof json !== 'object') return undefined;
+  const { _links, character, ...rest } = json;
+  return Object.keys(rest).length ? rest : undefined;
+}
+
 async function fetchCharacter(token, member, character) {
   const region = character.region;
   const slug = characterSlug(character);
@@ -217,6 +227,12 @@ async function fetchCharacter(token, member, character) {
     }
     results[key] = json;
   }
+
+  // Statistics are the character's true totals. Keep the rest of the snapshot
+  // if this endpoint is missing so a 404 cannot block equipment or talents.
+  const statisticsRes = await apiGet(`${base}/statistics?${q}`, token);
+  statuses.statistics = statisticsRes.status;
+  const statistics = compactStatistics(statisticsRes.status === 200 ? statisticsRes.json : null);
 
   const itemIcons = {};
   const items = results.equipment.equipped_items ?? [];
@@ -245,6 +261,7 @@ async function fetchCharacter(token, member, character) {
     professions: results.professions,
     itemIcons,
   };
+  if (statistics) snapshot.statistics = statistics;
 
   const outPath = join(OUT_DIR, member.slug, `${slug}.json`);
   mkdirSync(dirname(outPath), { recursive: true });
