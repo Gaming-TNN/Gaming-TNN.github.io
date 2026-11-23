@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T17:46:06.043Z",
+  "fetchedAt": "2026-11-23T18:01:08.417Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -2997,8 +2997,7 @@
                   "description": "Increases your spell damage by up to 60% of your Intellect, and reduces the cast time of your Hammer of Wrath by 1.0 sec.",
                   "spellId": 1311084
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236251.jpg"
+              ]
             },
             {
               "id": 105692,
@@ -3018,8 +3017,7 @@
                   "description": "Your melee attacks store a copy of your active Seal for 15 sec, stacking up to 3 times. Landing an attack with a different Seal consumes all stacks, giving the stored Seal its normal chance to activate once per stack.",
                   "spellId": 1310735
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135878.jpg"
+              ]
             }
           ]
         }
@@ -3064,8 +3062,7 @@
                   "description": "Increases the duration of your Gouge ability by 1.5 sec.",
                   "spellId": 13741
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132155.jpg"
+              ]
             },
             {
               "id": 105723,
@@ -5894,8 +5891,7 @@
                   "description": "Increases the critical strike chance of all your spells against Frozen targets by 50%.",
                   "spellId": 11170
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135849.jpg"
+              ]
             },
             {
               "id": 105765,
@@ -5923,8 +5919,7 @@
                   "description": "Increases the damage dealt by your Cone of Cold spell by 35%.",
                   "spellId": 11190
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135852.jpg"
+              ]
             },
             {
               "id": 105766,
@@ -5944,8 +5939,7 @@
                   "description": "Finishes the remaining cooldown on all your other Frost spells.",
                   "spellId": 12472
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
+              ]
             },
             {
               "id": 105764,
@@ -8938,8 +8932,7 @@
                   "description": "Increases the critical strike chance of your Searing Pain spell by 10% and the damage done by all your Destruction spells by 10%.",
                   "spellId": 17927
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135827.jpg"
+              ]
             },
             {
               "id": 105880,
@@ -8959,8 +8952,7 @@
                   "description": "Ignites a target that is already afflicted by your Immolate spell, dealing 225 to 242 Fire damage and consuming your Immolate effect.",
                   "spellId": 1293817
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135807.jpg"
+              ]
             },
             {
               "id": 105878,
@@ -8985,8 +8977,7 @@
                   "description": "Gives your Soul Fire spell a 26% chance to Stun the target for 3 sec, and your Rain of Fire and Hellfire spells a 26% chance over their duration to Stun targets they damage for 3 sec.",
                   "spellId": 18073
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135830.jpg"
+              ]
             },
             {
               "id": 105876,
@@ -12010,8 +12001,7 @@
                   "description": "Increases your melee ability critical strike damage by 30% and your Off Hand weapon damage by 50%.",
                   "spellId": 1310627
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132147.jpg"
+              ]
             },
             {
               "id": 104989,
@@ -12031,8 +12021,7 @@
                   "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 50% weapon damage plus 13 and immobilizes the target for 5 sec. Counterattack cannot be blocked, dodged, or parried.",
                   "spellId": 19306
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132336.jpg"
+              ]
             },
             {
               "id": 104983,
@@ -12055,8 +12044,7 @@
                   "description": "Reduces the Mana cost of your Trap and melee abilities by 60%, and grants your melee and ranged ability Critical Strikes a 100% chance to allow 50% of your Mana Regeneration to continue while casting for 30 sec.",
                   "spellId": 440529
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132207.jpg"
+              ]
             },
             {
               "id": 104985,
