@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T10:30:57.706Z",
+  "fetchedAt": "2026-11-23T10:46:05.530Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4803,7 +4803,8 @@
                   "description": "Increases the critical strike chance of your Arcane spells by 6%.",
                   "spellId": 11242
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136116.jpg"
             },
             {
               "id": 105806,
@@ -4823,7 +4824,8 @@
                   "description": "Blasts the target with energy, dealing 162 to 169 Arcane damage. Each time you cast Arcane Blast, you gain 12% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 100%. Effect stacks up to 4 times and lasts 18 sec from time of initial application.",
                   "spellId": 400574
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135735.jpg"
             },
             {
               "id": 105805,
@@ -4846,7 +4848,8 @@
                   "description": "Decreases the Mana lost per point of damage taken when your Mana Shield spell is active by 33% and increases the resistances granted by your Mage Armor spell by 50%.",
                   "spellId": 11252
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136153.jpg"
             },
             {
               "id": 105804,
@@ -7787,7 +7790,8 @@
                   "description": "Increases the damage done by your Bane of Agony by 10%.",
                   "spellId": 18827
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136139.jpg"
             },
             {
               "id": 105918,
@@ -7815,7 +7819,8 @@
                   "description": "Gives your Drain Life, Drain Mana, Drain Soul, and Wrack spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 17783
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136157.jpg"
             },
             {
               "id": 105916,
@@ -7835,7 +7840,8 @@
                   "description": "Increases the effect of your next Curse of Weakness or Bane of Agony by 50%, or your next Curse of Exhaustion by 20%.  Lasts 30 sec.",
                   "spellId": 18288
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136132.jpg"
             },
             {
               "id": 105917,
@@ -10799,7 +10805,8 @@
                   "description": "Revive Pet's casting time is reduced by 6 sec, mana cost is reduced by 40%, and increases the health your pet returns with by an additional 30%.",
                   "spellId": 24443
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132163.jpg"
             },
             {
               "id": 104973,
@@ -10822,7 +10829,8 @@
                   "description": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 6%.",
                   "spellId": 19559
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132242.jpg"
             },
             {
               "id": 104970,
@@ -10842,7 +10850,8 @@
                   "description": "Increases the movement speed of your pets by 30%.",
                   "spellId": 19596
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132120.jpg"
             },
             {
               "id": 104969,
