@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T01:30:56.071Z",
+  "fetchedAt": "2026-11-23T01:46:01.675Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4507,7 +4507,8 @@
                   "description": "Grants your Shank ability a 100% chance to add 2 Combo Points to the target.",
                   "spellId": 1329286
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135342.jpg"
             },
             {
               "id": 110866,
@@ -4527,7 +4528,8 @@
                   "description": "Finishing move that marks the target, storing a portion of the damage dealt by your attacks per Combo Point. Garrote and Rupture damage is stored at twice the rate. After 6 sec, the stored damage is dealt, up to a maximum increased by Attack Power and Critical Strike chance:\r\n   1 point  : 12% stored, 215 damage cap\r\n   2 points: 24% stored, 360 damage cap\r\n   3 points: 36% stored, 505 damage cap\r\n   4 points: 48% stored, 649 damage cap\r\n   5 points: 60% stored, 794 damage cap",
                   "spellId": 1316709
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132094.jpg"
             }
           ]
         }
@@ -4567,7 +4569,8 @@
                   "description": "Increases your damage with Wands by 25%.",
                   "spellId": 6057
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135463.jpg"
             },
             {
               "id": 105813,
@@ -4800,8 +4803,7 @@
                   "description": "Increases the critical strike chance of your Arcane spells by 6%.",
                   "spellId": 11242
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136116.jpg"
+              ]
             },
             {
               "id": 105806,
@@ -4821,8 +4823,7 @@
                   "description": "Blasts the target with energy, dealing 162 to 169 Arcane damage. Each time you cast Arcane Blast, you gain 12% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 100%. Effect stacks up to 4 times and lasts 18 sec from time of initial application.",
                   "spellId": 400574
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135735.jpg"
+              ]
             },
             {
               "id": 105805,
@@ -4845,8 +4846,7 @@
                   "description": "Decreases the Mana lost per point of damage taken when your Mana Shield spell is active by 33% and increases the resistances granted by your Mage Armor spell by 50%.",
                   "spellId": 11252
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136153.jpg"
+              ]
             },
             {
               "id": 105804,
@@ -7483,7 +7483,8 @@
                   "description": "Reduces the mana cost of your Devouring Plague by 50%.\r\n\r\nTargets that die while Devouring Plague is active spreads it, jumping to 2 nearby enemies within 10 yds for the remaining duration.\r\n",
                   "spellId": 1309950
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/252996.jpg"
             },
             {
               "id": 110854,
@@ -7786,8 +7787,7 @@
                   "description": "Increases the damage done by your Bane of Agony by 10%.",
                   "spellId": 18827
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136139.jpg"
+              ]
             },
             {
               "id": 105918,
@@ -7815,8 +7815,7 @@
                   "description": "Gives your Drain Life, Drain Mana, Drain Soul, and Wrack spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 17783
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136157.jpg"
+              ]
             },
             {
               "id": 105916,
@@ -7836,8 +7835,7 @@
                   "description": "Increases the effect of your next Curse of Weakness or Bane of Agony by 50%, or your next Curse of Exhaustion by 20%.  Lasts 30 sec.",
                   "spellId": 18288
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136132.jpg"
+              ]
             },
             {
               "id": 105917,
@@ -10452,7 +10450,8 @@
                   "description": "Reduces the Rage cost of your Sunder Armor ability by 3.",
                   "spellId": 12308
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132363.jpg"
             },
             {
               "id": 105966,
@@ -10800,8 +10799,7 @@
                   "description": "Revive Pet's casting time is reduced by 6 sec, mana cost is reduced by 40%, and increases the health your pet returns with by an additional 30%.",
                   "spellId": 24443
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132163.jpg"
+              ]
             },
             {
               "id": 104973,
@@ -10824,8 +10822,7 @@
                   "description": "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by 6%.",
                   "spellId": 19559
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132242.jpg"
+              ]
             },
             {
               "id": 104970,
@@ -10845,8 +10842,7 @@
                   "description": "Increases the movement speed of your pets by 30%.",
                   "spellId": 19596
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132120.jpg"
+              ]
             },
             {
               "id": 104969,
@@ -13516,7 +13512,8 @@
                   "description": "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds.  Lasts 10 min.\r\n\r\nOnly one Elemental Shield can be active on the Shaman at any one time.",
                   "spellId": 408510
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132315.jpg"
             },
             {
               "id": 104738,
@@ -13554,7 +13551,8 @@
                   "description": "Increases the critical effect chance of your healing spells by 5%.",
                   "spellId": 16194
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136107.jpg"
             },
             {
               "id": 104730,
@@ -13592,7 +13590,8 @@
                   "description": "Increases the effect of your Mana Spring Totem by 25% and increases the effect of your Healing Stream Totem by 50%.",
                   "spellId": 16187
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136053.jpg"
             },
             {
               "id": 104728,

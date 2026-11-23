@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T01:30:56.429Z",
+  "fetchedAt": "2026-11-23T01:46:02.193Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/profession/index?namespace=static-forever-us",
@@ -30,9 +30,7 @@
     },
     {
       "id": 333,
-      "name": "Enchanting",
-      "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136244.jpg",
-      "iconSource": "profession-media"
+      "name": "Enchanting"
     },
     {
       "id": 186,
