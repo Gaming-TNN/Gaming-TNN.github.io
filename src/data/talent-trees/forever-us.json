@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T05:16:02.354Z",
+  "fetchedAt": "2026-11-23T05:31:04.961Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3182,7 +3182,8 @@
                   "description": "Reduces the Energy cost of your Expose Armor ability by 10, and refunds 2 Combo Points when cast with 5 Combo Points.",
                   "spellId": 14168
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132354.jpg"
             },
             {
               "id": 105739,
@@ -3210,7 +3211,8 @@
                   "description": "Increases the duration of your Slice and Dice ability by 45%.",
                   "spellId": 14165
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132306.jpg"
             },
             {
               "id": 105720,
@@ -3233,7 +3235,8 @@
                   "description": "Increases your maximum Energy by 10.",
                   "spellId": 14983
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136023.jpg"
             },
             {
               "id": 105718,
@@ -6083,7 +6086,8 @@
                   "description": "Your Smite and Penance spells deal 10% increased damage to targets afflicted with your Holy Fire or Shadow Word: Pain.",
                   "spellId": 1309969
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135972.jpg"
             },
             {
               "id": 105850,
@@ -6106,7 +6110,8 @@
                   "description": "Increases your damage with Wands by 25%.",
                   "spellId": 14524
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135463.jpg"
             },
             {
               "id": 105849,
@@ -6144,7 +6149,8 @@
                   "description": "Increases the damage and healing of your instant cast spells by 5%.",
                   "spellId": 1225132
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135969.jpg"
             },
             {
               "id": 105848,
@@ -9091,7 +9097,8 @@
                   "description": "Deals 342 to 345 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate.",
                   "spellId": 412758
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135789.jpg"
             }
           ]
         }
@@ -9136,7 +9143,8 @@
                   "description": "Reduces the cost of your Heroic Strike ability by 3 Rage.",
                   "spellId": 12282
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132282.jpg"
             },
             {
               "id": 105957,
@@ -9174,7 +9182,8 @@
                   "description": "Increases your Parry chance by 5%.",
                   "spellId": 16462
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
             },
             {
               "id": 105956,
@@ -12154,7 +12163,8 @@
                   "description": "Increases your Agility by 15%.",
                   "spellId": 19168
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136047.jpg"
             },
             {
               "id": 104984,
@@ -12174,7 +12184,8 @@
                   "description": "Your Mongoose Bite also causes the target to Bleed for damage equal to 40% of the damage done by Mongoose Bite over 21 sec",
                   "spellId": 1310533
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132155.jpg"
             },
             {
               "id": 104982,
@@ -12212,7 +12223,8 @@
                   "description": "Increases your Agility by 15%.",
                   "spellId": 19168
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136047.jpg"
             }
           ]
         }
