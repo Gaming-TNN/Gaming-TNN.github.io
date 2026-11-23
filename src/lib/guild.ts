@@ -8,14 +8,31 @@ import { characterDisplayName, loadSnapshot, wowHref } from './characters';
 export interface GuildRole { id: string; label: string; color: string; icon: 'shield' | 'cross' | 'sword' | string }
 export interface GuildClass { id: string; name: string; color: string; blizzardId?: number }
 export interface GuildEventType { id: string; label: string; color: string }
-export interface GuildBoss { id: string; name: string; map?: { image?: string; credit?: string; aspect?: number } }
+/** Optional map art. image is a path under /public; credit + license are shown under the map and listed in CREDITS.md. */
+export interface GuildMap { image: string; credit: string; license: string; aspect?: number }
+export interface GuildBoss { id: string; name: string; wing?: string; optional?: boolean; map?: GuildMap }
 export interface GuildInstance {
   id: string;
   name: string;
   type: 'dungeon' | 'raid' | string;
-  size: number;
-  journalId?: number;
+  /** live = in the game now (or opening on a set date); upcoming = announced, details TBA. */
+  status: 'live' | 'upcoming';
+  /** New to WoW: Forever (not in Classic). */
+  new?: boolean;
+  level?: string;
+  size?: number;
+  location?: string;
+  /** Opening date (YYYY-MM-DD) for live content that is not open yet. */
+  opens?: string;
+  /** Roadmap window for upcoming content, e.g. "Spring 2027". */
+  when?: string;
+  note?: string;
+  /** Retail journal name used only to fetch banner art for classic instances. */
+  journalName?: string;
+  /** Default map for every boss in the instance (a boss map overrides it). */
+  map?: GuildMap;
   bosses: GuildBoss[];
+  sources?: string[];
 }
 export interface GuildConfig {
   slug: string;
@@ -23,7 +40,6 @@ export interface GuildConfig {
   name: string;
   shortName: string;
   guildName: string | null;
-  timeZone: string;
   rosterSource: 'wowForever' | 'none' | string;
   roles: GuildRole[];
   classes: GuildClass[];
@@ -174,67 +190,16 @@ export function resolveSlot(config: GuildConfig, roster: RosterEntry[], slot: Pl
   };
 }
 
+export function bossMap(inst: GuildInstance, boss: GuildBoss): GuildMap | undefined {
+  return boss.map ?? inst.map;
+}
+
+export function bossLabel(boss: GuildBoss): string {
+  return `${boss.wing ? `${boss.wing}: ` : ''}${boss.name}${boss.optional ? ' (optional)' : ''}`;
+}
+
 export function eventType(config: GuildConfig, id: string): GuildEventType {
   return config.eventTypes.find((t) => t.id === id) ?? { id, label: id, color: '#71717a' };
-}
-
-/** Parts of a date in the guild's time zone. */
-export function zonedParts(iso: string, timeZone: string) {
-  const d = new Date(iso);
-  const parts = Object.fromEntries(
-    new Intl.DateTimeFormat('en-US', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit' })
-      .formatToParts(d)
-      .map((p) => [p.type, p.value]),
-  );
-  return { year: Number(parts.year), month: Number(parts.month), day: Number(parts.day) };
-}
-
-export function formatEventTime(event: GuildEvent, timeZone: string): string {
-  const fmt = (iso: string, opts: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat('en-US', { timeZone, ...opts }).format(new Date(iso));
-  const start = fmt(event.start, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
-  if (!event.end) return `${start} ${fmt(event.start, { timeZoneName: 'short' }).split(' ').pop()}`;
-  const end = fmt(event.end, { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
-  return `${start} – ${end}`;
-}
-
-export interface CalendarMonth {
-  key: string;
-  label: string;
-  year: number;
-  month: number;
-  weeks: Array<Array<{ day: number; iso: string; events: GuildEvent[] } | null>>;
-}
-
-/** Month grids (Sunday-first) from the build month (or first event) through the last event month. */
-export function calendarMonths(events: GuildEvent[], timeZone: string, now = new Date()): CalendarMonth[] {
-  const nowParts = zonedParts(now.toISOString(), timeZone);
-  const eventMonths = events.map((e) => zonedParts(e.start, timeZone));
-  const all = [nowParts, ...eventMonths].map((p) => p.year * 12 + (p.month - 1));
-  const first = Math.min(...all);
-  const last = Math.max(...all);
-  const months: CalendarMonth[] = [];
-  for (let m = first; m <= last; m++) {
-    const year = Math.floor(m / 12);
-    const month = (m % 12) + 1;
-    const startDow = new Date(Date.UTC(year, month - 1, 1)).getUTCDay();
-    const daysIn = new Date(Date.UTC(year, month, 0)).getUTCDate();
-    const cells: CalendarMonth['weeks'][number] = [];
-    for (let i = 0; i < startDow; i++) cells.push(null);
-    for (let day = 1; day <= daysIn; day++) {
-      const iso = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-      const dayEvents = events.filter((e) => {
-        const p = zonedParts(e.start, timeZone);
-        return p.year === year && p.month === month && p.day === day;
-      });
-      cells.push({ day, iso, events: dayEvents });
-    }
-    while (cells.length % 7) cells.push(null);
-    const weeks: CalendarMonth['weeks'] = [];
-    for (let i = 0; i < cells.length; i += 7) weeks.push(cells.slice(i, i + 7));
-    const label = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(year, month - 1, 1)));
-    months.push({ key: `${year}-${String(month).padStart(2, '0')}`, label, year, month, weeks });
-  }
-  return months;
 }
 
 /** Validate plans at build time so a bad PR fails the build instead of rendering nonsense. */
@@ -242,6 +207,7 @@ export function validatePlan(config: GuildConfig, plan: GuildPlan): void {
   const where = `guild/${config.slug}/plans/${plan.id}.json`;
   const inst = instanceOf(config, plan.instance);
   if (!inst) throw new Error(`${where}: unknown instance "${plan.instance}"`);
+  if (inst.status !== 'live') throw new Error(`${where}: ${inst.id} is upcoming; plans need a live instance`);
   const groupIds = new Set(plan.groups.map((g) => g.id));
   for (const g of plan.groups) {
     for (const s of g.slots) {

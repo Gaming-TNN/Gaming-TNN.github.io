@@ -17,7 +17,8 @@ const games = guildGames();
             <a href={guildHref(g)} class="flex items-center gap-4 group">
               {game?.icon && <img src={`${game.icon.src}-128.webp`} alt="" width="56" height="56" class="size-14 border border-[#27272a]" />}
               <span class="min-w-0">
-                <span class="block text-xl font-black text-[#e4e4e7] group-hover:text-white normal-case tracking-wide">{g.name}</span>
+                <span class="block text-xl font-black text-[#e4e4e7] group-hover:text-white normal-case tracking-wide">{g.guildName ?? g.name}</span>
+                {g.guildName && <span class="block text-xs text-zinc-400 normal-case tracking-normal mt-0.5">{g.name}</span>}
                 <span class="block text-[10px] font-bold tracking-widest text-zinc-500 mt-1">{guildEvents(g.slug).length} events · {guildPlans(g.slug).length} plans</span>
               </span>
             </a>

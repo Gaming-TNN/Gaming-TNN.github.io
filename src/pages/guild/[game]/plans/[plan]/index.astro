@@ -2,8 +2,9 @@
 import BaseLayout from '../../../../../layouts/BaseLayout.astro';
 import GuildGroupRoster from '../../../../../components/guild/GuildGroupRoster.astro';
 import GuildBossMap from '../../../../../components/guild/GuildBossMap.astro';
+import LocalTime from '../../../../../components/guild/LocalTime.astro';
 import {
-  type GuildConfig, type GuildPlan, formatEventTime, guildEvents, guildGames, guildHref, guildMedia, guildPlans,
+  type GuildConfig, type GuildPlan, bossLabel, guildEvents, guildGames, guildHref, guildMedia, guildPlans,
   guildRoster, instanceOf, resolveSlot, validatePlan,
 } from '../../../../../lib/guild';
 
@@ -23,7 +24,7 @@ const event = guildEvents(config.slug).find((e) => e.id === plan.event);
 const leader = plan.leader ? resolveSlot(config, roster, { role: '', character: plan.leader }) : undefined;
 const slotCount = plan.groups.flatMap((g) => g.slots).length;
 ---
-<BaseLayout title={`${plan.title} · ${config.shortName} Guild | Top-Notch Gaming`} description={`${inst.name} group plan and boss positions for Top-Notch Gaming.`}>
+<BaseLayout title={`${plan.title} · ${config.guildName ?? config.shortName} | Top-Notch Gaming`} description={`${inst.name} group plan and boss positions for Top-Notch Gaming.`}>
   <article class="max-w-7xl mx-auto px-6 pt-20 pb-24">
     <nav class="text-[10px] font-bold tracking-widest text-zinc-500 mb-6" aria-label="Breadcrumb">
       <ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none">
@@ -39,13 +40,13 @@ const slotCount = plan.groups.flatMap((g) => g.slots).length;
       <span class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></span>
       <div class="relative p-6 md:p-8">
         <p class="m-0 flex flex-wrap items-center gap-2 text-[10px] font-black tracking-widest text-[#c20e0e]">
-          <span>// {inst.type} · {inst.size}-player</span>
+          <span>// {config.guildName ?? config.shortName} · {inst.type} · {inst.size}-player</span>
           {plan.example && <span class="px-1.5 py-0.5 border border-[#ffd100]/60 text-[#ffd100]">EXAMPLE</span>}
         </p>
         <h1 class="text-3xl md:text-5xl font-black tracking-tight text-[#e4e4e7] normal-case leading-tight m-0 mt-2">{plan.title}</h1>
         <p class="text-zinc-400 text-sm normal-case mt-3 mb-0">
           {inst.name}
-          {event && ` · ${formatEventTime(event, config.timeZone)}`}
+          {event && <> · <LocalTime start={event.start} end={event.end} /></>}
           {leader && !leader.open && ` · Leader: ${leader.name}`}
           {` · ${plan.groups.length} groups, ${slotCount} slots`}
         </p>
@@ -66,9 +67,9 @@ const slotCount = plan.groups.flatMap((g) => g.slots).length;
             const boss = inst.bosses.find((b) => b.id === enc.boss)!;
             return (
               <section aria-label={boss.name} class="grid lg:grid-cols-[minmax(0,1fr)_18rem] gap-6 items-start">
-                <GuildBossMap config={config} plan={plan} encounter={enc} boss={boss} roster={roster} />
+                <GuildBossMap config={config} plan={plan} encounter={enc} boss={boss} instance={inst} roster={roster} />
                 <div class="bg-[#121215] border border-[#27272a] p-4 order-first lg:order-none">
-                  <h3 class="m-0 text-lg font-black text-[#e4e4e7] normal-case tracking-wide">{boss.name}</h3>
+                  <h3 class="m-0 text-lg font-black text-[#e4e4e7] normal-case tracking-wide">{bossLabel(boss)}</h3>
                   {enc.notes && <p class="m-0 mt-2 text-xs text-zinc-400 normal-case tracking-normal leading-relaxed">{enc.notes}</p>}
                   <ul class="grid gap-1.5 mt-4 m-0 p-0 list-none">
                     {enc.positions.map((pos) => {

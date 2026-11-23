@@ -1,6 +1,6 @@
 ---
-// Client-side plan builder. No backend: drafts live in this browser (localStorage);
-// publishing = export JSON and add it as src/data/guild/{game}/plans/{id}.json via a PR.
+// Client-side plan builder. Drafts live in this browser (localStorage). Plans on the site
+// are managed by hand: export the JSON and add it as src/data/guild/{game}/plans/{id}.json in a PR.
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import { guildEvents, guildGames, guildHref, guildMedia, guildPlans, guildRoster } from '../../../../lib/guild';
 
@@ -12,7 +12,7 @@ const boot = {
   slug: config.slug,
   roles: config.roles,
   classes: config.classes,
-  instances: config.instances,
+  instances: config.instances.filter((i) => i.status === 'live'),
   media: guildMedia(config.slug),
   roster: guildRoster(config).map(({ key, name, classId, level }) => ({ key, name, classId, level })),
   events: guildEvents(config.slug).map(({ id, title, start }) => ({ id, title, start })),
@@ -37,7 +37,7 @@ const btn = 'text-[10px] font-black tracking-widest px-3 py-2 border transition'
     <h1 class="text-3xl md:text-5xl font-black tracking-tight text-[#e4e4e7] leading-tight m-0">PLANNER</h1>
     <p class="text-zinc-400 text-sm normal-case tracking-normal mt-3 mb-10 max-w-3xl leading-relaxed">
       Pick a dungeon or raid, fill each group (role, character, class), then drag the group markers on each boss map. Your draft is saved in this browser only.
-      To publish it on the site, export the JSON and add it as a plan (for now that goes through a pull request; sign-in editing comes later).
+      To put it on the site, export the JSON and send it to the site admins; they add it to the guild page.
     </p>
 
     <div class="flex flex-wrap gap-2 mb-8">
@@ -54,7 +54,11 @@ const btn = 'text-[10px] font-black tracking-widest px-3 py-2 border transition'
 
     <section class="bg-[#121215] border border-[#27272a] p-4 mb-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <div><label class={label} for="p-title">Title</label><input id="p-title" data-f="title" class={field} /></div>
-      <div><label class={label} for="p-inst">Dungeon / raid</label><select id="p-inst" data-f="instance" class={field}>{config.instances.map((i) => <option value={i.id}>{i.name} ({i.type}, {i.size})</option>)}</select></div>
+      <div><label class={label} for="p-inst">Dungeon / raid</label><select id="p-inst" data-f="instance" class={field}>
+        <optgroup label="Raids">{config.instances.filter((i) => i.status === 'live' && i.type === 'raid').map((i) => <option value={i.id}>{i.name} ({i.size})</option>)}</optgroup>
+        <optgroup label="Dungeons">{config.instances.filter((i) => i.status === 'live' && i.type !== 'raid').map((i) => <option value={i.id}>{i.name} ({i.level})</option>)}</optgroup>
+        <optgroup label="Upcoming (bosses TBA)">{config.instances.filter((i) => i.status === 'upcoming').map((i) => <option value={i.id} disabled>{i.name}</option>)}</optgroup>
+      </select></div>
       <div><label class={label} for="p-event">Calendar event</label><select id="p-event" data-f="event" class={field}><option value="">None</option>{boot.events.map((e) => <option value={e.id}>{e.title}</option>)}</select></div>
       <div><label class={label} for="p-leader">Leader</label><select id="p-leader" data-f="leader" class={field}><option value="">None</option>{boot.roster.map((r) => <option value={r.key}>{r.name}</option>)}</select></div>
       <div class="sm:col-span-2 lg:col-span-4"><label class={label} for="p-notes">Notes</label><textarea id="p-notes" data-f="notes" rows="2" class={field}></textarea></div>
@@ -74,11 +78,12 @@ const btn = 'text-[10px] font-black tracking-widest px-3 py-2 border transition'
       <div class="grid lg:grid-cols-[minmax(0,1fr)_18rem] gap-6 items-start">
         <div>
           <div class="relative w-full aspect-[16/10] border border-[#27272a] bg-[#0b0b0d] select-none touch-none" data-board>
-            <div class="planner-grid absolute inset-0 pointer-events-none" aria-hidden="true">
+            <img data-map-img alt="" class="absolute inset-0 size-full object-cover pointer-events-none" hidden />
+            <div class="planner-grid absolute inset-0 pointer-events-none" aria-hidden="true" data-map-grid>
               <span class="absolute inset-0 grid place-items-center text-xs font-black tracking-[0.3em] text-zinc-700">PLACEHOLDER MAP</span>
             </div>
           </div>
-          <p class="mt-2 text-[10px] text-zinc-600 normal-case tracking-normal">Drag the boss and group markers. Placeholder grid, not an in-game map.</p>
+          <p class="mt-2 text-[10px] text-zinc-600 normal-case tracking-normal" data-map-credit>Drag the boss and group markers. Placeholder grid, not an in-game map.</p>
         </div>
         <div class="bg-[#121215] border border-[#27272a] p-4">
           <label class="flex items-center gap-2 text-[10px] font-black tracking-widest text-zinc-300 mb-3"><input type="checkbox" data-include class="accent-[#c20e0e]" /> INCLUDE THIS BOSS</label>
@@ -222,7 +227,8 @@ const btn = 'text-[10px] font-black tracking-widest px-3 py-2 border transition'
     $('[data-bosses]').innerHTML = bosses.map((b: any) => {
       const on = plan.encounters.some((e) => e.boss === b.id);
       const sel = b.id === bossId;
-      return `<button type="button" data-boss="${esc(b.id)}" class="text-[10px] font-black tracking-widest px-3 py-1.5 border ${sel ? 'border-[#c20e0e] text-white bg-[#c20e0e]/20' : 'border-[#27272a] text-zinc-400 hover:text-white'}">${on ? '● ' : ''}${esc(b.name)}</button>`;
+      const label = `${b.wing ? `${b.wing}: ` : ''}${b.name}${b.optional ? ' (optional)' : ''}`;
+      return `<button type="button" data-boss="${esc(b.id)}" class="text-[10px] font-black tracking-widest px-3 py-1.5 border ${sel ? 'border-[#c20e0e] text-white bg-[#c20e0e]/20' : 'border-[#27272a] text-zinc-400 hover:text-white'}">${on ? '● ' : ''}${esc(label)}</button>`;
     }).join('');
     const e = enc();
     ($('[data-include]') as HTMLInputElement).checked = Boolean(e);
@@ -238,6 +244,12 @@ const btn = 'text-[10px] font-black tracking-widest px-3 py-2 border transition'
     board.classList.toggle('opacity-40', !e);
     if (!e) return;
     const boss = inst().bosses.find((b: any) => b.id === bossId);
+    const map = boss?.map ?? inst().map;
+    const img = board.querySelector<HTMLImageElement>('[data-map-img]')!;
+    img.hidden = !map?.image;
+    if (map?.image) img.src = map.image;
+    (board.querySelector('[data-map-grid]') as HTMLElement).hidden = Boolean(map?.image);
+    $('[data-map-credit]').textContent = map?.image ? `Drag the boss and group markers. Map: ${map.credit} (${map.license}).` : 'Drag the boss and group markers. Placeholder grid, not an in-game map.';
     const add = (html: string) => board.insertAdjacentHTML('beforeend', html);
     if (e.bossMarker) add(`<div data-m="boss" class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 cursor-grab touch-none" style="left:${e.bossMarker.x}%;top:${e.bossMarker.y}%"><span class="size-6 rotate-45 bg-[#c20e0e] border-2 border-[#ffd100]/80"></span><span class="text-[10px] font-black tracking-widest text-[#ffd100] bg-black/80 px-1.5 py-0.5 whitespace-nowrap normal-case">${esc(boss?.name)}</span></div>`);
     e.positions.forEach((p) => {

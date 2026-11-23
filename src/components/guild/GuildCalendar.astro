@@ -1,56 +1,36 @@
 ---
-// Month view + upcoming list. Months are pre-rendered; a small script picks the
-// current month, wires prev/next, marks today, and hides past events.
+// Month view + upcoming list. Everything is placed in the viewer's local time zone:
+// the month grid is built in the browser from the event data, and each event time is
+// formatted locally (LocalTime). Past events are hidden from the upcoming list.
 import type { GuildConfig, GuildEvent } from '../../lib/guild';
-import { calendarMonths, eventType, formatEventTime, instanceOf, planHref } from '../../lib/guild';
+import { eventType, instanceOf, planHref } from '../../lib/guild';
+import LocalTime from './LocalTime.astro';
 interface Props { config: GuildConfig; events: GuildEvent[] }
 const { config, events } = Astro.props;
-const months = calendarMonths(events, config.timeZone);
-const dows = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const tzLabel = new Intl.DateTimeFormat('en-US', { timeZone: config.timeZone, timeZoneName: 'short' }).formatToParts(new Date()).find((p) => p.type === 'timeZoneName')?.value;
+const calData = events.map((e) => ({ id: e.id, title: e.title, start: e.start, color: eventType(config, e.type).color }));
 ---
-<div class="grid lg:grid-cols-[minmax(0,1fr)_22rem] gap-6 items-start" data-guild-calendar data-tz={config.timeZone}>
+<div class="grid lg:grid-cols-[minmax(0,1fr)_22rem] gap-6 items-start" data-guild-calendar>
   <div class="bg-[#121215] border border-[#27272a] p-3 sm:p-4 min-w-0">
     <div class="flex items-center justify-between gap-3 mb-3">
       <button type="button" data-cal-prev class="px-3 py-1.5 text-xs font-black border border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e] disabled:opacity-30 disabled:hover:border-[#27272a]" aria-label="Previous month">‹</button>
-      {months.map((m, i) => <h3 class="m-0 text-sm font-black tracking-widest text-[#e4e4e7]" data-cal-label={m.key} hidden={i !== 0}>{m.label}</h3>)}
+      <h3 class="m-0 text-sm font-black tracking-widest text-[#e4e4e7]" data-cal-label aria-live="polite">Calendar</h3>
       <button type="button" data-cal-next class="px-3 py-1.5 text-xs font-black border border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e] disabled:opacity-30 disabled:hover:border-[#27272a]" aria-label="Next month">›</button>
     </div>
-    {months.map((m, i) => (
-      <div data-cal-month={m.key} hidden={i !== 0}>
-        <div class="grid grid-cols-7 gap-px mb-px">
-          {dows.map((d) => <span class="text-center text-[9px] sm:text-[10px] font-bold tracking-widest text-zinc-500 py-1">{d}</span>)}
-        </div>
-        <div class="grid grid-cols-7 gap-px bg-[#27272a] border border-[#27272a]">
-          {m.weeks.flat().map((cell) => cell ? (
-            <div class="bg-black min-h-12 sm:min-h-20 p-1 sm:p-1.5 min-w-0" data-cal-day={cell.iso}>
-              <span class="cal-daynum block text-[10px] sm:text-xs font-bold text-zinc-400 tabular-nums">{cell.day}</span>
-              {cell.events.length > 0 && (
-                <>
-                  <span class="flex sm:hidden gap-0.5 mt-1 flex-wrap">
-                    {cell.events.map((e) => <a href={`#event-${e.id}`} class="block size-2.5 rounded-full" style={`background:${eventType(config, e.type).color}`} aria-label={e.title}></a>)}
-                  </span>
-                  <span class="hidden sm:grid gap-0.5 mt-1">
-                    {cell.events.map((e) => (
-                      <a href={`#event-${e.id}`} class="block truncate text-[10px] leading-tight font-bold normal-case tracking-normal text-white px-1 py-0.5 border-l-2 bg-white/5 hover:bg-white/10" style={`border-color:${eventType(config, e.type).color}`} title={e.title}>{e.title}</a>
-                    ))}
-                  </span>
-                </>
-              )}
-            </div>
-          ) : <div class="bg-[#0b0b0d] min-h-12 sm:min-h-20" aria-hidden="true"></div>)}
-        </div>
-      </div>
-    ))}
+    <div class="grid grid-cols-7 gap-px mb-px">
+      {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d) => <span class="text-center text-[9px] sm:text-[10px] font-bold tracking-widest text-zinc-500 py-1">{d}</span>)}
+    </div>
+    <div class="grid grid-cols-7 gap-px bg-[#27272a] border border-[#27272a]" data-cal-grid>
+      <noscript><p class="col-span-7 bg-black p-4 m-0 text-xs text-zinc-500 normal-case">The calendar needs JavaScript. Events are listed under Upcoming.</p></noscript>
+    </div>
     <ul class="flex flex-wrap gap-x-4 gap-y-1 mt-3 m-0 p-0 list-none text-[10px] font-bold tracking-widest text-zinc-400">
       {config.eventTypes.map((t) => <li class="flex items-center gap-1.5"><span class="size-2.5 rounded-full" style={`background:${t.color}`}></span>{t.label}</li>)}
-      <li class="ml-auto normal-case tracking-normal text-zinc-600 font-normal">Times in {tzLabel ?? config.timeZone}</li>
+      <li class="ml-auto normal-case tracking-normal text-zinc-600 font-normal" data-cal-tz>Times in your local time zone</li>
     </ul>
   </div>
 
   <div class="min-w-0">
     <h3 class="text-xs font-black tracking-widest text-[#c20e0e] m-0 mb-3">UPCOMING</h3>
-    <ol class="grid gap-3 m-0 p-0 list-none" data-upcoming>
+    <ol class="grid gap-3 m-0 p-0 list-none">
       {events.map((e) => {
         const t = eventType(config, e.type);
         const inst = instanceOf(config, e.instance);
@@ -61,7 +41,7 @@ const tzLabel = new Intl.DateTimeFormat('en-US', { timeZone: config.timeZone, ti
               {e.example && <span class="px-1.5 py-0.5 border border-[#ffd100]/60 text-[#ffd100]">EXAMPLE</span>}
             </p>
             <p class="m-0 mt-1 text-base font-black text-[#e4e4e7] normal-case tracking-wide">{e.title}</p>
-            <p class="m-0 mt-1 text-xs text-zinc-400 normal-case tracking-normal">{formatEventTime(e, config.timeZone)}{inst && ` · ${inst.name}`}</p>
+            <p class="m-0 mt-1 text-xs text-zinc-400 normal-case tracking-normal"><LocalTime start={e.start} end={e.end} />{inst && ` · ${inst.name}`}</p>
             {e.description && <p class="m-0 mt-2 text-xs text-zinc-500 normal-case tracking-normal leading-relaxed">{e.description}</p>}
             {e.plan && <a href={planHref(config, e.plan)} class="inline-block mt-3 text-[10px] font-black tracking-widest text-white bg-[#c20e0e] hover:bg-[#9e0b0b] px-3 py-1.5 border border-[#d30000]">VIEW GROUP PLAN</a>}
           </li>
@@ -70,35 +50,60 @@ const tzLabel = new Intl.DateTimeFormat('en-US', { timeZone: config.timeZone, ti
     </ol>
     <p class="text-zinc-500 text-sm normal-case m-0" data-upcoming-empty hidden>No upcoming events.</p>
   </div>
+  <script type="application/json" data-cal-events set:html={JSON.stringify(calData).replace(/</g, '\\u003c')}></script>
 </div>
 
 <script>
+  type CalEvent = { id: string; title: string; start: string; color: string };
+  const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  const ymd = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
   document.querySelectorAll<HTMLElement>('[data-guild-calendar]').forEach((root) => {
-    const tz = root.dataset.tz || 'UTC';
-    const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date()).map((p) => [p.type, p.value]));
-    const todayIso = `${parts.year}-${parts.month}-${parts.day}`;
-    const monthKey = todayIso.slice(0, 7);
-    const months = [...root.querySelectorAll<HTMLElement>('[data-cal-month]')];
-    const labels = [...root.querySelectorAll<HTMLElement>('[data-cal-label]')];
+    const events: CalEvent[] = JSON.parse(root.querySelector('[data-cal-events]')?.textContent || '[]');
+    const grid = root.querySelector<HTMLElement>('[data-cal-grid]')!;
+    const label = root.querySelector<HTMLElement>('[data-cal-label]')!;
     const prev = root.querySelector<HTMLButtonElement>('[data-cal-prev]')!;
     const next = root.querySelector<HTMLButtonElement>('[data-cal-next]')!;
-    let idx = Math.max(0, months.findIndex((m) => m.dataset.calMonth === monthKey));
-    const show = () => {
-      months.forEach((m, i) => (m.hidden = i !== idx));
-      labels.forEach((l, i) => (l.hidden = i !== idx));
-      prev.disabled = idx === 0;
-      next.disabled = idx === months.length - 1;
+    const now = new Date();
+    const mIndex = (d: Date) => d.getFullYear() * 12 + d.getMonth();
+    const all = [mIndex(now), ...events.map((e) => mIndex(new Date(e.start)))];
+    const first = Math.min(...all);
+    const last = Math.max(...all);
+    let cur = mIndex(now);
+    const byDay = new Map<string, CalEvent[]>();
+    events.forEach((e) => { const k = ymd(new Date(e.start)); byDay.set(k, [...(byDay.get(k) ?? []), e]); });
+    const today = ymd(now);
+    const render = () => {
+      const y = Math.floor(cur / 12);
+      const m = cur % 12;
+      label.textContent = new Intl.DateTimeFormat(undefined, { month: 'long', year: 'numeric' }).format(new Date(y, m, 1));
+      const lead = new Date(y, m, 1).getDay();
+      const days = new Date(y, m + 1, 0).getDate();
+      const cells: string[] = [];
+      for (let i = 0; i < lead; i++) cells.push('<div class="bg-[#0b0b0d] min-h-12 sm:min-h-20" aria-hidden="true"></div>');
+      for (let d = 1; d <= days; d++) {
+        const key = ymd(new Date(y, m, d));
+        const evs = byDay.get(key) ?? [];
+        const isToday = key === today;
+        cells.push(`<div class="bg-black min-h-12 sm:min-h-20 p-1 sm:p-1.5 min-w-0${isToday ? ' outline outline-1 outline-[#c20e0e] -outline-offset-1' : ''}">
+          <span class="block text-[10px] sm:text-xs font-bold tabular-nums ${isToday ? 'text-[#c20e0e]' : 'text-zinc-400'}">${d}</span>
+          ${evs.length ? `<span class="flex sm:hidden gap-0.5 mt-1 flex-wrap">${evs.map((e) => `<a href="#event-${esc(e.id)}" class="block size-2.5 rounded-full" style="background:${esc(e.color)}" aria-label="${esc(e.title)}"></a>`).join('')}</span>
+          <span class="hidden sm:grid gap-0.5 mt-1">${evs.map((e) => `<a href="#event-${esc(e.id)}" class="block truncate text-[10px] leading-tight font-bold normal-case tracking-normal text-white px-1 py-0.5 border-l-2 bg-white/5 hover:bg-white/10" style="border-color:${esc(e.color)}" title="${esc(e.title)}">${esc(e.title)}</a>`).join('')}</span>` : ''}
+        </div>`);
+      }
+      while (cells.length % 7) cells.push('<div class="bg-[#0b0b0d] min-h-12 sm:min-h-20" aria-hidden="true"></div>');
+      grid.innerHTML = cells.join('');
+      prev.disabled = cur <= first;
+      next.disabled = cur >= last;
     };
-    prev.addEventListener('click', () => { if (idx > 0) { idx--; show(); } });
-    next.addEventListener('click', () => { if (idx < months.length - 1) { idx++; show(); } });
-    show();
-    const today = root.querySelector<HTMLElement>(`[data-cal-day="${todayIso}"]`);
-    today?.classList.add('outline', 'outline-1', 'outline-[#c20e0e]', '-outline-offset-1');
-    today?.querySelector('.cal-daynum')?.classList.add('text-[#c20e0e]');
-    const now = Date.now();
+    prev.addEventListener('click', () => { if (cur > first) { cur--; render(); } });
+    next.addEventListener('click', () => { if (cur < last) { cur++; render(); } });
+    render();
+    const tz = new Intl.DateTimeFormat(undefined, { timeZoneName: 'short' }).formatToParts(now).find((p) => p.type === 'timeZoneName')?.value;
+    const tzEl = root.querySelector('[data-cal-tz]');
+    if (tzEl && tz) tzEl.textContent = `Times in your time zone (${tz})`;
     let visible = 0;
     root.querySelectorAll<HTMLElement>('[data-event-end]').forEach((li) => {
-      const past = Date.parse(li.dataset.eventEnd || '') < now;
+      const past = Date.parse(li.dataset.eventEnd || '') < now.getTime();
       li.hidden = past;
       if (!past) visible++;
     });

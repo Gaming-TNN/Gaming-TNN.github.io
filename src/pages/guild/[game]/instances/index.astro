@@ -1,0 +1,92 @@
+---
+// Every dungeon and raid in the game's config: live raids, live dungeons (by level), and
+// announced/upcoming content. Boss lists come from the sources linked on each card.
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { type GuildInstance, bossLabel, bossMap, guildGames, guildHref, guildMedia } from '../../../../lib/guild';
+
+export function getStaticPaths() {
+  return guildGames().map((config) => ({ params: { game: config.slug }, props: { config } }));
+}
+const { config } = Astro.props;
+const media = guildMedia(config.slug);
+const live = config.instances.filter((i) => i.status === 'live');
+const sections = [
+  { id: 'raids', title: 'RAIDS', items: live.filter((i) => i.type === 'raid') },
+  { id: 'dungeons', title: 'DUNGEONS', items: live.filter((i) => i.type !== 'raid') },
+  { id: 'upcoming', title: 'UPCOMING (ANNOUNCED)', items: config.instances.filter((i) => i.status === 'upcoming') },
+];
+const opensLabel = (d: string) => new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${d}T12:00:00Z`));
+const mapCount = (i: GuildInstance) => i.bosses.filter((b) => bossMap(i, b)).length;
+const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
+---
+<BaseLayout title={`Dungeons & Raids · ${config.guildName ?? config.shortName} | Top-Notch Gaming`} description={`Every ${config.name} dungeon and raid, including new and upcoming ones, with levels, sizes, and bosses.`}>
+  <article class="max-w-7xl mx-auto px-6 pt-20 pb-24">
+    <nav class="text-[10px] font-bold tracking-widest text-zinc-500 mb-6" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none">
+        <li><a href="/guild/" class="hover:text-[#e4e4e7] transition">Guild</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href={guildHref(config)} class="hover:text-[#e4e4e7] transition">{config.shortName}</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-400">Dungeons &amp; Raids</li>
+      </ol>
+    </nav>
+    <p class="text-[#c20e0e] text-xs font-black tracking-widest m-0 mb-2">// {config.name}</p>
+    <h1 class="text-3xl md:text-5xl font-black tracking-tight text-[#e4e4e7] leading-tight m-0">DUNGEONS &amp; RAIDS</h1>
+    <p class="text-zinc-400 text-sm normal-case tracking-normal mt-3 mb-4 max-w-3xl leading-relaxed">
+      {live.filter((i) => i.type !== 'raid').length} dungeons and {live.filter((i) => i.type === 'raid').length} raids, plus {sections[2].items.length} announced entries. Level ranges are from the in-game group finder as reported by Wowhead. Upcoming entries show <span class="text-[#ffd100]">Bosses TBA</span> until Blizzard publishes them.
+    </p>
+    <nav class="flex flex-wrap gap-2 mb-12" aria-label="Sections">
+      {sections.map((s) => <a href={`#${s.id}`} class="text-[10px] font-black tracking-widest px-3 py-1.5 border border-[#27272a] text-zinc-300 hover:text-white hover:border-[#c20e0e]">{s.title} ({s.items.length})</a>)}
+    </nav>
+
+    {sections.map((section) => (
+      <section id={section.id} class="mb-16 scroll-mt-28" aria-labelledby={`${section.id}-h`}>
+        <h2 id={`${section.id}-h`} class="text-xs font-black tracking-widest text-[#c20e0e] mb-6">{section.title}</h2>
+        <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-4 m-0 p-0 list-none">
+          {section.items.map((inst) => {
+            const tile = media.instanceTiles?.[inst.id];
+            const upcoming = inst.status === 'upcoming';
+            return (
+              <li id={inst.id} class="bg-[#121215] border border-[#27272a] min-w-0 overflow-hidden flex flex-col scroll-mt-28">
+                <div class="relative h-20 bg-black overflow-hidden">
+                  {tile ? <img src={tile} alt="" loading="lazy" class="absolute inset-0 size-full object-cover opacity-60" /> : <div class="absolute inset-0 tng-grid opacity-60" aria-hidden="true"></div>}
+                  <span class="absolute inset-0 bg-gradient-to-t from-[#121215] to-transparent"></span>
+                  <span class="absolute top-2 right-2 flex gap-1">
+                    {inst.new && <span class="text-[10px] font-black tracking-widest px-1.5 py-0.5 bg-black/80 border border-[#c20e0e] text-[#ff6b6b]">NEW IN FOREVER</span>}
+                    {upcoming && <span class="text-[10px] font-black tracking-widest px-1.5 py-0.5 bg-black/80 border border-[#ffd100]/70 text-[#ffd100]">UPCOMING · {inst.when}</span>}
+                    {!upcoming && inst.opens && <span class="text-[10px] font-black tracking-widest px-1.5 py-0.5 bg-black/80 border border-[#ffd100]/70 text-[#ffd100]">OPENS {opensLabel(inst.opens)}</span>}
+                  </span>
+                </div>
+                <div class="p-4 pt-1 flex-1 flex flex-col">
+                  <h3 class="m-0 text-lg font-black text-[#e4e4e7] normal-case tracking-wide">{inst.name}</h3>
+                  <p class="m-0 mt-1 text-[10px] font-bold tracking-widest text-zinc-500">
+                    {[inst.type, inst.level && `LVL ${inst.level}`, inst.size && `${inst.size} PLAYERS`].filter(Boolean).join(' · ')}
+                  </p>
+                  {inst.location && <p class="m-0 mt-1 text-xs text-zinc-400 normal-case tracking-normal">{inst.location}</p>}
+                  {inst.note && <p class="m-0 mt-2 text-xs text-zinc-500 normal-case tracking-normal leading-relaxed">{inst.note}</p>}
+                  {inst.bosses.length === 0 ? (
+                    <p class="m-0 mt-3 text-xs font-black tracking-widest text-[#ffd100]">BOSSES TBA</p>
+                  ) : (
+                    <details class="mt-3 group">
+                      <summary class="cursor-pointer select-none text-[10px] font-black tracking-widest text-zinc-300 hover:text-white">{inst.bosses.length} BOSSES</summary>
+                      <ol class="mt-2 m-0 pl-5 grid gap-0.5 text-xs text-zinc-300 normal-case tracking-normal">
+                        {inst.bosses.map((b) => <li>{bossLabel(b)}</li>)}
+                      </ol>
+                    </details>
+                  )}
+                  <div class="mt-auto pt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-zinc-600 normal-case tracking-normal">
+                    {!upcoming && <span>{mapCount(inst) ? `${mapCount(inst)} maps` : 'Placeholder maps'}</span>}
+                    {inst.sources?.map((u) => u.startsWith('http') ? <a href={u} target="_blank" rel="noopener noreferrer" class="underline hover:text-zinc-400">{host(u)}</a> : <span title={u}>client data</span>)}
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+    <p class="text-[10px] text-zinc-600 normal-case tracking-normal mt-6 mb-0 max-w-3xl leading-relaxed">
+      Instance artwork (classic instances only) from the Blizzard Game Data API journal (static-us). No top-down maps are published for WoW: Forever, so boss maps use a labeled placeholder grid; see CREDITS.md in the site repository. World of Warcraft is a trademark of Blizzard Entertainment, Inc.
+    </p>
+  </article>
+</BaseLayout>

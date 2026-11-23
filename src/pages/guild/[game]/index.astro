@@ -17,8 +17,10 @@ const plans = guildPlans(config.slug);
 plans.forEach((p) => validatePlan(config, p));
 const roster = guildRoster(config);
 const media = guildMedia(config.slug);
+const liveCount = config.instances.filter((i) => i.status === 'live').length;
+const upcomingCount = config.instances.length - liveCount;
 ---
-<BaseLayout title={`${config.shortName} Guild | Top-Notch Gaming`} description={`Top-Notch Gaming ${config.name} guild calendar, group plans, and roster.`}>
+<BaseLayout title={`${config.guildName ?? config.shortName} · ${config.shortName} | Top-Notch Gaming`} description={`${config.guildName ?? 'Top-Notch Gaming'} on ${config.name}: guild calendar, group plans, dungeons and raids, and roster.`}>
   <article class="max-w-7xl mx-auto px-6 pt-20 pb-24">
     <nav class="text-[10px] font-bold tracking-widest text-zinc-500 mb-6" aria-label="Breadcrumb">
       <ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none">
@@ -30,7 +32,7 @@ const media = guildMedia(config.slug);
     <header class="flex items-center gap-4 mb-14">
       {game?.icon && <img src={`${game.icon.src}-128.webp`} alt="" width="64" height="64" class="size-16 border border-[#27272a] shrink-0" />}
       <div class="min-w-0">
-        <p class="text-[#c20e0e] text-xs font-black tracking-widest m-0 mb-2">// TNG GUILD</p>
+        <p class="text-[#c20e0e] text-xs font-black tracking-widest m-0 mb-2">// TNG GUILD · {config.name}</p>
         <h1 class="text-3xl md:text-5xl font-black tracking-tight text-[#e4e4e7] normal-case leading-tight m-0">{config.guildName ?? config.name}</h1>
       </div>
     </header>
@@ -43,7 +45,10 @@ const media = guildMedia(config.slug);
     <section class="mb-16" aria-labelledby="plans-heading" id="plans">
       <div class="flex flex-wrap items-end justify-between gap-4 mb-6">
         <h2 id="plans-heading" class="text-xs font-black tracking-widest text-[#c20e0e] m-0">DUNGEON &amp; RAID PLANS</h2>
-        <a href={`/guild/${config.slug}/planner/`} class="text-[10px] font-black tracking-widest text-white bg-[#c20e0e] hover:bg-[#9e0b0b] px-3 py-2 border border-[#d30000]">OPEN PLANNER</a>
+        <div class="flex flex-wrap gap-2">
+          <a href={`/guild/${config.slug}/instances/`} class="text-[10px] font-black tracking-widest text-zinc-300 hover:text-white px-3 py-2 border border-[#27272a] hover:border-[#c20e0e]">ALL DUNGEONS &amp; RAIDS ({liveCount} + {upcomingCount} UPCOMING)</a>
+          <a href={`/guild/${config.slug}/planner/`} class="text-[10px] font-black tracking-widest text-white bg-[#c20e0e] hover:bg-[#9e0b0b] px-3 py-2 border border-[#d30000]">OPEN PLANNER</a>
+        </div>
       </div>
       {plans.length === 0 ? <p class="text-zinc-500 text-sm normal-case">No plans yet.</p> : (
         <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 m-0 p-0 list-none">
@@ -91,6 +96,6 @@ const media = guildMedia(config.slug);
         </ul>
       )}
     </section>
-    <p class="text-[10px] text-zinc-600 normal-case tracking-normal mt-10 mb-0">Class icons from the Blizzard Game Data API (static-forever-us). Instance artwork from the Blizzard Game Data API journal (static-us). Events and plans tagged EXAMPLE are samples.</p>
+    <p class="text-[10px] text-zinc-600 normal-case tracking-normal mt-10 mb-0">Class icons from the Blizzard Game Data API (static-forever-us). Instance artwork from the Blizzard Game Data API journal (static-us), classic instances only. Event times are shown in your local time zone. Events and plans tagged EXAMPLE are samples.</p>
   </article>
 </BaseLayout>

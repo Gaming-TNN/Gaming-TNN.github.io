@@ -1,13 +1,14 @@
 ---
 // Boss positioning map. Coordinates are percentages (x from left, y from top), per boss.
 // Without a licensed map image the board is a labeled placeholder grid.
-import type { GuildBoss, GuildConfig, GuildPlan, PlanEncounter, RosterEntry } from '../../lib/guild';
-import { resolveSlot } from '../../lib/guild';
+import type { GuildBoss, GuildConfig, GuildInstance, GuildPlan, PlanEncounter, RosterEntry } from '../../lib/guild';
+import { bossMap, resolveSlot } from '../../lib/guild';
 import GuildMemberRow from './GuildMemberRow.astro';
-interface Props { config: GuildConfig; plan: GuildPlan; encounter: PlanEncounter; boss: GuildBoss; roster: RosterEntry[] }
-const { config, plan, encounter, boss, roster } = Astro.props;
-const image = boss.map?.image;
-const aspect = boss.map?.aspect ?? 16 / 10;
+interface Props { config: GuildConfig; plan: GuildPlan; encounter: PlanEncounter; boss: GuildBoss; instance: GuildInstance; roster: RosterEntry[] }
+const { config, plan, encounter, boss, instance, roster } = Astro.props;
+const map = bossMap(instance, boss);
+const image = map?.image;
+const aspect = map?.aspect ?? 16 / 10;
 const cols = 'ABCDEFGHIJ'.split('');
 ---
 <figure class="m-0">
@@ -56,7 +57,7 @@ const cols = 'ABCDEFGHIJ'.split('');
     })}
   </div>
   <figcaption class="mt-2 text-[10px] text-zinc-600 normal-case tracking-normal">
-    {image ? (boss.map?.credit ?? '') : 'Placeholder grid, not an in-game map. Positions are approximate (x/y as % of the board). Hover or tap a group marker to see who is in it.'}
+    {image ? `Map: ${map?.credit} (${map?.license}). Hover or tap a group marker to see who is in it.` : 'Placeholder grid, not an in-game map. Positions are approximate (x/y as % of the board). Hover or tap a group marker to see who is in it.'}
   </figcaption>
 </figure>
 

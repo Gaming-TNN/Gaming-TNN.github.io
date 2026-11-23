@@ -5,7 +5,8 @@
  *
  *  - Class icons: Game Data API, static-forever-us, /data/wow/media/playable-class/{id}
  *  - Instance tiles: Game Data API, static-us (retail journal; the forever
- *    namespace has no journal entries yet), /data/wow/media/journal-instance/{id}
+ *    namespace has no journal entries yet), /data/wow/media/journal-instance/{id}.
+ *    Classic instances only; new Forever instances have no journal art.
  *
  * Not part of the 15-minute refresh. Re-run by hand when the config changes:
  *   BNET_CLIENT_ID=... BNET_CLIENT_SECRET=... node scripts/fetch-guild-media.mjs
@@ -62,13 +63,18 @@ for (const c of config.classes) {
   if (icon) out.classIcons[c.id] = icon;
   console.log(`class ${c.id}: ${icon ? 'ok' : 'missing'}`);
 }
+// Only classic instances (journalName set) have retail journal art; new Forever
+// instances share names with unrelated retail content (e.g. Hyjal Summit), so skip them.
+const index = await get('/data/wow/journal-instance/index?namespace=static-us', t);
+const norm = (s) => s.toLowerCase().replace(/^the /, '').replace(/[^a-z0-9]/g, '');
 for (const inst of config.instances) {
-  if (!inst.journalId) continue;
-  const j = await get(`/data/wow/journal-instance/${inst.journalId}?namespace=static-us`, t);
-  const m = await get(`/data/wow/media/journal-instance/${inst.journalId}?namespace=static-us`, t);
+  if (!inst.journalName || inst.status !== 'live') continue;
+  const hit = index?.instances?.find((i) => norm(i.name) === norm(inst.journalName));
+  if (!hit) { console.log(`instance ${inst.id}: no journal match`); continue; }
+  const m = await get(`/data/wow/media/journal-instance/${hit.id}?namespace=static-us`, t);
   const tile = m?.assets?.find((a) => a.key === 'tile')?.value;
   if (tile) out.instanceTiles[inst.id] = tile;
-  console.log(`instance ${inst.id} (journal ${inst.journalId} = ${j?.name ?? '?'}): ${tile ? 'ok' : 'missing'}`);
+  console.log(`instance ${inst.id} (journal ${hit.id} = ${hit.name}): ${tile ? 'ok' : 'missing'}`);
 }
 await writeFile(OUT, `${JSON.stringify(out, null, 2)}\n`);
 console.log('Wrote src/data/guild/wow/blizzard-media.json');
