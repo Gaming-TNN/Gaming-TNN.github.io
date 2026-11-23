@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T15:16:06.576Z",
+  "fetchedAt": "2026-11-23T15:31:08.478Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5499,8 +5499,7 @@
                   "description": "Increases the damage done by your Fire spells by 3% per your Fire effects on the target, up to a maximum increase of 12%. Effects which mix multiple schools of magic do not qualify.",
                   "spellId": 11124
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135817.jpg"
+              ]
             },
             {
               "id": 105781,
@@ -5520,8 +5519,7 @@
                   "description": "When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%.  This effect lasts until you have caused 3 non-periodic critical strikes with Fire spells.",
                   "spellId": 11129
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135824.jpg"
+              ]
             }
           ]
         },
@@ -5554,8 +5552,7 @@
                   "description": "Increases the Armor and resistances granted by your Frost Armor and Ice Armor spells by 30%, gives your Frost Ward a 20% chance to negate the warded damage spell, and increases the amount absorbed by your Ice Barrier and Frost Ward by 20%.",
                   "spellId": 11189
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135850.jpg"
+              ]
             },
             {
               "id": 105779,
@@ -8489,8 +8486,7 @@
                   "description": "Increases the Attack Power reduction of your Felhunter's Tainted Blood, the healing of its Devour Magic, and the detection level of its Paranoia by 30%, and reduces the cooldown of its Spell Lock by 6 sec.",
                   "spellId": 1225217
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136217.jpg"
+              ]
             },
             {
               "id": 105892,
@@ -8512,8 +8508,7 @@
                   "description": "When active, 30% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, Incubus, or Felhunter Demon instead. In addition, both the Demon and the master will inflict 3% more damage. Lasts as long as the Demon is active.",
                   "spellId": 19028
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136160.jpg"
+              ]
             },
             {
               "id": 105893,
@@ -8541,8 +8536,7 @@
                   "description": "Increases your spell damage and your Demon pet's spell damage by up to 100% of your level while you have a summoned Demon pet active.",
                   "spellId": 412732
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136165.jpg"
+              ]
             },
             {
               "id": 105891,
@@ -11555,8 +11549,7 @@
                   "description": "A short-range shot that deals 50% weapon damage and disorients the target for 4 sec.  Any damage caused will remove the effect.  Turns off your attack when used.",
                   "spellId": 19503
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132153.jpg"
+              ]
             },
             {
               "id": 104998,
@@ -11594,8 +11587,7 @@
                   "description": "Increases the damage you deal with ranged weapons by 5%.",
                   "spellId": 19507
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135615.jpg"
+              ]
             },
             {
               "id": 104997,
@@ -11615,8 +11607,7 @@
                   "description": "A long-range shot that deals ranged damage plus 320 and increases the range of your next 3 Shots by 10 yards for 10 sec.",
                   "spellId": 1310687
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/1412205.jpg"
+              ]
             },
             {
               "id": 105003,
