@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-24T02:01:05.892Z",
+  "fetchedAt": "2026-11-24T02:15:59.452Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5593,8 +5593,7 @@
                   "description": "Reduces the casting time of your Frostbolt spell by 0.5 sec.",
                   "spellId": 11070
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135846.jpg"
+              ]
             },
             {
               "id": 105778,
@@ -5622,8 +5621,7 @@
                   "description": "Improves your chance to hit with all spells by 6%.",
                   "spellId": 29438
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135989.jpg"
+              ]
             },
             {
               "id": 105777,
@@ -5661,8 +5659,7 @@
                   "description": "Increases the critical strike damage bonus of your Frost spells by 100%.",
                   "spellId": 11207
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135855.jpg"
+              ]
             },
             {
               "id": 105774,
@@ -8580,8 +8577,7 @@
                   "description": "Grants both the Warlock and the summoned demon an effect as long as that demon is active.\r\n\r\nImp - Increases Fire damage done by 10%.\r\n\r\nVoidwalker - Reduces Physical damage taken by 10%.\r\n\r\nSuccubus/Incubus - Increases Shadow damage done by 10%.\r\n\r\nFelhunter - Reduces Magic damage taken by 10%.",
                   "spellId": 23785
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136203.jpg"
+              ]
             },
             {
               "id": 105890,
@@ -8601,8 +8597,7 @@
                   "description": "Your Demonic Sacrifice effect is no longer cancelled by summoning a different Demon pet. Resummoning the sacrificed pet will still cancel the effect.\r\n",
                   "spellId": 425464
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/5927650.jpg"
+              ]
             }
           ]
         },
@@ -8635,8 +8630,7 @@
                   "description": "Increases the range of your Destruction spells by 20%.",
                   "spellId": 17917
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136133.jpg"
+              ]
             },
             {
               "id": 105889,
@@ -11654,8 +11648,7 @@
                   "description": "Increases the damage done by your Serpent Sting by 10%.",
                   "spellId": 19464
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132204.jpg"
+              ]
             }
           ]
         },
@@ -11703,8 +11696,7 @@
                   "description": "While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by 5%.",
                   "spellId": 24293
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134154.jpg"
+              ]
             },
             {
               "id": 104995,
@@ -11742,8 +11734,7 @@
                   "description": "Increases your Parry chance by 5%.",
                   "spellId": 19295
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
+              ]
             },
             {
               "id": 104994,
