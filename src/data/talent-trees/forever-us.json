@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-24T15:16:10.702Z",
+  "fetchedAt": "2026-11-24T15:31:08.403Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -1948,7 +1948,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Blasts the target with Holy energy, causing 210 to 218 Holy damage to an enemy, or 333 to 342 healing to an ally.",
+                  "description": "Blasts the target with Holy energy, causing 209 to 218 Holy damage to an enemy, or 336 to 345 healing to an ally.",
                   "spellId": 1311606
                 }
               ],
@@ -2034,7 +2034,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Applies Light's Vigil to a friendly target for 30 sec. The caster's next Holy Shock on the target incurs no cooldown and heals the target and their party for 397 to 416. Only one Vigil per Paladin may be active in each party.",
+                  "description": "Applies Light's Vigil to a friendly target for 30 sec. The caster's next Holy Shock on the target incurs no cooldown and heals the target and their party for 400 to 419. Only one Vigil per Paladin may be active in each party.",
                   "spellId": 1310911
                 }
               ],
@@ -2783,7 +2783,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage.  Only one Seal can be active on the Paladin at any one time.  Lasts 30 sec.\r\n\r\nUnleashing this Seal's energy will judge an enemy, instantly causing 108 to 115 Holy damage, 220 to 230 if the target is stunned or incapacitated.",
+                  "description": "Gives the Paladin a chance to deal additional Holy damage equal to 70% of normal weapon damage.  Only one Seal can be active on the Paladin at any one time.  Lasts 30 sec.\r\n\r\nUnleashing this Seal's energy will judge an enemy, instantly causing 110 to 114 Holy damage, 216 to 227 if the target is stunned or incapacitated.",
                   "spellId": 20375
                 }
               ],
@@ -4821,7 +4821,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Blasts the target with energy, dealing 162 to 169 Arcane damage. Each time you cast Arcane Blast, you gain 12% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 100%. Effect stacks up to 4 times and lasts 18 sec from time of initial application.",
+                  "description": "Blasts the target with energy, dealing 171 to 171 Arcane damage. Each time you cast Arcane Blast, you gain 12% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 100%. Effect stacks up to 4 times and lasts 18 sec from time of initial application.",
                   "spellId": 400574
                 }
               ],
@@ -4921,7 +4921,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Launches a projectile of pure Arcane energy at the enemy target, causing 454 to 488 Arcane damage. This spell gains additional Spell Damage equal to 5% of your maximum Mana.",
+                  "description": "Launches a projectile of pure Arcane energy at the enemy target, causing 459 to 496 Arcane damage. This spell gains additional Spell Damage equal to 5% of your maximum Mana.",
                   "spellId": 1326079
                 }
               ],
@@ -5290,7 +5290,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Hurls an immense fiery boulder that causes 402 to 412 Fire damage and an additional 236 Fire damage over 12 sec.",
+                  "description": "Hurls an immense fiery boulder that causes 426 to 435 Fire damage and an additional 236 Fire damage over 12 sec.",
                   "spellId": 11366
                 }
               ],
@@ -5467,7 +5467,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 198 to 229 Fire damage, and Dazing them for 50% reduced movement speed for 6 sec.",
+                  "description": "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 194 to 228 Fire damage, and Dazing them for 50% reduced movement speed for 6 sec.",
                   "spellId": 11113
                 }
               ],
@@ -6772,7 +6772,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Causes an explosion of holy light around the caster, causing 45 to 53 Holy damage to all enemy targets within 10 yards and healing all party members within 10 yards for 103 to 112. These effects cause no threat.",
+                  "description": "Causes an explosion of holy light around the caster, causing 46 to 52 Holy damage to all enemy targets within 10 yards and healing all party members within 10 yards for 101 to 110. These effects cause no threat.",
                   "spellId": 15237
                 }
               ],
@@ -8875,7 +8875,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Instantly blasts the target for 196 to 204 Shadow damage.  If a non-trivial target dies within 8 sec of being hit with Shadowburn, the caster gains a Soul Shard.",
+                  "description": "Instantly blasts the target for 198 to 210 Shadow damage.  If a non-trivial target dies within 8 sec of being hit with Shadowburn, the caster gains a Soul Shard.",
                   "spellId": 17877
                 }
               ],
@@ -8956,7 +8956,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Ignites a target that is already afflicted by your Immolate spell, dealing 225 to 242 Fire damage and consuming your Immolate effect.",
+                  "description": "Ignites a target that is already afflicted by your Immolate spell, dealing 226 to 240 Fire damage and consuming your Immolate effect.",
                   "spellId": 1293817
                 }
               ],
@@ -9094,7 +9094,7 @@
               "ranks": [
                 {
                   "rank": 1,
-                  "description": "Deals 342 to 345 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate.",
+                  "description": "Deals 338 to 351 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate.",
                   "spellId": 412758
                 }
               ],
