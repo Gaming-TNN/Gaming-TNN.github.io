@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T07:45:47.949Z",
+  "fetchedAt": "2026-11-25T08:00:50.323Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -36,7 +36,7 @@
       "id": 1
     },
     "level": 32,
-    "experience": 3487,
+    "experience": 17903,
     "achievement_points": 0,
     "achievements": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/achievements?namespace=profile-forever-us"
@@ -53,7 +53,7 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795580298000,
+    "last_login_timestamp": 1795592917000,
     "specializations": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/specializations?namespace=profile-forever-us"
     },
@@ -246,8 +246,8 @@
           "item_modified_appearance_id": 77344
         },
         "durability": {
-          "value": 62,
-          "display_string": "Durability 62 / 70"
+          "value": 70,
+          "display_string": "Durability 70 / 70"
         }
       },
       {
@@ -469,8 +469,8 @@
           "second_item_modified_appearance_id": 77343
         },
         "durability": {
-          "value": 62,
-          "display_string": "Durability 62 / 70"
+          "value": 70,
+          "display_string": "Durability 70 / 70"
         }
       },
       {
@@ -693,8 +693,8 @@
           "item_modified_appearance_id": 104602
         },
         "durability": {
-          "value": 107,
-          "display_string": "Durability 107 / 120"
+          "value": 120,
+          "display_string": "Durability 120 / 120"
         }
       },
       {
@@ -832,8 +832,8 @@
           "item_modified_appearance_id": 84223
         },
         "durability": {
-          "value": 36,
-          "display_string": "Durability 36 / 40"
+          "value": 40,
+          "display_string": "Durability 40 / 40"
         }
       },
       {
@@ -988,8 +988,8 @@
           "item_modified_appearance_id": 198608
         },
         "durability": {
-          "value": 79,
-          "display_string": "Durability 79 / 90"
+          "value": 90,
+          "display_string": "Durability 90 / 90"
         }
       },
       {
@@ -1140,8 +1140,8 @@
           "item_modified_appearance_id": 306411
         },
         "durability": {
-          "value": 51,
-          "display_string": "Durability 51 / 60"
+          "value": 60,
+          "display_string": "Durability 60 / 60"
         }
       },
       {
@@ -1262,8 +1262,8 @@
           "item_modified_appearance_id": 104604
         },
         "durability": {
-          "value": 31,
-          "display_string": "Durability 31 / 35"
+          "value": 35,
+          "display_string": "Durability 35 / 35"
         }
       },
       {
@@ -1410,8 +1410,8 @@
           "item_modified_appearance_id": 158301
         },
         "durability": {
-          "value": 32,
-          "display_string": "Durability 32 / 35"
+          "value": 35,
+          "display_string": "Durability 35 / 35"
         }
       },
       {
@@ -1596,6 +1596,76 @@
             "copper": "40"
           }
         },
+        "is_subclass_hidden": true
+      },
+      {
+        "item": {
+          "key": {
+            "href": "https://us.api.blizzard.com/data/wow/item/280766?namespace=static-1.60.1_70399-forever-us"
+          },
+          "id": 280766
+        },
+        "slot": {
+          "type": "TRINKET_1",
+          "name": "Trinket 1"
+        },
+        "quantity": 1,
+        "context": 11,
+        "quality": {
+          "type": "UNCOMMON",
+          "name": "Uncommon"
+        },
+        "name": "Satchel of Potions",
+        "media": {
+          "key": {
+            "href": "https://us.api.blizzard.com/data/wow/media/item/280766?namespace=static-1.60.1_70399-forever-us"
+          },
+          "id": 280766
+        },
+        "item_class": {
+          "key": {
+            "href": "https://us.api.blizzard.com/data/wow/item-class/4?namespace=static-1.60.1_70399-forever-us"
+          },
+          "name": "Armor",
+          "id": 4
+        },
+        "item_subclass": {
+          "key": {
+            "href": "https://us.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-1.60.1_70399-forever-us"
+          },
+          "name": "Miscellaneous",
+          "id": 0
+        },
+        "inventory_type": {
+          "type": "TRINKET",
+          "name": "Trinket"
+        },
+        "binding": {
+          "type": "ON_ACQUIRE",
+          "name": "Binds when picked up"
+        },
+        "spells": [
+          {
+            "spell": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/spell/1309685?namespace=static-1.60.1_70399-forever-us"
+              },
+              "name": "Satchel of Potions",
+              "id": 1309685
+            },
+            "description": "Use: Reach into the bag and hope for the best. (10 Min Cooldown)"
+          }
+        ],
+        "sell_price": {
+          "value": 2489,
+          "display_strings": {
+            "header": "Sell Price:",
+            "gold": "0",
+            "silver": "24",
+            "copper": "89"
+          }
+        },
+        "description": "Not every potion is meant for consumption.",
         "is_subclass_hidden": true
       },
       {
@@ -1856,8 +1926,8 @@
           "item_modified_appearance_id": 161278
         },
         "durability": {
-          "value": 72,
-          "display_string": "Durability 72 / 80"
+          "value": 80,
+          "display_string": "Durability 80 / 80"
         }
       },
       {
@@ -2019,8 +2089,8 @@
           "item_modified_appearance_id": 160906
         },
         "durability": {
-          "value": 87,
-          "display_string": "Durability 87 / 100"
+          "value": 100,
+          "display_string": "Durability 100 / 100"
         }
       },
       {
@@ -2116,8 +2186,8 @@
           }
         },
         "durability": {
-          "value": 180,
-          "display_string": "Durability 180 / 200"
+          "value": 200,
+          "display_string": "Durability 200 / 200"
         }
       }
     ]
@@ -3029,6 +3099,13 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/54502?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Twice-Spiced Raptor Slice",
+                "id": 54502
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/54504?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Tasty Raptor Bites",
@@ -3210,6 +3287,7 @@
     "273842": "https://render.worldofwarcraft.com/forever-us/icons/56/132536.jpg",
     "274078": "https://render.worldofwarcraft.com/forever-us/icons/56/133368.jpg",
     "277204": "https://render.worldofwarcraft.com/forever-us/icons/56/133288.jpg",
+    "280766": "https://render.worldofwarcraft.com/forever-us/icons/56/133633.jpg",
     "281660": "https://render.worldofwarcraft.com/forever-us/icons/56/132330.jpg"
   },
   "statistics": {
@@ -3245,7 +3323,7 @@
     },
     "melee_crit": {
       "rating_bonus": 0,
-      "value": 4.7878,
+      "value": 4.9077997,
       "rating_normalized": 0
     },
     "melee_haste": {
@@ -3297,22 +3375,22 @@
     },
     "dodge": {
       "rating_bonus": 0,
-      "value": 5.6678,
+      "value": 5.7878003,
       "rating_normalized": 0
     },
     "parry": {
       "rating_bonus": 0,
-      "value": 5.7599998,
+      "value": 5.88,
       "rating_normalized": 0
     },
     "block": {
       "rating_bonus": 1,
-      "value": 11.759999,
+      "value": 11.88,
       "rating_normalized": 5
     },
     "ranged_crit": {
       "rating_bonus": 0,
-      "value": 4.5077996,
+      "value": 4.5477996,
       "rating_normalized": 0
     },
     "ranged_haste": {
@@ -3330,8 +3408,8 @@
       "effective": 43
     },
     "defense": {
-      "base": 156,
-      "effective": 179
+      "base": 159,
+      "effective": 182
     },
     "fire_resistance": {
       "base": 0,
