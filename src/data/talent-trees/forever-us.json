@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T06:31:04.727Z",
+  "fetchedAt": "2026-11-25T06:46:03.042Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4528,8 +4528,7 @@
                   "description": "Finishing move that marks the target, storing a portion of the damage dealt by your attacks per Combo Point. Garrote and Rupture damage is stored at twice the rate. After 6 sec, the stored damage is dealt, up to a maximum increased by Attack Power and Critical Strike chance:\r\n   1 point  : 12% stored, 215 damage cap\r\n   2 points: 24% stored, 360 damage cap\r\n   3 points: 36% stored, 505 damage cap\r\n   4 points: 48% stored, 649 damage cap\r\n   5 points: 60% stored, 794 damage cap",
                   "spellId": 1316709
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132094.jpg"
+              ]
             }
           ]
         }
@@ -4569,8 +4568,7 @@
                   "description": "Increases your damage with Wands by 25%.",
                   "spellId": 6057
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135463.jpg"
+              ]
             },
             {
               "id": 105813,
@@ -4608,8 +4606,7 @@
                   "description": "Gives your Arcane Missiles spell a 100% chance and your Arcane Blast and Arcane Wrath spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 11237
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136096.jpg"
+              ]
             },
             {
               "id": 105802,
@@ -10456,8 +10453,7 @@
                   "description": "Reduces the Rage cost of your Sunder Armor ability by 3.",
                   "spellId": 12308
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132363.jpg"
+              ]
             },
             {
               "id": 105966,
@@ -10475,8 +10471,7 @@
                   "description": "Your Charge ability is now usable while in Defensive Stance.",
                   "spellId": 1310317
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/4667427.jpg"
+              ]
             },
             {
               "id": 105963,
@@ -10499,8 +10494,7 @@
                   "description": "Gives your Shield Bash ability a 100% chance to Silence the target for 3 sec.",
                   "spellId": 12311
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132357.jpg"
+              ]
             },
             {
               "id": 105964,
@@ -13560,8 +13554,7 @@
                   "description": "Increases the critical effect chance of your healing spells by 5%.",
                   "spellId": 16194
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136107.jpg"
+              ]
             },
             {
               "id": 104730,
@@ -13599,8 +13592,7 @@
                   "description": "Increases the effect of your Mana Spring Totem by 25% and increases the effect of your Healing Stream Totem by 50%.",
                   "spellId": 16187
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136053.jpg"
+              ]
             },
             {
               "id": 104728,
@@ -13618,8 +13610,7 @@
                   "description": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 88 mana every 3 seconds to group members within 30 yards.",
                   "spellId": 16190
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135861.jpg"
+              ]
             },
             {
               "id": 104727,
