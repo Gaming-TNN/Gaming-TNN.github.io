@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T19:15:55.343Z",
+  "fetchedAt": "2026-11-25T19:31:11.845Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3511,7 +3511,8 @@
                   "description": "Instantly attacks with both weapons for 90% weapon damage plus an additional 36 with each weapon. Damage increased by 20% against Poisoned targets. Awards 2 Combo Points.",
                   "spellId": 399956
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236270.jpg"
             }
           ]
         },
@@ -3549,7 +3550,8 @@
                   "description": "Increases the damage done by your Eviscerate ability by 20%, and the damage and storage rate of your Death Mark ability by 20%.",
                   "spellId": 14162
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132292.jpg"
             },
             {
               "id": 105741,
@@ -3572,7 +3574,8 @@
                   "description": "Reduces the Energy cost of your Sinister Strike and Hemorrhage abilities by 5.",
                   "spellId": 13732
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136189.jpg"
             },
             {
               "id": 113398,
@@ -6428,7 +6431,8 @@
                   "description": "Reduces the casting time of your Mana Burn spell by 1.0 sec.",
                   "spellId": 14750
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136170.jpg"
             },
             {
               "id": 105839,
@@ -6450,7 +6454,8 @@
                   "description": "Reduces the cooldown on your Power Word: Shield spell by 4 sec and reduces its mana cost by 15%.",
                   "spellId": 402000
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135948.jpg"
             },
             {
               "id": 105834,
@@ -6470,7 +6475,8 @@
                   "description": "Launches a volley of holy light at the target, causing 81 Holy damage to an enemy, or 232 healing to an ally, instantly and every 1 sec for 2 sec.",
                   "spellId": 402174
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237545.jpg"
             },
             {
               "id": 105835,
@@ -9438,7 +9444,8 @@
                   "description": "Grants your Main Hand melee attacks against enemies afflicted by your Rend a 20% chance to allow an activation of Overpower.",
                   "spellId": 1289682
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135271.jpg"
             },
             {
               "id": 105945,
@@ -9458,7 +9465,8 @@
                   "description": "Your next 5 melee attacks strike an additional nearby opponent.",
                   "spellId": 12292
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132306.jpg"
             },
             {
               "id": 105944,
@@ -9496,7 +9504,8 @@
                   "description": "Gives your melee weapon attacks a benefit depending on the weapon.\r\n\r\n    Axe/Polearm: Increases your\r\n    critical strike chance by 5%.\r\n\r\n    Mace/Staff: Your attacks ignore\r\n    15% of your target's armor.\r\n\r\n    Sword: Your successful melee \r\n    attacks have a 5% chance to \r\n    trigger an extra attack on the \r\n    target.",
                   "spellId": 1290261
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/1085608.jpg"
             },
             {
               "id": 110858,
@@ -12538,7 +12547,8 @@
                   "description": "Gives your Lightning Bolt and Chain Lightning spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 29062
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136032.jpg"
             },
             {
               "id": 104762,
