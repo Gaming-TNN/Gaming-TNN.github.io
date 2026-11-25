@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T14:30:52.726Z",
+  "fetchedAt": "2026-11-25T14:45:49.740Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -53,7 +53,7 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795594182000,
+    "last_login_timestamp": 1795617186000,
     "specializations": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/specializations?namespace=profile-forever-us"
     },
@@ -693,8 +693,8 @@
           "item_modified_appearance_id": 104602
         },
         "durability": {
-          "value": 120,
-          "display_string": "Durability 120 / 120"
+          "value": 119,
+          "display_string": "Durability 119 / 120"
         }
       },
       {
