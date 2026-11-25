@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T23:31:00.438Z",
+  "fetchedAt": "2026-11-25T23:46:04.728Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4924,8 +4924,7 @@
                   "description": "Launches a projectile of pure Arcane energy at the enemy target, causing 459 to 496 Arcane damage. This spell gains additional Spell Damage equal to 5% of your maximum Mana.",
                   "spellId": 1326079
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236222.jpg"
+              ]
             },
             {
               "id": 105801,
@@ -4945,8 +4944,7 @@
                   "description": "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell.",
                   "spellId": 12043
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136031.jpg"
+              ]
             },
             {
               "id": 105800,
@@ -4984,8 +4982,7 @@
                   "description": "Increases your Intellect by 10% and increases the critical strike damage bonus of your Arcane spells by 100%.",
                   "spellId": 11232
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136129.jpg"
+              ]
             },
             {
               "id": 105799,
@@ -7932,8 +7929,7 @@
                   "description": "Gives your Corruption, Drain Soul, Drain Life, and Wrack spells a 4% chance to cause you to enter a Shadow Trance after damaging the opponent. The Shadow Trance reduces the casting time of your next Shadow Bolt spell by 100%.",
                   "spellId": 18094
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136223.jpg"
+              ]
             },
             {
               "id": 105913,
@@ -7953,8 +7949,7 @@
                   "description": "Reduces the target's movement speed by 30% for 12 sec.  Only one Curse per Warlock can be active on any one target.",
                   "spellId": 18223
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136162.jpg"
+              ]
             },
             {
               "id": 105912,
@@ -7974,8 +7969,7 @@
                   "description": "Transfers 27 health from the target to the caster every 3 sec.  Lasts 30 sec.",
                   "spellId": 18265
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136188.jpg"
+              ]
             },
             {
               "id": 105911,
@@ -10954,8 +10948,7 @@
                   "description": "Increases the critical strike chance of your pets and hawks by 10%.",
                   "spellId": 19598
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134297.jpg"
+              ]
             },
             {
               "id": 104966,
@@ -10973,8 +10966,7 @@
                   "description": "Command a hawk to dive-bomb your targeted enemy, dealing 57 Physical damage and continuing its assault for 18 sec. Only 2 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.",
                   "spellId": 1293241
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132158.jpg"
+              ]
             },
             {
               "id": 104965,
@@ -10997,8 +10989,7 @@
                   "description": "While your pet is active, you and your pet will regenerate 1% of total health every 5 sec.",
                   "spellId": 19578
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132121.jpg"
+              ]
             },
             {
               "id": 104964,
