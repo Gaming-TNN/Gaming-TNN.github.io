@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T15:01:09.603Z",
+  "fetchedAt": "2026-11-25T15:16:00.567Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5243,7 +5243,8 @@
                   "description": "Gives your Fire spells a 70% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by 30%.",
                   "spellId": 11083
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135805.jpg"
             },
             {
               "id": 105791,
@@ -5271,7 +5272,8 @@
                   "description": "Increases the critical strike chance of your Flamestrike spell by 15%.",
                   "spellId": 11108
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135826.jpg"
             },
             {
               "id": 105790,
@@ -5291,7 +5293,8 @@
                   "description": "Hurls an immense fiery boulder that causes 426 to 435 Fire damage and an additional 236 Fire damage over 12 sec.",
                   "spellId": 11366
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135808.jpg"
             },
             {
               "id": 105797,
@@ -5769,8 +5772,7 @@
                   "description": "Reduces the mana cost of your Frost spells by 15% and reduces the threat caused by your Frost spells by 30%.",
                   "spellId": 11160
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135860.jpg"
+              ]
             },
             {
               "id": 105771,
@@ -5798,8 +5800,7 @@
                   "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 40% for 1.5 sec.",
                   "spellId": 11185
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135857.jpg"
+              ]
             },
             {
               "id": 105767,
@@ -5819,8 +5820,7 @@
                   "description": "Deals 28 to 33 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.",
                   "spellId": 1312002
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135844.jpg"
+              ]
             },
             {
               "id": 105770,
@@ -8225,7 +8225,8 @@
                   "description": "Increases the effectiveness of your Demon Skin and Demon Armor spells by 30%.",
                   "spellId": 1235316
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136185.jpg"
             },
             {
               "id": 105904,
@@ -8253,7 +8254,8 @@
                   "description": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, Sacrifice, and Suffering spells by 30%.",
                   "spellId": 18705
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136221.jpg"
             },
             {
               "id": 105903,
@@ -8281,7 +8283,8 @@
                   "description": "Increases the maximum health and Mana of your Imp, Voidwalker, Succubus, Incubus, and Felhunter by 15%, and increases your maximum Mana by 15%.",
                   "spellId": 18731
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136150.jpg"
             },
             {
               "id": 105899,
@@ -8775,8 +8778,7 @@
                   "description": "Reduces the Mana cost of your Destruction spells by 10%.",
                   "spellId": 17778
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135831.jpg"
+              ]
             },
             {
               "id": 105886,
@@ -8853,8 +8855,7 @@
                   "description": "Increases the critical strike damage bonus of your Destruction spells by 100%.",
                   "spellId": 17959
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136207.jpg"
+              ]
             },
             {
               "id": 105884,
@@ -11249,7 +11250,8 @@
                   "description": "Increases the damage of your Serpent Sting ability by 20%, reduces the cooldown of your Viper Sting ability by 6 sec, and increases the duration of your Scorpid Sting ability by 45 sec.",
                   "spellId": 1310661
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132204.jpg"
             },
             {
               "id": 105009,
@@ -11287,7 +11289,8 @@
                   "description": "Reduces the Mana cost of your Shots, Stings, and melee abilities by 15%.",
                   "spellId": 19416
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
             },
             {
               "id": 105008,
@@ -11327,7 +11330,8 @@
                   "description": "Increases your Attack Power by 100% of your Intellect.",
                   "spellId": 1223984
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132217.jpg"
             },
             {
               "id": 105005,
@@ -11835,8 +11839,7 @@
                   "description": "Increases your total Health by 10%.",
                   "spellId": 19255
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136223.jpg"
+              ]
             },
             {
               "id": 104990,
@@ -11864,8 +11867,7 @@
                   "description": "Gives your Wing Clip ability a 20% chance to immobilize the target for 5 sec.",
                   "spellId": 19228
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132309.jpg"
+              ]
             },
             {
               "id": 104991,
@@ -11888,8 +11890,7 @@
                   "description": "Increases the duration of Freezing and Frost trap effects by 30% and the damage of Immolation and Explosive trap effects by 30%.",
                   "spellId": 19239
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136106.jpg"
+              ]
             },
             {
               "id": 104987,
