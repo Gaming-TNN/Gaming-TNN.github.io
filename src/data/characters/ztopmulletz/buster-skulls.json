@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T04:15:47.947Z",
+  "fetchedAt": "2026-11-25T04:30:48.713Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -35,8 +35,8 @@
       "name": "Warrior",
       "id": 1
     },
-    "level": 31,
-    "experience": 22850,
+    "level": 32,
+    "experience": 3487,
     "achievement_points": 0,
     "achievements": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/achievements?namespace=profile-forever-us"
@@ -53,7 +53,7 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795558888000,
+    "last_login_timestamp": 1795580298000,
     "specializations": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/specializations?namespace=profile-forever-us"
     },
@@ -246,8 +246,8 @@
           "item_modified_appearance_id": 77344
         },
         "durability": {
-          "value": 70,
-          "display_string": "Durability 70 / 70"
+          "value": 62,
+          "display_string": "Durability 62 / 70"
         }
       },
       {
@@ -344,25 +344,26 @@
       {
         "item": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item/13131?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/item/273028?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 13131
+          "id": 273028
         },
         "slot": {
           "type": "SHOULDER",
           "name": "Shoulders"
         },
         "quantity": 1,
+        "context": 1,
         "quality": {
           "type": "RARE",
           "name": "Rare"
         },
-        "name": "Sparkleshell Mantle",
+        "name": "Reliquary Mantle",
         "media": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/media/item/13131?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/media/item/273028?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 13131
+          "id": 273028
         },
         "item_class": {
           "key": {
@@ -383,13 +384,13 @@
           "name": "Shoulder"
         },
         "binding": {
-          "type": "ON_EQUIP",
-          "name": "Binds when equipped"
+          "type": "ON_ACQUIRE",
+          "name": "Binds when picked up"
         },
         "armor": {
-          "value": 161,
+          "value": 171,
           "display": {
-            "display_string": "161 Armor",
+            "display_string": "171 Armor",
             "color": {
               "r": 255,
               "g": 255,
@@ -401,12 +402,12 @@
         "stats": [
           {
             "type": {
-              "type": "AGILITY",
-              "name": "Agility"
+              "type": "STAMINA",
+              "name": "Stamina"
             },
-            "value": 4,
+            "value": 12,
             "display": {
-              "display_string": "+4 Agility",
+              "display_string": "+12 Stamina",
               "color": {
                 "r": 255,
                 "g": 255,
@@ -417,34 +418,35 @@
           },
           {
             "type": {
-              "type": "STAMINA",
-              "name": "Stamina"
+              "type": "HIT_RATING",
+              "name": "Hit"
             },
-            "value": 10,
+            "value": 4,
+            "is_equip_bonus": true,
             "display": {
-              "display_string": "+10 Stamina",
+              "display_string": "+4 Hit",
               "color": {
-                "r": 255,
+                "r": 0,
                 "g": 255,
-                "b": 255,
+                "b": 0,
                 "a": 1
               }
             }
           }
         ],
         "sell_price": {
-          "value": 2312,
+          "value": 3276,
           "display_strings": {
             "header": "Sell Price:",
             "gold": "0",
-            "silver": "23",
-            "copper": "12"
+            "silver": "32",
+            "copper": "76"
           }
         },
         "requirements": {
           "level": {
-            "value": 24,
-            "display_string": "Requires Level 24"
+            "value": 28,
+            "display_string": "Requires Level 28"
           }
         },
         "transmog": {
@@ -467,8 +469,8 @@
           "second_item_modified_appearance_id": 77343
         },
         "durability": {
-          "value": 70,
-          "display_string": "Durability 70 / 70"
+          "value": 62,
+          "display_string": "Durability 62 / 70"
         }
       },
       {
@@ -691,8 +693,8 @@
           "item_modified_appearance_id": 104602
         },
         "durability": {
-          "value": 120,
-          "display_string": "Durability 120 / 120"
+          "value": 107,
+          "display_string": "Durability 107 / 120"
         }
       },
       {
@@ -830,8 +832,8 @@
           "item_modified_appearance_id": 84223
         },
         "durability": {
-          "value": 40,
-          "display_string": "Durability 40 / 40"
+          "value": 36,
+          "display_string": "Durability 36 / 40"
         }
       },
       {
@@ -986,8 +988,8 @@
           "item_modified_appearance_id": 198608
         },
         "durability": {
-          "value": 90,
-          "display_string": "Durability 90 / 90"
+          "value": 79,
+          "display_string": "Durability 79 / 90"
         }
       },
       {
@@ -1138,8 +1140,8 @@
           "item_modified_appearance_id": 306411
         },
         "durability": {
-          "value": 60,
-          "display_string": "Durability 60 / 60"
+          "value": 51,
+          "display_string": "Durability 51 / 60"
         }
       },
       {
@@ -1260,8 +1262,8 @@
           "item_modified_appearance_id": 104604
         },
         "durability": {
-          "value": 35,
-          "display_string": "Durability 35 / 35"
+          "value": 31,
+          "display_string": "Durability 31 / 35"
         }
       },
       {
@@ -1408,8 +1410,8 @@
           "item_modified_appearance_id": 158301
         },
         "durability": {
-          "value": 35,
-          "display_string": "Durability 35 / 35"
+          "value": 32,
+          "display_string": "Durability 32 / 35"
         }
       },
       {
@@ -1854,8 +1856,8 @@
           "item_modified_appearance_id": 161278
         },
         "durability": {
-          "value": 80,
-          "display_string": "Durability 80 / 80"
+          "value": 72,
+          "display_string": "Durability 72 / 80"
         }
       },
       {
@@ -2017,8 +2019,8 @@
           "item_modified_appearance_id": 160906
         },
         "durability": {
-          "value": 100,
-          "display_string": "Durability 100 / 100"
+          "value": 87,
+          "display_string": "Durability 87 / 100"
         }
       },
       {
@@ -2114,8 +2116,8 @@
           }
         },
         "durability": {
-          "value": 200,
-          "display_string": "Durability 200 / 200"
+          "value": 180,
+          "display_string": "Durability 180 / 200"
         }
       }
     ]
@@ -2285,14 +2287,14 @@
                     "name": "Focused Rage",
                     "id": 29787
                   },
-                  "description": "Reduces the Rage cost of your offensive abilities by 2.",
+                  "description": "Reduces the Rage cost of your offensive abilities by 3.",
                   "cast_time": "Passive"
                 },
-                "talent_rank": 2
+                "talent_rank": 3
               }
             ],
             "specialization_name": "Protection",
-            "spent_points": 22
+            "spent_points": 23
           }
         ]
       }
@@ -3081,7 +3083,7 @@
         },
         "tiers": [
           {
-            "skill_points": 200,
+            "skill_points": 209,
             "max_skill_points": 225,
             "tier": {
               "name": "First Aid",
@@ -3202,16 +3204,16 @@
     "7129": "https://render.worldofwarcraft.com/forever-us/icons/56/132938.jpg",
     "7133": "https://render.worldofwarcraft.com/forever-us/icons/56/132629.jpg",
     "13127": "https://render.worldofwarcraft.com/forever-us/icons/56/133126.jpg",
-    "13131": "https://render.worldofwarcraft.com/forever-us/icons/56/135049.jpg",
     "250524": "https://render.worldofwarcraft.com/forever-us/icons/56/134668.jpg",
     "250557": "https://render.worldofwarcraft.com/forever-us/icons/56/236895.jpg",
+    "273028": "https://render.worldofwarcraft.com/forever-us/icons/56/135058.jpg",
     "273842": "https://render.worldofwarcraft.com/forever-us/icons/56/132536.jpg",
     "274078": "https://render.worldofwarcraft.com/forever-us/icons/56/133368.jpg",
     "277204": "https://render.worldofwarcraft.com/forever-us/icons/56/133288.jpg",
     "281660": "https://render.worldofwarcraft.com/forever-us/icons/56/132330.jpg"
   },
   "statistics": {
-    "health": 2041,
+    "health": 2099,
     "power": 100,
     "power_type": {
       "key": {
@@ -3226,24 +3228,24 @@
       "rating_normalized": 0
     },
     "strength": {
-      "base": 62,
-      "effective": 101
+      "base": 64,
+      "effective": 103
     },
     "agility": {
-      "base": 43,
-      "effective": 56
+      "base": 44,
+      "effective": 53
     },
     "intellect": {
       "base": 22,
       "effective": 22
     },
     "stamina": {
-      "base": 59,
-      "effective": 182
+      "base": 61,
+      "effective": 186
     },
     "melee_crit": {
       "rating_bonus": 0,
-      "value": 5.2808003,
+      "value": 4.7878,
       "rating_normalized": 0
     },
     "melee_haste": {
@@ -3271,11 +3273,11 @@
       "value": 0,
       "rating_normalized": 0
     },
-    "attack_power": 281,
-    "main_hand_damage_min": 76.17143,
-    "main_hand_damage_max": 100.17143,
+    "attack_power": 288,
+    "main_hand_damage_min": 77.37143,
+    "main_hand_damage_max": 101.37143,
     "main_hand_speed": 2.4,
-    "main_hand_dps": 36.738094,
+    "main_hand_dps": 37.238094,
     "off_hand_damage_min": 0,
     "off_hand_damage_max": 0,
     "off_hand_speed": 2,
@@ -3291,26 +3293,26 @@
     "mana_regen_combat": 0,
     "armor": {
       "base": 96,
-      "effective": 2118
+      "effective": 2122
     },
     "dodge": {
       "rating_bonus": 0,
-      "value": 6.2008,
+      "value": 5.6678,
       "rating_normalized": 0
     },
     "parry": {
       "rating_bonus": 0,
-      "value": 5.92,
+      "value": 5.7599998,
       "rating_normalized": 0
     },
     "block": {
       "rating_bonus": 1,
-      "value": 11.92,
+      "value": 11.759999,
       "rating_normalized": 5
     },
     "ranged_crit": {
       "rating_bonus": 0,
-      "value": 5.0408,
+      "value": 4.5077996,
       "rating_normalized": 0
     },
     "ranged_haste": {
@@ -3324,12 +3326,12 @@
       "rating_normalized": 0
     },
     "spirit": {
-      "base": 35,
-      "effective": 42
+      "base": 36,
+      "effective": 43
     },
     "defense": {
-      "base": 155,
-      "effective": 178
+      "base": 156,
+      "effective": 179
     },
     "fire_resistance": {
       "base": 0,
@@ -3352,32 +3354,32 @@
       "effective": 5
     },
     "movement_speed": 100,
-    "ranged_attack_power": 129,
-    "ranged_damage_min": 35.428574,
-    "ranged_damage_max": 51.428574,
+    "ranged_attack_power": 124,
+    "ranged_damage_min": 34.714287,
+    "ranged_damage_max": 50.714287,
     "expertise": 0,
     "off_hand_expertise": 0,
     "armor_penetration": 0,
     "spell_healing": 0,
     "melee_hit": {
-      "rating_bonus": 0,
-      "value": 0,
-      "rating_normalized": 0
+      "rating_bonus": 0.4,
+      "value": 0.4,
+      "rating_normalized": 4
     },
     "off_hand_hit": {
-      "rating_bonus": 0,
-      "value": 0,
-      "rating_normalized": 0
+      "rating_bonus": 0.4,
+      "value": 0.4,
+      "rating_normalized": 4
     },
     "ranged_hit": {
-      "rating_bonus": 0,
-      "value": 0,
-      "rating_normalized": 0
+      "rating_bonus": 0.4,
+      "value": 0.4,
+      "rating_normalized": 4
     },
     "spell_hit": {
-      "rating_bonus": 0,
-      "value": 0,
-      "rating_normalized": 0
+      "rating_bonus": 0.4,
+      "value": 0.4,
+      "rating_normalized": 4
     }
   }
 }
