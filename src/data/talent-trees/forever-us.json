@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T01:00:56.756Z",
+  "fetchedAt": "2026-11-25T01:16:03.741Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4774,7 +4774,8 @@
                   "description": "Increases the range of your Arcane spells by 6 yards.",
                   "spellId": 11247
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/6035311.jpg"
             },
             {
               "id": 105807,
@@ -4802,7 +4803,8 @@
                   "description": "Increases the critical strike chance of your Arcane spells by 6%.",
                   "spellId": 11242
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136116.jpg"
             },
             {
               "id": 105806,
@@ -4822,7 +4824,8 @@
                   "description": "Blasts the target with energy, dealing 171 to 171 Arcane damage. Each time you cast Arcane Blast, you gain 12% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 100%. Effect stacks up to 4 times and lasts 18 sec from time of initial application.",
                   "spellId": 400574
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135735.jpg"
             },
             {
               "id": 105805,
@@ -7763,7 +7766,8 @@
                   "description": "Increases Health drained, damage done, or Mana drained by your Drain Life, Drain Soul, and Drain Mana spells by 20%.",
                   "spellId": 403511
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136163.jpg"
             },
             {
               "id": 105919,
@@ -7786,7 +7790,8 @@
                   "description": "Increases the damage done by your Bane of Agony by 10%.",
                   "spellId": 18827
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136139.jpg"
             },
             {
               "id": 105918,
@@ -7814,7 +7819,8 @@
                   "description": "Gives your Drain Life, Drain Mana, Drain Soul, and Wrack spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 17783
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136157.jpg"
             },
             {
               "id": 105916,
@@ -10775,7 +10781,8 @@
                   "description": "Increases the Dodge bonus of your Aspect of the Monkey by 6%. Additionally, your pet gains 50% of the effect of your Aspect of the Monkey ability.",
                   "spellId": 19549
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132159.jpg"
             },
             {
               "id": 104972,
