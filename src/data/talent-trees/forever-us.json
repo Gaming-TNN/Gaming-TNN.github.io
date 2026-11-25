@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T10:16:03.249Z",
+  "fetchedAt": "2026-11-25T10:31:02.627Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3673,7 +3673,8 @@
                   "description": "Increases your Parry chance by 6%.",
                   "spellId": 13713
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
             },
             {
               "id": 105737,
@@ -3703,7 +3704,8 @@
                   "description": "Improves your chance to hit by 3%.",
                   "spellId": 13705
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132222.jpg"
             },
             {
               "id": 105732,
@@ -3726,7 +3728,8 @@
                   "description": "Gives a 100% chance to remove all movement impairing effects when you activate your Sprint ability.",
                   "spellId": 13743
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132307.jpg"
             },
             {
               "id": 105736,
@@ -6563,7 +6566,8 @@
                   "description": "Infuses the target with power, increasing their spell damage and healing done by 20% for 15 sec.",
                   "spellId": 10060
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135939.jpg"
             }
           ]
         },
@@ -6601,7 +6605,8 @@
                   "description": "Gives your spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 14913
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135918.jpg"
             },
             {
               "id": 105866,
@@ -6629,7 +6634,8 @@
                   "description": "Increases the amount healed by your Renew spell by 15%.",
                   "spellId": 14908
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135953.jpg"
             },
             {
               "id": 110855,
@@ -9572,7 +9578,8 @@
                   "description": "A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec.",
                   "spellId": 12294
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132355.jpg"
             }
           ]
         },
@@ -9620,7 +9627,8 @@
                   "description": "Increases the area of effect of your Shouts by 50% and reduces the Rage cost by of your Shouts and Howls by 25%.",
                   "spellId": 12321
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136075.jpg"
             },
             {
               "id": 105939,
@@ -9658,7 +9666,8 @@
                   "description": "Improves your chance to get a critical strike with melee attacks by 5%.",
                   "spellId": 12320
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132292.jpg"
             },
             {
               "id": 110857,
@@ -12676,7 +12685,8 @@
                   "description": "Increases the critical strike damage bonus of your Searing and Magma Totems and your Fire, Frost, and Nature spells by 100%.",
                   "spellId": 16089
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135830.jpg"
             },
             {
               "id": 104758,
@@ -12696,7 +12706,8 @@
                   "description": "Gain mastery over Lightning, reducing the cast time of your Lightning Bolt spell by 0.5 sec, and removing the cooldown from your Chain Lightning spell. Lasts 15 sec.",
                   "spellId": 16166
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136111.jpg"
             }
           ]
         },
@@ -12729,7 +12740,8 @@
                   "description": "Increases the health of your Stoneclaw Totem by 50% and the radius of your Earthbind Totem by 20%.",
                   "spellId": 16043
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136097.jpg"
             },
             {
               "id": 104753,
