@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T18:45:56.513Z",
+  "fetchedAt": "2026-11-25T19:01:00.515Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3129,8 +3129,7 @@
                   "description": "Increases your critical strike chance with all attacks and Poisons by 5%.",
                   "spellId": 14138
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
+              ]
             },
             {
               "id": 105721,
@@ -3158,8 +3157,7 @@
                   "description": "Gives your finishing moves a 60% chance to add a Combo Point to your target.",
                   "spellId": 14156
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132122.jpg"
+              ]
             },
             {
               "id": 105717,
@@ -8713,7 +8711,8 @@
                   "description": "Reduces the casting time of your Shadow Bolt, Immolate, and Incinerate spells by 0.5 sec and your Soul Fire spell by 2 sec.",
                   "spellId": 17788
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136146.jpg"
             },
             {
               "id": 105885,
@@ -8751,7 +8750,8 @@
                   "description": "Reduces all damage taken by 10%.",
                   "spellId": 1225220
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132221.jpg"
             },
             {
               "id": 105887,
@@ -8779,7 +8779,8 @@
                   "description": "Reduces the Mana cost of your Destruction spells by 10%.",
                   "spellId": 17778
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135831.jpg"
             },
             {
               "id": 105886,
@@ -8906,8 +8907,7 @@
                   "description": "Gives your Destruction spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 18135
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135819.jpg"
+              ]
             },
             {
               "id": 105879,
@@ -8956,8 +8956,7 @@
                   "description": "Ignites a target that is already afflicted by your Immolate spell, dealing 226 to 240 Fire damage and consuming your Immolate effect.",
                   "spellId": 1293817
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135807.jpg"
+              ]
             },
             {
               "id": 105878,
@@ -11802,7 +11801,8 @@
                   "description": "Increases the critical strike chance of all your melee abilities by 4%.",
                   "spellId": 19159
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
             },
             {
               "id": 104992,
@@ -11840,7 +11840,8 @@
                   "description": "Increases your total Health by 10%.",
                   "spellId": 19255
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136223.jpg"
             },
             {
               "id": 104990,
@@ -11868,7 +11869,8 @@
                   "description": "Gives your Wing Clip ability a 20% chance to immobilize the target for 5 sec.",
                   "spellId": 19228
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132309.jpg"
             },
             {
               "id": 104991,
@@ -11965,8 +11967,7 @@
                   "description": "Increases your chance to hit with your Trap and Feign Death abilities by 10%.",
                   "spellId": 19376
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132149.jpg"
+              ]
             },
             {
               "id": 110861,
@@ -12004,8 +12005,7 @@
                   "description": "Increases your melee ability critical strike damage by 30% and your Off Hand weapon damage by 50%.",
                   "spellId": 1310627
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132147.jpg"
+              ]
             },
             {
               "id": 104989,
@@ -12025,8 +12025,7 @@
                   "description": "A strike that becomes active after parrying an opponent's attack. This attack deals 50% weapon damage plus 13 and immobilizes the target for 5 sec. Counterattack cannot be blocked, dodged, or parried.",
                   "spellId": 19306
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132336.jpg"
+              ]
             },
             {
               "id": 104983,
