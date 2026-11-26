@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T21:01:00.864Z",
+  "fetchedAt": "2026-11-26T21:15:56.149Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4146,8 +4146,7 @@
                   "description": "Increases the damage dealt by your Backstab, Garrote, Ambush, and Mutilate abilities by 20%.",
                   "spellId": 14057
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132366.jpg"
+              ]
             },
             {
               "id": 105745,
@@ -7015,8 +7014,7 @@
                   "description": "Increases your spell healing by up to 25% of your total Spirit and your spell damage by up to 8% of your total Spirit.",
                   "spellId": 14901
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135977.jpg"
+              ]
             },
             {
               "id": 105852,
@@ -7044,8 +7042,7 @@
                   "description": "Increases the amount healed by your spells by 10%.",
                   "spellId": 14898
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136057.jpg"
+              ]
             },
             {
               "id": 105851,
@@ -7065,8 +7062,7 @@
                   "description": "Places a spell on the target that heals them for 395 the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within 20 yards. Jumps up to 5 times and lasts 30 sec after each jump. This spell can only be placed on one target at a time per caster.",
                   "spellId": 401859
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135944.jpg"
+              ]
             }
           ]
         },
@@ -10039,8 +10035,7 @@
                   "description": "Reduces the cooldown of your Intercept ability by 10 sec.",
                   "spellId": 20504
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132307.jpg"
+              ]
             },
             {
               "id": 105977,
@@ -10063,8 +10058,7 @@
                   "description": "Reduces the cooldown of your Whirlwind ability by 2 sec and increases the damage it deals to the closest enemy by 30%.",
                   "spellId": 1310315
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132369.jpg"
+              ]
             },
             {
               "id": 105928,
@@ -10092,8 +10086,7 @@
                   "description": "Increases your melee attack speed by 30% for your next 3 swings after dealing a melee critical strike.",
                   "spellId": 12319
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132152.jpg"
+              ]
             },
             {
               "id": 105930,
@@ -13149,8 +13142,7 @@
                   "description": "Increases your spell damage and healing by up to 30% of your Intellect.",
                   "spellId": 30812
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136090.jpg"
+              ]
             },
             {
               "id": 104742,
@@ -13175,8 +13167,7 @@
                   "description": "When you Stormstrike, you have a 100% chance to gain 50% mana regeneration while casting spells for 15 sec, and Stormstrike's cooldown has a 100% chance to reset each time you Dodge or Parry.",
                   "spellId": 1223031
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237581.jpg"
+              ]
             },
             {
               "id": 104741,
@@ -13214,8 +13205,7 @@
                   "description": "When you deal damage with a melee attack, you have a 27% chance (based on weapon speed) to reduce the cast time and Mana cost of your next Lightning Bolt spell by 20%. Stacks up to 5 times. Lasts 30 sec.",
                   "spellId": 408498
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237584.jpg"
+              ]
             },
             {
               "id": 104740,
