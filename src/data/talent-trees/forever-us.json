@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T15:15:58.028Z",
+  "fetchedAt": "2026-11-26T15:30:59.474Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3064,8 +3064,7 @@
                   "description": "Increases the duration of your Gouge ability by 1.5 sec.",
                   "spellId": 13741
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132155.jpg"
+              ]
             },
             {
               "id": 105723,
@@ -4569,7 +4568,8 @@
                   "description": "Increases your damage with Wands by 25%.",
                   "spellId": 6057
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135463.jpg"
             },
             {
               "id": 105813,
@@ -4607,7 +4607,8 @@
                   "description": "Gives your Arcane Missiles spell a 100% chance and your Arcane Blast and Arcane Wrath spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 11237
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136096.jpg"
             },
             {
               "id": 105802,
@@ -4635,7 +4636,8 @@
                   "description": "Increases your Armor by an amount equal to 75% of your Intellect.",
                   "spellId": 28574
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135733.jpg"
             },
             {
               "id": 105812,
@@ -5920,8 +5922,7 @@
                   "description": "Increases the damage dealt by your Cone of Cold spell by 35%.",
                   "spellId": 11190
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135852.jpg"
+              ]
             },
             {
               "id": 105766,
@@ -7546,7 +7547,8 @@
                   "description": "Increases your Shadow damage done by 10%.",
                   "spellId": 15259
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136223.jpg"
             },
             {
               "id": 105817,
@@ -7566,7 +7568,8 @@
                   "description": "Assume Shadowform, increasing your Shadow damage by 10%, reducing the Mana cost of all Shadow spells by 50%, increasing the critical strike damage bonus of your Shadow spells by 100%, and reducing Physical damage taken by you by 15%. However, you may not cast healing spells while in this form.",
                   "spellId": 15473
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136200.jpg"
             }
           ]
         }
@@ -7606,7 +7609,8 @@
                   "description": "Increases the amount of Mana awarded by your Life Tap spell by 20%.",
                   "spellId": 18182
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136126.jpg"
             },
             {
               "id": 105925,
@@ -8872,8 +8876,7 @@
                   "description": "Instantly blasts the target for 198 to 210 Shadow damage.  If a non-trivial target dies within 8 sec of being hit with Shadowburn, the caster gains a Soul Shard.",
                   "spellId": 17877
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136191.jpg"
+              ]
             },
             {
               "id": 105882,
@@ -10538,7 +10541,8 @@
                   "description": "Stuns the target for 5 sec.",
                   "spellId": 12809
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132325.jpg"
             },
             {
               "id": 105961,
@@ -10566,7 +10570,8 @@
                   "description": "Reduces the Rage cost of your offensive abilities by 3.",
                   "spellId": 29787
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132345.jpg"
             },
             {
               "id": 105962,
@@ -10604,7 +10609,8 @@
                   "description": "Increases all damage you deal by 10% while a shield is equipped.",
                   "spellId": 16538
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134950.jpg"
             },
             {
               "id": 105959,
@@ -11917,8 +11923,7 @@
                   "description": "Increases your hit chance by 3% and reduces the duration of movement impairing effects on you by 30%.",
                   "spellId": 19290
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132219.jpg"
+              ]
             },
             {
               "id": 104986,
@@ -11938,8 +11943,7 @@
                   "description": "When activated, increases your Dodge and Parry chance by 25% for 10 sec.",
                   "spellId": 19263
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132369.jpg"
+              ]
             },
             {
               "id": 104988,
@@ -11962,8 +11966,7 @@
                   "description": "Increases your chance to hit with your Trap and Feign Death abilities by 10%.",
                   "spellId": 19376
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132149.jpg"
+              ]
             },
             {
               "id": 110861,
@@ -13659,7 +13662,8 @@
                   "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell.",
                   "spellId": 16188
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136076.jpg"
             },
             {
               "id": 104725,
@@ -13697,7 +13701,8 @@
                   "description": "Increases the effectiveness of your healing spells by 10%.",
                   "spellId": 16178
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
             },
             {
               "id": 104724,
@@ -13717,7 +13722,8 @@
                   "description": "Heals a friendly target for 600 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%.",
                   "spellId": 408521
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/252995.jpg"
             }
           ]
         }
