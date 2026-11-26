@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T22:45:56.077Z",
+  "fetchedAt": "2026-11-26T23:01:04.715Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4569,7 +4569,8 @@
                   "description": "Increases your damage with Wands by 25%.",
                   "spellId": 6057
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135463.jpg"
             },
             {
               "id": 105813,
@@ -4607,7 +4608,8 @@
                   "description": "Gives your Arcane Missiles spell a 100% chance and your Arcane Blast and Arcane Wrath spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 11237
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136096.jpg"
             },
             {
               "id": 105802,
@@ -4635,7 +4637,8 @@
                   "description": "Increases your Armor by an amount equal to 75% of your Intellect.",
                   "spellId": 28574
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135733.jpg"
             },
             {
               "id": 105812,
@@ -7546,7 +7549,8 @@
                   "description": "Increases your Shadow damage done by 10%.",
                   "spellId": 15259
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136223.jpg"
             },
             {
               "id": 105817,
@@ -7566,7 +7570,8 @@
                   "description": "Assume Shadowform, increasing your Shadow damage by 10%, reducing the Mana cost of all Shadow spells by 50%, increasing the critical strike damage bonus of your Shadow spells by 100%, and reducing Physical damage taken by you by 15%. However, you may not cast healing spells while in this form.",
                   "spellId": 15473
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136200.jpg"
             }
           ]
         }
@@ -7606,7 +7611,8 @@
                   "description": "Increases the amount of Mana awarded by your Life Tap spell by 20%.",
                   "spellId": 18182
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136126.jpg"
             },
             {
               "id": 105925,
@@ -10538,7 +10544,8 @@
                   "description": "Stuns the target for 5 sec.",
                   "spellId": 12809
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132325.jpg"
             },
             {
               "id": 105961,
@@ -10566,7 +10573,8 @@
                   "description": "Reduces the Rage cost of your offensive abilities by 3.",
                   "spellId": 29787
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132345.jpg"
             },
             {
               "id": 105962,
@@ -13610,7 +13618,8 @@
                   "description": "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 sec that restores 88 mana every 3 seconds to group members within 30 yards.",
                   "spellId": 16190
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135861.jpg"
             },
             {
               "id": 104727,
@@ -13659,7 +13668,8 @@
                   "description": "When activated, your next Nature spell with a casting time less than 10 sec. becomes an instant cast spell.",
                   "spellId": 16188
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136076.jpg"
             },
             {
               "id": 104725,
