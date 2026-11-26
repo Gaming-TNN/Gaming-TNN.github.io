@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T12:01:01.500Z",
+  "fetchedAt": "2026-11-26T12:16:06.384Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5801,7 +5801,8 @@
                   "description": "Adds a Chill effect to your Blizzard spell. This effect lowers the target's movement speed by 40% for 1.5 sec.",
                   "spellId": 11185
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135857.jpg"
             },
             {
               "id": 105767,
@@ -5821,7 +5822,8 @@
                   "description": "Deals 28 to 33 Frost damage to an enemy target. Deals 300% increased damage to Frozen targets.",
                   "spellId": 1312002
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135844.jpg"
             },
             {
               "id": 105770,
@@ -5844,7 +5846,8 @@
                   "description": "Increases the range of your Frostbolt, Ice Lance, and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by 20%.",
                   "spellId": 16757
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136141.jpg"
             },
             {
               "id": 105769,
@@ -8817,7 +8820,8 @@
                   "description": "Increases the initial damage of your Immolate spell by 50% and your Conflagrate spell has a 100% chance to Daze the target, reducing the target's movement speed by 50% for 5 sec.",
                   "spellId": 18119
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135805.jpg"
             },
             {
               "id": 105883,
@@ -8855,7 +8859,8 @@
                   "description": "Increases the critical strike damage bonus of your Destruction spells by 100%.",
                   "spellId": 17959
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136207.jpg"
             },
             {
               "id": 105884,
@@ -8873,7 +8878,8 @@
                   "description": "Instantly blasts the target for 198 to 210 Shadow damage.  If a non-trivial target dies within 8 sec of being hit with Shadowburn, the caster gains a Soul Shard.",
                   "spellId": 17877
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136191.jpg"
             },
             {
               "id": 105882,
