@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T15:30:59.474Z",
+  "fetchedAt": "2026-11-26T15:46:02.134Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3064,7 +3064,8 @@
                   "description": "Increases the duration of your Gouge ability by 1.5 sec.",
                   "spellId": 13741
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132155.jpg"
             },
             {
               "id": 105723,
@@ -5922,7 +5923,8 @@
                   "description": "Increases the damage dealt by your Cone of Cold spell by 35%.",
                   "spellId": 11190
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135852.jpg"
             },
             {
               "id": 105766,
@@ -8876,7 +8878,8 @@
                   "description": "Instantly blasts the target for 198 to 210 Shadow damage.  If a non-trivial target dies within 8 sec of being hit with Shadowburn, the caster gains a Soul Shard.",
                   "spellId": 17877
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136191.jpg"
             },
             {
               "id": 105882,
@@ -11923,7 +11926,8 @@
                   "description": "Increases your hit chance by 3% and reduces the duration of movement impairing effects on you by 30%.",
                   "spellId": 19290
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132219.jpg"
             },
             {
               "id": 104986,
@@ -11943,7 +11947,8 @@
                   "description": "When activated, increases your Dodge and Parry chance by 25% for 10 sec.",
                   "spellId": 19263
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132369.jpg"
             },
             {
               "id": 104988,
@@ -11966,7 +11971,8 @@
                   "description": "Increases your chance to hit with your Trap and Feign Death abilities by 10%.",
                   "spellId": 19376
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132149.jpg"
             },
             {
               "id": 110861,
