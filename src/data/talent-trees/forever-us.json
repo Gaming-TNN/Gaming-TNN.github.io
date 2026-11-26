@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T20:45:55.428Z",
+  "fetchedAt": "2026-11-26T21:01:00.864Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3088,7 +3088,8 @@
                   "description": "After killing a non-trivial enemy, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
                   "spellId": 14144
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132151.jpg"
             },
             {
               "id": 105722,
@@ -3128,7 +3129,8 @@
                   "description": "Increases your critical strike chance with all attacks and Poisons by 5%.",
                   "spellId": 14138
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
             },
             {
               "id": 105721,
@@ -3156,7 +3158,8 @@
                   "description": "Gives your finishing moves a 60% chance to add a Combo Point to your target.",
                   "spellId": 14156
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132122.jpg"
             },
             {
               "id": 105717,
@@ -5967,7 +5970,8 @@
                   "description": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 2 spells cast as if the target were Frozen. Lasts 15 sec.",
                   "spellId": 400647
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236227.jpg"
             },
             {
               "id": 105763,
@@ -6005,7 +6009,8 @@
                   "description": "Gives your Frostbolt and Fingers of Frost empowered Ice Lance spells a 100% chance to apply Winter's Chill, increasing the target's damage taken from your next Cone of Cold by 20% and it gains an additional 7% of your spell damage, stacking up to 5 times.",
                   "spellId": 11180
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135836.jpg"
             },
             {
               "id": 105762,
@@ -6025,7 +6030,8 @@
                   "description": "Shield yourself, absorbing 480 damage and increasing your Frost damage by 15% for 1 min. While shielded, your Frost damage is increased by an additional 5% and you do not lose casting time when you take damage.",
                   "spellId": 11426
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135988.jpg"
             }
           ]
         }
@@ -9000,7 +9006,8 @@
                   "description": "Afflicts the target for 5 min, causing 15% of all damage done by the Warlock to other targets to also be dealt to the cursed target. Bane of Havoc is limited to 1 target, and only one Bane per Warlock can be active on any one target.",
                   "spellId": 1225228
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/460695.jpg"
             },
             {
               "id": 105877,
@@ -9030,7 +9037,8 @@
                   "description": "Increases the critical strike chance of your Conflagrate spell by 25%.",
                   "spellId": 412751
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135821.jpg"
             },
             {
               "id": 105875,
@@ -9068,7 +9076,8 @@
                   "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by 20% for 20 sec, and hitting an enemy with Shadowburn increases all Fire damage you deal by 20% for 20 sec. In addition, Conflagrate has a 100% chance not to consume Immolate, and Shadowburn has a 100% chance to instantly refund a Soul Shard.",
                   "spellId": 426316
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135823.jpg"
             },
             {
               "id": 105874,
@@ -12072,7 +12081,8 @@
                   "description": "Grants your melee and ranged attacks against enemies afflicted by Hunter's Mark a 10% chance to allow an activation of Mongoose Bite. Lasts 10 sec.",
                   "spellId": 1310532
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132215.jpg"
             },
             {
               "id": 110860,
@@ -12095,7 +12105,8 @@
                   "description": "Reduces the cooldown of your Trap and Deterrence abilities by 40%.",
                   "spellId": 1310496
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132178.jpg"
             },
             {
               "id": 104981,
@@ -12113,7 +12124,8 @@
                   "description": "A powerful kick that deals 100% melee weapon damage and increases movement speed by 30% for 3 sec.",
                   "spellId": 1317257
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132198.jpg"
             },
             {
               "id": 110859,
