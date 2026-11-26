@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T04:00:55.189Z",
+  "fetchedAt": "2026-11-26T04:16:07.458Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4078,7 +4078,8 @@
                   "description": "Gives you a 45% chance to add a Combo Point to your target after Dodging their attack or fully resisting one of their spells.",
                   "spellId": 13983
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136056.jpg"
             },
             {
               "id": 105761,
@@ -4106,7 +4107,8 @@
                   "description": "Reduces the chance enemies have to detect you while in Stealth mode as if you were 3 levels higher.",
                   "spellId": 13958
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136129.jpg"
             },
             {
               "id": 105760,
@@ -4144,7 +4146,8 @@
                   "description": "Increases the damage dealt by your Backstab, Garrote, Ambush, and Mutilate abilities by 20%.",
                   "spellId": 14057
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132366.jpg"
             },
             {
               "id": 105745,
@@ -7012,7 +7015,8 @@
                   "description": "Increases your spell healing by up to 25% of your total Spirit and your spell damage by up to 8% of your total Spirit.",
                   "spellId": 14901
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135977.jpg"
             },
             {
               "id": 105852,
@@ -7040,7 +7044,8 @@
                   "description": "Increases the amount healed by your spells by 10%.",
                   "spellId": 14898
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136057.jpg"
             },
             {
               "id": 105851,
@@ -7060,7 +7065,8 @@
                   "description": "Places a spell on the target that heals them for 395 the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within 20 yards. Jumps up to 5 times and lasts 30 sec after each jump. This spell can only be placed on one target at a time per caster.",
                   "spellId": 401859
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135944.jpg"
             }
           ]
         },
@@ -13053,7 +13059,8 @@
                   "description": "Increases your attack speed by 30% for your next 3 swings after dealing a melee critical strike.",
                   "spellId": 16256
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132152.jpg"
             },
             {
               "id": 104743,
@@ -13073,7 +13080,8 @@
                   "description": "Instantly strike for 100% weapon damage and increase the damage you deal to the target with your next Lightning Bolt, Chain Lightning, or Earth Shock spell by 20% for 12 sec.",
                   "spellId": 17364
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132314.jpg"
             },
             {
               "id": 104752,
@@ -13096,7 +13104,8 @@
                   "description": "Reduces the cast time of your Ghost Wolf spell by 3.0 sec, and Ghost Wolf may be used indoors.",
                   "spellId": 16262
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136095.jpg"
             },
             {
               "id": 104745,
