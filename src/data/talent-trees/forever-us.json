@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T02:46:02.525Z",
+  "fetchedAt": "2026-11-26T03:00:59.783Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5370,7 +5370,8 @@
                   "description": "Causes your Fire Ward to have a 20% chance to reflect Fire spells while active.",
                   "spellId": 11094
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135806.jpg"
             },
             {
               "id": 105786,
@@ -5390,7 +5391,8 @@
                   "description": "Non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch reduce the cast time of your next Pyroblast cast within 20 sec by 25%, stacking up to 3 times. Fire Blast grants an additional stack every time it deals damage.",
                   "spellId": 400624
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135809.jpg"
             },
             {
               "id": 105785,
@@ -5418,7 +5420,8 @@
                   "description": "Your Fire and Frost critical strikes will refund 30% of their base mana cost.",
                   "spellId": 29074
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135820.jpg"
             },
             {
               "id": 105784,
@@ -8357,7 +8360,8 @@
                   "description": "When activated, sacrifices your summoned Demon to enhance the opposing aspect of your power, granting you an effect that lasts 2 hrs. The effect is canceled if any Demon is summoned.\r\n\r\nImp: Increases your Shadow damage by 15%.\r\n\r\nVoidwalker: Restores 2% of your total Mana every 4 sec.\r\n\r\nSuccubus/Incubus: Increases your Fire damage by 15%.\r\n\r\nFelhunter: Restores 3% of your total Health every 4 sec.",
                   "spellId": 18788
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136184.jpg"
             },
             {
               "id": 105898,
@@ -8382,7 +8386,8 @@
                   "description": "Reduces the casting time of your Imp, Voidwalker, Succubus, Incubus, and Felhunter Summoning spells by 4 sec and the Mana cost by 40%.",
                   "spellId": 18709
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136164.jpg"
             },
             {
               "id": 105897,
@@ -8405,7 +8410,8 @@
                   "description": "Reduces the cooldown of your Soul Fire spell by 90%. When you cast Shadow Bolt or Searing Pain on an enemy below 35% health, they deal 6% increased damage, and for the next 10 sec your Soul Fire spell has its cast time reduced by 40% and costs no Soul Shards.",
                   "spellId": 440870
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135808.jpg"
             },
             {
               "id": 105895,
@@ -11413,7 +11419,8 @@
                   "description": "You deal 20% increased damage with all attacks while you do not have an active pet.",
                   "spellId": 415370
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132266.jpg"
             },
             {
               "id": 105004,
@@ -11433,7 +11440,8 @@
                   "description": "Increases the Ranged Attack Power of party or raid members within 45 yds by 20.",
                   "spellId": 1299346
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132329.jpg"
             },
             {
               "id": 105002,
@@ -11473,7 +11481,8 @@
                   "description": "Increases the critical strike damage bonus on all ranged abilities by 30%.",
                   "spellId": 19485
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132271.jpg"
             },
             {
               "id": 104999,
