@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T01:31:06.633Z",
+  "fetchedAt": "2026-11-26T01:46:05.266Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3613,8 +3613,7 @@
                   "description": "Increases your Dodge chance by 5%.",
                   "spellId": 13712
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136047.jpg"
+              ]
             },
             {
               "id": 105719,
@@ -3642,8 +3641,7 @@
                   "description": "Increases the critical strike chance of your Backstab by 30% and your Mutilate by 15%, and gives Backstab a 45% chance to add an additional Combo Point.",
                   "spellId": 1224716
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132090.jpg"
+              ]
             },
             {
               "id": 105738,
@@ -3673,8 +3671,7 @@
                   "description": "Increases your Parry chance by 6%.",
                   "spellId": 13713
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
+              ]
             },
             {
               "id": 105737,
@@ -6516,8 +6513,7 @@
                   "description": "Your heals from Flash Heal, Lesser Heal, Heal, Greater Heal, and Penance gain 10% increased critical strike chance when cast on targets with Weakened Soul, and reduce the remaining duration of Weakened Soul on their target by 5 sec.",
                   "spellId": 425280
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135923.jpg"
+              ]
             },
             {
               "id": 105840,
@@ -6545,8 +6541,7 @@
                   "description": "Your non-periodic critical heals create a protective shield on the target, absorbing 15% of the amount healed. Shields up to 1,200 damage and lasts 12 sec.",
                   "spellId": 431622
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237539.jpg"
+              ]
             },
             {
               "id": 105836,
@@ -6566,8 +6561,7 @@
                   "description": "Infuses the target with power, increasing their spell damage and healing done by 20% for 15 sec.",
                   "spellId": 10060
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135939.jpg"
+              ]
             }
           ]
         },
@@ -9528,8 +9522,7 @@
                   "description": "Reduces the cooldown of your Slam ability by 5.0 sec, the cast time and global cooldown by 0.50 sec, and Slam no longer interrupts or delays your melee swing.",
                   "spellId": 12862
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132340.jpg"
+              ]
             },
             {
               "id": 105942,
@@ -9557,8 +9550,7 @@
                   "description": "Gives your Hamstring ability a 15% chance to immobilize the target for 5 sec.",
                   "spellId": 12289
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132316.jpg"
+              ]
             },
             {
               "id": 105941,
@@ -9578,8 +9570,7 @@
                   "description": "A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec.",
                   "spellId": 12294
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132355.jpg"
+              ]
             }
           ]
         },
@@ -12611,8 +12602,7 @@
                   "description": "Increases the critical strike chance of your Lightning Bolt and Chain Lightning spells by 5%.",
                   "spellId": 16120
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136014.jpg"
+              ]
             },
             {
               "id": 104759,
@@ -12644,8 +12634,7 @@
                   "description": "Gives your Lightning Bolt and Chain Lightning spells a 30% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.\r\n",
                   "spellId": 408438
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136050.jpg"
+              ]
             },
             {
               "id": 104766,
@@ -12685,8 +12674,7 @@
                   "description": "Increases the critical strike damage bonus of your Searing and Magma Totems and your Fire, Frost, and Nature spells by 100%.",
                   "spellId": 16089
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135830.jpg"
+              ]
             },
             {
               "id": 104758,
