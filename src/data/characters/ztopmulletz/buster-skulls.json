@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T04:45:48.768Z",
+  "fetchedAt": "2026-11-26T05:00:49.095Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -36,7 +36,7 @@
       "id": 1
     },
     "level": 32,
-    "experience": 17903,
+    "experience": 49827,
     "achievement_points": 0,
     "achievements": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/achievements?namespace=profile-forever-us"
@@ -53,7 +53,7 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795617186000,
+    "last_login_timestamp": 1795669049000,
     "specializations": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/specializations?namespace=profile-forever-us"
     },
@@ -114,25 +114,26 @@
       {
         "item": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item/13127?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/item/6686?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 13127
+          "id": 6686
         },
         "slot": {
           "type": "HEAD",
           "name": "Head"
         },
         "quantity": 1,
+        "context": 1,
         "quality": {
           "type": "RARE",
           "name": "Rare"
         },
-        "name": "Frostreaver Crown",
+        "name": "Tusken Helm",
         "media": {
           "key": {
-            "href": "https://us.api.blizzard.com/data/wow/media/item/13127?namespace=static-1.60.1_70399-forever-us"
+            "href": "https://us.api.blizzard.com/data/wow/media/item/6686?namespace=static-1.60.1_70399-forever-us"
           },
-          "id": 13127
+          "id": 6686
         },
         "item_class": {
           "key": {
@@ -153,13 +154,13 @@
           "name": "Head"
         },
         "binding": {
-          "type": "ON_EQUIP",
-          "name": "Binds when equipped"
+          "type": "ON_ACQUIRE",
+          "name": "Binds when picked up"
         },
         "armor": {
-          "value": 182,
+          "value": 188,
           "display": {
-            "display_string": "182 Armor",
+            "display_string": "188 Armor",
             "color": {
               "r": 255,
               "g": 255,
@@ -174,9 +175,9 @@
               "type": "STRENGTH",
               "name": "Strength"
             },
-            "value": 4,
+            "value": 13,
             "display": {
-              "display_string": "+4 Strength",
+              "display_string": "+13 Strength",
               "color": {
                 "r": 255,
                 "g": 255,
@@ -187,29 +188,13 @@
           },
           {
             "type": {
-              "type": "STAMINA",
-              "name": "Stamina"
+              "type": "EXTRA_ARMOR",
+              "name": "Bonus Armor"
             },
-            "value": 15,
-            "display": {
-              "display_string": "+15 Stamina",
-              "color": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
-                "a": 1
-              }
-            }
-          },
-          {
-            "type": {
-              "type": "SPIRIT",
-              "name": "Spirit"
-            },
-            "value": 4,
+            "value": 120,
             "is_equip_bonus": true,
             "display": {
-              "display_string": "+4 Spirit",
+              "display_string": "+120 Bonus Armor",
               "color": {
                 "r": 0,
                 "g": 255,
@@ -220,18 +205,18 @@
           }
         ],
         "sell_price": {
-          "value": 3021,
+          "value": 3567,
           "display_strings": {
             "header": "Sell Price:",
             "gold": "0",
-            "silver": "30",
-            "copper": "21"
+            "silver": "35",
+            "copper": "67"
           }
         },
         "requirements": {
           "level": {
-            "value": 27,
-            "display_string": "Requires Level 27"
+            "value": 29,
+            "display_string": "Requires Level 29"
           }
         },
         "transmog": {
@@ -693,8 +678,8 @@
           "item_modified_appearance_id": 104602
         },
         "durability": {
-          "value": 119,
-          "display_string": "Durability 119 / 120"
+          "value": 120,
+          "display_string": "Durability 120 / 120"
         }
       },
       {
@@ -1417,13 +1402,124 @@
       {
         "item": {
           "key": {
+            "href": "https://us.api.blizzard.com/data/wow/item/6693?namespace=static-1.60.1_70399-forever-us"
+          },
+          "id": 6693
+        },
+        "slot": {
+          "type": "FINGER_1",
+          "name": "Ring 1"
+        },
+        "quantity": 1,
+        "context": 1,
+        "quality": {
+          "type": "RARE",
+          "name": "Rare"
+        },
+        "name": "Agamaggan's Clutch",
+        "media": {
+          "key": {
+            "href": "https://us.api.blizzard.com/data/wow/media/item/6693?namespace=static-1.60.1_70399-forever-us"
+          },
+          "id": 6693
+        },
+        "item_class": {
+          "key": {
+            "href": "https://us.api.blizzard.com/data/wow/item-class/4?namespace=static-1.60.1_70399-forever-us"
+          },
+          "name": "Armor",
+          "id": 4
+        },
+        "item_subclass": {
+          "key": {
+            "href": "https://us.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-1.60.1_70399-forever-us"
+          },
+          "name": "Miscellaneous",
+          "id": 0
+        },
+        "inventory_type": {
+          "type": "FINGER",
+          "name": "Finger"
+        },
+        "binding": {
+          "type": "ON_ACQUIRE",
+          "name": "Binds when picked up"
+        },
+        "unique_equipped": "Unique-Equipped",
+        "stats": [
+          {
+            "type": {
+              "type": "STAMINA",
+              "name": "Stamina"
+            },
+            "value": 5,
+            "display": {
+              "display_string": "+5 Stamina",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1
+              }
+            }
+          },
+          {
+            "type": {
+              "type": "SPIRIT",
+              "name": "Spirit"
+            },
+            "value": 6,
+            "is_equip_bonus": true,
+            "display": {
+              "display_string": "+6 Spirit",
+              "color": {
+                "r": 0,
+                "g": 255,
+                "b": 0,
+                "a": 1
+              }
+            }
+          }
+        ],
+        "spells": [
+          {
+            "spell": {
+              "key": {
+                "href": "https://us.api.blizzard.com/data/wow/spell/1293199?namespace=static-1.60.1_70399-forever-us"
+              },
+              "name": "Agamaggan's Clutch",
+              "id": 1293199
+            },
+            "description": "Equip: Increases movement speed by 3% in The Barrens, Thousand Needles, Razorfen Kraul, and Razorfen Downs."
+          }
+        ],
+        "sell_price": {
+          "value": 3472,
+          "display_strings": {
+            "header": "Sell Price:",
+            "gold": "0",
+            "silver": "34",
+            "copper": "72"
+          }
+        },
+        "requirements": {
+          "level": {
+            "value": 30,
+            "display_string": "Requires Level 30"
+          }
+        },
+        "is_subclass_hidden": true
+      },
+      {
+        "item": {
+          "key": {
             "href": "https://us.api.blizzard.com/data/wow/item/6414?namespace=static-1.60.1_70399-forever-us"
           },
           "id": 6414
         },
         "slot": {
-          "type": "FINGER_1",
-          "name": "Ring 1"
+          "type": "FINGER_2",
+          "name": "Ring 2"
         },
         "quantity": 1,
         "context": 11,
@@ -1502,98 +1598,6 @@
             "gold": "0",
             "silver": "19",
             "copper": "60"
-          }
-        },
-        "is_subclass_hidden": true
-      },
-      {
-        "item": {
-          "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item/274078?namespace=static-1.60.1_70399-forever-us"
-          },
-          "id": 274078
-        },
-        "slot": {
-          "type": "FINGER_2",
-          "name": "Ring 2"
-        },
-        "quantity": 1,
-        "context": 11,
-        "quality": {
-          "type": "UNCOMMON",
-          "name": "Uncommon"
-        },
-        "name": "Boar Signet",
-        "media": {
-          "key": {
-            "href": "https://us.api.blizzard.com/data/wow/media/item/274078?namespace=static-1.60.1_70399-forever-us"
-          },
-          "id": 274078
-        },
-        "item_class": {
-          "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item-class/4?namespace=static-1.60.1_70399-forever-us"
-          },
-          "name": "Armor",
-          "id": 4
-        },
-        "item_subclass": {
-          "key": {
-            "href": "https://us.api.blizzard.com/data/wow/item-class/4/item-subclass/0?namespace=static-1.60.1_70399-forever-us"
-          },
-          "name": "Miscellaneous",
-          "id": 0
-        },
-        "inventory_type": {
-          "type": "FINGER",
-          "name": "Finger"
-        },
-        "binding": {
-          "type": "ON_ACQUIRE",
-          "name": "Binds when picked up"
-        },
-        "stats": [
-          {
-            "type": {
-              "type": "STAMINA",
-              "name": "Stamina"
-            },
-            "value": 5,
-            "display": {
-              "display_string": "+5 Stamina",
-              "color": {
-                "r": 255,
-                "g": 255,
-                "b": 255,
-                "a": 1
-              }
-            }
-          },
-          {
-            "type": {
-              "type": "BLOCK_RATING",
-              "name": "Block"
-            },
-            "value": 5,
-            "is_equip_bonus": true,
-            "display": {
-              "display_string": "+5 Block",
-              "color": {
-                "r": 0,
-                "g": 255,
-                "b": 0,
-                "a": 1
-              }
-            }
-          }
-        ],
-        "sell_price": {
-          "value": 2140,
-          "display_strings": {
-            "header": "Sell Price:",
-            "gold": "0",
-            "silver": "21",
-            "copper": "40"
           }
         },
         "is_subclass_hidden": true
@@ -2430,7 +2434,7 @@
         },
         "tiers": [
           {
-            "skill_points": 210,
+            "skill_points": 211,
             "max_skill_points": 225,
             "tier": {
               "name": "Mining",
@@ -2950,6 +2954,13 @@
               },
               {
                 "key": {
+                  "href": "https://us.api.blizzard.com/data/wow/recipe/54710?namespace=static-1.60.1_70399-forever-us"
+                },
+                "name": "Veteran's Chain Helm",
+                "id": 54710
+              },
+              {
+                "key": {
                   "href": "https://us.api.blizzard.com/data/wow/recipe/54721?namespace=static-1.60.1_70399-forever-us"
                 },
                 "name": "Guard's Gloves",
@@ -3125,7 +3136,7 @@
         },
         "tiers": [
           {
-            "skill_points": 75,
+            "skill_points": 82,
             "max_skill_points": 150,
             "tier": {
               "name": "Fishing",
@@ -3277,21 +3288,21 @@
     "6323": "https://render.worldofwarcraft.com/forever-us/icons/56/133477.jpg",
     "6340": "https://render.worldofwarcraft.com/forever-us/icons/56/134367.jpg",
     "6414": "https://render.worldofwarcraft.com/forever-us/icons/56/133357.jpg",
+    "6686": "https://render.worldofwarcraft.com/forever-us/icons/56/133077.jpg",
+    "6693": "https://render.worldofwarcraft.com/forever-us/icons/56/133722.jpg",
     "7002": "https://render.worldofwarcraft.com/forever-us/icons/56/134948.jpg",
     "7129": "https://render.worldofwarcraft.com/forever-us/icons/56/132938.jpg",
     "7133": "https://render.worldofwarcraft.com/forever-us/icons/56/132629.jpg",
-    "13127": "https://render.worldofwarcraft.com/forever-us/icons/56/133126.jpg",
     "250524": "https://render.worldofwarcraft.com/forever-us/icons/56/134668.jpg",
     "250557": "https://render.worldofwarcraft.com/forever-us/icons/56/236895.jpg",
     "273028": "https://render.worldofwarcraft.com/forever-us/icons/56/135058.jpg",
     "273842": "https://render.worldofwarcraft.com/forever-us/icons/56/132536.jpg",
-    "274078": "https://render.worldofwarcraft.com/forever-us/icons/56/133368.jpg",
     "277204": "https://render.worldofwarcraft.com/forever-us/icons/56/133288.jpg",
     "280766": "https://render.worldofwarcraft.com/forever-us/icons/56/133633.jpg",
     "281660": "https://render.worldofwarcraft.com/forever-us/icons/56/132330.jpg"
   },
   "statistics": {
-    "health": 2099,
+    "health": 1949,
     "power": 100,
     "power_type": {
       "key": {
@@ -3307,7 +3318,7 @@
     },
     "strength": {
       "base": 64,
-      "effective": 103
+      "effective": 112
     },
     "agility": {
       "base": 44,
@@ -3319,7 +3330,7 @@
     },
     "stamina": {
       "base": 61,
-      "effective": 186
+      "effective": 171
     },
     "melee_crit": {
       "rating_bonus": 0,
@@ -3336,7 +3347,7 @@
       "value": 0,
       "rating_normalized": 0
     },
-    "bonus_armor": 96,
+    "bonus_armor": 216,
     "lifesteal": {
       "rating_bonus": 0,
       "value": 0,
@@ -3351,11 +3362,11 @@
       "value": 0,
       "rating_normalized": 0
     },
-    "attack_power": 288,
-    "main_hand_damage_min": 77.37143,
-    "main_hand_damage_max": 101.37143,
+    "attack_power": 306,
+    "main_hand_damage_min": 80.457146,
+    "main_hand_damage_max": 104.457146,
     "main_hand_speed": 2.4,
-    "main_hand_dps": 37.238094,
+    "main_hand_dps": 38.523808,
     "off_hand_damage_min": 0,
     "off_hand_damage_max": 0,
     "off_hand_speed": 2,
@@ -3370,23 +3381,23 @@
     "mana_regen": 0,
     "mana_regen_combat": 0,
     "armor": {
-      "base": 96,
-      "effective": 2122
+      "base": 216,
+      "effective": 2248
     },
     "dodge": {
       "rating_bonus": 0,
-      "value": 5.7878003,
+      "value": 5.8278003,
       "rating_normalized": 0
     },
     "parry": {
       "rating_bonus": 0,
-      "value": 5.88,
+      "value": 5.92,
       "rating_normalized": 0
     },
     "block": {
-      "rating_bonus": 1,
-      "value": 11.88,
-      "rating_normalized": 5
+      "rating_bonus": 0,
+      "value": 10.92,
+      "rating_normalized": 0
     },
     "ranged_crit": {
       "rating_bonus": 0,
@@ -3405,11 +3416,11 @@
     },
     "spirit": {
       "base": 36,
-      "effective": 43
+      "effective": 45
     },
     "defense": {
-      "base": 159,
-      "effective": 182
+      "base": 160,
+      "effective": 183
     },
     "fire_resistance": {
       "base": 0,
