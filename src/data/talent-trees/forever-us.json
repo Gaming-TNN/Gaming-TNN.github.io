@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T11:01:03.983Z",
+  "fetchedAt": "2026-11-27T11:15:56.266Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3797,8 +3797,7 @@
                   "description": "Increases the Energy cost reduction of your Poised ability by 10.",
                   "spellId": 1329265
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132296.jpg"
+              ]
             },
             {
               "id": 105733,
@@ -3821,8 +3820,7 @@
                   "description": "Gives your Kick ability a 100% chance to Silence the target for 2 sec.",
                   "spellId": 13754
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132219.jpg"
+              ]
             },
             {
               "id": 108100,
@@ -3840,8 +3838,7 @@
                   "description": "Reduces the Energy cost of your Eviscerate ability by 15.",
                   "spellId": 1310711
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135345.jpg"
+              ]
             },
             {
               "id": 105726,
@@ -6756,8 +6753,7 @@
                   "description": "Reduces the casting time of your Smite, Holy Fire, Heal, and Greater Heal spells by 0.5 sec.",
                   "spellId": 18530
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135971.jpg"
+              ]
             },
             {
               "id": 105862,
@@ -6775,8 +6771,7 @@
                   "description": "Causes an explosion of holy light around the caster, causing 46 to 52 Holy damage to all enemy targets within 10 yards and healing all party members within 10 yards for 101 to 110. These effects cause no threat.",
                   "spellId": 15237
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135922.jpg"
+              ]
             },
             {
               "id": 105861,
@@ -6804,8 +6799,7 @@
                   "description": "After being struck by a melee or ranged critical hit, or suffering more than 30% of your maximum Health from a single attack, heal 25% of the damage taken over 6 sec. Refreshing this effect carries over any remaining healing.",
                   "spellId": 27811
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135877.jpg"
+              ]
             },
             {
               "id": 105860,
@@ -9744,8 +9738,7 @@
                   "description": "Gives you a 60% chance to generate 1 additional Rage when you deal melee damage with a weapon.",
                   "spellId": 12322
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136097.jpg"
+              ]
             },
             {
               "id": 105953,
@@ -9792,8 +9785,7 @@
                   "description": "Causes all enemies within 10 yds to be Dazed, reducing movement speed by 50% for 6 sec.",
                   "spellId": 12323
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136147.jpg"
+              ]
             },
             {
               "id": 105934,
@@ -9823,8 +9815,7 @@
                   "description": "Regenerates 3% of your total Health over 6 sec after being the victim of a critical strike or suffering more than 20% of your maximum Health from a single attack.",
                   "spellId": 16487
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136218.jpg"
+              ]
             },
             {
               "id": 105931,
@@ -12842,8 +12833,7 @@
                   "description": "Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by 20% and reduces the cooldown of your Grounding Totem by 2 sec.",
                   "spellId": 16258
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136098.jpg"
+              ]
             },
             {
               "id": 104755,
@@ -12873,8 +12863,7 @@
                   "description": "Increases your Attack Power by an amount equal to 100% of your Intellect.",
                   "spellId": 415140
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136055.jpg"
+              ]
             },
             {
               "id": 104751,
@@ -12902,8 +12891,7 @@
                   "description": "Increases the damage done by your Lightning Shield orbs by 15%.",
                   "spellId": 16261
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136051.jpg"
+              ]
             },
             {
               "id": 104750,
