@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T03:15:48.711Z",
+  "fetchedAt": "2026-11-27T03:30:49.211Z",
   "memberSlug": "ztopmulletz",
   "region": "us",
   "namespace": "profile-forever-us",
@@ -53,7 +53,7 @@
     "media": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/character-media?namespace=profile-forever-us"
     },
-    "last_login_timestamp": 1795744475000,
+    "last_login_timestamp": 1795749684000,
     "specializations": {
       "href": "https://us.api.blizzard.com/profile/wow/character/buster-skulls/specializations?namespace=profile-forever-us"
     },
