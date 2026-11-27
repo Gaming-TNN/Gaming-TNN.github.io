@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T20:00:58.078Z",
+  "fetchedAt": "2026-11-27T20:16:06.239Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4333,7 +4333,8 @@
                   "description": "Causes your attacks to ignore 9% of your target's Armor and increases the damage dealt by your Rupture ability by 30%.",
                   "spellId": 14171
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135315.jpg"
             },
             {
               "id": 105753,
@@ -4356,7 +4357,8 @@
                   "description": "Reduces the cooldown of your Vanish and Blind abilities by 90 sec.",
                   "spellId": 13981
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135994.jpg"
             },
             {
               "id": 105754,
@@ -4374,7 +4376,8 @@
                   "description": "A strike that deals 125% (180% if a Dagger is equipped in your Main Hand) weapon damage, increases your chance to dodge by 15% for 7 sec, and causes your next Ambush or Garrote cast within 7 sec to not require Stealth.  Awards 1 combo point.",
                   "spellId": 14278
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136136.jpg"
             },
             {
               "id": 110867,
@@ -7304,7 +7307,8 @@
                   "description": "Reduces the cooldown of your Psychic Scream spell by 4 sec.",
                   "spellId": 15392
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136184.jpg"
             },
             {
               "id": 105826,
@@ -7324,7 +7328,8 @@
                   "description": "Assault the target's mind with Shadow energy, causing 159 Shadow damage over 3 sec  and slowing their movement speed by 50%.",
                   "spellId": 15407
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136208.jpg"
             },
             {
               "id": 105825,
@@ -7349,7 +7354,8 @@
                   "description": "Each instance of damage of Mind Flay deals 20% more damage than its previous instance of damage.",
                   "spellId": 1225139
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136213.jpg"
             },
             {
               "id": 105823,
@@ -10318,7 +10324,8 @@
                   "description": "Reduces the Rage cost of your Thunder Clap ability by 6.",
                   "spellId": 12287
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132326.jpg"
             },
             {
               "id": 105970,
@@ -10336,7 +10343,8 @@
                   "description": "When activated, this ability temporarily grants you 30% of your maximum health for 20 sec. After the effect expires, the health is lost.",
                   "spellId": 12975
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135871.jpg"
             },
             {
               "id": 105971,
@@ -10361,7 +10369,8 @@
                   "description": "Grants you a 100% chance to generate 5 Rage when you Dodge or Parry while a shield is equipped.",
                   "spellId": 1310316
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132359.jpg"
             },
             {
               "id": 105967,
@@ -13411,7 +13420,8 @@
                   "description": "Reduces the Mana cost of your totems and any spells that summon or move them by 25%.",
                   "spellId": 16173
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136057.jpg"
             },
             {
               "id": 104737,
@@ -13434,7 +13444,8 @@
                   "description": "Reduces the cooldown of your Reincarnation spell by 20 min, increases your maximum health by 4%, and increases the amount of health and Mana you reincarnate with by an additional 20%.",
                   "spellId": 16184
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136080.jpg"
             },
             {
               "id": 104731,
@@ -13462,7 +13473,8 @@
                   "description": "Increases your target's armor value by 25% for 15 sec after getting a critical effect from one of your healing spells.",
                   "spellId": 16176
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136109.jpg"
             },
             {
               "id": 104733,
