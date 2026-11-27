@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T11:31:05.443Z",
+  "fetchedAt": "2026-11-27T11:46:05.574Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5714,7 +5714,8 @@
                   "description": "Reduces the cooldown of your Frost Nova spell by 4 sec.",
                   "spellId": 11165
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135840.jpg"
             },
             {
               "id": 105776,
@@ -5742,7 +5743,8 @@
                   "description": "Increases the duration of your Chill effects by 33% and reduces the target's speed by an additional 10%.",
                   "spellId": 11175
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135864.jpg"
             },
             {
               "id": 105772,
@@ -5770,7 +5772,8 @@
                   "description": "Reduces the mana cost of your Frost spells by 15% and reduces the threat caused by your Frost spells by 30%.",
                   "spellId": 11160
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135860.jpg"
             },
             {
               "id": 105771,
@@ -8710,7 +8713,8 @@
                   "description": "Reduces the casting time of your Shadow Bolt, Immolate, and Incinerate spells by 0.5 sec and your Soul Fire spell by 2 sec.",
                   "spellId": 17788
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136146.jpg"
             },
             {
               "id": 105885,
@@ -8748,7 +8752,8 @@
                   "description": "Reduces all damage taken by 10%.",
                   "spellId": 1225220
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132221.jpg"
             },
             {
               "id": 105887,
@@ -8776,7 +8781,8 @@
                   "description": "Reduces the Mana cost of your Destruction spells by 10%.",
                   "spellId": 17778
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135831.jpg"
             },
             {
               "id": 105886,
@@ -11799,7 +11805,8 @@
                   "description": "Increases the critical strike chance of all your melee abilities by 4%.",
                   "spellId": 19159
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132277.jpg"
             },
             {
               "id": 104992,
@@ -11837,7 +11844,8 @@
                   "description": "Increases your total Health by 10%.",
                   "spellId": 19255
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136223.jpg"
             },
             {
               "id": 104990,
@@ -11865,7 +11873,8 @@
                   "description": "Gives your Wing Clip ability a 20% chance to immobilize the target for 5 sec.",
                   "spellId": 19228
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132309.jpg"
             },
             {
               "id": 104991,
