@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T13:31:02.112Z",
+  "fetchedAt": "2026-11-27T13:45:56.447Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3158,8 +3158,7 @@
                   "description": "Gives your finishing moves a 60% chance to add a Combo Point to your target.",
                   "spellId": 14156
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132122.jpg"
+              ]
             },
             {
               "id": 105717,
@@ -3182,8 +3181,7 @@
                   "description": "Reduces the Energy cost of your Expose Armor ability by 10, and refunds 2 Combo Points when cast with 5 Combo Points.",
                   "spellId": 14168
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132354.jpg"
+              ]
             },
             {
               "id": 105739,
@@ -3211,8 +3209,7 @@
                   "description": "Increases the duration of your Slice and Dice ability by 45%.",
                   "spellId": 14165
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132306.jpg"
+              ]
             },
             {
               "id": 105720,
@@ -6030,8 +6027,7 @@
                   "description": "Shield yourself, absorbing 480 damage and increasing your Frost damage by 15% for 1 min. While shielded, your Frost damage is increased by an additional 5% and you do not lose casting time when you take damage.",
                   "spellId": 11426
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135988.jpg"
+              ]
             }
           ]
         }
@@ -6110,8 +6106,7 @@
                   "description": "Increases your damage with Wands by 25%.",
                   "spellId": 14524
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135463.jpg"
+              ]
             },
             {
               "id": 105849,
@@ -9037,8 +9032,7 @@
                   "description": "Increases the critical strike chance of your Conflagrate spell by 25%.",
                   "spellId": 412751
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135821.jpg"
+              ]
             },
             {
               "id": 105875,
@@ -9076,8 +9070,7 @@
                   "description": "Hitting an enemy with Conflagrate increases all Shadow damage you deal by 20% for 20 sec, and hitting an enemy with Shadowburn increases all Fire damage you deal by 20% for 20 sec. In addition, Conflagrate has a 100% chance not to consume Immolate, and Shadowburn has a 100% chance to instantly refund a Soul Shard.",
                   "spellId": 426316
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135823.jpg"
+              ]
             },
             {
               "id": 105874,
@@ -12055,8 +12048,7 @@
                   "description": "Reduces the Mana cost of your Trap and melee abilities by 60%, and grants your melee and ranged ability Critical Strikes a 100% chance to allow 50% of your Mana Regeneration to continue while casting for 30 sec.",
                   "spellId": 440529
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132207.jpg"
+              ]
             },
             {
               "id": 104985,
@@ -12105,8 +12097,7 @@
                   "description": "Reduces the cooldown of your Trap and Deterrence abilities by 40%.",
                   "spellId": 1310496
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132178.jpg"
+              ]
             },
             {
               "id": 104981,
