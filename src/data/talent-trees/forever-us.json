@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T05:30:56.282Z",
+  "fetchedAt": "2026-11-27T05:46:05.307Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3704,7 +3704,8 @@
                   "description": "Improves your chance to hit by 3%.",
                   "spellId": 13705
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132222.jpg"
             },
             {
               "id": 105732,
@@ -3727,7 +3728,8 @@
                   "description": "Gives a 100% chance to remove all movement impairing effects when you activate your Sprint ability.",
                   "spellId": 13743
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132307.jpg"
             },
             {
               "id": 105736,
@@ -3750,7 +3752,8 @@
                   "description": "Reduces the cooldown of your Sprint and Evasion abilities by 60%.",
                   "spellId": 13742
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136205.jpg"
             },
             {
               "id": 105735,
@@ -6602,7 +6605,8 @@
                   "description": "Gives your spells a 70% chance to not lose casting time when you take damage.",
                   "spellId": 14913
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135918.jpg"
             },
             {
               "id": 105866,
@@ -6630,7 +6634,8 @@
                   "description": "Increases the amount healed by your Renew spell by 15%.",
                   "spellId": 14908
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135953.jpg"
             },
             {
               "id": 110855,
@@ -6671,7 +6676,8 @@
               ],
               "aliasTalentIds": [
                 135395
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135967.jpg"
             },
             {
               "id": 105864,
@@ -9621,7 +9627,8 @@
                   "description": "Increases the area of effect of your Shouts by 50% and reduces the Rage cost by of your Shouts and Howls by 25%.",
                   "spellId": 12321
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136075.jpg"
             },
             {
               "id": 105939,
@@ -12637,7 +12644,8 @@
                   "description": "Gives your Lightning Bolt and Chain Lightning spells a 30% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.\r\n",
                   "spellId": 408438
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136050.jpg"
             },
             {
               "id": 104766,
@@ -12677,7 +12685,8 @@
                   "description": "Increases the critical strike damage bonus of your Searing and Magma Totems and your Fire, Frost, and Nature spells by 100%.",
                   "spellId": 16089
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135830.jpg"
             },
             {
               "id": 104758,
@@ -12697,7 +12706,8 @@
                   "description": "Gain mastery over Lightning, reducing the cast time of your Lightning Bolt spell by 0.5 sec, and removing the cooldown from your Chain Lightning spell. Lasts 15 sec.",
                   "spellId": 16166
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136111.jpg"
             }
           ]
         },
