@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T04:16:06.927Z",
+  "fetchedAt": "2026-11-27T04:30:56.057Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -7689,8 +7689,7 @@
                   "description": "Reduces the casting time of your Corruption spell by 2 sec and increases the damage it deals by 10%.",
                   "spellId": 17810
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136118.jpg"
+              ]
             },
             {
               "id": 105923,
@@ -10612,8 +10611,7 @@
                   "description": "Increases all damage you deal by 10% while a shield is equipped.",
                   "spellId": 16538
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/134950.jpg"
+              ]
             },
             {
               "id": 105959,
