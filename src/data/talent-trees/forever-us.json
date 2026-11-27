@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T19:31:01.545Z",
+  "fetchedAt": "2026-11-27T19:45:55.648Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5293,8 +5293,7 @@
                   "description": "Hurls an immense fiery boulder that causes 426 to 435 Fire damage and an additional 236 Fire damage over 12 sec.",
                   "spellId": 11366
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135808.jpg"
+              ]
             },
             {
               "id": 105797,
@@ -5317,8 +5316,7 @@
                   "description": "Reduces the cooldown of your Fire Blast spell by 2 sec and increases its range by 15 yards.",
                   "spellId": 11078
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135819.jpg"
+              ]
             },
             {
               "id": 105788,
@@ -5346,8 +5344,7 @@
                   "description": "Your Scorch spell has a 100% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all Fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
                   "spellId": 11095
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135827.jpg"
+              ]
             },
             {
               "id": 105787,
@@ -11226,8 +11223,7 @@
                   "description": "Increases your critical strike chance with all attacks by 5%.",
                   "spellId": 19426
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132312.jpg"
+              ]
             },
             {
               "id": 110870,
@@ -11255,8 +11251,7 @@
                   "description": "Increases the damage of your Serpent Sting ability by 20%, reduces the cooldown of your Viper Sting ability by 6 sec, and increases the duration of your Scorpid Sting ability by 45 sec.",
                   "spellId": 1310661
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132204.jpg"
+              ]
             },
             {
               "id": 105009,
@@ -11294,8 +11289,7 @@
                   "description": "Reduces the Mana cost of your Shots, Stings, and melee abilities by 15%.",
                   "spellId": 19416
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
+              ]
             },
             {
               "id": 105008,
