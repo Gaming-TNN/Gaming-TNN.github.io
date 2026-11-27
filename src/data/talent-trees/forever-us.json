@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-27T01:00:54.158Z",
+  "fetchedAt": "2026-11-27T01:15:55.352Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3280,8 +3280,7 @@
                   "description": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Mutilate, Ghostly Strike, and Hemorrhage abilities by 20%.",
                   "spellId": 14128
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132109.jpg"
+              ]
             },
             {
               "id": 105714,
@@ -3319,8 +3318,7 @@
                   "description": "Increases the damage dealt by your poisons by 20% and gives your poisons an additional 40% chance to resist dispel effects.",
                   "spellId": 16513
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132293.jpg"
+              ]
             },
             {
               "id": 105715,
@@ -3338,8 +3336,7 @@
                   "description": "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, Eviscerate, or Mutilate by 100%.",
                   "spellId": 14177
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135988.jpg"
+              ]
             },
             {
               "id": 105713,
@@ -4107,7 +4104,8 @@
                   "description": "Reduces the chance enemies have to detect you while in Stealth mode as if you were 3 levels higher.",
                   "spellId": 13958
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136129.jpg"
             },
             {
               "id": 105760,
@@ -4145,7 +4143,8 @@
                   "description": "Increases the damage dealt by your Backstab, Garrote, Ambush, and Mutilate abilities by 20%.",
                   "spellId": 14057
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132366.jpg"
             },
             {
               "id": 105745,
@@ -4168,7 +4167,8 @@
                   "description": "Reduces the Energy cost of your Cheap Shot and Garrote abilities by 20, and your Garrote ability no longer requires you to be behind your target.",
                   "spellId": 14082
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136220.jpg"
             },
             {
               "id": 105756,
@@ -6204,8 +6204,7 @@
                   "description": "Improves your chance to hit with Holy spells by 18%.",
                   "spellId": 1309957
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135895.jpg"
+              ]
             },
             {
               "id": 105837,
@@ -6243,8 +6242,7 @@
                   "description": "Increases your total Intellect by 10%.",
                   "spellId": 18551
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136031.jpg"
+              ]
             },
             {
               "id": 105845,
@@ -6267,8 +6265,7 @@
                   "description": "Gives you a 100% chance to gain Focused Casting for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing casting time when taking damage and increases your resistance to Interrupt effects by 20%.",
                   "spellId": 14531
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136107.jpg"
+              ]
             },
             {
               "id": 105842,
@@ -7041,7 +7038,8 @@
                   "description": "Increases the amount healed by your spells by 10%.",
                   "spellId": 14898
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136057.jpg"
             },
             {
               "id": 105851,
@@ -7061,7 +7059,8 @@
                   "description": "Places a spell on the target that heals them for 395 the next time they take damage or receive non-periodic healing. When the heal occurs, Prayer of Mending jumps to a party or raid member within 20 yards. Jumps up to 5 times and lasts 30 sec after each jump. This spell can only be placed on one target at a time per caster.",
                   "spellId": 401859
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135944.jpg"
             }
           ]
         },
@@ -7109,7 +7108,8 @@
                   "description": "Improves your chance to hit with Shadow spells by 5%.",
                   "spellId": 15260
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136126.jpg"
             },
             {
               "id": 105832,
@@ -9231,8 +9231,7 @@
                   "description": "Increases the Rage generated by your Charge ability by 6.",
                   "spellId": 12285
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132337.jpg"
+              ]
             },
             {
               "id": 105954,
@@ -9262,8 +9261,7 @@
                   "description": "Tactical Mastery lets you retain up to an additional 15 Rage when you change stances.",
                   "spellId": 12295
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136031.jpg"
+              ]
             },
             {
               "id": 105952,
@@ -9286,8 +9284,7 @@
                   "description": "Increases the critical strike chance of your Overpower ability by 50%.",
                   "spellId": 12290
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135275.jpg"
+              ]
             },
             {
               "id": 105951,
@@ -10057,7 +10054,8 @@
                   "description": "Reduces the cooldown of your Whirlwind ability by 2 sec and increases the damage it deals to the closest enemy by 30%.",
                   "spellId": 1310315
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132369.jpg"
             },
             {
               "id": 105928,
@@ -10085,7 +10083,8 @@
                   "description": "Increases your melee attack speed by 30% for your next 3 swings after dealing a melee critical strike.",
                   "spellId": 12319
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132152.jpg"
             },
             {
               "id": 105930,
@@ -12339,8 +12338,7 @@
                   "description": "Your Critical Strikes with direct damage spells increase your chance to get a Critical Strike with melee attacks by 9% for 10 sec.",
                   "spellId": 30160
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135791.jpg"
+              ]
             },
             {
               "id": 104767,
@@ -12378,8 +12376,7 @@
                   "description": "Reduces the cooldown of your Shock spells by 1.0 sec.",
                   "spellId": 16040
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135850.jpg"
+              ]
             },
             {
               "id": 104771,
@@ -12409,8 +12406,7 @@
                   "description": "Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.50 sec.",
                   "spellId": 16578
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135990.jpg"
+              ]
             },
             {
               "id": 104770,
@@ -13115,7 +13111,8 @@
                   "description": "Gives a chance to parry enemy melee attacks, reduces all threat generated by your attacks by 30% while Rockbiter Weapon is not active, and increases all threat generated by 30% while Rockbiter Weapon is active.",
                   "spellId": 16268
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132269.jpg"
             },
             {
               "id": 104744,
@@ -13140,7 +13137,8 @@
                   "description": "Increases your spell damage and healing by up to 30% of your Intellect.",
                   "spellId": 30812
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136090.jpg"
             },
             {
               "id": 104742,
@@ -13165,7 +13163,8 @@
                   "description": "When you Stormstrike, you have a 100% chance to gain 50% mana regeneration while casting spells for 15 sec, and Stormstrike's cooldown has a 100% chance to reset each time you Dodge or Parry.",
                   "spellId": 1223031
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/237581.jpg"
             },
             {
               "id": 104741,
