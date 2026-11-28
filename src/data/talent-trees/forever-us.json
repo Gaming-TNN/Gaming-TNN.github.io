@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-28T04:01:04.287Z",
+  "fetchedAt": "2026-11-28T04:15:56.464Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3018,8 +3018,7 @@
                   "description": "Your melee attacks store a copy of your active Seal for 15 sec, stacking up to 3 times. Landing an attack with a different Seal consumes all stacks, giving the stored Seal its normal chance to activate once per stack.",
                   "spellId": 1310735
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135878.jpg"
+              ]
             }
           ]
         }
@@ -3064,8 +3063,7 @@
                   "description": "Increases the duration of your Gouge ability by 1.5 sec.",
                   "spellId": 13741
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132155.jpg"
+              ]
             },
             {
               "id": 105723,
@@ -3088,8 +3086,7 @@
                   "description": "After killing a non-trivial enemy, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, Mutilate, or Ghostly Strike. Lasts 20 sec.",
                   "spellId": 14144
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132151.jpg"
+              ]
             },
             {
               "id": 105722,
@@ -5923,8 +5920,7 @@
                   "description": "Increases the damage dealt by your Cone of Cold spell by 35%.",
                   "spellId": 11190
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135852.jpg"
+              ]
             },
             {
               "id": 105766,
@@ -5944,8 +5940,7 @@
                   "description": "Finishes the remaining cooldown on all your other Frost spells.",
                   "spellId": 12472
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135865.jpg"
+              ]
             },
             {
               "id": 105764,
@@ -5970,8 +5965,7 @@
                   "description": "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 2 spells cast as if the target were Frozen. Lasts 15 sec.",
                   "spellId": 400647
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/236227.jpg"
+              ]
             },
             {
               "id": 105763,
@@ -11947,8 +11941,7 @@
                   "description": "When activated, increases your Dodge and Parry chance by 25% for 10 sec.",
                   "spellId": 19263
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132369.jpg"
+              ]
             },
             {
               "id": 104988,
@@ -11971,8 +11964,7 @@
                   "description": "Increases your chance to hit with your Trap and Feign Death abilities by 10%.",
                   "spellId": 19376
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132149.jpg"
+              ]
             },
             {
               "id": 110861,
@@ -12010,8 +12002,7 @@
                   "description": "Increases your melee ability critical strike damage by 30% and your Off Hand weapon damage by 50%.",
                   "spellId": 1310627
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132147.jpg"
+              ]
             },
             {
               "id": 104989,
