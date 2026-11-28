@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-28T14:46:03.217Z",
+  "fetchedAt": "2026-11-28T15:00:56.934Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -3821,7 +3821,8 @@
                   "description": "Gives your Kick ability a 100% chance to Silence the target for 2 sec.",
                   "spellId": 13754
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132219.jpg"
             },
             {
               "id": 108100,
@@ -3839,7 +3840,8 @@
                   "description": "Reduces the Energy cost of your Eviscerate ability by 15.",
                   "spellId": 1310711
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135345.jpg"
             },
             {
               "id": 105726,
@@ -3864,7 +3866,8 @@
                   "description": "Reduces the chance for your attacks to be Dodged or Parried by 2%.",
                   "spellId": 30919
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135882.jpg"
             },
             {
               "id": 105730,
@@ -6772,7 +6775,8 @@
                   "description": "Causes an explosion of holy light around the caster, causing 46 to 52 Holy damage to all enemy targets within 10 yards and healing all party members within 10 yards for 101 to 110. These effects cause no threat.",
                   "spellId": 15237
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135922.jpg"
             },
             {
               "id": 105861,
@@ -6800,7 +6804,8 @@
                   "description": "After being struck by a melee or ranged critical hit, or suffering more than 30% of your maximum Health from a single attack, heal 25% of the damage taken over 6 sec. Refreshing this effect carries over any remaining healing.",
                   "spellId": 27811
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135877.jpg"
             },
             {
               "id": 105860,
@@ -6828,7 +6833,8 @@
                   "description": "Your non-periodic critical heals increase your target's Armor by 25% for 15 sec.",
                   "spellId": 14892
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135928.jpg"
             },
             {
               "id": 105859,
@@ -9786,7 +9792,8 @@
                   "description": "Causes all enemies within 10 yds to be Dazed, reducing movement speed by 50% for 6 sec.",
                   "spellId": 12323
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136147.jpg"
             },
             {
               "id": 105934,
@@ -9816,7 +9823,8 @@
                   "description": "Regenerates 3% of your total Health over 6 sec after being the victim of a critical strike or suffering more than 20% of your maximum Health from a single attack.",
                   "spellId": 16487
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136218.jpg"
             },
             {
               "id": 105931,
@@ -9854,7 +9862,8 @@
                   "description": "Gives you a 30% chance to deal 10% increased Physical damage for 12 sec after being the victim of any damaging attack.",
                   "spellId": 12317
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136224.jpg"
             },
             {
               "id": 105933,
@@ -12864,7 +12873,8 @@
                   "description": "Increases your Attack Power by an amount equal to 100% of your Intellect.",
                   "spellId": 415140
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136055.jpg"
             },
             {
               "id": 104751,
@@ -12892,7 +12902,8 @@
                   "description": "Increases the damage done by your Lightning Shield orbs by 15%.",
                   "spellId": 16261
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136051.jpg"
             },
             {
               "id": 104750,
@@ -12920,7 +12931,8 @@
                   "description": "Increases the melee attack power bonus of your Rockbiter Weapon by 20%, your Windfury Weapon effect by 40% and increases the damage caused by your Flametongue Weapon and Frostbrand Weapon by 15%.",
                   "spellId": 16266
                 }
-              ]
+              ],
+              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135814.jpg"
             },
             {
               "id": 104749,
