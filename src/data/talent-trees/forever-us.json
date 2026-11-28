@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-28T05:46:09.378Z",
+  "fetchedAt": "2026-11-28T06:01:01.626Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -4945,8 +4945,7 @@
                   "description": "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell.",
                   "spellId": 12043
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136031.jpg"
+              ]
             },
             {
               "id": 105800,
@@ -4984,8 +4983,7 @@
                   "description": "Increases your Intellect by 10% and increases the critical strike damage bonus of your Arcane spells by 100%.",
                   "spellId": 11232
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136129.jpg"
+              ]
             },
             {
               "id": 105799,
@@ -5013,8 +5011,7 @@
                   "description": "Increases the damage done by your spells by 3% and your critical strike chance by 3%.",
                   "spellId": 15058
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136222.jpg"
+              ]
             },
             {
               "id": 105798,
@@ -7953,8 +7950,7 @@
                   "description": "Reduces the target's movement speed by 30% for 12 sec.  Only one Curse per Warlock can be active on any one target.",
                   "spellId": 18223
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136162.jpg"
+              ]
             },
             {
               "id": 105912,
@@ -7974,8 +7970,7 @@
                   "description": "Transfers 27 health from the target to the caster every 3 sec.  Lasts 30 sec.",
                   "spellId": 18265
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136188.jpg"
+              ]
             },
             {
               "id": 105911,
@@ -8003,8 +7998,7 @@
                   "description": "Increases the damage done or health drained by your Drain Life, Drain Soul, and Wrack spells by 12% per each of your Corruption, Siphon Life, and Bane of Agony effects active on the target, up to a maximum increase of 36%.",
                   "spellId": 17804
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/136169.jpg"
+              ]
             },
             {
               "id": 105910,
@@ -10973,8 +10967,7 @@
                   "description": "Command a hawk to dive-bomb your targeted enemy, dealing 57 Physical damage and continuing its assault for 18 sec. Only 2 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot.",
                   "spellId": 1293241
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132158.jpg"
+              ]
             },
             {
               "id": 104965,
@@ -10997,8 +10990,7 @@
                   "description": "While your pet is active, you and your pet will regenerate 1% of total health every 5 sec.",
                   "spellId": 19578
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132121.jpg"
+              ]
             },
             {
               "id": 104964,
@@ -11021,8 +11013,7 @@
                   "description": "Command your pet to Stun the target for 3 sec on its next successful attack, which also gains 100% increased critical strike chance. Generates high threat.",
                   "spellId": 19577
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/132111.jpg"
+              ]
             },
             {
               "id": 104963,
