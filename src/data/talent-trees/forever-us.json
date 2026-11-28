@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-28T06:16:56.420Z",
+  "fetchedAt": "2026-11-28T06:31:02.712Z",
   "namespace": "static-forever-us",
   "locale": "en_US",
   "source": "https://us.api.blizzard.com/data/wow/talent-tree/index?namespace=static-forever-us",
@@ -5317,8 +5317,7 @@
                   "description": "Reduces the cooldown of your Fire Blast spell by 2 sec and increases its range by 15 yards.",
                   "spellId": 11078
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135819.jpg"
+              ]
             },
             {
               "id": 105788,
@@ -5346,8 +5345,7 @@
                   "description": "Your Scorch spell has a 100% chance to cause your target to be vulnerable to Fire damage. This vulnerability increases all Fire damage you deal to your target by 3% and lasts 30 sec, stacking up to 5 times.",
                   "spellId": 11095
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135827.jpg"
+              ]
             },
             {
               "id": 105787,
@@ -5370,8 +5368,7 @@
                   "description": "Causes your Fire Ward to have a 20% chance to reflect Fire spells while active.",
                   "spellId": 11094
                 }
-              ],
-              "icon": "https://render.worldofwarcraft.com/forever-us/icons/56/135806.jpg"
+              ]
             },
             {
               "id": 105786,
